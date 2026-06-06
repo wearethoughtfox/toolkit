@@ -1,0 +1,12 @@
+{
+  "title": "Colors",
+  "description": "Root brand palette. Ground is the dark base, Clay and Air for text, Olive Oil for accents (large text only per accessibility audit).",
+  "items": [
+    { "name": "Ground", "value": "#332822" },
+    { "name": "Olive Oil", "value": "#B5883A" },
+    { "name": "Olive Oil Dark", "value": "#a37a34" },
+    { "name": "Clay", "value": "#F7E8D6" },
+    { "name": "Air", "value": "#FFFFFF" },
+    { "name": "Teal", "value": "#346278" }
+  ]
+}

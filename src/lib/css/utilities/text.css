@@ -1,0 +1,34 @@
+/*
+TEXT UTILITIES
+Weight, size, and alignment helpers.
+*/
+
+/* Weights */
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-medium  { font-weight: var(--font-weight-medium); }
+.font-bold    { font-weight: var(--font-weight-bold); }
+.font-black   { font-weight: var(--font-weight-black); }
+
+/* Leading */
+.leading-micro    { line-height: var(--leading-micro); }
+.leading-flat     { line-height: var(--leading-flat); }
+.leading-fine     { line-height: var(--leading-fine); }
+.leading-standard { line-height: var(--leading-standard); }
+.leading-loose    { line-height: var(--leading-loose); }
+
+/* Uppercase with optical kerning */
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: var(--uppercase-kerning);
+}
+
+/* Truncate single line */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Alignment */
+.text-center { text-align: center; }
+.text-right  { text-align: end; }

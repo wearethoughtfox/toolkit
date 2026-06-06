@@ -1,0 +1,18 @@
+{
+  "title": "Fonts",
+  "description": "Root brand fonts. Rockhill Sans Rough for display headlines only. Inter variable for all body, UI, and labels.",
+  "items": [
+    {
+      "name": "Base",
+      "value": "'Inter', 'Helvetica Neue', Arial, sans-serif"
+    },
+    {
+      "name": "Display",
+      "value": "'Rockhill Sans Rough', 'Inter', sans-serif"
+    },
+    {
+      "name": "Mono",
+      "value": "'ui-monospace', 'Cascadia Code', monospace"
+    }
+  ]
+}

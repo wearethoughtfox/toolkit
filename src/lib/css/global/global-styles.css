@@ -1,0 +1,201 @@
+/*
+  Global styles
+  Low-specificity styles that apply to the whole project: https://cube.fyi/css.html
+*/
+
+body {
+  background: var(--color-ground);
+  color: var(--color-clay);
+  font-size: var(--size-step-0);
+  font-family: var(--font-base);
+  font-weight: 300;
+  line-height: var(--leading-standard);
+  font-size-adjust: from-font;
+  /* opsz: optical sizing for body text
+     cv05: single-storey 'a' — warmer, more humanist
+     cv03: curved lowercase 'l' — less clinical */
+  font-variation-settings: 'opsz' 16;
+  font-feature-settings: 'cv05' 1, 'cv03' 1;
+  margin: 0;
+}
+
+:is(h1, h2, h3, h4) {
+  line-height: var(--leading-fine);
+  text-wrap: balance;
+}
+
+/* Display headings — Rockhill Sans Rough, all caps, tight */
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--size-step-9);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--color-olive-oil);
+  max-width: 20ch;
+}
+
+/* Section headings — Rockhill Sans Rough, all caps */
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--size-step-7);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--color-olive-oil);
+  max-width: 28ch;
+}
+
+/* Sub-headings — Inter, tracked label style (JOIN US FOR, WITH MAVRA) */
+h3 {
+  font-size: var(--size-step-00);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  max-width: 35ch;
+}
+
+:is(h4, h5, h6) {
+  font-size: var(--size-step-00);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+small {
+  font-size: var(--size-step-0);
+}
+
+/* Constrain body copy line length */
+p,
+li,
+blockquote,
+figcaption {
+  max-width: var(--measure, 66ch);
+}
+
+/* Opt out for layout-driven containers */
+.cluster p,
+.grid p,
+[data-no-measure] p {
+  max-width: unset;
+}
+
+p {
+  overflow-wrap: break-word;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+}
+
+ins {
+  text-decoration: none;
+  background: var(--color-primary);
+  color: var(--color-dark);
+  padding-inline: 0.3em;
+}
+
+:is(code, kbd, samp) {
+  font-family: var(--font-mono);
+  padding: 0.2em 0.2em 0.05em 0.2em;
+  hyphens: none;
+  tab-size: 2;
+  text-align: left;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  box-decoration-break: clone;
+}
+
+@supports not (font-size-adjust: from-font) {
+  :is(code, kbd, samp) {
+    font-size: 0.8em;
+  }
+}
+
+pre:has(code) {
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+pre code {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+kbd {
+  border: 1px solid;
+  padding-block-end: 0.1em;
+}
+
+var {
+  font-style: normal;
+  font-weight: var(--font-medium);
+}
+
+q {
+  font-style: italic;
+}
+
+ul:not([class]) {
+  padding-inline-start: 1.7ch;
+  list-style-type: disc;
+}
+
+ul:not([class]) > li {
+  padding-inline-start: var(--space-xs);
+}
+
+:is(ol, ul):not([class]) li + * {
+  margin-block-start: var(--flow-space, var(--space-xs));
+}
+
+ul ::marker {
+  font-size: 0.8lh;
+}
+
+ol ::marker {
+  font-size: 1em;
+  font-weight: var(--font-bold);
+}
+
+[role='list'][class],
+[role='tablist'][class] {
+  margin-block: 0;
+  padding: 0;
+}
+
+dt {
+  font-weight: var(--font-medium);
+}
+
+dt + dd {
+  margin-block-start: var(--space-xs);
+}
+
+dd + dt {
+  margin-block-start: var(--space-s);
+}
+
+dd {
+  margin-inline-start: 1.5ch;
+}
+
+a:not([class]) {
+  color: var(--color-olive-oil);
+  text-underline-offset: 0.2em;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 3px solid var(--color-olive-oil);
+  outline-offset: 3px;
+}
+
+/* Smooth scrolling — respects reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
