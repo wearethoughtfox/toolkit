@@ -10,7 +10,7 @@ Used by [robertocarroll.com](https://robertocarroll.com) and Root Pilates & Cafe
 ## Install
 
 ```sh
-npm i -D github:robertocarroll/toolkit#v0.1.0
+npm i -D github:wearethoughtfox/toolkit#v0.1.0
 ```
 
 Pin a tag. Upgrade sites deliberately by bumping the tag, rebuilding, and
