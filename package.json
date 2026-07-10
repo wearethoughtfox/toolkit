@@ -1,0 +1,29 @@
+{
+	"name": "@thoughtfox/toolkit",
+	"version": "0.1.0",
+	"description": "Shared CUBE CSS + Every Layout foundations for Thought Fox SvelteKit sites: compositions, utilities, layout components, and the design-token generator.",
+	"type": "module",
+	"svelte": "./index.js",
+	"exports": {
+		".": {
+			"svelte": "./index.js",
+			"default": "./index.js"
+		},
+		"./css/*": "./css/*",
+		"./components/*": "./components/*",
+		"./actions/*": "./actions/*",
+		"./stores/*": "./stores/*",
+		"./scripts/*": "./scripts/*",
+		"./package.json": "./package.json"
+	},
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/robertocarroll/toolkit.git"
+	},
+	"engines": {
+		"node": ">=22"
+	}
+}
