@@ -1,15 +1,25 @@
 /* AUTO-GENERATED — do not edit. Run `npm run tokens` to regenerate. */
 :root {
 
-  /* Colors */
+  /* Colors — the palette. Only roles and schemes should use these */
   --color-ground: #332822;
-  --color-olive-oil: #B5883A;
+  --color-olive-oil: #B6893B;
   --color-olive-oil-dark: #a37a34;
   --color-clay: #F7E8D6;
   --color-air: #FFFFFF;
   --color-teal: #346278;
 
+  /* Roles — what each colour does. Components use these */
+  --surface: var(--color-ground);
+  --text: var(--color-clay);
+  --heading: var(--color-olive-oil);
+  --primary: var(--color-olive-oil);
+  --on-primary: var(--color-ground);
+  --accent: var(--color-clay);
+  --border: var(--color-olive-oil);
+
   /* Spacing */
+  --space-2xs: clamp(0.1875rem, 0.17rem + 0.10vw, 0.25rem);
   --space-xs: clamp(0.4375rem, 0.42rem + 0.10vw, 0.5rem);
   --space-s: clamp(0.875rem, 0.83rem + 0.20vw, 1rem);
   --space-m: clamp(1.3125rem, 1.25rem + 0.29vw, 1.5rem);
@@ -60,4 +70,40 @@
   --font-base: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-display: 'Rockhill Sans Rough', 'Inter', sans-serif;
   --font-mono: 'ui-monospace', 'Cascadia Code', monospace;
+}
+
+/* Schemes — put data-scheme="name" on a section to switch its colours */
+:where([data-scheme]) {
+  background: var(--surface);
+  color: var(--text);
+}
+
+[data-scheme="default"] {
+  --surface: var(--color-ground);
+  --text: var(--color-clay);
+  --heading: var(--color-olive-oil);
+  --primary: var(--color-olive-oil);
+  --on-primary: var(--color-ground);
+  --accent: var(--color-clay);
+  --border: var(--color-olive-oil);
+}
+
+[data-scheme="inverse"] {
+  --surface: var(--color-clay);
+  --text: var(--color-ground);
+  --heading: var(--color-olive-oil-dark);
+  --primary: var(--color-ground);
+  --on-primary: var(--color-clay);
+  --accent: var(--color-ground);
+  --border: var(--color-ground);
+}
+
+[data-scheme="highlight"] {
+  --surface: var(--color-olive-oil);
+  --text: var(--color-clay);
+  --heading: var(--color-clay);
+  --primary: var(--color-ground);
+  --on-primary: var(--color-clay);
+  --accent: var(--color-ground);
+  --border: var(--color-ground);
 }

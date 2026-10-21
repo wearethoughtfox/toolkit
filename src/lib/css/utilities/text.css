@@ -1,26 +1,51 @@
 /*
 TEXT UTILITIES
-Weight, size, and alignment helpers.
+Tachyons names, mapped onto the design tokens.
+Old → new names are listed in UTILITY-RENAMES.md.
 */
 
-/* Weights */
-.font-regular { font-weight: var(--font-weight-regular); }
-.font-medium  { font-weight: var(--font-weight-medium); }
-.font-bold    { font-weight: var(--font-weight-bold); }
-.font-black   { font-weight: var(--font-weight-black); }
+/* Font weight */
+.normal { font-weight: var(--font-weight-regular); }
+.b      { font-weight: var(--font-weight-bold); }
+.fw4    { font-weight: var(--font-weight-regular); }
+.fw5    { font-weight: var(--font-weight-medium); }
+.fw7    { font-weight: var(--font-weight-bold); }
+.fw9    { font-weight: var(--font-weight-black); }
 
-/* Leading */
-.leading-micro    { line-height: var(--leading-micro); }
-.leading-flat     { line-height: var(--leading-flat); }
-.leading-fine     { line-height: var(--leading-fine); }
-.leading-standard { line-height: var(--leading-standard); }
-.leading-loose    { line-height: var(--leading-loose); }
+/* Font style */
+.i         { font-style: italic; }
+.fs-normal { font-style: normal; }
 
-/* Uppercase with optical kerning */
-.uppercase {
+/* Line height */
+.lh-micro { line-height: var(--leading-micro); }
+.lh-solid { line-height: var(--leading-flat); }
+.lh-title { line-height: var(--leading-fine); }
+.lh-copy  { line-height: var(--leading-standard); }
+.lh-loose { line-height: var(--leading-loose); }
+
+/* Text transform — uppercase gets optical kerning */
+.ttu {
   text-transform: uppercase;
   letter-spacing: var(--uppercase-kerning);
 }
+.ttc { text-transform: capitalize; }
+.ttl { text-transform: lowercase; }
+.ttn { text-transform: none; }
+.small-caps { font-variant: small-caps; }
+
+/* Tracking — after .ttu so it can override the kerning */
+.tracked       { letter-spacing: var(--tracking); }
+.tracked-tight { letter-spacing: var(--tracking-tight); }
+.tracked-mega  { letter-spacing: var(--tracking-mega); }
+
+/* Text align — logical, so .tl/.tr follow writing direction */
+.tl { text-align: start; }
+.tc { text-align: center; }
+.tr { text-align: end; }
+.tj { text-align: justify; }
+
+/* White space */
+.nowrap { white-space: nowrap; }
 
 /* Truncate single line */
 .truncate {
@@ -28,7 +53,3 @@ Weight, size, and alignment helpers.
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-/* Alignment */
-.text-center { text-align: center; }
-.text-right  { text-align: end; }

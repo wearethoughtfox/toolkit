@@ -1,0 +1,41 @@
+/*
+WIDTH UTILITIES
+Tachyons names. Reach for Sidebar / Switcher / Grid first —
+these are for one-off sizing inside a block.
+*/
+
+/* Fixed scale */
+.w1 { width: 1rem; }
+.w2 { width: 2rem; }
+.w3 { width: 4rem; }
+.w4 { width: 8rem; }
+.w5 { width: 16rem; }
+
+/* Percentages */
+.w-10  { width: 10%; }
+.w-20  { width: 20%; }
+.w-25  { width: 25%; }
+.w-30  { width: 30%; }
+.w-33  { width: 33%; }
+.w-34  { width: 34%; }
+.w-40  { width: 40%; }
+.w-50  { width: 50%; }
+.w-60  { width: 60%; }
+.w-70  { width: 70%; }
+.w-75  { width: 75%; }
+.w-80  { width: 80%; }
+.w-90  { width: 90%; }
+.w-100 { width: 100%; }
+
+.w-third      { width: calc(100% / 3); }
+.w-two-thirds { width: calc(100% / 1.5); }
+.w-auto       { width: auto; }
+
+/* Max widths */
+.mw-100  { max-width: 100%; }
+.mw-none { max-width: none; }
+
+/* Measure — line length for reading */
+.measure        { max-width: var(--measure); }
+.measure-narrow { max-width: var(--measure-narrow); }
+.measure-wide   { max-width: var(--measure-wide); }

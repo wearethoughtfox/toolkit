@@ -42,36 +42,42 @@
   }
 
   .button[data-variant='primary'] {
-    background: var(--color-primary);
-    color: var(--color-dark);
-    border-color: var(--color-primary);
+    background: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--primary);
   }
 
   .button[data-variant='primary']:hover {
     background: transparent;
-    color: var(--color-primary);
+    color: var(--primary);
   }
 
   .button[data-variant='secondary'] {
     background: transparent;
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+    color: var(--primary);
+    border-color: var(--primary);
   }
 
   .button[data-variant='secondary']:hover {
-    background: var(--color-primary);
-    color: var(--color-dark);
+    background: var(--primary);
+    color: var(--on-primary);
   }
 
   .button[data-variant='ghost'] {
     background: transparent;
-    color: var(--color-light);
+    color: var(--text);
     border-color: transparent;
     padding-inline: 0;
   }
 
   .button[data-variant='ghost']:hover {
-    color: var(--color-primary);
+    color: var(--primary);
+  }
+
+  .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 
   @media (prefers-reduced-motion: reduce) {

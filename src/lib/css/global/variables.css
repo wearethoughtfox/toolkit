@@ -6,6 +6,8 @@
   --gutter: var(--space-m-l);
   --wrapper-max-width: 1360px;
   --measure: 66ch;
+  --measure-narrow: 45ch;
+  --measure-wide: 80ch;
 
   --transition-base: 250ms ease;
   --transition-movement: 200ms linear;
@@ -20,4 +22,7 @@
   --radius-l: 2.5rem;
 
   --uppercase-kerning: 0.04ch;
+  --tracking-tight: -0.05em;
+  --tracking: 0.1em;
+  --tracking-mega: 0.25em;
 }

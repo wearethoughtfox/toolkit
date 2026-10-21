@@ -12,6 +12,7 @@
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/kit": "^2.0.0",
     "cssnano": "^7.0.0",
+    "modern-normalize": "^3.0.1",
     "postcss": "^8.4.0",
     "postcss-import": "^16.0.0",
     "postcss-nesting": "^13.0.0",

@@ -153,7 +153,7 @@
   <Wrapper>
     <Stack space="var(--space-l)">
       <h2>Grid</h2>
-      <p class="font-medium">Auto-fill grid — items find their own minimum width (16rem).</p>
+      <p class="fw5">Auto-fill grid — items find their own minimum width (16rem).</p>
       <Grid>
         {#each ['Card one', 'Card two', 'Card three', 'Card four', 'Card five', 'Card six'] as title}
           <Card>
@@ -165,7 +165,7 @@
         {/each}
       </Grid>
 
-      <p class="font-medium">50/50 grid.</p>
+      <p class="fw5">50/50 grid.</p>
       <Grid layout="50-50">
         <Card>
           <svelte:fragment slot="heading">Left</svelte:fragment>
@@ -243,12 +243,17 @@
   <Wrapper>
     <Stack space="var(--space-l)">
       <h2>Buttons</h2>
-      <Cluster>
-        <Button>Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button href="/">Link button</Button>
-      </Cluster>
+      {#each ['default', 'inverse'] as scheme}
+        <div data-scheme={scheme} data-button-test={scheme} class="pa-m">
+          <Cluster>
+            <Button>Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="ghost">Ghost</Button>
+            <Button href="/">Link button</Button>
+            <Button disabled>Disabled</Button>
+          </Cluster>
+        </div>
+      {/each}
     </Stack>
   </Wrapper>
 </Region>

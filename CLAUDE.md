@@ -8,18 +8,20 @@ This project uses **CUBE CSS** (Composition Utility Block Exception) with **Ever
 
 | Layer | Location | Rule |
 |---|---|---|
+| Normalize | `modern-normalize` (npm), first import in `app.css` | Cross-browser fixes — update with npm |
 | Reset | `src/lib/css/global/reset.css` | Global, never override |
 | Tokens (generated) | `src/lib/css/global/_tokens.generated.css` | Never edit — run `npm run tokens` |
 | Variables | `src/lib/css/global/variables.css` | Manual additions on top of tokens |
 | Global styles | `src/lib/css/global/global-styles.css` | Low-specificity, element selectors |
 | Compositions | `src/lib/css/compositions/*.css` | Every Layout patterns — plain class names |
-| Utilities | `src/lib/css/utilities/*.css` | Single-purpose classes |
+| Utilities | `src/lib/css/utilities/*.css` | Single-purpose classes, Tachyons names |
+| Spacing utilities (generated) | `src/lib/css/utilities/_spacing.generated.css` | Never edit — run `npm run tokens` |
 | Blocks | Scoped `<style>` in `.svelte` files | Component-specific styles |
 
 ### CUBE layers summary
 
 - **C — Composition**: layout primitives (`.stack`, `.cluster`, `.grid`, `.sidebar`, `.switcher`, `.cover`, `.reel`, `.frame`, `.wrapper`, `.repel`)
-- **U — Utility**: single-purpose helpers (`.region`, `.visually-hidden`, `.font-bold`, `.leading-loose`, `.uppercase`)
+- **U — Utility**: single-purpose helpers (`.region`, `.visually-hidden`, `.b`, `.lh-copy`, `.ttu`, `.pb1`, `.mt-l`)
 - **B — Block**: component styles scoped inside Svelte files (`Button.svelte`, `Card.svelte`, etc.)
 - **E — Exception**: data-attribute modifiers (`.grid[data-layout="50-50"]`, `.sidebar[data-reversed]`)
 
@@ -31,7 +33,7 @@ Edit JSON files in `src/lib/design-tokens/`, then regenerate:
 npm run tokens
 ```
 
-This writes `_tokens.generated.css` with all `--color-*`, `--space-*`, `--size-step-*`, `--leading-*`, `--font-*` custom properties.
+This writes `_tokens.generated.css` with all `--color-*`, `--space-*`, `--size-step-*`, `--leading-*`, `--font-*` custom properties, and `_spacing.generated.css` with the spacing utilities.
 
 Token files:
 - `colors.json` — palette
@@ -41,6 +43,24 @@ Token files:
 - `text-weights.json` — font-weight values
 - `fonts.json` — font stacks
 - `viewports.json` — min/max viewport for clamp() calculations
+
+## Utilities (Tachyons names)
+
+Utility class names follow Tachyons, mapped onto the tokens. Renames from the old names are in `UTILITY-RENAMES.md`.
+
+| Group | Classes | Source |
+|---|---|---|
+| Spacing | `pa ph pv pt pb pl pr`, `ma mh mv mt mb ml mr` + `0–6` or token name (`pb1`, `mv3`, `pa-m`, `mt-xs-l`), `ml-auto`, `mr-auto` | `--space-*`; numbers set by `step` in `spacing.json` |
+| Weight | `.normal` `.b` `.fw4` `.fw5` `.fw7` `.fw9` | `--font-weight-*` |
+| Line height | `.lh-micro` `.lh-solid` `.lh-title` `.lh-copy` `.lh-loose` | `--leading-*` |
+| Tracking | `.tracked` `.tracked-tight` `.tracked-mega` | `--tracking*` in `variables.css` |
+| Transform | `.ttu` (with kerning) `.ttc` `.ttl` `.ttn` `.small-caps` | — |
+| Align | `.tl` `.tc` `.tr` `.tj` (logical start/end) | — |
+| Widths | `.w1–.w5`, `.w-10–.w-100`, `.w-third`, `.w-two-thirds`, `.w-auto`, `.mw-100`, `.mw-none` | — |
+| Measure | `.measure` `.measure-narrow` `.measure-wide` | `--measure*` in `variables.css` |
+| Debug | `.debug` (outlines children), `.debug-grid` | dev only |
+
+Spacing uses logical properties (`mt` = `margin-block-start`). Utilities load after compositions, so `.mt0` on a `.stack` child overrides the stack gap. Prefer Stack/Cluster/Region for layout spacing; use these for one-offs. There is no Tachyons `.center` — that name is the Every Layout Center composition.
 
 ## Every Layout Compositions
 

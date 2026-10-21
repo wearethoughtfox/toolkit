@@ -189,7 +189,7 @@ a:not([class]) {
 
 /* Focus styles */
 :focus-visible {
-  outline: 3px solid var(--color-olive-oil);
+  outline: 3px solid var(--primary);
   outline-offset: 3px;
 }
 

@@ -28,7 +28,7 @@
     <div class="feature-block__inner sidebar" style:--sidebar-target-width="22rem" style:--gutter="var(--space-l)">
       <div class="feature-block__content stack" style:--stack-space="var(--space-m)">
         {#if label}
-          <p class="feature-block__label uppercase">{label}</p>
+          <p class="feature-block__label ttu">{label}</p>
         {/if}
         <slot name="body" />
       </div>
