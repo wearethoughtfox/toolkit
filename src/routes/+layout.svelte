@@ -1,6 +1,7 @@
 <script>
   import '../app.css';
   import { afterNavigate } from '$app/navigation';
+  import { dev } from '$app/environment';
   import { onMount } from 'svelte';
   import SkipLink from '$lib/components/blocks/SkipLink.svelte';
   import SiteHead from '$lib/components/blocks/SiteHead.svelte';
@@ -8,7 +9,9 @@
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' }
+    { href: '/about', label: 'About' },
+    // Development-only tools
+    ...(dev ? [{ href: '/palette', label: 'Palette' }] : [])
   ];
 
   onMount(() => {

@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { generateContrast } from './contrast.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const tokensDir = join(__dirname, '../src/lib/design-tokens');
@@ -200,6 +201,7 @@ export function generateTokens() {
   console.log('✓ tokens generated →', outputPath);
 
   generateSpacingUtilities(spacing);
+  generateContrast();
 }
 
 /**

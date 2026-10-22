@@ -124,11 +124,11 @@ Production builds return a 404 for this page: in `+page.js`, `if (!dev) error(40
 | 1 | Audit | ~~List current colour usage~~ | Done (see above) |
 | 2 | Roles | ~~Change `colors.json` to the colours/roles/schemes format and update `generate-tokens.js`~~ | Done |
 | 3 | Proof | ~~Move **one** component onto roles (Button)~~ | Done. Olive Oil changed from `#B5883A` to `#B6893B` so the label reaches AA (4.52). `:focus-visible` now uses `var(--primary)` |
-| 4 | Contrast | `scripts/contrast.js` (WCAG + `apca-w3`) and `contrast.generated.json` with `supports` | Olive Oil on Clay comes out about 2.7, `body: false` |
+| 4 | Contrast | ~~`scripts/contrast.js` (WCAG + `apca-w3`) and `contrast.generated.json` with `supports`~~ | Done. `npm run contrast` prints every pair; the JSON is written to `src/lib/palette/` on every `npm run tokens` |
 | 5 | Schemes | Generate the `[data-scheme]` rules, and run the role-pair checks and the undefined-variable scan. Add the `focus-ring` role | `data-scheme="inverse"` works and the warnings appear. `highlight` should be flagged (see below) |
 | 6 | Migration | Move everything else onto roles and schemes, and remove the `:global` overrides and the old variables | **Root looks the same as before.** This is a refactor, not a redesign. Screenshots before and after |
-| 7 | Inspect | `/palette` matrix and scheme previews, development only | It matches the components.ai layout, and production returns 404 |
-| 8 | Explore | Randomiser mode A: shuffle, lock, filter, copy | Cycles only through pairs from the palette |
+| 7 | Inspect | ~~`/palette` matrix~~, development only. **Scheme previews still to do** (after task 5) | Matrix done |
+| 8 | Explore | ~~Randomiser mode A: shuffle, lock, filter, copy~~ | Done: shuffle (button or →), fix text or background, swap, filter by use, copy JSON |
 | 9 | Builder | Randomiser mode B: the scheme builder | A generated scheme passes every rule |
 | 10 | Docs | `CLAUDE.md`: the four concepts, the role list, the steps for setting up a new palette | A new project only needs to edit `colors.json` |
 
