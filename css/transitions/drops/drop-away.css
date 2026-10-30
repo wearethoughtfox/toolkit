@@ -1,0 +1,91 @@
+/* Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue */
+/*
+  Segue: Drop Away (drop: angle: 90, spin: 8, sink: 0.08, dim: 0.3)
+
+  Drop this in and any view transition on the page uses it:
+  - same page:   document.startViewTransition(() => updateTheDOM())
+  - across pages: the @view-transition rule below opts same-origin
+    navigations in; it needs to be on both pages.
+  Reduced motion falls back to the default crossfade.
+*/
+
+@view-transition {
+  navigation: auto;
+}
+
+:root {
+  --segue-lead-color: #5ef2e8;
+  --segue-duration: 0.8s;
+}
+
+@keyframes segue-drop-out {
+  0% {
+    transform: translate(calc(0 * (100vh / 1 + 25vmin)), calc(0 * (100vh / 1 + 25vmin))) rotate(0deg);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  78% {
+    transform: translate(calc(0 * (100vh / 1 + 25vmin)), calc(1 * (100vh / 1 + 25vmin))) rotate(8deg);
+  }
+  100% {
+    transform: translate(calc(0 * (100vh / 1 + 25vmin)), calc(1 * (100vh / 1 + 25vmin))) rotate(8deg);
+  }
+}
+@keyframes segue-drop-in {
+  0% {
+    transform: scale(0.92);
+    filter: brightness(0.7);
+    animation-timing-function: linear;
+  }
+  18% {
+    transform: scale(0.92);
+    filter: brightness(0.7);
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(root) {
+    animation: none;
+    background: var(--segue-lead-color);
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    mix-blend-mode: normal;
+    animation-duration: var(--segue-duration);
+    animation-fill-mode: both;
+  }
+  ::view-transition-old(root) {
+    animation-name: segue-drop-out;
+    box-shadow: 0 2vmin 8vmin rgb(0 0 0 / 0.3);
+    z-index: 1;
+  }
+  ::view-transition-new(root) {
+    animation-name: segue-drop-in;
+  }
+}
+
+/*
+  Backwards: the same move, the other way, for going back. It runs when the
+  view transition carries the type "backwards":
+  - same page:   document.startViewTransition({ update, types: ['backwards'] })
+  - across pages: in a 'pagereveal' listener, when the navigation went back,
+    event.viewTransition.types.add('backwards')
+*/
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:active-view-transition-type(backwards)::view-transition-old(root) {
+    animation-name: segue-drop-in;
+    animation-direction: reverse;
+    box-shadow: initial;
+    z-index: auto;
+  }
+  :root:active-view-transition-type(backwards)::view-transition-new(root) {
+    animation-name: segue-drop-out;
+    animation-direction: reverse;
+    box-shadow: 0 2vmin 8vmin rgb(0 0 0 / 0.3);
+  }
+}

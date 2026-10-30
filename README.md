@@ -23,8 +23,11 @@ css/reset.css               Modern reset (piccalil.li)
 css/compositions/*.css      stack, cluster, sidebar, grid, switcher, cover,
                             center, reel, frame, wrapper, repel
 css/utilities/*.css         region, text, visually-hidden, reveal
+css/transitions/*/*.css     46 Segue page transitions (list: transitions.json)
 components/layout/*.svelte  Prop-based wrappers for each composition
 components/SkipLink.svelte  Accessible skip link (pair with #main-content)
+components/transitions/*    SVG masks for the four transitions that need them
+transitions/segue.js        segueTransitions() for onNavigate, segue() helper
 actions/reveal.js           IntersectionObserver scroll-reveal action
 stores/motion.js            prefers-reduced-motion readable store
 scripts/generate-tokens.js  Design-token JSON → CSS custom properties
@@ -55,6 +58,49 @@ scripts/generate-tokens.js  Design-token JSON → CSS custom properties
 
 Every prop maps to a CSS custom property; the classes work without the
 components too (`<div class="stack">`).
+
+### Page transitions
+
+46 view transitions from [Segue](https://jhey.dev/prototypes/2026/segue/)
+(slides, stripes, circles, cells, sprites, card flips…), one self-contained
+CSS file each. Pick one per site and import it in `app.css`:
+
+```css
+@import '@thoughtfox/toolkit/css/transitions/circles/circle-pop.css';
+```
+
+Then wrap navigations in the root `+layout.svelte`:
+
+```svelte
+<script>
+  import { onNavigate } from '$app/navigation';
+  import { segueTransitions } from '@thoughtfox/toolkit';
+  onNavigate(segueTransitions());
+</script>
+```
+
+Going back plays the reverse (38 of the 46 have one; `backwards` in
+`css/transitions/transitions.json`), and pointer-origin transitions grow from
+the click. For same-page changes, `segue(() => update(), { back })`.
+
+Paint Over, Dots Radial, Dots Sweep and Grid Squares also need their masks
+rendered once in the layout: `<DotsRadialMasks />` and so on.
+
+Give the transition the site's colours by overriding its custom properties
+after the import. Don't edit the file. The `:root` block at the top of each
+file lists what it exposes:
+
+```css
+:root {
+  --segue-lead-color: var(--color-primary);
+  --segue-trail-color: var(--color-dark);
+  --segue-duration: 0.6s;
+}
+```
+
+Reduced-motion users get the default crossfade, and browsers without view
+transitions navigate normally. To try them all, use the demo in
+`CSS-course-picalli/segue-transitions/demo/`.
 
 ### Design tokens
 
@@ -99,3 +145,6 @@ Pickering & Andy Bell) and the CUBE CSS conventions from
 [Piccalilli](https://piccalil.li) / [Set Studio](https://set.studio) —
 see [buildexcellentwebsit.es](https://buildexcellentwebsit.es). The reset and
 visually-hidden utility are from Piccalilli articles (linked in each file).
+The page transitions are generated with [Segue](https://jhey.dev/prototypes/2026/segue/)
+by Jhey Tompkins (credited in each file). Segue states no licence, so ask
+him before republishing them outside Thought Fox sites.

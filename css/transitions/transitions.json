@@ -1,0 +1,282 @@
+[
+  {
+    "name": "Slide Left",
+    "family": "Slides",
+    "css": "css/transitions/slides/slide-left.css",
+    "backwards": true
+  },
+  {
+    "name": "Slide Right",
+    "family": "Slides",
+    "css": "css/transitions/slides/slide-right.css",
+    "backwards": true
+  },
+  {
+    "name": "Slide Up",
+    "family": "Slides",
+    "css": "css/transitions/slides/slide-up.css",
+    "backwards": true
+  },
+  {
+    "name": "Slide Down",
+    "family": "Slides",
+    "css": "css/transitions/slides/slide-down.css",
+    "backwards": true
+  },
+  {
+    "name": "Diagonal Up",
+    "family": "Slides",
+    "css": "css/transitions/slides/diagonal-up.css",
+    "backwards": true
+  },
+  {
+    "name": "Diagonal Down",
+    "family": "Slides",
+    "css": "css/transitions/slides/diagonal-down.css",
+    "backwards": true
+  },
+  {
+    "name": "Stripes Horizontal",
+    "family": "Stripes",
+    "css": "css/transitions/stripes/stripes-horizontal.css",
+    "backwards": true
+  },
+  {
+    "name": "Stripes Vertical",
+    "family": "Stripes",
+    "css": "css/transitions/stripes/stripes-vertical.css",
+    "backwards": true
+  },
+  {
+    "name": "Stripes Horizontal Alt",
+    "family": "Stripes",
+    "css": "css/transitions/stripes/stripes-horizontal-alt.css",
+    "backwards": true
+  },
+  {
+    "name": "Stripes Vertical Alt",
+    "family": "Stripes",
+    "css": "css/transitions/stripes/stripes-vertical-alt.css",
+    "backwards": true
+  },
+  {
+    "name": "Stripes Diagonal",
+    "family": "Stripes",
+    "css": "css/transitions/stripes/stripes-diagonal.css",
+    "backwards": true
+  },
+  {
+    "name": "Blinds Horizontal",
+    "family": "Blinds",
+    "css": "css/transitions/blinds/blinds-horizontal.css",
+    "backwards": true
+  },
+  {
+    "name": "Blinds Vertical",
+    "family": "Blinds",
+    "css": "css/transitions/blinds/blinds-vertical.css",
+    "backwards": true
+  },
+  {
+    "name": "Hinge Open",
+    "family": "Hinges",
+    "css": "css/transitions/hinges/hinge-open.css",
+    "backwards": true
+  },
+  {
+    "name": "Hinge Lift",
+    "family": "Hinges",
+    "css": "css/transitions/hinges/hinge-lift.css",
+    "backwards": true
+  },
+  {
+    "name": "Circle Pop",
+    "family": "Circles",
+    "css": "css/transitions/circles/circle-pop.css",
+    "backwards": true
+  },
+  {
+    "name": "Circle Iris",
+    "family": "Circles",
+    "css": "css/transitions/circles/circle-iris.css",
+    "backwards": true
+  },
+  {
+    "name": "Circle Corner",
+    "family": "Circles",
+    "css": "css/transitions/circles/circle-corner.css",
+    "backwards": true
+  },
+  {
+    "name": "Focus Pull",
+    "family": "Focus",
+    "css": "css/transitions/focus/focus-pull.css",
+    "backwards": true
+  },
+  {
+    "name": "Diamond Iris",
+    "family": "Polygons",
+    "css": "css/transitions/polygons/diamond-iris.css",
+    "backwards": true
+  },
+  {
+    "name": "Arrow Right",
+    "family": "Arrows",
+    "css": "css/transitions/arrows/arrow-right.css",
+    "backwards": true
+  },
+  {
+    "name": "Shutter",
+    "family": "Splits",
+    "css": "css/transitions/splits/shutter.css",
+    "backwards": true
+  },
+  {
+    "name": "Doors",
+    "family": "Splits",
+    "css": "css/transitions/splits/doors.css",
+    "backwards": true
+  },
+  {
+    "name": "Framed Slide",
+    "family": "Framed",
+    "css": "css/transitions/framed/framed-slide.css",
+    "backwards": true
+  },
+  {
+    "name": "Framed Drift",
+    "family": "Framed",
+    "css": "css/transitions/framed/framed-drift.css",
+    "backwards": true
+  },
+  {
+    "name": "Framed Cover",
+    "family": "Framed",
+    "css": "css/transitions/framed/framed-cover.css",
+    "backwards": true
+  },
+  {
+    "name": "Quad Pinwheel",
+    "family": "Pinwheels",
+    "css": "css/transitions/pinwheels/quad-pinwheel.css",
+    "backwards": true
+  },
+  {
+    "name": "Drop Away",
+    "family": "Drops",
+    "css": "css/transitions/drops/drop-away.css",
+    "backwards": true
+  },
+  {
+    "name": "Clock Wipe",
+    "family": "Radial",
+    "css": "css/transitions/radial/clock-wipe.css",
+    "backwards": false
+  },
+  {
+    "name": "Fan Wipe",
+    "family": "Radial",
+    "css": "css/transitions/radial/fan-wipe.css",
+    "backwards": false
+  },
+  {
+    "name": "Swing",
+    "family": "Radial",
+    "css": "css/transitions/radial/swing.css",
+    "backwards": false
+  },
+  {
+    "name": "Zigzag Up",
+    "family": "Edges",
+    "css": "css/transitions/edges/zigzag-up.css",
+    "backwards": true
+  },
+  {
+    "name": "Wave Up",
+    "family": "Edges",
+    "css": "css/transitions/edges/wave-up.css",
+    "backwards": true
+  },
+  {
+    "name": "Deal In",
+    "family": "Deals",
+    "css": "css/transitions/deals/deal-in.css",
+    "backwards": true
+  },
+  {
+    "name": "Brush Lines",
+    "family": "Brush",
+    "css": "css/transitions/brush/brush-lines.css",
+    "backwards": true
+  },
+  {
+    "name": "Paint Over",
+    "family": "Paint",
+    "css": "css/transitions/paint/paint-over.css",
+    "backwards": true,
+    "masks": "components/transitions/PaintOverMasks.svelte"
+  },
+  {
+    "name": "Dots Radial",
+    "family": "Cells",
+    "css": "css/transitions/cells/dots-radial.css",
+    "backwards": false,
+    "masks": "components/transitions/DotsRadialMasks.svelte"
+  },
+  {
+    "name": "Dots Sweep",
+    "family": "Cells",
+    "css": "css/transitions/cells/dots-sweep.css",
+    "backwards": true,
+    "masks": "components/transitions/DotsSweepMasks.svelte"
+  },
+  {
+    "name": "Grid Squares",
+    "family": "Cells",
+    "css": "css/transitions/cells/grid-squares.css",
+    "backwards": true,
+    "masks": "components/transitions/GridSquaresMasks.svelte"
+  },
+  {
+    "name": "Sprite Noise",
+    "family": "Sprites",
+    "css": "css/transitions/sprites/sprite-noise.css",
+    "backwards": false
+  },
+  {
+    "name": "Dither Dissolve",
+    "family": "Sprites",
+    "css": "css/transitions/sprites/dither-dissolve.css",
+    "backwards": false
+  },
+  {
+    "name": "Dither Wipe",
+    "family": "Sprites",
+    "css": "css/transitions/sprites/dither-wipe.css",
+    "backwards": true
+  },
+  {
+    "name": "Pixel Burn",
+    "family": "Sprites",
+    "css": "css/transitions/sprites/pixel-burn.css",
+    "backwards": false
+  },
+  {
+    "name": "Sprite Shuffle",
+    "family": "Sprites",
+    "css": "css/transitions/sprites/sprite-shuffle.css",
+    "backwards": false
+  },
+  {
+    "name": "Card Flip",
+    "family": "Turns",
+    "css": "css/transitions/turns/card-flip.css",
+    "backwards": true
+  },
+  {
+    "name": "Cube Turn",
+    "family": "Turns",
+    "css": "css/transitions/turns/cube-turn.css",
+    "backwards": true
+  }
+]

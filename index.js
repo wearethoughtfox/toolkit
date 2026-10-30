@@ -18,6 +18,13 @@ export { default as Wrapper } from './components/layout/Wrapper.svelte';
 // Blocks
 export { default as SkipLink } from './components/SkipLink.svelte';
 
+// Page transitions (pair with one css/transitions/*/*.css)
+export { segueTransitions, segue } from './transitions/segue.js';
+export { default as PaintOverMasks } from './components/transitions/PaintOverMasks.svelte';
+export { default as DotsRadialMasks } from './components/transitions/DotsRadialMasks.svelte';
+export { default as DotsSweepMasks } from './components/transitions/DotsSweepMasks.svelte';
+export { default as GridSquaresMasks } from './components/transitions/GridSquaresMasks.svelte';
+
 // Actions & stores
 export { reveal } from './actions/reveal.js';
 export { prefersReducedMotion } from './stores/motion.js';

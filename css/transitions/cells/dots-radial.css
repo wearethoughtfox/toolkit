@@ -1,0 +1,75 @@
+/* Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue */
+/*
+  Segue: Dots Radial (cells: across: 16, roundness: 1, order: radial, angle: 0, spread: 0.55)
+
+  Needs markup: one inline <svg> holding the masks (copied below the CSS).
+  Put it anywhere in <body>, on every page that transitions; it takes no
+  space. The masks animate while a view transition runs, so there's still
+  no JS to add.
+
+  Drop this in and any view transition on the page uses it:
+  - same page:   document.startViewTransition(() => updateTheDOM())
+  - across pages: the @view-transition rule below opts same-origin
+    navigations in; it needs to be on both pages.
+  Reduced motion falls back to the default crossfade.
+*/
+
+@view-transition {
+  navigation: auto;
+}
+
+:root {
+  --segue-lead-color: #5ef2e8;
+  --segue-trail-color: #c2185b;
+  --segue-ease: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.segue-masks {
+  position: fixed;
+  pointer-events: none;
+}
+/* keeps the transition open while the masks (which live in the page, not on
+   the pseudos) do the animating -- with a little slack, since the two start
+   on their own clocks */
+@keyframes segue-hold {
+  to { opacity: 1; }
+}
+.segue-masks rect[style] {
+  transform-box: fill-box;
+  transform-origin: center;
+  scale: 1.434;
+}
+@keyframes segue-cell {
+  from { scale: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:active-view-transition .segue-lead {
+    animation: segue-cell 0.36s var(--segue-ease) calc(var(--d) + 0s) both;
+  }
+  :root:active-view-transition .segue-trail {
+    animation: segue-cell 0.36s var(--segue-ease) calc(var(--d) + 0.08s) both;
+  }
+  :root:active-view-transition .segue-page {
+    animation: segue-cell 0.36s var(--segue-ease) calc(var(--d) + 0.16s) both;
+  }
+
+  ::view-transition-group(root) {
+    background: var(--segue-lead-color);
+    animation: segue-hold 1.01s linear both;
+  }
+  ::view-transition-image-pair(root) {
+    background: var(--segue-trail-color);
+    mask: url(#segue-pair);
+  }
+  ::view-transition-old(root) {
+    mix-blend-mode: normal;
+    animation: none;
+    mask: url(#segue-old);
+  }
+  ::view-transition-new(root) {
+    mix-blend-mode: normal;
+    animation: none;
+    mask: url(#segue-page);
+  }
+}

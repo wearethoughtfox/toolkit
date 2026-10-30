@@ -13,6 +13,7 @@
 		"./components/*": "./components/*",
 		"./actions/*": "./actions/*",
 		"./stores/*": "./stores/*",
+		"./transitions/*": "./transitions/*",
 		"./scripts/*": "./scripts/*",
 		"./package.json": "./package.json"
 	},
