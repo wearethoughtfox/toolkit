@@ -48,8 +48,8 @@
     color: inherit;
     text-decoration: none;
     font-weight: var(--font-bold);
-    font-size: var(--size-step-2);
-    line-height: var(--leading-fine);
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-leading);
   }
 
   .card__link::after {

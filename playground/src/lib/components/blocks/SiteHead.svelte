@@ -28,7 +28,8 @@
 
   .site-head__logo {
     font-weight: var(--font-black);
-    font-size: var(--size-step-2);
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-leading);
     text-decoration: none;
     color: var(--color-primary);
     letter-spacing: var(--uppercase-kerning);

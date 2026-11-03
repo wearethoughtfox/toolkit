@@ -3,13 +3,19 @@
   Low-specificity styles that apply to the whole project: https://cube.fyi/css.html
 */
 
+/*
+  Type comes from typography.json (the /type lab) through the --type-* tokens
+  in _type.generated.css. Each step brings its face, weight, size and
+  line-height (a unitless ratio). Steps: label, small, body, h3, h2, h1.
+*/
+
 body {
   background: var(--color-ground);
   color: var(--color-clay);
-  font-size: var(--size-step-0);
-  font-family: var(--font-base);
-  font-weight: 300;
-  line-height: var(--leading-standard);
+  font-family: var(--type-body-font);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  line-height: var(--type-body-leading);
   font-size-adjust: from-font;
   /* opsz: optical sizing for body text
      cv05: single-storey 'a' — warmer, more humanist
@@ -19,51 +25,56 @@ body {
   margin: 0;
 }
 
-:is(h1, h2, h3, h4) {
-  line-height: var(--leading-fine);
+:is(h1, h2, h3, h4, h5, h6) {
   text-wrap: balance;
 }
 
-/* Display headings — Rockhill Sans Rough, all caps, tight */
+/* Display headings — all caps, tight */
 h1 {
-  font-family: var(--font-display);
-  font-size: var(--size-step-9);
-  font-weight: 400;
+  font-family: var(--type-h1-font);
+  font-size: var(--type-h1-size);
+  font-weight: var(--type-h1-weight);
+  line-height: var(--type-h1-leading);
   text-transform: uppercase;
   letter-spacing: -0.01em;
   color: var(--color-olive-oil);
   max-width: 20ch;
 }
 
-/* Section headings — Rockhill Sans Rough, all caps */
+/* Section headings — all caps */
 h2 {
-  font-family: var(--font-display);
-  font-size: var(--size-step-7);
-  font-weight: 400;
+  font-family: var(--type-h2-font);
+  font-size: var(--type-h2-size);
+  font-weight: var(--type-h2-weight);
+  line-height: var(--type-h2-leading);
   text-transform: uppercase;
   letter-spacing: -0.01em;
   color: var(--color-olive-oil);
   max-width: 28ch;
 }
 
-/* Sub-headings — Inter, tracked label style (JOIN US FOR, WITH MAVRA) */
+/* Subheadings — all caps */
 h3 {
-  font-size: var(--size-step-00);
-  font-weight: 500;
+  font-family: var(--type-h3-font);
+  font-size: var(--type-h3-size);
+  font-weight: var(--type-h3-weight);
+  line-height: var(--type-h3-leading);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
   max-width: 35ch;
 }
 
+/* Minor headings — the tracked label style (JOIN US FOR, WITH MAVRA) */
 :is(h4, h5, h6) {
-  font-size: var(--size-step-00);
-  font-weight: 500;
+  font-family: var(--type-label-font);
+  font-size: var(--type-label-size);
+  font-weight: var(--type-label-weight);
+  line-height: var(--type-label-leading);
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
 
 small {
-  font-size: var(--size-step-0);
+  font-size: var(--type-small-size);
 }
 
 /* Constrain body copy line length */
@@ -71,7 +82,7 @@ p,
 li,
 blockquote,
 figcaption {
-  max-width: var(--measure, 66ch);
+  max-width: var(--measure, var(--type-max-width));
 }
 
 /* Opt out for layout-driven containers */

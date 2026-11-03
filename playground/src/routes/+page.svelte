@@ -12,6 +12,11 @@
   import Card from '$lib/components/blocks/Card.svelte';
   import Prose from '$lib/components/blocks/Prose.svelte';
   import FeatureBlock from '$lib/components/blocks/FeatureBlock.svelte';
+  import typography from '$lib/design-tokens/typography.json';
+
+  // The type specimen is drawn from the scale itself, largest first
+  const scale = [...typography.scale].reverse();
+  const px = (s) => `${s.size}/${s.leading}`;
 </script>
 
 <svelte:head>
@@ -24,7 +29,7 @@
     <Stack space="var(--space-l)">
       <Stack space="var(--space-m)">
         <Stack space="var(--space-s)">
-          <h3>Pilates · Café · Community</h3>
+          <p class="meta">Pilates · Café · Community</p>
           <h1>Move well.<br>Eat well.<br>Stay a while.</h1>
         </Stack>
         <p>Root is a place to move and eat without having to choose between doing it properly and enjoying it. The classes are real. The food is made here. The people stay longer than they planned to, which is usually a good sign.</p>
@@ -47,7 +52,7 @@
     <Wrapper>
       <Stack space="var(--space-l)">
         <Stack space="var(--space-s)">
-          <h3>Our café</h3>
+          <p class="meta">Our café</p>
           <h2>Food that moves you</h2>
         </Stack>
         <p>Everything on the menu is made here. The sourdough is baked in-house. The eggs are properly poached. The coffee is taken seriously. It's the kind of place where you come in for a post-class flat white and find yourself still there an hour later, which we take as a compliment.</p>
@@ -90,7 +95,7 @@
       ctaHref="/classes"
     >
       <svelte:fragment slot="body">
-        <p style="font-family: var(--font-display); font-size: var(--size-step-6); line-height: var(--leading-fine); text-transform: uppercase; letter-spacing: -0.01em; max-width: 16ch;">
+        <p style="font-family: var(--type-h2-font); font-size: var(--type-h2-size); line-height: var(--type-h2-leading); text-transform: uppercase; letter-spacing: -0.01em; max-width: 16ch;">
           Good food. Good movement. Good people.
         </p>
       </svelte:fragment>
@@ -108,20 +113,15 @@
     <Stack space="var(--space-xl)">
       <h2>Typography</h2>
 
-      <!-- Display scale: Rockhill Sans Rough -->
+      <!-- The --type-* scale, from typography.json -->
       <Stack space="var(--space-m)">
-        <h3>Display — Rockhill Sans Rough</h3>
+        <h3>Scale — typography.json</h3>
+        <p>Each step sets its face, weight, size and line-height from <code>--type-&lt;step&gt;-*</code>. Sizes in px are below / above the {typography.breakpoint}px breakpoint.</p>
         <Stack space="var(--space-s)">
-          {#each [
-            ['Step 9 — h1', 'var(--size-step-9)', '43–93px'],
-            ['Step 7 — h2', 'var(--size-step-7)', '34–65px'],
-            ['Step 6', 'var(--size-step-6)', '30–54px'],
-            ['Step 5', 'var(--size-step-5)', '27–45px'],
-            ['Step 4', 'var(--size-step-4)', '24–37px'],
-          ] as [label, size, range]}
+          {#each scale as step}
             <div class="type-specimen-row">
-              <code class="type-label">{label} · {range}</code>
-              <p class="display-specimen" style="font-size: {size};">Move well. Eat well.</p>
+              <code class="type-label">{step.name} · {step.role} · {px(step.small)} → {px(step.large)}</code>
+              <p class="type-specimen" data-step={step.name}>{typography.sample.title}</p>
             </div>
           {/each}
         </Stack>
@@ -131,8 +131,8 @@
       <Stack space="var(--space-m)">
         <h3>Body — Inter variable</h3>
         <Prose>
-          <p>Body copy uses a fluid type scale from <strong>Step 0</strong> (15–18px) upward. The scale is generated from design tokens using <code>clamp()</code> values, so everything scales smoothly across viewport sizes.</p>
-          <p>Measure is constrained to <code>66ch</code> on prose elements. Longer text wraps cleanly without the lines becoming unreadably wide.</p>
+          <p>Body copy uses the <strong>body</strong> step: 18/24px below the breakpoint and 20/28px above it. It stops growing there, so wide screens get more layout, not bigger text. <code>npm run tokens</code> writes the steps from <code>typography.json</code>.</p>
+          <p>Measure is constrained to <code>--type-max-width</code> (700px) on prose elements. Longer text wraps cleanly without the lines becoming unreadably wide.</p>
           <blockquote>
             <p>Good typography is invisible. You notice bad typography immediately.</p>
           </blockquote>
@@ -279,7 +279,7 @@
             color: {fg};
             padding: var(--space-s) var(--space-m);
             border-radius: var(--radius-s);
-            font-size: var(--size-step-00);
+            font-size: var(--type-label-size);
             font-weight: var(--font-bold);
           ">{name}</div>
         {/each}
@@ -303,7 +303,7 @@
               border-radius: var(--radius-s);
               flex-shrink: 0;
             "></div>
-            <code style="font-size: var(--size-step-00);">{name} — {val}</code>
+            <code style="font-size: var(--type-label-size);">{name} — {val}</code>
           </div>
         {/each}
       </Stack>
@@ -332,27 +332,73 @@
     padding-top: var(--space-xs);
   }
 
+  .meta {
+    font-family: var(--type-label-font);
+    font-size: var(--type-label-size);
+    font-weight: var(--type-label-weight);
+    line-height: var(--type-label-leading);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
   .type-label {
     display: block;
-    font-size: var(--size-step-00);
+    font-size: var(--type-label-size);
     opacity: 0.5;
     margin-block-end: var(--space-2xs, 0.25rem);
     background: none;
     padding: 0;
   }
 
-  .display-specimen {
-    font-family: var(--font-display);
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    line-height: var(--leading-fine);
-    color: var(--color-olive-oil);
+  /* One rule per step, so every --type-* name is written out in full */
+  .type-specimen {
     max-width: unset;
   }
 
+  .type-specimen[data-step='h1'] {
+    font-family: var(--type-h1-font);
+    font-weight: var(--type-h1-weight);
+    font-size: var(--type-h1-size);
+    line-height: var(--type-h1-leading);
+  }
+
+  .type-specimen[data-step='h2'] {
+    font-family: var(--type-h2-font);
+    font-weight: var(--type-h2-weight);
+    font-size: var(--type-h2-size);
+    line-height: var(--type-h2-leading);
+  }
+
+  .type-specimen[data-step='h3'] {
+    font-family: var(--type-h3-font);
+    font-weight: var(--type-h3-weight);
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-leading);
+  }
+
+  .type-specimen[data-step='body'] {
+    font-family: var(--type-body-font);
+    font-weight: var(--type-body-weight);
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-leading);
+  }
+
+  .type-specimen[data-step='small'] {
+    font-family: var(--type-small-font);
+    font-weight: var(--type-small-weight);
+    font-size: var(--type-small-size);
+    line-height: var(--type-small-leading);
+  }
+
+  .type-specimen[data-step='label'] {
+    font-family: var(--type-label-font);
+    font-weight: var(--type-label-weight);
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-leading);
+  }
+
   .label-tag {
-    font-size: var(--size-step-00);
+    font-size: var(--type-label-size);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     opacity: 0.5;
@@ -366,12 +412,12 @@
   }
 
   .manifesto-line {
-    font-family: var(--font-display);
-    font-size: var(--size-step-5);
-    font-weight: 400;
+    font-family: var(--type-h2-font);
+    font-size: var(--type-h2-size);
+    font-weight: var(--type-h2-weight);
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    line-height: 1.15;
+    line-height: var(--type-h2-leading);
     color: var(--color-clay);
     max-width: unset;
   }

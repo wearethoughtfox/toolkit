@@ -46,7 +46,7 @@ Token files:
 - `text-weights.json` — font-weight values
 - `fonts.json` — font stacks
 - `viewports.json` — min/max viewport for clamp() calculations
-- `typography.json` — the type method's results: candidates and test notes, body size, breakpoint, a scale on a 4px rhythm, hierarchy recipes. Edit it in the `/type` lab (dev only), which saves the file and regenerates. It becomes `--type-<step>-font`, `-weight`, `-size` and `-leading`, plus `--type-max-width`. Nothing uses these yet; a site opts in by using them in its blocks. Bad structure stops the build; departures from the method print as warnings.
+- `typography.json` — the type method's results: candidates and test notes, body size, breakpoint, a scale on a 4px rhythm, hierarchy recipes. Edit it in the `/type` lab (dev only), which saves the file and regenerates. It becomes `--type-<step>-font`, `-weight`, `-size` and `-leading`, plus `--type-max-width`. The playground's `global-styles.css` and blocks use these (h1–h3 their own steps, h4–h6 `label`, `small` the small step, `--measure` the max width). `text-sizes.json` (`--size-step-*`) is older; only the `/palette` and `/type` tools still use it. Bad structure stops the build; departures from the method print as warnings.
 
 ## Utilities (Tachyons names)
 
