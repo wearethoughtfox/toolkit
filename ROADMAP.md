@@ -56,7 +56,7 @@ From `emil-color`: generate OKLCH alongside hex, add APCA scores next to the WCA
 - [x] Fixed-hue tonal ramps on `/palette`: 11 steps per colour, each checked against every scheme's surface. For exploring only, not written to tokens
 - [ ] The palette skill, once Rob has used the ramps on a real choice
 
-## 5. Toolkit restructure (done 3 November, release not tagged yet)
+## 5. Toolkit restructure (done 3 November, v0.2.0 tagged)
 
 The pieces are now in one repo, but the playground still has its own copies of the compositions, utilities and token script. Group the package by area (tokens, layout, motion, palette, type). Make the playground import the package instead of its copies, and move the palette and type tools (`src/lib/palette`, `src/lib/type`, their components and scripts) into the package so sites can use them. Then release v0.2.0, and check it with `tools/site-snapshots` against Root and robertocarroll.com before bumping either.
 
@@ -64,7 +64,7 @@ The pieces are now in one repo, but the playground still has its own copies of t
 - [x] The playground imports the package (`file:..`) instead of its copies. Its built CSS is the same, apart from Svelte scope hashes for components that are now in the package
 - [x] The palette and type tools in the package (`@thoughtfox/toolkit/palette`, `/type`); the `/palette` and `/type` routes stay in the playground and pass its Button as `button={Button}`
 - [x] v0.2.0 release notes and upgrade notes in the README
-- [ ] Rob: tag v0.2.0 after merging (`git tag v0.2.0 && git push --tags`)
+- [x] Rob: tag v0.2.0 after merging (`git tag v0.2.0 && git push --tags`)
 - [ ] Rob: bump Root and robertocarroll.com to `#v0.2.0` and check each with `cd tools/site-snapshots && npm run compare -- root robertocarroll`. No code changes needed
 
 ## 6. Transitions bank
