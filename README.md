@@ -21,14 +21,16 @@ checking the site — never track a branch.
 ```
 css/reset.css               Modern reset (piccalil.li)
 css/compositions/*.css      stack, cluster, sidebar, grid, switcher, cover,
-                            center, reel, frame, wrapper, repel
+                            center, reel, frame, wrapper, repel, scene
 css/utilities/*.css         region, text, visually-hidden, reveal
 css/transitions/*/*.css     46 Segue page transitions (list: transitions.json)
 components/layout/*.svelte  Prop-based wrappers for each composition
 components/SkipLink.svelte  Accessible skip link (pair with #main-content)
+components/ScrollScene.svelte  Scroll-scrubbed sticky scene wrapper
 components/transitions/*    SVG masks for the four transitions that need them
 transitions/segue.js        segueTransitions() for onNavigate, segue() helper
 actions/reveal.js           IntersectionObserver scroll-reveal action
+actions/scroll-scene.js     scrollScene action + lerp/phase/ease helpers
 stores/motion.js            prefers-reduced-motion readable store
 scripts/generate-tokens.js  Design-token JSON → CSS custom properties
 ```
@@ -58,6 +60,44 @@ scripts/generate-tokens.js  Design-token JSON → CSS custom properties
 
 Every prop maps to a CSS custom property; the classes work without the
 components too (`<div class="stack">`).
+
+### Scroll scenes
+
+Scroll-scrubbed sticky sections (hero scalers, image cascades, card flips —
+any movement driven by scroll progress). Import the composition CSS, then
+either the `ScrollScene` component or the raw action:
+
+```css
+@import '@thoughtfox/toolkit/css/compositions/scene.css';
+```
+
+```svelte
+<script>
+  import { ScrollScene, lerp, phase, ease } from '@thoughtfox/toolkit';
+
+  let image;
+  function drive(p) {
+    image.style.width = `${lerp(100, 70, ease.outCubic(p))}%`;
+    image.style.borderRadius = `${lerp(0, 16, ease.outCubic(p))}px`;
+  }
+</script>
+
+<ScrollScene length="200vh" onprogress={drive}>
+  {#snippet children()}
+    <div class="my-hero" bind:this={image}>…</div>
+  {/snippet}
+</ScrollScene>
+```
+
+Or attach `use:scrollScene` to your own `.scene` runway. Every update also
+sets `--scene-progress` (0–1) on the runway for pure-CSS consumption —
+always give it a fallback of 1 (`var(--scene-progress, 1)`) so no-JS shows
+the finished state. Under `prefers-reduced-motion` the runway collapses and
+progress pins at 1, so build markup whose resting state is the readable end
+state. `phase(p, start, end)` remaps scene progress into sub-ranges so one
+scene drives several overlapping movements. Worked examples of the five
+effect recipes live in the animation-experiments repo
+(`toolkit-animations/demo.html`).
 
 ### Page transitions
 

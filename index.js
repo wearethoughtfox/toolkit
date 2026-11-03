@@ -18,6 +18,10 @@ export { default as Wrapper } from './components/layout/Wrapper.svelte';
 // Blocks
 export { default as SkipLink } from './components/SkipLink.svelte';
 
+// Scroll scenes (pair with css/compositions/scene.css)
+export { default as ScrollScene } from './components/ScrollScene.svelte';
+export { scrollScene, lerp, phase, clamp01, ease } from './actions/scroll-scene.js';
+
 // Page transitions (pair with one css/transitions/*/*.css)
 export { segueTransitions, segue } from './transitions/segue.js';
 export { default as PaintOverMasks } from './components/transitions/PaintOverMasks.svelte';

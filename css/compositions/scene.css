@@ -1,0 +1,40 @@
+/*
+ * SCENE — scroll-scrubbed sticky stage.
+ *
+ * A tall runway (.scene) provides scroll distance; a sticky frame
+ * (.scene__frame) stays pinned to the viewport while the user scrolls
+ * through it. Pair with the scrollScene action, which turns the scroll
+ * position into --scene-progress (0–1) on the runway.
+ *
+ * --scene-length controls how much scrolling the scene "costs":
+ * 300vh = two extra viewports of scrubbing. Longer = slower movement.
+ *
+ * Reduced motion: the runway collapses to a single static viewport and
+ * the action pins progress at 1, so the resting markup must be the
+ * fully-revealed state.
+ */
+.scene {
+  position: relative;
+  min-height: var(--scene-length, 300vh);
+}
+
+.scene__frame {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene {
+    min-height: auto;
+  }
+
+  .scene__frame {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
