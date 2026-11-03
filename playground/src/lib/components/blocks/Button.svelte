@@ -26,7 +26,7 @@
     border-radius: var(--radius-s);
     border: 2px solid transparent;
     font-weight: var(--font-bold);
-    font-size: var(--size-step-0);
+    font-size: var(--type-small-size);
     line-height: var(--leading-flat);
     text-decoration: none;
     cursor: pointer;

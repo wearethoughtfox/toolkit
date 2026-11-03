@@ -34,8 +34,8 @@
 
   .nav__link:hover,
   .nav__link[aria-current='page'] {
-    color: var(--color-primary);
-    border-block-end-color: var(--color-primary);
+    color: var(--primary);
+    border-block-end-color: var(--primary);
   }
 
   @media (prefers-reduced-motion: reduce) {

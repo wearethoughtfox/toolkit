@@ -1,4 +1,4 @@
-/* Generated tokens — all --color-*, --space-*, --size-step-*, --leading-*, --font-* */
+/* Generated tokens — --color-*, roles, --space-*, --font-*, and the older --size-step-* and --leading-* (still used by the /palette and /type tools) */
 @import './_tokens.generated.css';
 /* Generated from typography.json — all --type-* */
 @import './_type.generated.css';
@@ -7,7 +7,7 @@
 :root {
   --gutter: var(--space-m-l);
   --wrapper-max-width: 1360px;
-  --measure: 66ch;
+  --measure: var(--type-max-width);
   --measure-narrow: 45ch;
   --measure-wide: 80ch;
 
