@@ -9,8 +9,13 @@ Custom properties:
   --grid-placement (auto-fill): auto-fill or auto-fit
 
 Exceptions via data-layout attribute:
-  [data-layout="50-50"]: two equal columns
-  [data-layout="thirds"]: three equal columns
+  [data-layout="50-50"]: two equal columns, or one when the row is
+    narrower than --grid-threshold (34rem)
+  [data-layout="thirds"]: three equal columns, or one when the row is
+    narrower than --grid-threshold (52rem). Never 2 + 1, never an
+    empty fourth column.
+  These work like Every Layout's Switcher: below the threshold the
+  minimum becomes huge, so min(100%, …) gives one full-width column.
 */
 
 .grid {
@@ -23,11 +28,33 @@ Exceptions via data-layout attribute:
 }
 
 .grid[data-layout='50-50'] {
-  --grid-placement: auto-fit;
-  --grid-min-item-size: clamp(16rem, 50vw, 33rem);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      min(
+        100%,
+        max(
+          (100% - var(--gutter, var(--space-l))) / 2,
+          (var(--grid-threshold, 34rem) - 100%) * 999
+        )
+      ),
+      1fr
+    )
+  );
 }
 
 .grid[data-layout='thirds'] {
-  --grid-placement: auto-fit;
-  --grid-min-item-size: clamp(16rem, 33%, 20rem);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      min(
+        100%,
+        max(
+          (100% - 2 * var(--gutter, var(--space-l))) / 3,
+          (var(--grid-threshold, 52rem) - 100%) * 999
+        )
+      ),
+      1fr
+    )
+  );
 }
