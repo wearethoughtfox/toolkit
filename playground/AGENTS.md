@@ -9,12 +9,12 @@ This project uses **CUBE CSS** (Composition Utility Block Exception) with **Ever
 | Layer | Location | Rule |
 |---|---|---|
 | Normalize | `modern-normalize` (npm), first import in `app.css` | Cross-browser fixes — update with npm |
-| Reset | `src/lib/css/global/reset.css` | Global, never override |
+| Reset | `@thoughtfox/toolkit/layout/reset.css` | Global, never override |
 | Tokens (generated) | `src/lib/css/global/_tokens.generated.css` | Never edit — run `npm run tokens` |
 | Variables | `src/lib/css/global/variables.css` | Manual additions on top of tokens |
 | Global styles | `src/lib/css/global/global-styles.css` | Low-specificity, element selectors |
-| Compositions | `src/lib/css/compositions/*.css` | Every Layout patterns — plain class names |
-| Utilities | `src/lib/css/utilities/*.css` | Single-purpose classes, Tachyons names |
+| Compositions | `@thoughtfox/toolkit/layout/compositions/*.css` | Every Layout patterns — plain class names |
+| Utilities | `@thoughtfox/toolkit/layout/utilities/*.css`, `@thoughtfox/toolkit/type/utilities/text.css`, plus `src/lib/css/utilities/widths.css` and `debug.css` | Single-purpose classes, Tachyons names |
 | Spacing utilities (generated) | `src/lib/css/utilities/_spacing.generated.css` | Never edit — run `npm run tokens` |
 | Blocks | Scoped `<style>` in `.svelte` files | Component-specific styles |
 
@@ -68,6 +68,8 @@ Each layout pattern is both:
 1. A plain CSS class — use directly in markup: `<div class="cluster">`
 2. A Svelte component — use for prop-based configuration: `<Cluster gap="var(--space-l)">`
 
+Both come from the toolkit package at the repo root, which the playground installs as `@thoughtfox/toolkit` (`file:..`). Import components from `@thoughtfox/toolkit/layout/components/<Name>.svelte`, and change them in the package, not here.
+
 The components set CSS custom properties via `style:--prop={value}`. The CSS class defines the behaviour; the custom property overrides the default.
 
 ### Composition reference
@@ -97,9 +99,9 @@ The components set CSS custom properties via `style:--prop={value}`. The CSS cla
 
 ## Animations
 
-- Import `prefersReducedMotion` from `$lib/stores/motion.js` to gate Svelte transitions
+- Import `prefersReducedMotion` from `@thoughtfox/toolkit/motion/reduced-motion.js` to gate Svelte transitions
 - CSS transitions go inside `@media (prefers-reduced-motion: no-preference)` blocks in scoped styles
-- Use the `reveal` action from `$lib/actions/reveal.js` for scroll-triggered reveals paired with CSS animations
+- Use the `reveal` action from `@thoughtfox/toolkit/motion/reveal.js` (with `motion/utilities/reveal.css`) for scroll-triggered reveals
 
 ## Starting a new project
 

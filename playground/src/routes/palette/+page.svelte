@@ -1,12 +1,12 @@
 <script>
-  import Region from '$lib/components/layout/Region.svelte';
-  import Wrapper from '$lib/components/layout/Wrapper.svelte';
-  import Stack from '$lib/components/layout/Stack.svelte';
+  import Region from '@thoughtfox/toolkit/layout/components/Region.svelte';
+  import Wrapper from '@thoughtfox/toolkit/layout/components/Wrapper.svelte';
+  import Stack from '@thoughtfox/toolkit/layout/components/Stack.svelte';
   import PairExplorer from '$lib/components/palette/PairExplorer.svelte';
   import ContrastMatrix from '$lib/components/palette/ContrastMatrix.svelte';
   import SchemePreview from '$lib/components/palette/SchemePreview.svelte';
   import TonalRamps from '$lib/components/palette/TonalRamps.svelte';
-  import Grid from '$lib/components/layout/Grid.svelte';
+  import Grid from '@thoughtfox/toolkit/layout/components/Grid.svelte';
   import data from '$lib/palette/contrast.generated.json';
   import { uses } from '$lib/palette/levels.js';
 

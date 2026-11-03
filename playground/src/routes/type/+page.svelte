@@ -1,7 +1,7 @@
 <script>
-  import Region from '$lib/components/layout/Region.svelte';
-  import Wrapper from '$lib/components/layout/Wrapper.svelte';
-  import Stack from '$lib/components/layout/Stack.svelte';
+  import Region from '@thoughtfox/toolkit/layout/components/Region.svelte';
+  import Wrapper from '@thoughtfox/toolkit/layout/components/Wrapper.svelte';
+  import Stack from '@thoughtfox/toolkit/layout/components/Stack.svelte';
   import Button from '$lib/components/blocks/Button.svelte';
   import CandidateList from '$lib/components/type/CandidateList.svelte';
   import RunningText from '$lib/components/type/RunningText.svelte';

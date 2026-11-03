@@ -8,12 +8,13 @@
     "preview": "vite preview",
     "tokens": "node scripts/generate-tokens.js",
     "contrast": "node scripts/contrast.js",
-    "check:vars": "node scripts/check-vars.js",
+    "check:vars": "node node_modules/@thoughtfox/toolkit/tokens/check-vars.js src ../layout ../type/utilities",
     "test": "node --test \"src/**/*.test.js\""
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/kit": "^2.0.0",
+    "@thoughtfox/toolkit": "file:..",
     "apca-w3": "^0.1.9",
     "cssnano": "^7.0.0",
     "modern-normalize": "^3.0.1",

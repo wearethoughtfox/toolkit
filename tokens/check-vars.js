@@ -4,16 +4,18 @@
  * makes its property act as `unset`, so the mistake is silent in the browser.
  *
  * var(--x, fallback) is skipped: a fallback means the gap is intentional.
- * Run: npm run check:vars   (also runs with npm run tokens)
+ * It scans the project's src/ (from process.cwd()), or the folders you pass.
+ * generate-tokens.js runs it when colors.json uses roles, to catch colours
+ * left over from before.
+ *
+ * Run from a site root:
+ *   "check:vars": "node node_modules/@thoughtfox/toolkit/tokens/check-vars.js"
  */
 
-import { readFileSync, readdirSync, statSync } from 'fs';
-import { fileURLToPath, pathToFileURL } from 'url';
-import { dirname, join, relative, extname } from 'path';
+import { readFileSync, readdirSync, statSync, realpathSync } from 'fs';
+import { pathToFileURL } from 'url';
+import { join, relative, resolve, extname } from 'path';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const root = join(__dirname, '..');
-const srcDir = join(root, 'src');
 const extensions = new Set(['.css', '.svelte', '.js']);
 
 function files(dir) {
@@ -35,11 +37,13 @@ function stripCssComments(text, ext) {
   return text;
 }
 
-export function findUndefinedVars() {
+/** srcDir: one folder or a list, relative to root (default: the project's src/) */
+export function findUndefinedVars({ srcDir = 'src', root = process.cwd() } = {}) {
   const defined = new Set();
   const used = [];
+  const dirs = (Array.isArray(srcDir) ? srcDir : [srcDir]).map((dir) => resolve(root, dir));
 
-  for (const file of files(srcDir)) {
+  for (const file of dirs.flatMap(files)) {
     const text = stripCssComments(readFileSync(file, 'utf-8'), extname(file));
     // Declarations (--x: …), including inline style="--x: …", and Svelte style:--x={…}
     for (const [, name] of text.matchAll(/(--[a-z0-9-]+)\s*:/gi)) defined.add(name);
@@ -60,8 +64,8 @@ export function findUndefinedVars() {
   return missing;
 }
 
-export function checkVars() {
-  const missing = findUndefinedVars();
+export function checkVars(options) {
+  const missing = findUndefinedVars(options);
   if (!missing.size) {
     console.log('✓ no undefined custom properties');
     return missing;
@@ -73,5 +77,8 @@ export function checkVars() {
   return missing;
 }
 
-// Run directly: node scripts/check-vars.js
-if (import.meta.url === pathToFileURL(process.argv[1]).href) checkVars();
+// Run directly: node node_modules/@thoughtfox/toolkit/tokens/check-vars.js [folder …]
+if (process.argv[1] && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href) {
+  const dirs = process.argv.slice(2);
+  checkVars(dirs.length ? { srcDir: dirs } : undefined);
+}
