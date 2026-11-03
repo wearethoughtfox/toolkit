@@ -19,7 +19,7 @@ A combination only says that two colours *can* be used together. A scheme is a s
 ## Audit (done)
 
 - `generate-tokens.js` writes `--color-<name>` from `colors.json` `items`. That's all it does for colour today.
-- **Bug:** five colour variables are used but never defined: `--color-primary`, `--color-dark`, `--color-dark-glare`, `--color-light` and `--color-mid`. They're left over from the starter's old palette. Because of this, Button, Nav, SkipLink, Card, SiteHead, SiteFoot, Prose, and the reel scrollbar have no colour, or fall back to a browser default.
+- **Bug (fixed 3 November, each one replaced with a role):** five colour variables are used but never defined: `--color-primary`, `--color-dark`, `--color-dark-glare`, `--color-light` and `--color-mid`. They're left over from the starter's old palette. Because of this, Button, Nav, SkipLink, Card, SiteHead, SiteFoot, Prose, and the reel scrollbar have no colour, or fall back to a browser default.
 - Raw colour names are written directly in `global-styles.css`, `variables.css` (`--stroke`), FeatureBlock (through `--feature-bg`), and the demo page.
 - Both clay overrides on the demo page use `:global()`. Schemes replace those.
 
@@ -134,9 +134,18 @@ Production builds return a 404 for this page: in `+page.js`, `if (!dev) error(40
 
 ## Contrast failures to decide on
 
-- **`highlight` scheme** (the manifesto block, Clay on Olive Oil): 2.63:1. That fails body text (4.5) and large text (3). It already failed before the Olive Oil change, at 2.67. Smallest fixes, using colours already in the palette:
-  - Switch the surface to `olive-oil-dark`: Clay on it is 3.24:1. That passes for large text only, so the scheme could only hold display type
-  - Switch the text and heading to `ground`: 4.52:1. That passes for everything, but the block would look different
+- **`highlight` scheme** (the manifesto block, Clay on Olive Oil): 2.63:1. That fails body text (4.5) and large text (3). It already failed before the Olive Oil change, at 2.67. Not changed: Rob to choose. The generator's smallest fixes (`npm run tokens`, 3 November):
+  - **text** (clay on olive-oil, needs 4.5 for body text):
+    - text: clay → `ground` (4.52). Passes for everything, but the block would look different
+    - surface: olive-oil → `teal` (5.52)
+    - surface: olive-oil → tint `#85642b` (4.53), a new, darker olive
+  - **heading** (clay on olive-oil, needs 3 for large text):
+    - heading: clay → `air` (3.17)
+    - heading: clay → tint `#fdf8f3` (3.00), only just
+    - surface: olive-oil → `olive-oil-dark` (3.24). Large text only, so the scheme could only hold display type
+    - surface: olive-oil → tint `#a97f37` (3.02), only just
+  - One change that fixes both: text and heading → `ground` (4.52), or surface → `teal` (5.52)
+  - The home page's Treatment B block is the same pair (clay on olive-oil) but sets its colours directly, not through `data-scheme="highlight"`. It moves onto the scheme in task 6
 
 ## Decisions
 
