@@ -7,6 +7,9 @@
 //
 // Flags: --no-build (serve the existing build), --url=http://localhost:5173 (use a server
 // that's already running; one site only). Sites and widths live in sites.json.
+//
+// The browser is the installed Microsoft Edge. Set SNAP_BROWSER=chromium for
+// Playwright's own (after `npx playwright install chromium`), or chrome.
 
 import { spawn } from 'node:child_process';
 import { existsSync } from 'node:fs';
@@ -171,7 +174,8 @@ async function capture(site, origin, into) {
   await mkdir(into, { recursive: true });
 
   const widths = config.widths;
-  const browser = await chromium.launch();
+  const channel = process.env.SNAP_BROWSER || 'msedge';
+  const browser = await chromium.launch(channel === 'chromium' ? {} : { channel });
   const contexts = await Promise.all(
     widths.map((width) =>
       browser.newContext({

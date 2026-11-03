@@ -34,6 +34,7 @@ Root builds content from PocketBase when `PB_URL` is set. Take the baseline and 
 
 ## Notes
 
+- It uses the Microsoft Edge installed on the Mac, not a browser downloaded by Playwright. For Playwright's own Chromium, run `npx playwright install chromium` and set `SNAP_BROWSER=chromium`. Take a baseline and its comparison with the same browser, or font rendering will show up as changes.
 - Run it from your own terminal. Claude's sandbox can't start servers or Chromium, so it can't take the screenshots itself; it can run `diff` and read the report.
 - If `npm install` complains about root-owned files in `~/.npm`, either run `sudo chown -R 501:20 ~/.npm` once, or add `--cache "$TMPDIR/npm-cache"`.
 - `output/` is git-ignored. Baselines are local to this machine.
