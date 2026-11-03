@@ -1,0 +1,885 @@
+{
+  "thresholds": {
+    "body": 4.5,
+    "largeText": 3,
+    "nonText": 3,
+    "aaaBody": 7
+  },
+  "colors": [
+    {
+      "name": "ground",
+      "hex": "#332822",
+      "rgb": [
+        51,
+        40,
+        34
+      ],
+      "hsl": [
+        21,
+        20,
+        17
+      ],
+      "roles": [
+        "surface",
+        "on-primary"
+      ],
+      "onBlack": {
+        "ratio": 1.47,
+        "apca": 0
+      },
+      "onWhite": {
+        "ratio": 14.31,
+        "apca": 101
+      }
+    },
+    {
+      "name": "olive-oil",
+      "hex": "#B6893B",
+      "rgb": [
+        182,
+        137,
+        59
+      ],
+      "hsl": [
+        38,
+        51,
+        47
+      ],
+      "roles": [
+        "heading",
+        "primary",
+        "border",
+        "focus-ring"
+      ],
+      "onBlack": {
+        "ratio": 6.63,
+        "apca": -43.1
+      },
+      "onWhite": {
+        "ratio": 3.17,
+        "apca": 58.7
+      }
+    },
+    {
+      "name": "olive-oil-dark",
+      "hex": "#a37a34",
+      "rgb": [
+        163,
+        122,
+        52
+      ],
+      "hsl": [
+        38,
+        52,
+        42
+      ],
+      "roles": [],
+      "onBlack": {
+        "ratio": 5.39,
+        "apca": -35.4
+      },
+      "onWhite": {
+        "ratio": 3.9,
+        "apca": 66.3
+      }
+    },
+    {
+      "name": "clay",
+      "hex": "#F7E8D6",
+      "rgb": [
+        247,
+        232,
+        214
+      ],
+      "hsl": [
+        33,
+        67,
+        90
+      ],
+      "roles": [
+        "text",
+        "accent"
+      ],
+      "onBlack": {
+        "ratio": 17.47,
+        "apca": -94.3
+      },
+      "onWhite": {
+        "ratio": 1.2,
+        "apca": 9.9
+      }
+    },
+    {
+      "name": "air",
+      "hex": "#FFFFFF",
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "hsl": [
+        0,
+        0,
+        100
+      ],
+      "roles": [],
+      "onBlack": {
+        "ratio": 21,
+        "apca": -107.9
+      },
+      "onWhite": {
+        "ratio": 1,
+        "apca": 0
+      }
+    },
+    {
+      "name": "teal",
+      "hex": "#346278",
+      "rgb": [
+        52,
+        98,
+        120
+      ],
+      "hsl": [
+        199,
+        40,
+        34
+      ],
+      "roles": [],
+      "onBlack": {
+        "ratio": 3.16,
+        "apca": -19.2
+      },
+      "onWhite": {
+        "ratio": 6.64,
+        "apca": 82.7
+      }
+    }
+  ],
+  "roles": {
+    "surface": "ground",
+    "text": "clay",
+    "heading": "olive-oil",
+    "primary": "olive-oil",
+    "on-primary": "ground",
+    "accent": "clay",
+    "border": "olive-oil",
+    "focus-ring": "olive-oil"
+  },
+  "schemes": {
+    "inverse": {
+      "surface": "clay",
+      "text": "ground",
+      "heading": "olive-oil-dark",
+      "primary": "ground",
+      "on-primary": "clay",
+      "accent": "ground",
+      "border": "ground",
+      "focus-ring": "ground"
+    },
+    "highlight": {
+      "surface": "olive-oil",
+      "text": "clay",
+      "heading": "clay",
+      "primary": "ground",
+      "on-primary": "clay",
+      "accent": "ground",
+      "border": "ground",
+      "focus-ring": "ground"
+    }
+  },
+  "pairs": [
+    {
+      "fg": "ground",
+      "bg": "olive-oil",
+      "ratio": 4.52,
+      "apca": 40.4,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "ground",
+      "bg": "olive-oil-dark",
+      "ratio": 3.67,
+      "apca": 32.8,
+      "supports": {
+        "body": false,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "ground",
+      "bg": "clay",
+      "ratio": 11.9,
+      "apca": 88.7,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": true
+      }
+    },
+    {
+      "fg": "ground",
+      "bg": "air",
+      "ratio": 14.31,
+      "apca": 101,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": true
+      }
+    },
+    {
+      "fg": "ground",
+      "bg": "teal",
+      "ratio": 2.16,
+      "apca": 16.4,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "olive-oil",
+      "bg": "ground",
+      "ratio": 4.52,
+      "apca": -39.2,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "olive-oil",
+      "bg": "olive-oil-dark",
+      "ratio": 1.23,
+      "apca": 0,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "olive-oil",
+      "bg": "clay",
+      "ratio": 2.63,
+      "apca": 46.3,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "olive-oil",
+      "bg": "air",
+      "ratio": 3.17,
+      "apca": 58.7,
+      "supports": {
+        "body": false,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "olive-oil",
+      "bg": "teal",
+      "ratio": 2.1,
+      "apca": -22.9,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "olive-oil-dark",
+      "bg": "ground",
+      "ratio": 3.67,
+      "apca": -31.5,
+      "supports": {
+        "body": false,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "olive-oil-dark",
+      "bg": "olive-oil",
+      "ratio": 1.23,
+      "apca": 0,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "olive-oil-dark",
+      "bg": "clay",
+      "ratio": 3.24,
+      "apca": 53.9,
+      "supports": {
+        "body": false,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "olive-oil-dark",
+      "bg": "air",
+      "ratio": 3.9,
+      "apca": 66.3,
+      "supports": {
+        "body": false,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "olive-oil-dark",
+      "bg": "teal",
+      "ratio": 1.7,
+      "apca": -15.2,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "clay",
+      "bg": "ground",
+      "ratio": 11.9,
+      "apca": -90.4,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": true
+      }
+    },
+    {
+      "fg": "clay",
+      "bg": "olive-oil",
+      "ratio": 2.63,
+      "apca": -50.4,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "clay",
+      "bg": "olive-oil-dark",
+      "ratio": 3.24,
+      "apca": -58.1,
+      "supports": {
+        "body": false,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "clay",
+      "bg": "air",
+      "ratio": 1.2,
+      "apca": 9.9,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "clay",
+      "bg": "teal",
+      "ratio": 5.52,
+      "apca": -74.1,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "air",
+      "bg": "ground",
+      "ratio": 14.31,
+      "apca": -104,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": true
+      }
+    },
+    {
+      "fg": "air",
+      "bg": "olive-oil",
+      "ratio": 3.17,
+      "apca": -64.1,
+      "supports": {
+        "body": false,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "air",
+      "bg": "olive-oil-dark",
+      "ratio": 3.9,
+      "apca": -71.8,
+      "supports": {
+        "body": false,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "air",
+      "bg": "clay",
+      "ratio": 1.2,
+      "apca": -11.5,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "air",
+      "bg": "teal",
+      "ratio": 6.64,
+      "apca": -87.7,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "teal",
+      "bg": "ground",
+      "ratio": 2.16,
+      "apca": -15.3,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "teal",
+      "bg": "olive-oil",
+      "ratio": 2.1,
+      "apca": 22,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "teal",
+      "bg": "olive-oil-dark",
+      "ratio": 1.7,
+      "apca": 14.5,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "teal",
+      "bg": "clay",
+      "ratio": 5.52,
+      "apca": 70.3,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "teal",
+      "bg": "air",
+      "ratio": 6.64,
+      "apca": 82.7,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    }
+  ],
+  "schemeChecks": {
+    "default": [
+      {
+        "fg": "text",
+        "bg": "surface",
+        "use": "body",
+        "why": "body text",
+        "fgColor": "clay",
+        "bgColor": "ground",
+        "ratio": 11.9,
+        "apca": -90.4,
+        "min": 4.5,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "heading",
+        "bg": "surface",
+        "use": "largeText",
+        "why": "headings (large text only)",
+        "fgColor": "olive-oil",
+        "bgColor": "ground",
+        "ratio": 4.52,
+        "apca": -39.2,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "primary",
+        "bg": "surface",
+        "use": "body",
+        "why": "links in running text",
+        "fgColor": "olive-oil",
+        "bgColor": "ground",
+        "ratio": 4.52,
+        "apca": -39.2,
+        "min": 4.5,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "on-primary",
+        "bg": "primary",
+        "use": "body",
+        "why": "button labels",
+        "fgColor": "ground",
+        "bgColor": "olive-oil",
+        "ratio": 4.52,
+        "apca": 40.4,
+        "min": 4.5,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "border",
+        "bg": "surface",
+        "use": "nonText",
+        "why": "borders that mark out controls",
+        "fgColor": "olive-oil",
+        "bgColor": "ground",
+        "ratio": 4.52,
+        "apca": -39.2,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "accent",
+        "bg": "surface",
+        "use": "nonText",
+        "why": "accents",
+        "fgColor": "clay",
+        "bgColor": "ground",
+        "ratio": 11.9,
+        "apca": -90.4,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "focus-ring",
+        "bg": "surface",
+        "use": "nonText",
+        "why": "keyboard focus ring",
+        "fgColor": "olive-oil",
+        "bgColor": "ground",
+        "ratio": 4.52,
+        "apca": -39.2,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      }
+    ],
+    "inverse": [
+      {
+        "fg": "text",
+        "bg": "surface",
+        "use": "body",
+        "why": "body text",
+        "fgColor": "ground",
+        "bgColor": "clay",
+        "ratio": 11.9,
+        "apca": 88.7,
+        "min": 4.5,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "heading",
+        "bg": "surface",
+        "use": "largeText",
+        "why": "headings (large text only)",
+        "fgColor": "olive-oil-dark",
+        "bgColor": "clay",
+        "ratio": 3.24,
+        "apca": 53.9,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "primary",
+        "bg": "surface",
+        "use": "body",
+        "why": "links in running text",
+        "fgColor": "ground",
+        "bgColor": "clay",
+        "ratio": 11.9,
+        "apca": 88.7,
+        "min": 4.5,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "on-primary",
+        "bg": "primary",
+        "use": "body",
+        "why": "button labels",
+        "fgColor": "clay",
+        "bgColor": "ground",
+        "ratio": 11.9,
+        "apca": -90.4,
+        "min": 4.5,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "border",
+        "bg": "surface",
+        "use": "nonText",
+        "why": "borders that mark out controls",
+        "fgColor": "ground",
+        "bgColor": "clay",
+        "ratio": 11.9,
+        "apca": 88.7,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "accent",
+        "bg": "surface",
+        "use": "nonText",
+        "why": "accents",
+        "fgColor": "ground",
+        "bgColor": "clay",
+        "ratio": 11.9,
+        "apca": 88.7,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "focus-ring",
+        "bg": "surface",
+        "use": "nonText",
+        "why": "keyboard focus ring",
+        "fgColor": "ground",
+        "bgColor": "clay",
+        "ratio": 11.9,
+        "apca": 88.7,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      }
+    ],
+    "highlight": [
+      {
+        "fg": "text",
+        "bg": "surface",
+        "use": "body",
+        "why": "body text",
+        "fgColor": "clay",
+        "bgColor": "olive-oil",
+        "ratio": 2.63,
+        "apca": -50.4,
+        "min": 4.5,
+        "pass": false,
+        "fixes": [
+          {
+            "kind": "palette",
+            "role": "text",
+            "from": "clay",
+            "to": "ground",
+            "ratio": 4.52
+          },
+          {
+            "kind": "palette",
+            "role": "surface",
+            "from": "olive-oil",
+            "to": "teal",
+            "ratio": 5.52
+          },
+          {
+            "kind": "tint",
+            "role": "surface",
+            "from": "olive-oil",
+            "to": "#85642b",
+            "ratio": 4.53
+          }
+        ]
+      },
+      {
+        "fg": "heading",
+        "bg": "surface",
+        "use": "largeText",
+        "why": "headings (large text only)",
+        "fgColor": "clay",
+        "bgColor": "olive-oil",
+        "ratio": 2.63,
+        "apca": -50.4,
+        "min": 3,
+        "pass": false,
+        "fixes": [
+          {
+            "kind": "palette",
+            "role": "heading",
+            "from": "clay",
+            "to": "air",
+            "ratio": 3.17
+          },
+          {
+            "kind": "tint",
+            "role": "heading",
+            "from": "clay",
+            "to": "#fdf8f3",
+            "ratio": 3
+          },
+          {
+            "kind": "palette",
+            "role": "surface",
+            "from": "olive-oil",
+            "to": "olive-oil-dark",
+            "ratio": 3.24
+          },
+          {
+            "kind": "tint",
+            "role": "surface",
+            "from": "olive-oil",
+            "to": "#a97f37",
+            "ratio": 3.02
+          }
+        ]
+      },
+      {
+        "fg": "primary",
+        "bg": "surface",
+        "use": "body",
+        "why": "links in running text",
+        "fgColor": "ground",
+        "bgColor": "olive-oil",
+        "ratio": 4.52,
+        "apca": 40.4,
+        "min": 4.5,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "on-primary",
+        "bg": "primary",
+        "use": "body",
+        "why": "button labels",
+        "fgColor": "clay",
+        "bgColor": "ground",
+        "ratio": 11.9,
+        "apca": -90.4,
+        "min": 4.5,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "border",
+        "bg": "surface",
+        "use": "nonText",
+        "why": "borders that mark out controls",
+        "fgColor": "ground",
+        "bgColor": "olive-oil",
+        "ratio": 4.52,
+        "apca": 40.4,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "accent",
+        "bg": "surface",
+        "use": "nonText",
+        "why": "accents",
+        "fgColor": "ground",
+        "bgColor": "olive-oil",
+        "ratio": 4.52,
+        "apca": 40.4,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      },
+      {
+        "fg": "focus-ring",
+        "bg": "surface",
+        "use": "nonText",
+        "why": "keyboard focus ring",
+        "fgColor": "ground",
+        "bgColor": "olive-oil",
+        "ratio": 4.52,
+        "apca": 40.4,
+        "min": 3,
+        "pass": true,
+        "fixes": []
+      }
+    ]
+  }
+}

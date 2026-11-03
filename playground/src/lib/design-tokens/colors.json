@@ -1,0 +1,44 @@
+{
+  "title": "Colors",
+  "description": "colors: the palette (name → hex). roles: what each colour does (role → colour name). schemes: role overrides for a context, used with data-scheme=\"name\". Any role a scheme leaves out keeps its value from roles.",
+  "colors": {
+    "ground": "#332822",
+    "olive-oil": "#B6893B",
+    "olive-oil-dark": "#a37a34",
+    "clay": "#F7E8D6",
+    "air": "#FFFFFF",
+    "teal": "#346278"
+  },
+  "roles": {
+    "surface": "ground",
+    "text": "clay",
+    "heading": "olive-oil",
+    "primary": "olive-oil",
+    "on-primary": "ground",
+    "accent": "clay",
+    "border": "olive-oil",
+    "focus-ring": "olive-oil"
+  },
+  "schemes": {
+    "inverse": {
+      "surface": "clay",
+      "text": "ground",
+      "heading": "olive-oil-dark",
+      "primary": "ground",
+      "on-primary": "clay",
+      "accent": "ground",
+      "border": "ground",
+      "focus-ring": "ground"
+    },
+    "highlight": {
+      "surface": "olive-oil",
+      "text": "clay",
+      "heading": "clay",
+      "primary": "ground",
+      "on-primary": "clay",
+      "accent": "ground",
+      "border": "ground",
+      "focus-ring": "ground"
+    }
+  }
+}

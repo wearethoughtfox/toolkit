@@ -1,0 +1,76 @@
+{
+  "title": "Typography",
+  "description": "Edited in the /type lab (development only); npm run tokens turns it into --type-* custom properties in _type.generated.css. Sizes and line-heights are px. 'small' is the setting below the breakpoint, 'large' the one above it. The breakpoint is the text-column width where the large setting takes over, applied as a viewport min-width. mode 'stepped' switches at the breakpoint; 'fluid' grows from viewports.min and stops at the breakpoint. The scale starts from Chimero's 18/24 and 20/28 and hasn't been tested yet. The sample copy is from the demo page (Root's); replace it with the client's own.",
+  "mode": "stepped",
+  "breakpoint": 600,
+  "maxWidth": 700,
+  "sample": {
+    "title": "Move well. Eat well. Stay a while.",
+    "meta": "Pilates · Café · Community",
+    "text": "The reformer Pilates classes at Root are small — deliberately so. Sam keeps them to eight people because she'd rather teach eight people well than sixteen people adequately. The method is precise, the instructors know what they're doing, and you'll notice the difference in your body faster than you expect. The community that has formed around Root is the part that's hardest to describe on a website. It tends to happen gradually — you recognise someone from Tuesday's class, you end up at the same table, you find out they work two streets away."
+  },
+  "candidates": [
+    {
+      "id": "inter",
+      "family": "Inter",
+      "stack": "'Inter', 'Helvetica Neue', Arial, sans-serif",
+      "role": "Body, interface, labels",
+      "pick": "candidate",
+      "practical": "Variable woff2 in static/fonts (roman and italic), SIL Open Font License.",
+      "running": { "verdict": "untested", "notes": "" },
+      "sizes": { "verdict": "untested", "notes": "" }
+    },
+    {
+      "id": "rockhill-sans-rough",
+      "family": "Rockhill Sans Rough",
+      "stack": "'Rockhill Sans Rough', 'Inter', sans-serif",
+      "role": "Display headlines",
+      "pick": "candidate",
+      "practical": "One weight, woff2 in static/fonts. fonts.css says display only, 24px and up. Licence: check.",
+      "running": { "verdict": "untested", "notes": "" },
+      "sizes": { "verdict": "untested", "notes": "" }
+    },
+    {
+      "id": "rockhill-sans",
+      "family": "Rockhill Sans",
+      "stack": "'Rockhill Sans', 'Inter', sans-serif",
+      "role": "Smaller display sizes",
+      "pick": "candidate",
+      "practical": "One weight, woff2 in static/fonts. Licence: check.",
+      "running": { "verdict": "untested", "notes": "" },
+      "sizes": { "verdict": "untested", "notes": "" }
+    },
+    {
+      "id": "georgia",
+      "family": "Georgia",
+      "stack": "Georgia, 'Times New Roman', serif",
+      "role": "Reading (system serif to compare against)",
+      "pick": "candidate",
+      "practical": "Installed on macOS, iOS and Windows, not Android. No file to load.",
+      "running": { "verdict": "untested", "notes": "" },
+      "sizes": { "verdict": "untested", "notes": "" }
+    },
+    {
+      "id": "system-ui",
+      "family": "System UI",
+      "stack": "system-ui, sans-serif",
+      "role": "Interface (system sans to compare against)",
+      "pick": "candidate",
+      "practical": "No file to load, but the face changes by platform: SF, Segoe UI or Roboto.",
+      "running": { "verdict": "untested", "notes": "" },
+      "sizes": { "verdict": "untested", "notes": "" }
+    }
+  ],
+  "scale": [
+    { "name": "label", "role": "Labels and metadata", "face": "inter", "weight": 500, "small": { "size": 13, "leading": 16 }, "large": { "size": 13, "leading": 16 } },
+    { "name": "small", "role": "Captions and interface", "face": "inter", "weight": 400, "small": { "size": 15, "leading": 20 }, "large": { "size": 15, "leading": 20 } },
+    { "name": "body", "role": "Extended reading", "face": "inter", "weight": 400, "small": { "size": 18, "leading": 24 }, "large": { "size": 20, "leading": 28 } },
+    { "name": "h3", "role": "Subheadings", "face": "rockhill-sans", "weight": 400, "small": { "size": 22, "leading": 28 }, "large": { "size": 26, "leading": 32 } },
+    { "name": "h2", "role": "Section headings", "face": "rockhill-sans-rough", "weight": 400, "small": { "size": 28, "leading": 32 }, "large": { "size": 36, "leading": 40 } },
+    { "name": "h1", "role": "Page titles", "face": "rockhill-sans-rough", "weight": 400, "small": { "size": 36, "leading": 40 }, "large": { "size": 52, "leading": 56 } }
+  ],
+  "lineBreakTests": [],
+  "hierarchy": {
+    "post-header": { "tools": [], "metaFirst": false, "notes": "" }
+  }
+}

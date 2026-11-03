@@ -1,0 +1,113 @@
+/* AUTO-GENERATED — do not edit. Run `npm run tokens` to regenerate. */
+:root {
+
+  /* Colors — the palette. Only roles and schemes should use these */
+  --color-ground: #332822;
+  --color-olive-oil: #B6893B;
+  --color-olive-oil-dark: #a37a34;
+  --color-clay: #F7E8D6;
+  --color-air: #FFFFFF;
+  --color-teal: #346278;
+
+  /* Roles — what each colour does. Components use these */
+  --surface: var(--color-ground);
+  --text: var(--color-clay);
+  --heading: var(--color-olive-oil);
+  --primary: var(--color-olive-oil);
+  --on-primary: var(--color-ground);
+  --accent: var(--color-clay);
+  --border: var(--color-olive-oil);
+  --focus-ring: var(--color-olive-oil);
+
+  /* Spacing */
+  --space-2xs: clamp(0.1875rem, 0.17rem + 0.10vw, 0.25rem);
+  --space-xs: clamp(0.4375rem, 0.42rem + 0.10vw, 0.5rem);
+  --space-s: clamp(0.875rem, 0.83rem + 0.20vw, 1rem);
+  --space-m: clamp(1.3125rem, 1.25rem + 0.29vw, 1.5rem);
+  --space-l: clamp(2.1875rem, 2.09rem + 0.49vw, 2.5rem);
+  --space-xl: clamp(3.0625rem, 2.92rem + 0.69vw, 3.5rem);
+  --space-2xl: clamp(3.5rem, 3.34rem + 0.78vw, 4rem);
+  --space-3xl: clamp(4.375rem, 4.17rem + 0.98vw, 5rem);
+  --space-4xl: clamp(6.5625rem, 6.26rem + 1.47vw, 7.5rem);
+  --space-xs-l: clamp(0.4375rem, -0.23rem + 3.24vw, 2.5rem);
+  --space-m-l: clamp(1.3125rem, 0.93rem + 1.86vw, 2.5rem);
+  --space-2xl-4xl: clamp(3.5rem, 2.21rem + 6.27vw, 7.5rem);
+
+  /* Type sizes */
+  --size-step-000: clamp(0.740625rem, 0.73rem + 0.06vw, 0.78125rem);
+  --size-step-00: clamp(0.833125rem, 0.80rem + 0.16vw, 0.9375rem);
+  --size-step-0: clamp(0.9375rem, 0.88rem + 0.29vw, 1.125rem);
+  --size-step-1: clamp(1.055rem, 0.96rem + 0.46vw, 1.35rem);
+  --size-step-2: clamp(1.18625rem, 1.05rem + 0.68vw, 1.62rem);
+  --size-step-3: clamp(1.335rem, 1.14rem + 0.95vw, 1.94375rem);
+  --size-step-4: clamp(1.501875rem, 1.23rem + 1.30vw, 2.3325rem);
+  --size-step-5: clamp(1.689375rem, 1.33rem + 1.74vw, 2.799375rem);
+  --size-step-6: clamp(1.900625rem, 1.43rem + 2.29vw, 3.359375rem);
+  --size-step-7: clamp(2.138125rem, 1.53rem + 2.97vw, 4.03125rem);
+  --size-step-8: clamp(2.405625rem, 1.62rem + 3.81vw, 4.8375rem);
+  --size-step-9: clamp(2.70625rem, 1.70rem + 4.86vw, 5.805rem);
+  --size-step-10: clamp(3.03125rem, 1.76rem + 6.17vw, 6.965625rem);
+  --size-step-11: clamp(3.78875rem, 1.63rem + 10.45vw, 10.448125rem);
+  --size-step-12: clamp(3.78875rem, 0.36rem + 16.61vw, 14.375rem);
+
+  /* Leading */
+  --leading-micro: 0.85;
+  --leading-flat: 1;
+  --leading-fine: 1.2;
+  --leading-standard: 1.55;
+  --leading-loose: 1.7;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-regular: 400;
+  --font-weight-medium: 500;
+  --font-medium: 500;
+  --font-weight-bold: 700;
+  --font-bold: 700;
+  --font-weight-black: 900;
+  --font-black: 900;
+
+  /* Font stacks */
+  --font-base: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Rockhill Sans Rough', 'Inter', sans-serif;
+  --font-mono: 'ui-monospace', 'Cascadia Code', monospace;
+}
+
+/* Schemes — put data-scheme="name" on a section to switch its colours */
+:where([data-scheme]) {
+  background: var(--surface);
+  color: var(--text);
+}
+
+[data-scheme="default"] {
+  --surface: var(--color-ground);
+  --text: var(--color-clay);
+  --heading: var(--color-olive-oil);
+  --primary: var(--color-olive-oil);
+  --on-primary: var(--color-ground);
+  --accent: var(--color-clay);
+  --border: var(--color-olive-oil);
+  --focus-ring: var(--color-olive-oil);
+}
+
+[data-scheme="inverse"] {
+  --surface: var(--color-clay);
+  --text: var(--color-ground);
+  --heading: var(--color-olive-oil-dark);
+  --primary: var(--color-ground);
+  --on-primary: var(--color-clay);
+  --accent: var(--color-ground);
+  --border: var(--color-ground);
+  --focus-ring: var(--color-ground);
+}
+
+[data-scheme="highlight"] {
+  --surface: var(--color-olive-oil);
+  --text: var(--color-clay);
+  --heading: var(--color-clay);
+  --primary: var(--color-ground);
+  --on-primary: var(--color-clay);
+  --accent: var(--color-ground);
+  --border: var(--color-ground);
+  --focus-ring: var(--color-ground);
+}

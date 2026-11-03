@@ -1,0 +1,30 @@
+/* Generated tokens — all --color-*, --space-*, --size-step-*, --leading-*, --font-* */
+@import './_tokens.generated.css';
+/* Generated from typography.json — all --type-* */
+@import './_type.generated.css';
+
+/* Manual variables that live alongside tokens */
+:root {
+  --gutter: var(--space-m-l);
+  --wrapper-max-width: 1360px;
+  --measure: 66ch;
+  --measure-narrow: 45ch;
+  --measure-wide: 80ch;
+
+  --transition-base: 250ms ease;
+  --transition-movement: 200ms linear;
+  --transition-fade: 300ms ease;
+  --transition-bounce: 500ms cubic-bezier(0.5, 0.05, 0.2, 1.5);
+
+  --stroke: 1px dashed var(--color-olive-oil);
+  --stroke-solid: 1px solid var(--color-olive-oil);
+
+  --radius-s: 0.2rem;
+  --radius-m: 0.75rem;
+  --radius-l: 2.5rem;
+
+  --uppercase-kerning: 0.04ch;
+  --tracking-tight: -0.05em;
+  --tracking: 0.1em;
+  --tracking-mega: 0.25em;
+}

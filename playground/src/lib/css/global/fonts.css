@@ -1,0 +1,39 @@
+/*
+  Root brand fonts.
+
+  Inter: variable font — covers all weights 100–900 in a single file.
+  Rockhill Sans Rough: display only, use at Step 5+ (≥24px).
+  Rockhill Sans: cleaner variant for slightly smaller display sizes.
+*/
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/InterVariable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: optional;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/InterVariable-Italic.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: optional;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rockhill Sans Rough';
+  src: url('/fonts/rockhill-sans-rough.woff2') format('woff2');
+  font-weight: 400;
+  font-display: optional;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rockhill Sans';
+  src: url('/fonts/rockhill-sans-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: optional;
+  font-style: normal;
+}

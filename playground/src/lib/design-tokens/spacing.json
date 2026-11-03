@@ -1,0 +1,18 @@
+{
+  "title": "Spacing",
+  "description": "Fluid spacing scale, min/max in pixels. Generated as CSS clamp() values. `step` gives the token a Tachyons-style number (pa3, mt4) — matched to Tachyons' px values as closely as the scale allows. Every token also gets a named class (pa-m, mt-xs-l).",
+  "items": [
+    { "name": "2XS", "min": 3, "max": 4, "step": 1 },
+    { "name": "XS", "min": 7, "max": 8, "step": 2 },
+    { "name": "S", "min": 14, "max": 16, "step": 3 },
+    { "name": "M", "min": 21, "max": 24 },
+    { "name": "L", "min": 35, "max": 40, "step": 4 },
+    { "name": "XL", "min": 49, "max": 56 },
+    { "name": "2XL", "min": 56, "max": 64, "step": 5 },
+    { "name": "3XL", "min": 70, "max": 80 },
+    { "name": "4XL", "min": 105, "max": 120, "step": 6 },
+    { "name": "XS - L", "min": 7, "max": 40 },
+    { "name": "M - L", "min": 21, "max": 40 },
+    { "name": "2XL - 4XL", "min": 56, "max": 120 }
+  ]
+}

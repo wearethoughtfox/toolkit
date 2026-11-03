@@ -1,0 +1,15 @@
+/*
+DEBUG UTILITIES
+Dev-only. Add to any element to see the boxes inside it.
+*/
+
+/* Outline every descendant */
+.debug * { outline: 1px solid gold; }
+
+/* 8px baseline grid behind the element */
+.debug-grid {
+  background-image:
+    linear-gradient(to right, rgb(0 0 0 / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(0 0 0 / 0.08) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
