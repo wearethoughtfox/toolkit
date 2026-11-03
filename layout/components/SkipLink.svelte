@@ -1,4 +1,7 @@
 <script>
+  // Colours come from the site's roles (--primary, --on-primary) when it has
+  // them, otherwise the system colours, so the link is always readable.
+  // Set --skip-link-bg and --skip-link-text to style it.
   export let href = '#main-content';
 </script>
 
@@ -12,10 +15,10 @@
     top: var(--space-s);
     left: var(--space-s);
     z-index: 999;
-    background: var(--color-primary);
-    color: var(--color-dark);
+    background: var(--skip-link-bg, var(--primary, Canvas));
+    color: var(--skip-link-text, var(--on-primary, CanvasText));
     padding: var(--space-xs) var(--space-s);
-    border-radius: var(--radius-s);
+    border-radius: var(--radius-s, 0.2rem);
     font-weight: var(--font-bold);
     text-decoration: none;
   }

@@ -268,10 +268,23 @@ the package installs.
 - Compositions are plain classes configured by custom properties; exceptions
   use data attributes (`.grid[data-layout='50-50']`).
 - `--gutter` is the shared spacing hook across cluster/grid/switcher/wrapper.
+- Package files only use variables every site has, or give a fallback:
+  `var(--x, …)`. SkipLink uses the `--primary` / `--on-primary` roles,
+  else the system colours; set `--skip-link-bg` and `--skip-link-text` to
+  style it.
 - Blocks (buttons, cards, navs) stay in each site — they carry the brand.
 - Rule of two: nothing enters this package until at least two sites need it.
 
-## v0.2.0 (draft — not tagged yet)
+## v0.2.1 (not tagged yet)
+
+**Fixes.** SkipLink, Reel and Sidebar used variables from the old starter
+palette that most sites don't define. They now fall back to something that
+works everywhere (see "Conventions"). A site that didn't set those variables
+sees one change: its skip link, when focused, is white on black (or its
+`--primary` / `--on-primary` roles) instead of having no background. No code
+changes needed.
+
+## v0.2.0
 
 **Upgrading needs no code changes.** Bump the pin to `#v0.2.0`, run
 `npm install`, build and check with the snapshots. Every v0.1.0 import path
