@@ -10,7 +10,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Slide Right",
@@ -23,7 +24,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Slide Up",
@@ -36,7 +38,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Slide Down",
@@ -49,7 +52,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Diagonal Up",
@@ -62,7 +66,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Diagonal Down",
@@ -75,7 +80,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Stripes Horizontal",
@@ -88,7 +94,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Stripes Vertical",
@@ -101,7 +108,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Stripes Horizontal Alt",
@@ -114,7 +122,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Stripes Vertical Alt",
@@ -127,7 +136,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Stripes Diagonal",
@@ -140,7 +150,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Blinds Horizontal",
@@ -153,7 +164,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Blinds Vertical",
@@ -166,7 +178,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Hinge Open",
@@ -181,7 +194,8 @@
       "cubic-bezier(0.65, 0, 0.35, 1)",
       "linear (hold only)"
     ],
-    "easingNote": "The swing ends at speed (the curve never settles), which suits a door leaving the screen. Linear is used only for a still hold. No overshoot."
+    "easingNote": "The swing ends at speed (the curve never settles), which suits a door leaving the screen. Linear is used only for a still hold. No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Hinge Lift",
@@ -196,7 +210,8 @@
       "cubic-bezier(0.65, 0, 0.35, 1)",
       "linear (hold only)"
     ],
-    "easingNote": "The swing ends at speed (the curve never settles), which suits a door leaving the screen. Linear is used only for a still hold. No overshoot."
+    "easingNote": "The swing ends at speed (the curve never settles), which suits a door leaving the screen. Linear is used only for a still hold. No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Circle Pop",
@@ -209,7 +224,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Circle Iris",
@@ -222,7 +238,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Circle Corner",
@@ -235,7 +252,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Focus Pull",
@@ -248,7 +266,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on opacity, blur and scale. No linear, no overshoot."
+    "easingNote": "Ease-in-out cubic on opacity, blur and scale. No linear, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Diamond Iris",
@@ -261,7 +280,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Arrow Right",
@@ -274,7 +294,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Shutter",
@@ -287,7 +308,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Doors",
@@ -300,7 +322,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Framed Slide",
@@ -314,7 +337,8 @@
       "cubic-bezier(0.65, 0, 0.35, 1)",
       "cubic-bezier(0.76, 0, 0.24, 1)"
     ],
-    "easingNote": "Ease-in-out cubic and quint. No linear, no overshoot."
+    "easingNote": "Ease-in-out cubic and quint. No linear, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Framed Drift",
@@ -327,7 +351,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on every phase. No linear, no overshoot."
+    "easingNote": "Ease-in-out cubic on every phase. No linear, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Framed Cover",
@@ -342,7 +367,8 @@
       "cubic-bezier(0.76, 0, 0.24, 1)",
       "linear (hold only)"
     ],
-    "easingNote": "Ease-in-out cubic for the push back, ease-in-out quint for the slide. Linear is used only for a still hold. No overshoot."
+    "easingNote": "Ease-in-out cubic for the push back, ease-in-out quint for the slide. Linear is used only for a still hold. No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Quad Pinwheel",
@@ -355,7 +381,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Drop Away",
@@ -370,7 +397,8 @@
       "cubic-bezier(0.65, 0, 0.35, 1)",
       "linear (hold only)"
     ],
-    "easingNote": "Strong ease-in (gravity) on the fall, which accelerates out of view. Linear is used only for a still hold. No overshoot."
+    "easingNote": "Strong ease-in (gravity) on the fall, which accelerates out of view. Linear is used only for a still hold. No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Clock Wipe",
@@ -383,7 +411,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Fan Wipe",
@@ -396,7 +425,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Swing",
@@ -409,7 +439,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Zigzag Up",
@@ -422,7 +453,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Wave Up",
@@ -435,7 +467,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Deal In",
@@ -450,7 +483,8 @@
       "cubic-bezier(0.25, 1, 0.5, 1)",
       "linear (opacity only)"
     ],
-    "easingNote": "Ease-out quart on the landing (fast in, long settle); linear only on the short fade. No overshoot."
+    "easingNote": "Ease-out quart on the landing (fast in, long settle); linear only on the short fade. No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Brush Lines",
@@ -463,7 +497,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Paint Over",
@@ -478,7 +513,8 @@
       "cubic-bezier(0.65, 0, 0.35, 1)",
       "linear (hold and fill)"
     ],
-    "easingNote": "Ease-in-out cubic on the strokes. Linear only on the hold. No overshoot."
+    "easingNote": "Ease-in-out cubic on the strokes. Linear only on the hold. No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Dots Radial",
@@ -493,7 +529,8 @@
       "cubic-bezier(0.65, 0, 0.35, 1)",
       "linear (hold only)"
     ],
-    "easingNote": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot."
+    "easingNote": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Dots Sweep",
@@ -508,7 +545,8 @@
       "cubic-bezier(0.65, 0, 0.35, 1)",
       "linear (hold only)"
     ],
-    "easingNote": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot."
+    "easingNote": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Grid Squares",
@@ -523,7 +561,8 @@
       "cubic-bezier(0.65, 0, 0.35, 1)",
       "linear (hold only)"
     ],
-    "easingNote": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot."
+    "easingNote": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Sprite Noise",
@@ -536,7 +575,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "The ease drives an integer frame number, so the movement steps through 16 frames (about 20 fps). No overshoot."
+    "easingNote": "The ease drives an integer frame number, so the movement steps through 16 frames (about 20 fps). No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Dither Dissolve",
@@ -549,7 +589,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "The ease drives an integer frame number, so the movement steps through 16 frames (about 20 fps). No overshoot."
+    "easingNote": "The ease drives an integer frame number, so the movement steps through 16 frames (about 20 fps). No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Dither Wipe",
@@ -562,7 +603,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "The ease drives an integer frame number, so the movement steps through 24 frames (about 30 fps). No overshoot."
+    "easingNote": "The ease drives an integer frame number, so the movement steps through 24 frames (about 30 fps). No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Pixel Burn",
@@ -575,7 +617,8 @@
     "easing": [
       "linear"
     ],
-    "easingNote": "The ease drives an integer frame number, so the movement steps through 24 frames (about 20 fps). Flagged: linear."
+    "easingNote": "The ease drives an integer frame number, so the movement steps through 24 frames (about 20 fps). Flagged: linear.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Sprite Shuffle",
@@ -588,7 +631,8 @@
     "easing": [
       "cubic-bezier(0.65, 0, 0.35, 1)"
     ],
-    "easingNote": "The ease drives an integer frame number, so the movement steps through 12 frames (about 15 fps). No overshoot."
+    "easingNote": "The ease drives an integer frame number, so the movement steps through 12 frames (about 15 fps). No overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Card Flip",
@@ -602,7 +646,8 @@
       "cubic-bezier(0.65, 0, 0.35, 1)",
       "cubic-bezier(0.37, 0, 0.63, 1)"
     ],
-    "easingNote": "Ease-in-out cubic and sine. No linear, no overshoot."
+    "easingNote": "Ease-in-out cubic and sine. No linear, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   },
   {
     "name": "Cube Turn",
@@ -616,6 +661,7 @@
       "cubic-bezier(0.65, 0, 0.35, 1)",
       "cubic-bezier(0.37, 0, 0.63, 1)"
     ],
-    "easingNote": "Ease-in-out cubic and sine. No linear, no overshoot."
+    "easingNote": "Ease-in-out cubic and sine. No linear, no overshoot.",
+    "reducedMotion": "180ms opacity crossfade; no movement, clip-path, scale or blur."
   }
 ]

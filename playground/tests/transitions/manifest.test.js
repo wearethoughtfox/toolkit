@@ -48,3 +48,43 @@ describe('transitions manifest: duration and easing', () => {
     });
   }
 });
+
+// The block at the end of each file, inside @media (prefers-reduced-motion: reduce)
+const reduceBlock = (css) => {
+  const start = css.indexOf('@media (prefers-reduced-motion: reduce)');
+  return start === -1 ? null : css.slice(start);
+};
+
+describe('transitions: reduced motion', () => {
+  for (const entry of manifest) {
+    test(`${entry.name}: a reduce block that only fades`, () => {
+      const css = cssOf(entry);
+      const block = reduceBlock(css);
+      assert.ok(block, 'no prefers-reduced-motion: reduce block');
+      assert.equal(css.match(/prefers-reduced-motion: reduce/g).length, 1);
+      assert.match(block, /var\(--segue-fade-duration, 180ms\)/);
+      assert.match(block, /::view-transition-group\(root\) \{\s*animation: none;/);
+      for (const banned of ['transform', 'clip-path', 'filter', 'mask', 'scale', 'translate', 'rotate']) {
+        assert.ok(!block.includes(banned), `reduce block uses ${banned}`);
+      }
+      assert.equal(typeof entry.reducedMotion, 'string');
+    });
+
+    test(`${entry.name}: every other animated rule is no-preference only`, () => {
+      const css = cssOf(entry);
+      const before = css.slice(0, css.indexOf('@media (prefers-reduced-motion: reduce)'));
+      // Outside @media blocks there may be @property, @keyframes, :root and
+      // mask styles, but no rule that targets a view-transition pseudo
+      let depth = 0;
+      let inMotionBlock = false;
+      for (const line of before.split('\n')) {
+        if (depth === 0 && line.startsWith('@media (prefers-reduced-motion: no-preference)')) inMotionBlock = true;
+        if (!inMotionBlock && /::view-transition-|animation:/.test(line) && !line.trim().startsWith('@')) {
+          assert.fail(`outside no-preference: ${line.trim()}`);
+        }
+        depth += (line.match(/\{/g) || []).length - (line.match(/\}/g) || []).length;
+        if (depth === 0) inMotionBlock = false;
+      }
+    });
+  }
+});
