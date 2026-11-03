@@ -1,5 +1,5 @@
 <script>
-  import { uses, level, formatMetric } from '$lib/palette/levels.js';
+  import { uses, level, formatMetric } from '../levels.js';
 
   /** @type {Array} The palette colours */
   export let colors;

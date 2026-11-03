@@ -3,7 +3,7 @@
  *
  * The conversion is Björn Ottosson's OKLab (https://bottosson.github.io/posts/oklab/),
  * with the sRGB → LMS matrices as published there and in CSS Color 4. No dependency:
- * scripts/contrast.js uses this to write OKLCH and ramps into contrast.generated.json.
+ * palette/contrast.js uses this to write OKLCH and ramps into contrast.generated.json.
  *
  * Hex stays the source of truth. OKLCH is derived from it, for reading and exploring.
  */

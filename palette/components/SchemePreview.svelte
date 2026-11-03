@@ -1,10 +1,12 @@
 <script>
-  import Button from '$lib/components/blocks/Button.svelte';
+  import LabButton from '../../shared/LabButton.svelte';
 
   /** @type {string} Scheme name, as used in data-scheme */
   export let name;
   /** @type {Array} This scheme's results from schemeChecks */
   export let checks;
+  /** Your site's Button component, so the tools look like the site. Takes variant (primary, secondary, ghost) and onclick */
+  export let button = LabButton;
 
   $: failing = checks.filter((c) => !c.pass).length;
 </script>
@@ -25,8 +27,8 @@
       middle of the sentence.
     </p>
     <div class="cluster">
-      <Button>Primary</Button>
-      <Button variant="secondary">Secondary</Button>
+      <svelte:component this={button}>Primary</svelte:component>
+      <svelte:component this={button} variant="secondary">Secondary</svelte:component>
     </div>
     <div class="scheme__border">Bordered box, with an <span class="scheme__accent">accent</span></div>
   </div>

@@ -9,14 +9,18 @@
  * More output switches on when the token files ask for it, so a site that
  * doesn't use a feature gets exactly what v0.1.0 wrote:
  *
- *   spacing.json items have a `step`   → Tachyons spacing utilities
- *                                         (src/lib/css/utilities/_spacing.generated.css)
- *   colors.json has colors/roles/schemes → roles, [data-scheme] blocks, and
- *                                         the undefined-variable check over src/
+ *   spacing.json items have a `step`    → Tachyons spacing utilities
+ *                                          (src/lib/css/utilities/_spacing.generated.css)
+ *   typography.json exists (/type lab)   → --type-* properties
+ *                                          (src/lib/css/global/_type.generated.css)
+ *   colors.json has colors/roles/schemes → roles and [data-scheme] blocks,
+ *                                          contrast data for the palette tools
+ *                                          (src/lib/palette/contrast.generated.json),
+ *                                          and the undefined-variable check over src/
  *
  * Pass a path to move an output, or false to turn it off. checkVars takes
  * the folders to scan (default: src):
- *   generateTokens({ spacingOutput: false, checkVars: ['src', '../shared'] })
+ *   generateTokens({ spacingOutput: false, contrastOutput: false, checkVars: ['src', '../shared'] })
  *
  * Run from a site root:  npm run tokens
  *   ("tokens": "node node_modules/@thoughtfox/toolkit/tokens/generate-tokens.js")
@@ -26,10 +30,13 @@
  *   plugins: [{ name: 'tokens', buildStart: () => generateTokens() }]
  */
 
-import { readFileSync, writeFileSync, realpathSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync, realpathSync } from 'fs';
 import { join } from 'path';
 import { pathToFileURL } from 'url';
 import { checkVars as runCheckVars } from './check-vars.js';
+import { typographyCss } from '../type/css.js';
+import { typographyErrors, typographyWarnings } from '../type/checks.js';
+import { generateContrast } from '../palette/contrast.js';
 
 // Tachyons spacing prefixes → logical properties
 const spacingProperties = {
@@ -206,6 +213,8 @@ export function generateTokens({
   tokensDir = join(process.cwd(), 'src/lib/design-tokens'),
   output = join(process.cwd(), 'src/lib/css/global/_tokens.generated.css'),
   spacingOutput,
+  typographyOutput,
+  contrastOutput,
   checkVars
 } = {}) {
   const readToken = (filename) => JSON.parse(readFileSync(join(tokensDir, filename), 'utf-8'));
@@ -288,8 +297,49 @@ export function generateTokens({
     console.log('✓ spacing utilities generated →', spacingPath);
   }
 
+  const hasTypography = existsSync(join(tokensDir, 'typography.json'));
+  const typographyPath = pick(
+    typographyOutput,
+    hasTypography,
+    join(process.cwd(), 'src/lib/css/global/_type.generated.css')
+  );
+  if (typographyPath) generateTypography({ tokensDir, viewports, output: typographyPath });
+
+  const contrastPath = pick(
+    contrastOutput,
+    roles,
+    join(process.cwd(), 'src/lib/palette/contrast.generated.json')
+  );
+  if (contrastPath) generateContrast({ colorsPath: join(tokensDir, 'colors.json'), output: contrastPath });
+
   const checkDirs = pick(checkVars, roles, 'src');
   if (checkDirs) runCheckVars({ srcDir: checkDirs });
+}
+
+/**
+ * typography.json (from the /type lab) → --type-* custom properties.
+ * Bad structure stops the build; departures from the method are warnings.
+ * Without the file, an empty stylesheet keeps an import of the output working.
+ */
+function generateTypography({ tokensDir, viewports, output }) {
+  const path = join(tokensDir, 'typography.json');
+  if (!existsSync(path)) {
+    writeFileSync(output, '/* AUTO-GENERATED — no typography.json yet. Make one in the /type lab. */\n');
+    return;
+  }
+  const typography = JSON.parse(readFileSync(path, 'utf-8'));
+  const errors = typographyErrors(typography);
+  if (errors.length) {
+    throw new Error(`typography.json has ${errors.length} problem(s):\n  - ${errors.join('\n  - ')}`);
+  }
+  writeFileSync(output, typographyCss(typography, viewports));
+  console.log('✓ typography generated →', output);
+
+  const warnings = typographyWarnings(typography);
+  if (warnings.length) {
+    console.warn(`⚠ typography.json: ${warnings.length} departure(s) from the type method:`);
+    for (const warning of warnings) console.warn(`    ${warning}`);
+  }
 }
 
 // Run when executed directly (node .../generate-tokens.js), but not when

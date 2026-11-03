@@ -1,6 +1,6 @@
 <script>
   import { onMount, tick } from 'svelte';
-  import { lineStats } from '$lib/type/measure.js';
+  import { lineStats } from '../measure.js';
 
   /** @type {string} The running text */
   export let text;

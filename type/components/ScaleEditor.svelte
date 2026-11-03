@@ -1,12 +1,14 @@
 <script>
-  import Button from '$lib/components/blocks/Button.svelte';
-  import { typographyErrors, typographyWarnings } from '$lib/type/checks.js';
-  import { settingAt } from '$lib/type/css.js';
+  import LabButton from '../../shared/LabButton.svelte';
+  import { typographyErrors, typographyWarnings } from '../checks.js';
+  import { settingAt } from '../css.js';
 
   /** @type {object} typography.json, for bind:typography */
   export let typography;
   /** @type {object} viewports.json */
   export let viewports;
+  /** Your site's Button component, so the tools look like the site. Takes variant (primary, secondary, ghost) and onclick */
+  export let button = LabButton;
 
   let preview = 'small';
 
@@ -43,8 +45,8 @@
         <option value="fluid">Fluid: grow from {viewports.min}px, stop at the breakpoint</option>
       </select>
     </label>
-    <Button variant="ghost" onclick={sort}>Sort by size</Button>
-    <Button variant="secondary" onclick={add}>Add a step</Button>
+    <svelte:component this={button} variant="ghost" onclick={sort}>Sort by size</svelte:component>
+    <svelte:component this={button} variant="secondary" onclick={add}>Add a step</svelte:component>
   </div>
 
   <div class="scale__scroll">
@@ -84,7 +86,7 @@
               <td class="scale__at" data-off={at.leading % 4 !== 0}>{at.size}/{at.leading}</td>
             {/each}
             <td>
-              {#if step.name !== 'body'}<Button variant="ghost" onclick={() => remove(step)}>Remove</Button>{/if}
+              {#if step.name !== 'body'}<svelte:component this={button} variant="ghost" onclick={() => remove(step)}>Remove</svelte:component>{/if}
             </td>
           </tr>
         {/each}

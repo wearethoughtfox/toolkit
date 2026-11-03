@@ -1,9 +1,9 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { typographyErrors, typographyWarnings } from './checks.js';
+import { typographyErrors, typographyWarnings } from '@thoughtfox/toolkit/type/checks.js';
 
-const shipped = JSON.parse(readFileSync(new URL('../design-tokens/typography.json', import.meta.url), 'utf-8'));
+const shipped = JSON.parse(readFileSync(new URL('../../src/lib/design-tokens/typography.json', import.meta.url), 'utf-8'));
 
 const step = (name, small, large = small, extra = {}) => ({
   name,

@@ -1,11 +1,13 @@
 <script>
   import { onMount } from 'svelte';
-  import Button from '$lib/components/blocks/Button.svelte';
+  import LabButton from '../../shared/LabButton.svelte';
   import Measured from './Measured.svelte';
-  import { familyOf, xHeightRatio } from '$lib/type/measure.js';
+  import { familyOf, xHeightRatio } from '../measure.js';
 
   /** @type {object} typography.json, for bind:typography */
   export let typography;
+  /** Your site's Button component, so the tools look like the site. Takes variant (primary, secondary, ghost) and onclick */
+  export let button = LabButton;
 
   let aId = typography.candidates[0]?.id;
   let bId = typography.candidates[1]?.id;
@@ -107,7 +109,7 @@
       </figure>
     </div>
 
-    <div><Button variant="secondary" onclick={record}>Record this result</Button></div>
+    <div><svelte:component this={button} variant="secondary" onclick={record}>Record this result</svelte:component></div>
   {/if}
 
   {#if typography.lineBreakTests.length}
@@ -124,7 +126,7 @@
             <td>{test.sizeA} / {test.sizeB}px</td>
             <td>{test.same} of {test.breaks}</td>
             <td>{test.date}</td>
-            <td><Button variant="ghost" onclick={() => remove(test)}>Remove</Button></td>
+            <td><svelte:component this={button} variant="ghost" onclick={() => remove(test)}>Remove</svelte:component></td>
           </tr>
         {/each}
       </tbody>

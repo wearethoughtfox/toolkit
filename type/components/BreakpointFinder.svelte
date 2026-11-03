@@ -1,10 +1,12 @@
 <script>
-  import Button from '$lib/components/blocks/Button.svelte';
+  import LabButton from '../../shared/LabButton.svelte';
   import Measured from './Measured.svelte';
-  import { targetAt } from '$lib/type/measure.js';
+  import { targetAt } from '../measure.js';
 
   /** @type {object} typography.json, for bind:typography */
   export let typography;
+  /** Your site's Button component, so the tools look like the site. Takes variant (primary, secondary, ghost) and onclick */
+  export let button = LabButton;
 
   let width = typography.breakpoint;
   let smallStats = null;
@@ -22,7 +24,7 @@
         Column width <strong>{width}px</strong>
         <input type="range" min="320" max="700" step="5" bind:value={width} />
       </label>
-      <Button variant="secondary" onclick={() => (typography.breakpoint = width)}>Use {width}px as the breakpoint</Button>
+      <svelte:component this={button} variant="secondary" onclick={() => (typography.breakpoint = width)}>Use {width}px as the breakpoint</svelte:component>
     </div>
 
     <p class="finder__status" aria-live="polite">

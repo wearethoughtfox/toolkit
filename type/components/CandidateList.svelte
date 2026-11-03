@@ -1,10 +1,12 @@
 <script>
   import { onMount } from 'svelte';
-  import Button from '$lib/components/blocks/Button.svelte';
-  import { isAvailable } from '$lib/type/measure.js';
+  import LabButton from '../../shared/LabButton.svelte';
+  import { isAvailable } from '../measure.js';
 
   /** @type {object} typography.json, for bind:typography */
   export let typography;
+  /** Your site's Button component, so the tools look like the site. Takes variant (primary, secondary, ghost) and onclick */
+  export let button = LabButton;
 
   const picks = ['candidate', 'primary', 'reserve', 'rejected'];
   let available = {};
@@ -82,11 +84,11 @@
       {#if inUse.has(candidate.id)}
         <p class="candidate__note">Used by the scale, so it can't be removed.</p>
       {:else}
-        <Button variant="ghost" onclick={() => remove(candidate)}>Remove</Button>
+        <svelte:component this={button} variant="ghost" onclick={() => remove(candidate)}>Remove</svelte:component>
       {/if}
     </fieldset>
   {/each}
-  <div><Button variant="secondary" onclick={add}>Add a candidate</Button></div>
+  <div><svelte:component this={button} variant="secondary" onclick={add}>Add a candidate</svelte:component></div>
 </div>
 
 <style>

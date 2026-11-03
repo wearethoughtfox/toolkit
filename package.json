@@ -17,10 +17,19 @@
 			"svelte": "./motion/index.js",
 			"default": "./motion/index.js"
 		},
+		"./palette": {
+			"svelte": "./palette/index.js",
+			"default": "./palette/index.js"
+		},
+		"./type": {
+			"svelte": "./type/index.js",
+			"default": "./type/index.js"
+		},
 		"./tokens": "./tokens/index.js",
 		"./layout/*": "./layout/*",
 		"./motion/*": "./motion/*",
 		"./tokens/*": "./tokens/*",
+		"./palette/*": "./palette/*",
 		"./type/*": "./type/*",
 		"./css/reset.css": "./layout/reset.css",
 		"./css/compositions/scene.css": "./motion/compositions/scene.css",
@@ -44,10 +53,15 @@
 		"index.js",
 		"layout",
 		"motion",
+		"palette",
 		"tokens",
 		"type",
+		"shared",
 		"scripts"
 	],
+	"dependencies": {
+		"apca-w3": "^0.1.9"
+	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"
 	},

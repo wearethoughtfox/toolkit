@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
-  import Button from '$lib/components/blocks/Button.svelte';
-  import { uses } from '$lib/palette/levels.js';
+  import LabButton from '../../shared/LabButton.svelte';
+  import { uses } from '../levels.js';
 
   /** @type {Array} Every ordered pair from contrast.generated.json */
   export let pairs;
@@ -9,6 +9,8 @@
   export let colors;
   /** @type {string} Which `supports` key a pair must pass */
   export let use = 'body';
+  /** Your site's Button component, so the tools look like the site. Takes variant (primary, secondary, ghost) and onclick */
+  export let button = LabButton;
 
   // '' means any colour
   let fgChoice = '';
@@ -82,9 +84,9 @@
         {/each}
       </select>
     </label>
-    <Button onclick={shuffle} disabled={pool.length < 2}>Shuffle →</Button>
-    <Button variant="secondary" onclick={swap} disabled={!current}>Swap</Button>
-    <Button variant="ghost" onclick={copy} disabled={!current}>Copy JSON</Button>
+    <svelte:component this={button} onclick={shuffle} disabled={pool.length < 2}>Shuffle →</svelte:component>
+    <svelte:component this={button} variant="secondary" onclick={swap} disabled={!current}>Swap</svelte:component>
+    <svelte:component this={button} variant="ghost" onclick={copy} disabled={!current}>Copy JSON</svelte:component>
   </div>
 
   <p class="explorer__status" aria-live="polite">
@@ -109,8 +111,8 @@
         Here is <a class="preview__link" href="#explore">a link</a> in running text.
       </p>
       <div class="cluster">
-        <Button>Primary</Button>
-        <Button variant="secondary">Secondary</Button>
+        <svelte:component this={button}>Primary</svelte:component>
+        <svelte:component this={button} variant="secondary">Secondary</svelte:component>
       </div>
     </div>
 

@@ -1,6 +1,6 @@
 <script>
   import Measured from './Measured.svelte';
-  import { boxes, verdict } from '$lib/type/measure.js';
+  import { boxes, verdict } from '../measure.js';
 
   /** @type {object} typography.json, for bind:typography */
   export let typography;

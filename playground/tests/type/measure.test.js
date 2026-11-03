@@ -2,7 +2,7 @@
 // xHeightRatio need a DOM or a canvas and are tested by eye in the /type lab.
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { boxes, familyOf, targetAt, verdict } from './measure.js';
+import { boxes, familyOf, targetAt, verdict } from '@thoughtfox/toolkit/type/measure.js';
 
 describe('boxes', () => {
   test("are Chimero's: 5–6 words at 320px, 10–14 at 700px", () => {

@@ -1,5 +1,5 @@
 <script>
-  import { uses, level, formatMetric } from '$lib/palette/levels.js';
+  import { uses, level, formatMetric } from '../levels.js';
 
   /** @type {Array} One ramp per palette colour, from contrast.generated.json */
   export let ramps;

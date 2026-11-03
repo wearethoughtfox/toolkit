@@ -7,19 +7,39 @@
  * of truth) and a fixed-hue tonal ramp per colour, checked against every
  * scheme's surface. Ramps are for exploring only: they are not written to tokens.
  *
- * Writes src/lib/palette/contrast.generated.json for the /palette page.
- * Run: npm run contrast   (prints a summary; also runs with npm run tokens)
+ * Reads colors.json in the roles format (colors, roles, schemes) and writes
+ * src/lib/palette/contrast.generated.json for the palette tools. Paths
+ * resolve from the project root (process.cwd()). generate-tokens.js runs it
+ * when colors.json uses roles.
+ *
+ * Run from a site root (prints every pair and scheme check):
+ *   "contrast": "node node_modules/@thoughtfox/toolkit/palette/contrast.js"
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
-import { fileURLToPath, pathToFileURL } from 'url';
+import { readFileSync, writeFileSync, mkdirSync, realpathSync } from 'fs';
+import { pathToFileURL } from 'url';
+import { createRequire } from 'module';
 import { dirname, join } from 'path';
-import { APCAcontrast, sRGBtoY } from 'apca-w3';
-import { hexToOklch, roundOklch, ramp } from '../src/lib/palette/oklch.js';
+import { hexToOklch, roundOklch, ramp } from './oklch.js';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const colorsPath = join(__dirname, '../src/lib/design-tokens/colors.json');
-const outputPath = join(__dirname, '../src/lib/palette/contrast.generated.json');
+/**
+ * apca-w3 is a dependency of the package. When the package is linked rather
+ * than installed (the playground's "file:.."), npm puts it in the project's
+ * node_modules, so look there too. Loaded on first use: sites that don't use
+ * roles never need it.
+ */
+let apca;
+function loadApca() {
+  if (apca) return apca;
+  for (const base of [import.meta.url, join(process.cwd(), 'package.json')]) {
+    try {
+      return (apca = createRequire(base)('apca-w3'));
+    } catch (error) {
+      if (error.code !== 'MODULE_NOT_FOUND') throw error;
+    }
+  }
+  throw new Error('The contrast check needs apca-w3. Run: npm install');
+}
 
 // WCAG 2 thresholds, by what the pair is used for
 export const thresholds = {
@@ -89,6 +109,7 @@ export function wcagRatio(fgHex, bgHex) {
 }
 
 export function apcaLc(fgHex, bgHex) {
+  const { APCAcontrast, sRGBtoY } = loadApca();
   return APCAcontrast(sRGBtoY(hexToRgb(fgHex)), sRGBtoY(hexToRgb(bgHex)));
 }
 
@@ -265,17 +286,20 @@ export function buildContrast({ colors, roles, schemes = {} }) {
   return { thresholds, colors: colorList, roles, schemes, pairs, schemeChecks, surfaces, ramps };
 }
 
-export function generateContrast() {
+export function generateContrast({
+  colorsPath = join(process.cwd(), 'src/lib/design-tokens/colors.json'),
+  output = join(process.cwd(), 'src/lib/palette/contrast.generated.json')
+} = {}) {
   const data = buildContrast(JSON.parse(readFileSync(colorsPath, 'utf-8')));
-  mkdirSync(dirname(outputPath), { recursive: true });
-  writeFileSync(outputPath, JSON.stringify(data, null, 2) + '\n');
-  console.log('✓ contrast generated →', outputPath);
+  mkdirSync(dirname(output), { recursive: true });
+  writeFileSync(output, JSON.stringify(data, null, 2) + '\n');
+  console.log('✓ contrast generated →', output);
   for (const line of schemeWarnings(data.schemeChecks)) console.warn(`⚠ ${line}`);
   return data;
 }
 
 // Run directly: print every pair, best first
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href) {
   const { pairs, schemeChecks } = generateContrast();
   const label = ({ supports: s }) =>
     s.aaaBody ? 'AAA' : s.body ? 'AA' : s.largeText ? 'AA large / UI' : 'fail';

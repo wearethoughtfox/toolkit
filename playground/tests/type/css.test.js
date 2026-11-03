@@ -1,7 +1,7 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { settingAt, typographyCss } from './css.js';
+import { settingAt, typographyCss } from '@thoughtfox/toolkit/type/css.js';
 
 const viewports = { min: 330, max: 1350 };
 
@@ -133,7 +133,7 @@ describe('typographyCss, stepped', () => {
   });
 
   test('the shipped typography.json generates', () => {
-    const shipped = JSON.parse(readFileSync(new URL('../design-tokens/typography.json', import.meta.url), 'utf-8'));
+    const shipped = JSON.parse(readFileSync(new URL('../../src/lib/design-tokens/typography.json', import.meta.url), 'utf-8'));
     const out = parse(typographyCss(shipped, viewports));
     assert.equal(out.root['--type-body-size'], '1.125rem');
     assert.equal(out.media.decls['--type-body-size'], '1.25rem');

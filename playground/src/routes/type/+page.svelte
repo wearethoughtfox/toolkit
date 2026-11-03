@@ -3,15 +3,15 @@
   import Wrapper from '@thoughtfox/toolkit/layout/components/Wrapper.svelte';
   import Stack from '@thoughtfox/toolkit/layout/components/Stack.svelte';
   import Button from '$lib/components/blocks/Button.svelte';
-  import CandidateList from '$lib/components/type/CandidateList.svelte';
-  import RunningText from '$lib/components/type/RunningText.svelte';
-  import LineBreakTest from '$lib/components/type/LineBreakTest.svelte';
-  import BodyBoxes from '$lib/components/type/BodyBoxes.svelte';
-  import BreakpointFinder from '$lib/components/type/BreakpointFinder.svelte';
-  import ScaleEditor from '$lib/components/type/ScaleEditor.svelte';
-  import HierarchyLab from '$lib/components/type/HierarchyLab.svelte';
-  import { typographyCss } from '$lib/type/css.js';
-  import { typographyErrors } from '$lib/type/checks.js';
+  import CandidateList from '@thoughtfox/toolkit/type/components/CandidateList.svelte';
+  import RunningText from '@thoughtfox/toolkit/type/components/RunningText.svelte';
+  import LineBreakTest from '@thoughtfox/toolkit/type/components/LineBreakTest.svelte';
+  import BodyBoxes from '@thoughtfox/toolkit/type/components/BodyBoxes.svelte';
+  import BreakpointFinder from '@thoughtfox/toolkit/type/components/BreakpointFinder.svelte';
+  import ScaleEditor from '@thoughtfox/toolkit/type/components/ScaleEditor.svelte';
+  import HierarchyLab from '@thoughtfox/toolkit/type/components/HierarchyLab.svelte';
+  import { typographyCss } from '@thoughtfox/toolkit/type/css.js';
+  import { typographyErrors } from '@thoughtfox/toolkit/type/checks.js';
 
   export let data;
 
@@ -121,7 +121,7 @@
         <section class="stack" id="candidates" aria-labelledby="candidates-h">
           <h2 id="candidates-h">Candidates</h2>
           <p>Two to four per role, with the client’s existing fonts first. A face that isn’t installed or loaded is flagged, because the tests would otherwise judge its fallback.</p>
-          <CandidateList bind:typography />
+          <CandidateList bind:typography button={Button} />
         </section>
 
         <section class="stack" id="running" aria-labelledby="running-h">
@@ -133,7 +133,7 @@
         <section class="stack" id="line-breaks" aria-labelledby="line-breaks-h">
           <h2 id="line-breaks-h">Line breaks</h2>
           <p>For two faces that will both set running text. B is resized until the x-heights match. If most line breaks fall on the same word, their horizontal rhythm matches and they’ll sit well together. Underlined words start a line: solid where both faces break there, faint where only one does.</p>
-          <LineBreakTest bind:typography />
+          <LineBreakTest bind:typography button={Button} />
         </section>
 
         <section class="stack" id="body" aria-labelledby="body-h">
@@ -145,13 +145,13 @@
         <section class="stack" id="breakpoint" aria-labelledby="breakpoint-h">
           <h2 id="breakpoint-h">Breakpoint</h2>
           <p>Drag to the column width where both settings feel slightly wrong: the small one a touch stretched, the large one a touch cramped. Switch there. Chimero’s was 600px. Word counts can’t find this point for you, because his two targets scale in proportion with the width; the counts are there to judge against.</p>
-          <BreakpointFinder bind:typography />
+          <BreakpointFinder bind:typography button={Button} />
         </section>
 
         <section class="stack" id="scale" aria-labelledby="scale-h">
           <h2 id="scale-h">Scale</h2>
           <p>Six or seven sizes, line-heights on 4px, never three consecutive small sizes. The “At” columns show what a reader actually gets at the narrowest, a 700px and the widest viewport. Values off the 4px rhythm are highlighted. Line heights are saved as ratios (line height ÷ size), so they follow any element that changes its font size.</p>
-          <ScaleEditor bind:typography viewports={data.viewports} />
+          <ScaleEditor bind:typography viewports={data.viewports} button={Button} />
         </section>
 
         <section class="stack" id="hierarchy" aria-labelledby="hierarchy-h">

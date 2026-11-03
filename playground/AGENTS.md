@@ -35,6 +35,8 @@ npm run tokens
 
 This writes `_tokens.generated.css` with all `--color-*`, `--space-*`, `--size-step-*`, `--leading-*`, `--font-*` custom properties, and `_spacing.generated.css` with the spacing utilities.
 
+The generator is the toolkit package's (`@thoughtfox/toolkit/tokens/generate-tokens.js`); `scripts/generate-tokens.js` only adds the toolkit folders to the undefined-variable check. The `/palette` and `/type` routes are here, but their components and checks are in the package (`palette/` and `type/` at the repo root). Each route passes this playground's `Button` to the tools as `button={Button}`.
+
 Token files:
 - `colors.json` — palette
 - `spacing.json` — fluid spacing scale (min/max px → clamp())
