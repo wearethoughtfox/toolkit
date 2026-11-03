@@ -275,7 +275,26 @@ the package installs.
 - Blocks (buttons, cards, navs) stay in each site — they carry the brand.
 - Rule of two: nothing enters this package until at least two sites need it.
 
-## v0.2.1 (not tagged yet)
+## v0.2.2 (not tagged yet)
+
+**Fix: Grid presets.** `<Grid layout="thirds">` and `layout="50-50"` never
+applied, because the component wrote its default `minItemSize` and
+`placement` inline, which beat the preset. On a wide row "thirds" made four
+columns and left one empty; around 768px it showed two plus one.
+
+- `Grid` now writes nothing inline for props you leave unset, so the CSS
+  defaults (16rem, auto-fill) and the presets apply. A prop you set still
+  wins.
+- `thirds` is three equal columns, or one when the row is narrower than
+  52rem. `50-50` is two, or one below 34rem. Change the switch point with
+  the `threshold` prop or `--grid-threshold`.
+- A `<Grid>` without `layout` gives exactly what it did before.
+
+**Check after bumping:** any page that uses `layout="thirds"` or
+`layout="50-50"` changes. Root: the pattern pages. The playground: the
+50-50 demo on its home page.
+
+## v0.2.1
 
 **Fixes.** SkipLink, Reel and Sidebar used variables from the old starter
 palette that most sites don't define. They now fall back to something that
