@@ -1,14 +1,15 @@
 <script>
-  import Region from '$lib/components/layout/Region.svelte';
-  import Wrapper from '$lib/components/layout/Wrapper.svelte';
-  import Stack from '$lib/components/layout/Stack.svelte';
-  import PairExplorer from '$lib/components/palette/PairExplorer.svelte';
-  import ContrastMatrix from '$lib/components/palette/ContrastMatrix.svelte';
-  import SchemePreview from '$lib/components/palette/SchemePreview.svelte';
-  import TonalRamps from '$lib/components/palette/TonalRamps.svelte';
-  import Grid from '$lib/components/layout/Grid.svelte';
+  import Region from '@thoughtfox/toolkit/layout/components/Region.svelte';
+  import Wrapper from '@thoughtfox/toolkit/layout/components/Wrapper.svelte';
+  import Stack from '@thoughtfox/toolkit/layout/components/Stack.svelte';
+  import PairExplorer from '@thoughtfox/toolkit/palette/components/PairExplorer.svelte';
+  import ContrastMatrix from '@thoughtfox/toolkit/palette/components/ContrastMatrix.svelte';
+  import SchemePreview from '@thoughtfox/toolkit/palette/components/SchemePreview.svelte';
+  import TonalRamps from '@thoughtfox/toolkit/palette/components/TonalRamps.svelte';
+  import Grid from '@thoughtfox/toolkit/layout/components/Grid.svelte';
   import data from '$lib/palette/contrast.generated.json';
-  import { uses } from '$lib/palette/levels.js';
+  import { uses } from '@thoughtfox/toolkit/palette/levels.js';
+  import Button from '$lib/components/blocks/Button.svelte';
 
   let use = 'body';
   let metric = 'wcag';
@@ -61,7 +62,7 @@
       <section class="stack" aria-labelledby="explore">
         <h2 id="explore">Explore</h2>
         <p>Shuffle through pairs that pass, using the button or the → key. Fix the text or background colour to see only its partners.</p>
-        <PairExplorer pairs={data.pairs} colors={data.colors} {use} />
+        <PairExplorer pairs={data.pairs} colors={data.colors} {use} button={Button} />
       </section>
 
       <section class="stack" aria-labelledby="inspect">
@@ -96,7 +97,7 @@
         </p>
         <Grid minItemSize="22rem">
           {#each Object.entries(data.schemeChecks) as [name, checks]}
-            <SchemePreview {name} {checks} />
+            <SchemePreview {name} {checks} button={Button} />
           {/each}
         </Grid>
       </section>

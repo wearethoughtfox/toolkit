@@ -2,7 +2,7 @@ import { dev } from '$app/environment';
 import { error, json } from '@sveltejs/kit';
 import { writeFileSync } from 'fs';
 import { join } from 'path';
-import { typographyErrors, typographyWarnings } from '$lib/type/checks.js';
+import { typographyErrors, typographyWarnings } from '@thoughtfox/toolkit/type/checks.js';
 import { generateTokens } from '../../../../scripts/generate-tokens.js';
 
 const path = join(process.cwd(), 'src/lib/design-tokens/typography.json');

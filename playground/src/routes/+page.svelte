@@ -1,13 +1,13 @@
 <script>
-  import Stack from '$lib/components/layout/Stack.svelte';
-  import Cluster from '$lib/components/layout/Cluster.svelte';
-  import Grid from '$lib/components/layout/Grid.svelte';
-  import Sidebar from '$lib/components/layout/Sidebar.svelte';
-  import Switcher from '$lib/components/layout/Switcher.svelte';
-  import Cover from '$lib/components/layout/Cover.svelte';
-  import Reel from '$lib/components/layout/Reel.svelte';
-  import Wrapper from '$lib/components/layout/Wrapper.svelte';
-  import Region from '$lib/components/layout/Region.svelte';
+  import Stack from '@thoughtfox/toolkit/layout/components/Stack.svelte';
+  import Cluster from '@thoughtfox/toolkit/layout/components/Cluster.svelte';
+  import Grid from '@thoughtfox/toolkit/layout/components/Grid.svelte';
+  import Sidebar from '@thoughtfox/toolkit/layout/components/Sidebar.svelte';
+  import Switcher from '@thoughtfox/toolkit/layout/components/Switcher.svelte';
+  import Cover from '@thoughtfox/toolkit/layout/components/Cover.svelte';
+  import Reel from '@thoughtfox/toolkit/layout/components/Reel.svelte';
+  import Wrapper from '@thoughtfox/toolkit/layout/components/Wrapper.svelte';
+  import Region from '@thoughtfox/toolkit/layout/components/Region.svelte';
   import Button from '$lib/components/blocks/Button.svelte';
   import Card from '$lib/components/blocks/Card.svelte';
   import Prose from '$lib/components/blocks/Prose.svelte';

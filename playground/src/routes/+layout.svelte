@@ -3,7 +3,7 @@
   import { afterNavigate } from '$app/navigation';
   import { dev } from '$app/environment';
   import { onMount } from 'svelte';
-  import SkipLink from '$lib/components/blocks/SkipLink.svelte';
+  import SkipLink from '@thoughtfox/toolkit/layout/components/SkipLink.svelte';
   import SiteHead from '$lib/components/blocks/SiteHead.svelte';
   import SiteFoot from '$lib/components/blocks/SiteFoot.svelte';
 

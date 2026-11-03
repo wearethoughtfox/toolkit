@@ -80,9 +80,9 @@ Each tool can also push things back: a date can be smaller and lighter. Stronger
 
 ## The lab: `/type` in the playground
 
-The toolkit's `playground/` (the former starter) has a dev-only `/type` route that runs these tests: running text, the line-break count with x-heights matched, words per line in the 320 and 700px boxes, the breakpoint slider, the scale checks and the hierarchy tools. Use it instead of judging by hand, and quote its numbers in `TYPOGRAPHY.md`. It saves `playground/src/lib/design-tokens/typography.json`, and `npm run tokens` turns that into `--type-<step>-font`, `-weight`, `-size` and `-leading`. Its checks (`playground/src/lib/type/checks.js`) are the rules in this skill, so the warnings it prints are findings to report.
+The toolkit's `playground/` (the former starter) has a dev-only `/type` route that runs these tests: running text, the line-break count with x-heights matched, words per line in the 320 and 700px boxes, the breakpoint slider, the scale checks and the hierarchy tools. Use it instead of judging by hand, and quote its numbers in `TYPOGRAPHY.md`. It saves `playground/src/lib/design-tokens/typography.json`, and `npm run tokens` turns that into `--type-<step>-font`, `-weight`, `-size` and `-leading`. Its checks (`type/checks.js` in the toolkit package) are the rules in this skill, so the warnings it prints are findings to report.
 
-For a client site, copy the route, `src/lib/type/` and `src/lib/components/type/` from the playground until the toolkit package carries them (roadmap step 5).
+For a client site, use the toolkit package (v0.2.0 or later), which carries the lab's components and checks (`@thoughtfox/toolkit/type`). Copy only the thin route files from `playground/src/routes/type/` (the page, `+page.server.js` and `save/+server.js`) and pass the site's own Button as `button={Button}`. In `save/+server.js`, import `generateTokens` from `@thoughtfox/toolkit/tokens/generate-tokens.js` instead of the playground's script. The token generator writes `_type.generated.css` as soon as `typography.json` exists.
 
 ## Mapping onto the CUBE starter tokens
 

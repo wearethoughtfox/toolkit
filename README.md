@@ -1,16 +1,17 @@
 # @thoughtfox/toolkit
 
 Shared foundations for Thought Fox SvelteKit sites: CUBE CSS compositions and
-utilities (Every Layout patterns), Svelte layout primitives, and the fluid
-design-token generator. Sites keep their own tokens (colours, type, spacing
-values); this package holds everything brand-agnostic.
+utilities (Every Layout patterns), Svelte layout primitives, motion, the fluid
+design-token generator, and the palette and type tools. Sites keep their own
+tokens (colours, type, spacing values); this package holds everything
+brand-agnostic.
 
 Used by [robertocarroll.com](https://robertocarroll.com) and Root Pilates & Cafe.
 
 ## Install
 
 ```sh
-npm i -D github:wearethoughtfox/toolkit#v0.1.0
+npm i -D github:wearethoughtfox/toolkit#v0.2.0
 ```
 
 Pin a tag. Upgrade sites deliberately by bumping the tag, rebuilding, and
@@ -43,27 +44,54 @@ user skills, from this folder:
 ln -s "$PWD/.claude/skills/thoughtfox-redesign" ~/.claude/skills/thoughtfox-redesign && ln -s "$PWD/.claude/skills/thoughtfox-type" ~/.claude/skills/thoughtfox-type
 ```
 
-The playground still has its own copies of the compositions, utilities and
-token script. Making it use the package, and moving the palette and type
-tools into the package, is roadmap step 5.
+The playground installs the package from this folder
+(`"@thoughtfox/toolkit": "file:.."`) and imports it the way a site does, so a
+change to the package shows in the playground at once. Its own `src/` holds
+only what a site would hold: tokens, blocks, pages and the `/palette` and
+`/type` routes.
 
 ## What's inside
 
+One folder per area. Each has an entry for its Svelte components and
+functions (`@thoughtfox/toolkit/layout`, `/motion`, `/palette`, `/type`,
+and `/tokens` for Node); CSS and single files are imported by path.
+
 ```
-css/reset.css               Modern reset (piccalil.li)
-css/compositions/*.css      stack, cluster, sidebar, grid, switcher, cover,
-                            center, reel, frame, wrapper, repel, scene
-css/utilities/*.css         region, text, visually-hidden, reveal
-css/transitions/*/*.css     46 Segue page transitions (list: transitions.json)
-components/layout/*.svelte  Prop-based wrappers for each composition
-components/SkipLink.svelte  Accessible skip link (pair with #main-content)
-components/ScrollScene.svelte  Scroll-scrubbed sticky scene wrapper
-components/transitions/*    SVG masks for the four transitions that need them
-transitions/segue.js        segueTransitions() for onNavigate, segue() helper
-actions/reveal.js           IntersectionObserver scroll-reveal action
-actions/scroll-scene.js     scrollScene action + lerp/phase/ease helpers
-stores/motion.js            prefers-reduced-motion readable store
-scripts/generate-tokens.js  Design-token JSON → CSS custom properties
+tokens/generate-tokens.js     Design-token JSON → CSS custom properties (Node)
+tokens/check-vars.js          Finds var(--x) that nothing defines (Node)
+
+layout/reset.css              Modern reset (piccalil.li)
+layout/compositions/*.css     stack, cluster, sidebar, grid, switcher, cover,
+                              center, reel, frame, wrapper, repel
+layout/utilities/*.css        region, visually-hidden
+layout/components/*.svelte    Prop-based wrappers for each composition, and
+                              SkipLink (pair with #main-content)
+
+motion/compositions/scene.css Scroll-scene runway
+motion/utilities/reveal.css   Scroll reveal (pair with reveal.js)
+motion/transitions/*/*.css    46 Segue page transitions (list: transitions.json)
+motion/components/*.svelte    ScrollScene, and the SVG masks for the four
+                              transitions that need them
+motion/segue.js               segueTransitions() for onNavigate, segue() helper
+motion/reveal.js              IntersectionObserver scroll-reveal action
+motion/scroll-scene.js        scrollScene action + lerp/phase/ease helpers
+motion/reduced-motion.js      prefers-reduced-motion readable store
+
+palette/contrast.js           WCAG + APCA contrast data, OKLCH, tonal ramps (Node)
+palette/oklch.js, levels.js   Colour maths and labels shared by the tools
+palette/components/*.svelte   The /palette tools: PairExplorer, ContrastMatrix,
+                              TonalRamps, SchemePreview
+
+type/utilities/text.css       Text utilities, Tachyons names
+type/utilities/text-legacy.css  The v0.1.0 text utilities (old names)
+type/checks.js, css.js        typography.json checks and --type-* CSS
+type/measure.js               Browser-only measuring for the /type lab
+type/components/*.svelte      The /type lab: CandidateList, RunningText,
+                              LineBreakTest, BodyBoxes, BreakpointFinder,
+                              ScaleEditor, HierarchyLab, Measured
+
+shared/LabButton.svelte       The tools' default button (no look of its own)
+scripts/generate-tokens.js    The v0.1.0 path of the token generator
 ```
 
 ## Usage
@@ -71,9 +99,10 @@ scripts/generate-tokens.js  Design-token JSON → CSS custom properties
 ### CSS (in the site's `app.css`)
 
 ```css
-@import '@thoughtfox/toolkit/css/reset.css';
-@import '@thoughtfox/toolkit/css/compositions/stack.css';
-@import '@thoughtfox/toolkit/css/utilities/region.css';
+@import '@thoughtfox/toolkit/layout/reset.css';
+@import '@thoughtfox/toolkit/layout/compositions/stack.css';
+@import '@thoughtfox/toolkit/layout/utilities/region.css';
+@import '@thoughtfox/toolkit/type/utilities/text.css';
 /* site-local: fonts, variables, global-styles, _tokens.generated.css */
 ```
 
@@ -81,9 +110,9 @@ scripts/generate-tokens.js  Design-token JSON → CSS custom properties
 
 ```svelte
 <script>
-  import { Stack, Sidebar } from '@thoughtfox/toolkit';
+  import { Stack, Sidebar } from '@thoughtfox/toolkit/layout';
   // or directly:
-  import Stack from '@thoughtfox/toolkit/components/layout/Stack.svelte';
+  import Stack from '@thoughtfox/toolkit/layout/components/Stack.svelte';
 </script>
 
 <Stack space="var(--space-l)">…</Stack>
@@ -99,12 +128,12 @@ any movement driven by scroll progress). Import the composition CSS, then
 either the `ScrollScene` component or the raw action:
 
 ```css
-@import '@thoughtfox/toolkit/css/compositions/scene.css';
+@import '@thoughtfox/toolkit/motion/compositions/scene.css';
 ```
 
 ```svelte
 <script>
-  import { ScrollScene, lerp, phase, ease } from '@thoughtfox/toolkit';
+  import { ScrollScene, lerp, phase, ease } from '@thoughtfox/toolkit/motion';
 
   let image;
   function drive(p) {
@@ -137,7 +166,7 @@ effect recipes live in the animation-experiments repo
 CSS file each. Pick one per site and import it in `app.css`:
 
 ```css
-@import '@thoughtfox/toolkit/css/transitions/circles/circle-pop.css';
+@import '@thoughtfox/toolkit/motion/transitions/circles/circle-pop.css';
 ```
 
 Then wrap navigations in the root `+layout.svelte`:
@@ -145,13 +174,13 @@ Then wrap navigations in the root `+layout.svelte`:
 ```svelte
 <script>
   import { onNavigate } from '$app/navigation';
-  import { segueTransitions } from '@thoughtfox/toolkit';
+  import { segueTransitions } from '@thoughtfox/toolkit/motion';
   onNavigate(segueTransitions());
 </script>
 ```
 
 Going back plays the reverse (38 of the 46 have one; `backwards` in
-`css/transitions/transitions.json`), and pointer-origin transitions grow from
+`motion/transitions/transitions.json`), and pointer-origin transitions grow from
 the click. For same-page changes, `segue(() => update(), { back })`.
 
 Paint Over, Dots Radial, Dots Sweep and Grid Squares also need their masks
@@ -180,19 +209,59 @@ Sites keep token JSON in `src/lib/design-tokens/` and generate
 
 ```sh
 npm run tokens
-# each site defines: "tokens": "node node_modules/@thoughtfox/toolkit/scripts/generate-tokens.js"
+# each site defines: "tokens": "node node_modules/@thoughtfox/toolkit/tokens/generate-tokens.js"
 ```
 
 Regenerate automatically on dev/build in `vite.config.js`:
 
 ```js
-import { generateTokens } from '@thoughtfox/toolkit/scripts/generate-tokens.js';
+import { generateTokens } from '@thoughtfox/toolkit/tokens/generate-tokens.js';
 
 plugins: [
   sveltekit(),
   { name: 'tokens', buildStart: () => generateTokens() }
 ]
 ```
+
+The generator always writes `_tokens.generated.css`. It writes more only
+when the token files ask for it, so a site that uses none of these gets
+exactly the v0.1.0 output:
+
+| When | It also writes |
+|---|---|
+| `colors.json` has `colors`, `roles` and `schemes` (not the v0.1.0 `items` list) | the roles and `[data-scheme]` blocks in `_tokens.generated.css`, `src/lib/palette/contrast.generated.json` (with warnings for failing scheme pairs), and the undefined-variable check over `src/` |
+| an item in `spacing.json` has a `step` | `src/lib/css/utilities/_spacing.generated.css` (Tachyons `pa1`, `mt-l` …) |
+| `src/lib/design-tokens/typography.json` exists (the `/type` lab saves it) | `src/lib/css/global/_type.generated.css` (`--type-*`) |
+
+Each output takes a path to move it, or `false` to turn it off:
+`generateTokens({ spacingOutput, typographyOutput, contrastOutput, checkVars })`.
+`checkVars` takes the folders to scan (default `'src'`). Run the check alone
+with `node node_modules/@thoughtfox/toolkit/tokens/check-vars.js [folder …]`.
+
+### Palette and type tools
+
+The `/palette` and `/type` labs are routes in the playground, built from the
+package's components, so a site can have them too. Copy the routes from
+`playground/src/routes/palette/` and `playground/src/routes/type/` (each page
+is dev only, and `type/save/+server.js` should import `generateTokens` from
+`@thoughtfox/toolkit/tokens/generate-tokens.js`). Then pass the site's own
+Button so the tools look like the site:
+
+```svelte
+<script>
+  import { PairExplorer, SchemePreview } from '@thoughtfox/toolkit/palette';
+  import Button from '$lib/components/blocks/Button.svelte';
+  import data from '$lib/palette/contrast.generated.json';
+</script>
+
+<PairExplorer pairs={data.pairs} colors={data.colors} button={Button} />
+```
+
+`button` is any component that takes `variant` (`primary`, `secondary`,
+`ghost`) and `onclick`. Without it the tools use a plain
+`<button class="button" data-variant="…">`. The palette tools need
+`colors.json` in the roles format; the contrast script uses `apca-w3`, which
+the package installs.
 
 ## Conventions
 
@@ -201,6 +270,65 @@ plugins: [
 - `--gutter` is the shared spacing hook across cluster/grid/switcher/wrapper.
 - Blocks (buttons, cards, navs) stay in each site — they carry the brand.
 - Rule of two: nothing enters this package until at least two sites need it.
+
+## v0.2.0 (draft — not tagged yet)
+
+**Upgrading needs no code changes.** Bump the pin to `#v0.2.0`, run
+`npm install`, build and check with the snapshots. Every v0.1.0 import path
+still works and gives the same code (a few files differ only in comments),
+and the token generator gives the same output for v0.1.0 token files.
+
+**New**
+
+- The package is grouped by area: `tokens/`, `layout/`, `motion/`,
+  `palette/`, `type/` (see "What's inside"), with an entry per area:
+  `@thoughtfox/toolkit/layout`, `/motion`, `/palette`, `/type`, `/tokens`.
+  The root entry still exports the same layout and motion names.
+- The token generator takes over the playground's version: the roles and
+  schemes format for `colors.json` (with checks), Tachyons spacing
+  utilities, `--type-*` from `typography.json`, contrast data, and the
+  undefined-variable check. Each turns on only when the token files use it
+  (see "Design tokens").
+- `type/utilities/text.css`: the text utilities with Tachyons names (`.b`,
+  `.lh-copy`, `.ttu`, `.tc`, `.tracked` …).
+- The `/palette` and `/type` tools: `@thoughtfox/toolkit/palette` and
+  `@thoughtfox/toolkit/type`, with a `button` prop for the site's Button.
+- `tokens/check-vars.js` and `palette/contrast.js` as scripts.
+- Dependency: `apca-w3` (for the contrast data; loaded only when it runs,
+  which needs Node 22.12 or later).
+
+**Upgrade notes: changed paths**
+
+The old paths are kept in `package.json` `exports`, so nothing breaks. Move
+to the new path when you next work on a site; the old ones may go in v1.0.0.
+
+| v0.1.0 path (still works) | New path |
+|---|---|
+| `@thoughtfox/toolkit/css/reset.css` | `@thoughtfox/toolkit/layout/reset.css` |
+| `…/css/compositions/<name>.css` | `…/layout/compositions/<name>.css` |
+| `…/css/compositions/scene.css` | `…/motion/compositions/scene.css` |
+| `…/css/utilities/region.css`, `visually-hidden.css` | `…/layout/utilities/region.css`, `visually-hidden.css` |
+| `…/css/utilities/reveal.css` | `…/motion/utilities/reveal.css` |
+| `…/css/utilities/text.css` | `…/type/utilities/text-legacy.css` (same file). For the Tachyons names, use `…/type/utilities/text.css` and rename the classes: see `playground/UTILITY-RENAMES.md` |
+| `…/css/transitions/<group>/<name>.css`, `transitions.json` | `…/motion/transitions/<group>/<name>.css`, `transitions.json` |
+| `…/components/layout/<Name>.svelte` | `…/layout/components/<Name>.svelte` |
+| `…/components/SkipLink.svelte` | `…/layout/components/SkipLink.svelte` |
+| `…/components/ScrollScene.svelte` | `…/motion/components/ScrollScene.svelte` |
+| `…/components/transitions/<Name>Masks.svelte` | `…/motion/components/<Name>Masks.svelte` |
+| `…/actions/reveal.js` | `…/motion/reveal.js` |
+| `…/actions/scroll-scene.js` | `…/motion/scroll-scene.js` |
+| `…/stores/motion.js` | `…/motion/reduced-motion.js` |
+| `…/transitions/segue.js` | `…/motion/segue.js` |
+| `…/scripts/generate-tokens.js` (import or `node node_modules/…`) | `…/tokens/generate-tokens.js` |
+| `import { … } from '@thoughtfox/toolkit'` | unchanged; or `'@thoughtfox/toolkit/layout'` / `'/motion'` |
+
+**Not kept:** reading package files by their place on disk, such as
+`node_modules/@thoughtfox/toolkit/css/reset.css` in a `<link>` or a plain
+postcss-import setup outside Vite. Only `scripts/generate-tokens.js` is
+still a real file at its old place, because sites run it with `node`. Vite
+resolves `@thoughtfox/toolkit/…` through `exports`, so imports in CSS,
+Svelte and JS are not affected. Neither Root nor robertocarroll.com reads
+files this way.
 
 ## Releasing a change
 

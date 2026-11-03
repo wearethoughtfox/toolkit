@@ -9,5 +9,11 @@ export default defineConfig({
       name: 'tokens',
       buildStart: generateTokens
     }
-  ]
+  ],
+  server: {
+    fs: {
+      // @thoughtfox/toolkit is linked from the repo root (file:..)
+      allow: ['..']
+    }
+  }
 });

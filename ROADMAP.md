@@ -4,11 +4,11 @@ The order of work across the toolkit and the client sites, agreed on 3 November 
 
 **How it fits together:** everything shared lives in this one repo. That's the package (the top-level folders), the playground (`playground/`, which was the starter), the tools (`tools/`), the Thought Fox skills (`.claude/skills/`) and this roadmap. Work happens here once. Each site gets it only when you tag a release and bump that site's pin (`github:wearethoughtfox/toolkit#vX.Y.Z`), then check it with the snapshots. Nothing updates a site on its own.
 
-## 1. Safety net (in progress)
+## 1. Safety net (done)
 
 - [x] `tools/site-snapshots/`: screenshots every page of every site and diffs against a baseline
 - [x] Baselines for Ashbright, Brick House, Clubs, WATF and the starter (327 screenshots, 3 November)
-- [ ] Baselines for Root and robertocarroll.com (it built, then failed while serving or taking screenshots; error not seen yet): `npm run baseline -- root robertocarroll`
+- [x] Baselines for Root and robertocarroll.com (Edge, 3 November)
 - [x] Commit everything and gather it into this repo (3 November): ScrollScene, the starter as `playground/` with its history, the snapshots, the Segue bank and the skills. robertocarroll.com's redesign is pushed to its own repo
 
 ## 2. Thought Fox method skills (done)
@@ -56,9 +56,16 @@ From `emil-color`: generate OKLCH alongside hex, add APCA scores next to the WCA
 - [x] Fixed-hue tonal ramps on `/palette`: 11 steps per colour, each checked against every scheme's surface. For exploring only, not written to tokens
 - [ ] The palette skill, once Rob has used the ramps on a real choice
 
-## 5. Toolkit restructure
+## 5. Toolkit restructure (done 3 November, release not tagged yet)
 
 The pieces are now in one repo, but the playground still has its own copies of the compositions, utilities and token script. Group the package by area (tokens, layout, motion, palette, type). Make the playground import the package instead of its copies, and move the palette and type tools (`src/lib/palette`, `src/lib/type`, their components and scripts) into the package so sites can use them. Then release v0.2.0, and check it with `tools/site-snapshots` against Root and robertocarroll.com before bumping either.
+
+- [x] The package grouped by area: `tokens/`, `layout/`, `motion/`, `palette/`, `type/`, with an entry per area. Every v0.1.0 path still works (`exports` in `package.json`, and `scripts/generate-tokens.js` as a real file)
+- [x] The playground imports the package (`file:..`) instead of its copies. Its built CSS is the same, apart from Svelte scope hashes for components that are now in the package
+- [x] The palette and type tools in the package (`@thoughtfox/toolkit/palette`, `/type`); the `/palette` and `/type` routes stay in the playground and pass its Button as `button={Button}`
+- [x] v0.2.0 release notes and upgrade notes in the README
+- [ ] Rob: tag v0.2.0 after merging (`git tag v0.2.0 && git push --tags`)
+- [ ] Rob: bump Root and robertocarroll.com to `#v0.2.0` and check each with `cd tools/site-snapshots && npm run compare -- root robertocarroll`. No code changes needed
 
 ## 6. Transitions bank
 

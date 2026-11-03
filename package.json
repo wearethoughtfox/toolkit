@@ -1,7 +1,7 @@
 {
 	"name": "@thoughtfox/toolkit",
-	"version": "0.1.0",
-	"description": "Shared CUBE CSS + Every Layout foundations for Thought Fox SvelteKit sites: compositions, utilities, layout components, and the design-token generator.",
+	"version": "0.2.0",
+	"description": "Shared foundations for Thought Fox SvelteKit sites, by area: design tokens, layout (CUBE CSS + Every Layout), motion, and the palette and type tools.",
 	"type": "module",
 	"svelte": "./index.js",
 	"exports": {
@@ -9,23 +9,59 @@
 			"svelte": "./index.js",
 			"default": "./index.js"
 		},
-		"./css/*": "./css/*",
-		"./components/*": "./components/*",
-		"./actions/*": "./actions/*",
-		"./stores/*": "./stores/*",
-		"./transitions/*": "./transitions/*",
+		"./layout": {
+			"svelte": "./layout/index.js",
+			"default": "./layout/index.js"
+		},
+		"./motion": {
+			"svelte": "./motion/index.js",
+			"default": "./motion/index.js"
+		},
+		"./palette": {
+			"svelte": "./palette/index.js",
+			"default": "./palette/index.js"
+		},
+		"./type": {
+			"svelte": "./type/index.js",
+			"default": "./type/index.js"
+		},
+		"./tokens": "./tokens/index.js",
+		"./layout/*": "./layout/*",
+		"./motion/*": "./motion/*",
+		"./tokens/*": "./tokens/*",
+		"./palette/*": "./palette/*",
+		"./type/*": "./type/*",
+		"./css/reset.css": "./layout/reset.css",
+		"./css/compositions/scene.css": "./motion/compositions/scene.css",
+		"./css/compositions/*": "./layout/compositions/*",
+		"./css/utilities/reveal.css": "./motion/utilities/reveal.css",
+		"./css/utilities/text.css": "./type/utilities/text-legacy.css",
+		"./css/utilities/*": "./layout/utilities/*",
+		"./css/transitions/*": "./motion/transitions/*",
+		"./components/SkipLink.svelte": "./layout/components/SkipLink.svelte",
+		"./components/ScrollScene.svelte": "./motion/components/ScrollScene.svelte",
+		"./components/layout/*": "./layout/components/*",
+		"./components/transitions/*": "./motion/components/*",
+		"./actions/reveal.js": "./motion/reveal.js",
+		"./actions/scroll-scene.js": "./motion/scroll-scene.js",
+		"./stores/motion.js": "./motion/reduced-motion.js",
+		"./transitions/segue.js": "./motion/segue.js",
 		"./scripts/*": "./scripts/*",
 		"./package.json": "./package.json"
 	},
 	"files": [
 		"index.js",
-		"actions",
-		"components",
-		"css",
-		"scripts",
-		"stores",
-		"transitions"
+		"layout",
+		"motion",
+		"palette",
+		"tokens",
+		"type",
+		"shared",
+		"scripts"
 	],
+	"dependencies": {
+		"apca-w3": "^0.1.9"
+	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"
 	},
