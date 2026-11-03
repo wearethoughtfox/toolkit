@@ -13,10 +13,17 @@
   import Prose from '$lib/components/blocks/Prose.svelte';
   import FeatureBlock from '$lib/components/blocks/FeatureBlock.svelte';
   import typography from '$lib/design-tokens/typography.json';
+  import colors from '$lib/design-tokens/colors.json';
 
   // The type specimen is drawn from the scale itself, largest first
   const scale = [...typography.scale].reverse();
   const px = (s) => `${s.size}/${s.leading}`;
+
+  // Every scheme with its full set of roles: a scheme only lists what it changes
+  const schemes = [
+    ['default', colors.roles],
+    ...Object.entries(colors.schemes).map(([name, roles]) => [name, { ...colors.roles, ...roles }])
+  ];
 </script>
 
 <svelte:head>
@@ -186,13 +193,13 @@
     <Stack space="var(--space-l)">
       <h2>Sidebar</h2>
       <Sidebar>
-        <aside style="background: var(--color-dark-glare); padding: var(--space-m); border-radius: var(--radius-m);">
+        <aside class="panel">
           <Stack space="var(--space-s)">
             <h3>Sidebar</h3>
             <p>Fixed-width (20rem). Stacks when the viewport is too narrow for both panes.</p>
           </Stack>
         </aside>
-        <div style="background: var(--color-dark-glare); padding: var(--space-m); border-radius: var(--radius-m);">
+        <div class="panel">
           <Stack space="var(--space-s)">
             <h3>Main content</h3>
             <p>This pane grows to fill available space, with a minimum width of 50% before stacking.</p>
@@ -209,8 +216,8 @@
     <Stack space="var(--space-l)">
       <h2>Switcher</h2>
       <Switcher threshold="32rem">
-        <div style="background: var(--color-dark-glare); padding: var(--space-m); border-radius: var(--radius-m);">Item A — switches to stacked below 32rem</div>
-        <div style="background: var(--color-dark-glare); padding: var(--space-m); border-radius: var(--radius-m);">Item B</div>
+        <div class="panel">Item A — switches to stacked below 32rem</div>
+        <div class="panel">Item B</div>
       </Switcher>
     </Stack>
   </Wrapper>
@@ -223,13 +230,7 @@
       <h2>Reel</h2>
       <Reel itemWidth="16rem">
         {#each Array(8) as _, i}
-          <div style="
-            background: var(--color-dark-glare);
-            padding: var(--space-m);
-            border-radius: var(--radius-m);
-            flex-shrink: 0;
-            width: 16rem;
-          ">
+          <div class="panel" style="flex-shrink: 0; width: 16rem;">
             Reel item {i + 1}
           </div>
         {/each}
@@ -266,24 +267,35 @@
       <p>Edit <code>src/lib/design-tokens/*.json</code> and run <code>npm run tokens</code> to regenerate all CSS custom properties.</p>
 
       <h3>Colour palette</h3>
-      <Cluster>
-        {#each [
-          ['Dark', 'var(--color-dark)', 'var(--color-light)'],
-          ['Dark glare', 'var(--color-dark-glare)', 'var(--color-light)'],
-          ['Mid', 'var(--color-mid)', 'var(--color-dark)'],
-          ['Light', 'var(--color-light)', 'var(--color-dark)'],
-          ['Primary', 'var(--color-primary)', 'var(--color-dark)'],
-        ] as [name, bg, fg]}
-          <div style="
-            background: {bg};
-            color: {fg};
-            padding: var(--space-s) var(--space-m);
-            border-radius: var(--radius-s);
-            font-size: var(--type-label-size);
-            font-weight: var(--font-bold);
-          ">{name}</div>
+      <p>The colours in <code>colors.json</code>. Components never use these names; they use the roles below.</p>
+      <ul role="list" class="cluster swatches">
+        {#each Object.entries(colors.colors) as [name, hex]}
+          <li class="swatch">
+            <span class="swatch__chip" style:background={hex}></span>
+            <code>{name}</code>
+            <code>{hex}</code>
+          </li>
         {/each}
-      </Cluster>
+      </ul>
+
+      <h3>Roles and schemes</h3>
+      <p>Each box is a real <code>data-scheme</code> container, so its surface and text are that scheme's. The contrast checks for each scheme are on <code>/palette</code> (development only).</p>
+      <Grid minItemSize="18rem">
+        {#each schemes as [scheme, roles]}
+          <div data-scheme={scheme} class="scheme-box stack" style:--stack-space="var(--space-s)">
+            <p class="meta">data-scheme="{scheme}"</p>
+            <ul role="list" class="stack" style:--stack-space="var(--space-2xs)">
+              {#each Object.entries(roles) as [role, color]}
+                <li class="swatch">
+                  <span class="swatch__chip" style:background={colors.colors[color]}></span>
+                  <code>--{role}</code>
+                  <code>{color}</code>
+                </li>
+              {/each}
+            </ul>
+          </div>
+        {/each}
+      </Grid>
 
       <h3>Spacing scale</h3>
       <Stack space="var(--space-xs)">
@@ -297,7 +309,7 @@
         ] as [name, val]}
           <div style="display: flex; align-items: center; gap: var(--space-m);">
             <div style="
-              background: var(--color-primary);
+              background: var(--primary);
               height: 1rem;
               width: {val};
               border-radius: var(--radius-s);
@@ -325,6 +337,43 @@
 
   .clay-section :global(h3) {
     color: var(--color-ground);
+  }
+
+  .panel {
+    background: var(--surface-raised);
+    padding: var(--space-m);
+    border-radius: var(--radius-m);
+  }
+
+  .swatches {
+    --gutter: var(--space-m);
+  }
+
+  .swatch {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-leading);
+  }
+
+  .swatch code {
+    background: none;
+    padding: 0;
+  }
+
+  .swatch__chip {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+    border-radius: var(--radius-s);
+    outline: 1px solid currentColor;
+    flex-shrink: 0;
+  }
+
+  .scheme-box {
+    padding: var(--space-m);
+    border-radius: var(--radius-m);
+    outline: 1px solid var(--border);
   }
 
   .type-specimen-row {

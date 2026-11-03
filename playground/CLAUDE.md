@@ -39,7 +39,7 @@ This writes `_tokens.generated.css` with all `--color-*`, `--space-*`, `--size-s
 The generator is the toolkit package's (`@thoughtfox/toolkit/tokens/generate-tokens.js`); `scripts/generate-tokens.js` only adds the toolkit folders to the undefined-variable check. The `/palette` and `/type` routes are here, but their components and checks are in the package (`palette/` and `type/` at the repo root). Each route passes this playground's `Button` to the tools as `button={Button}`.
 
 Token files:
-- `colors.json` — palette
+- `colors.json` — colours, roles and schemes (see `PALETTE-PLAN.md`). Blocks and global styles use the roles (`--surface`, `--text`, `--heading`, `--primary`, `--on-primary`, `--accent`, `--border`, `--focus-ring`), never `--color-*`, so `data-scheme="…"` switches them. `--surface-raised` (in `global-styles.css`) is a panel mixed from `--text` and `--surface`, for cards and demo boxes. `npm run check:vars` lists any variable that is used but never defined
 - `spacing.json` — fluid spacing scale (min/max px → clamp())
 - `text-sizes.json` — fluid type scale
 - `text-leading.json` — line-height values

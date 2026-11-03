@@ -28,7 +28,7 @@
 
 <style>
   .card {
-    background: var(--color-dark-glare);
+    background: var(--surface-raised);
     border-radius: var(--radius-m);
     overflow: hidden;
     display: flex;
@@ -63,7 +63,7 @@
   }
 
   .card__link:hover {
-    color: var(--color-primary);
+    color: var(--primary);
   }
 
   @media (prefers-reduced-motion: no-preference) {

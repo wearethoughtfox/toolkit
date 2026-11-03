@@ -21,7 +21,7 @@
 
   .site-foot__credit {
     font-size: var(--type-small-size);
-    color: var(--color-mid);
+    color: var(--text);
     max-width: unset;
   }
 </style>

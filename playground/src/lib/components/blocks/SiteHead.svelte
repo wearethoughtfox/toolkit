@@ -31,7 +31,7 @@
     font-size: var(--type-h3-size);
     line-height: var(--type-h3-leading);
     text-decoration: none;
-    color: var(--color-primary);
+    color: var(--primary);
     letter-spacing: var(--uppercase-kerning);
     text-transform: uppercase;
   }

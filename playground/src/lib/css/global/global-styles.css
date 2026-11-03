@@ -4,14 +4,28 @@
 */
 
 /*
+  Colour: use the roles (--surface, --text, --heading, --primary, --on-primary,
+  --accent, --border, --focus-ring) from colors.json, never --color-* names,
+  so data-scheme="…" can switch them.
+
+  --surface-raised is a panel a step lighter (or darker) than its surface,
+  for cards and demo boxes. No palette colour does this job, so it's mixed
+  from two roles. It's set again on every scheme container so that it
+  follows that scheme's roles.
+*/
+:where(:root, [data-scheme]) {
+  --surface-raised: color-mix(in srgb, var(--text) 6%, var(--surface));
+}
+
+/*
   Type comes from typography.json (the /type lab) through the --type-* tokens
   in _type.generated.css. Each step brings its face, weight, size and
   line-height (a unitless ratio). Steps: label, small, body, h3, h2, h1.
 */
 
 body {
-  background: var(--color-ground);
-  color: var(--color-clay);
+  background: var(--surface);
+  color: var(--text);
   font-family: var(--type-body-font);
   font-size: var(--type-body-size);
   font-weight: var(--type-body-weight);
@@ -37,7 +51,7 @@ h1 {
   line-height: var(--type-h1-leading);
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  color: var(--color-olive-oil);
+  color: var(--heading);
   max-width: 20ch;
 }
 
@@ -49,7 +63,7 @@ h2 {
   line-height: var(--type-h2-leading);
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  color: var(--color-olive-oil);
+  color: var(--heading);
   max-width: 28ch;
 }
 
@@ -100,8 +114,8 @@ p {
 
 ins {
   text-decoration: none;
-  background: var(--color-primary);
-  color: var(--color-dark);
+  background: var(--primary);
+  color: var(--on-primary);
   padding-inline: 0.3em;
 }
 
@@ -194,7 +208,7 @@ dd {
 }
 
 a:not([class]) {
-  color: var(--color-olive-oil);
+  color: var(--primary);
   text-underline-offset: 0.2em;
 }
 

@@ -22,7 +22,7 @@
   }
 
   .prose :global(a) {
-    color: var(--color-primary);
+    color: var(--primary);
     text-underline-offset: 0.2em;
   }
 
@@ -31,7 +31,7 @@
   }
 
   .prose :global(blockquote) {
-    border-inline-start: 4px solid var(--color-primary);
+    border-inline-start: 4px solid var(--border);
     padding-inline-start: var(--space-m);
     font-size: var(--type-h3-size);
     line-height: var(--type-h3-leading);
