@@ -16,7 +16,11 @@ function fluid(min, max, from, to) {
   if (min === max) return rem(min);
   const slope = (max - min) / (to - from);
   const intercept = min - slope * from;
-  return `clamp(${rem(min)}, ${rem(intercept)} + ${+(slope * 100).toFixed(4)}vw, ${rem(max)})`;
+  // clamp() takes its bounds in order. A value that gets smaller (a
+  // line-height that tightens as the size grows) has its ends swapped, or
+  // CSS would keep it at the small end's value.
+  const [lower, upper] = min < max ? [min, max] : [max, min];
+  return `clamp(${rem(lower)}, ${rem(intercept)} + ${+(slope * 100).toFixed(4)}vw, ${rem(upper)})`;
 }
 
 /** Size and line-height in px for one step at a viewport width */
