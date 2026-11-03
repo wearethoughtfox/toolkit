@@ -1,0 +1,99 @@
+/* Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue */
+/*
+  Segue: Paint Over (paint: strokes: 5, wobble: 0.45, slant: -6, seed: 7)
+
+  Needs markup: one inline <svg> holding the masks (copied below the CSS).
+  Put it anywhere in <body>, on every page that transitions; it takes no
+  space. The masks animate while a view transition runs, so there's still
+  no JS to add.
+
+  Drop this in and any view transition on the page uses it:
+  - same page:   document.startViewTransition(() => updateTheDOM())
+  - across pages: the @view-transition rule below opts same-origin
+    navigations in; it needs to be on both pages.
+  Reduced motion falls back to the default crossfade.
+*/
+
+@view-transition {
+  navigation: auto;
+}
+
+:root {
+  --segue-lead-color: #ff9cc0;
+  --segue-trail-color: #3b1d5a;
+  --segue-ease: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.segue-masks {
+  position: fixed;
+  pointer-events: none;
+}
+/* keeps the transition open while the masks (which live in the page, not on
+   the pseudos) do the animating -- with a little slack, since the two start
+   on their own clocks */
+@keyframes segue-hold {
+  to { opacity: 1; }
+}
+.segue-masks path {
+  stroke-dasharray: 1 2;
+  stroke-dashoffset: 1;
+}
+.segue-page-fill {
+  opacity: 0;
+}
+@keyframes segue-paint {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes segue-paint-fill {
+  0%, 92% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:active-view-transition .segue-lead {
+    animation: segue-paint 0.8s var(--segue-ease) 0s both;
+  }
+  :root:active-view-transition .segue-trail {
+    animation: segue-paint 0.8s var(--segue-ease) 0.08s both;
+  }
+  :root:active-view-transition .segue-page {
+    animation: segue-paint 0.8s var(--segue-ease) 0.16s both;
+  }
+  :root:active-view-transition .segue-page-fill {
+    animation: segue-paint-fill 0.8s linear 0.16s both;
+  }
+
+  ::view-transition-group(root) {
+    background: var(--segue-lead-color);
+    animation: segue-hold 1.01s linear both;
+  }
+  ::view-transition-image-pair(root) {
+    background: var(--segue-trail-color);
+    mask: url(#segue-pair);
+  }
+  ::view-transition-old(root) {
+    mix-blend-mode: normal;
+    animation: none;
+    mask: url(#segue-old);
+  }
+  ::view-transition-new(root) {
+    mix-blend-mode: normal;
+    animation: none;
+    mask: url(#segue-page);
+  }
+}
+
+/*
+  Backwards: the same move, the other way, for going back. It runs when the
+  view transition carries the type "backwards":
+  - same page:   document.startViewTransition({ update, types: ['backwards'] })
+  - across pages: in a 'pagereveal' listener, when the navigation went back,
+    event.viewTransition.types.add('backwards')
+*/
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:active-view-transition-type(backwards) .segue-flip {
+    transform: rotate(180deg);
+    transform-origin: 0.5px 0.5px;
+  }
+}

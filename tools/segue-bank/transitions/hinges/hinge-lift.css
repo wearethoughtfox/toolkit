@@ -1,0 +1,97 @@
+/* Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue */
+/*
+  Segue: Hinge Lift (hinge: edge: top, perspective: 160, depth: 24, dim: 0.35)
+
+  Drop this in and any view transition on the page uses it:
+  - same page:   document.startViewTransition(() => updateTheDOM())
+  - across pages: the @view-transition rule below opts same-origin
+    navigations in; it needs to be on both pages.
+  Reduced motion falls back to the default crossfade.
+*/
+
+@view-transition {
+  navigation: auto;
+}
+
+:root {
+  --segue-lead-color: #b5f0cf;
+  --segue-duration: 0.8s;
+}
+
+@keyframes segue-hinge-out {
+  0% {
+    transform: rotateX(0deg);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.6, 0.75);
+  }
+  62% {
+    transform: rotateX(-111.354deg);
+  }
+  100% {
+    transform: rotateX(-111.354deg);
+  }
+}
+@keyframes segue-hinge-in {
+  0% {
+    transform: translateZ(-24vmax);
+    filter: brightness(0.65);
+    animation-timing-function: linear;
+  }
+  58% {
+    transform: translateZ(-24vmax);
+    filter: brightness(0.65);
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  100% {
+    transform: translateZ(0vmax);
+    filter: brightness(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(root) {
+    animation: none;
+    background: var(--segue-lead-color);
+  }
+  ::view-transition-image-pair(root) {
+    perspective: 160vmax;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    mix-blend-mode: normal;
+    animation-duration: var(--segue-duration);
+    animation-fill-mode: both;
+  }
+  ::view-transition-old(root) {
+    animation-name: segue-hinge-out;
+    transform-origin: 50% 0%;
+    backface-visibility: hidden;
+    z-index: 1;
+  }
+  ::view-transition-new(root) {
+    animation-name: segue-hinge-in;
+  }
+}
+
+/*
+  Backwards: the same move, the other way, for going back. It runs when the
+  view transition carries the type "backwards":
+  - same page:   document.startViewTransition({ update, types: ['backwards'] })
+  - across pages: in a 'pagereveal' listener, when the navigation went back,
+    event.viewTransition.types.add('backwards')
+*/
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:active-view-transition-type(backwards)::view-transition-old(root) {
+    animation-name: segue-hinge-in;
+    animation-direction: reverse;
+    transform-origin: initial;
+    backface-visibility: initial;
+    z-index: auto;
+  }
+  :root:active-view-transition-type(backwards)::view-transition-new(root) {
+    animation-name: segue-hinge-out;
+    animation-direction: reverse;
+    transform-origin: 50% 0%;
+    backface-visibility: hidden;
+  }
+}

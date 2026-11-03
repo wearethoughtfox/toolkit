@@ -1,0 +1,120 @@
+/* Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue */
+/*
+  Segue: Diagonal Up (slide: angle: -45)
+
+  Drop this in and any view transition on the page uses it:
+  - same page:   document.startViewTransition(() => updateTheDOM())
+  - across pages: the @view-transition rule below opts same-origin
+    navigations in; it needs to be on both pages.
+  No extra markup needed. Reduced motion falls back to the default crossfade.
+*/
+
+@view-transition {
+  navigation: auto;
+}
+
+@property --segue-lead {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+@property --segue-trail {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+@property --segue-page {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+@keyframes segue-lead {
+  to { --segue-lead: 1; }
+}
+@keyframes segue-trail {
+  to { --segue-trail: 1; }
+}
+@keyframes segue-page {
+  to { --segue-page: 1; }
+}
+
+:root {
+  --segue-lead-color: #7ef0c5;
+  --segue-trail-color: #2f45b8;
+  --segue-duration: 0.8s;
+  --segue-gap: 0.08s;
+  --segue-ease: cubic-bezier(0.65, 0, 0.35, 1);
+  /* the pointer origin; set these from JS to grow from a click */
+  --segue-x: 50vw;
+  --segue-y: 50vh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(root) {
+    animation: none;
+    background: var(--segue-lead-color);
+  }
+  ::view-transition-image-pair(root) {
+    background: var(--segue-trail-color);
+    animation: segue-lead var(--segue-duration) var(--segue-ease) 0s both,
+      segue-trail var(--segue-duration) var(--segue-ease) var(--segue-gap) both;
+    clip-path: shape(evenodd from -1% -1%, hline to 101%, vline to 101%, hline to -1%, close, move to calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + 0.7071 * ((var(--segue-lead) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + -0.7071 * ((var(--segue-lead) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + 0.7071 * ((var(--segue-lead) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + -0.7071 * ((var(--segue-lead) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)), line to calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)), close, move to calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + 0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + -0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + 0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + -0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)), line to calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)), close);
+  }
+  ::view-transition-old(root) {
+    mix-blend-mode: normal;
+    animation: segue-trail var(--segue-duration) var(--segue-ease) var(--segue-gap) both;
+    clip-path: shape(evenodd from -1% -1%, hline to 101%, vline to 101%, hline to -1%, close, move to calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + 0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + -0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + 0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + -0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)), line to calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)), close);
+  }
+  ::view-transition-new(root) {
+    mix-blend-mode: normal;
+    animation: segue-page var(--segue-duration) var(--segue-ease) calc(var(--segue-gap) * 2) both;
+    clip-path: shape(evenodd from calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + 0.7071 * ((var(--segue-page) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + -0.7071 * ((var(--segue-page) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + 0.7071 * ((var(--segue-page) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + -0.7071 * ((var(--segue-page) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)), line to calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + 0.7071 * (35.3553vw + 35.3553vh + 1px)), close);
+  }
+}
+
+
+/*
+  Backwards: the same move, the other way, for going back. It runs when the
+  view transition carries the type "backwards":
+  - same page:   document.startViewTransition({ update, types: ['backwards'] })
+  - across pages: in a 'pagereveal' listener, when the navigation went back,
+    event.viewTransition.types.add('backwards')
+*/
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:active-view-transition-type(backwards)::view-transition-group(root),
+  :root:active-view-transition-type(backwards)::view-transition-image-pair(root),
+  :root:active-view-transition-type(backwards)::view-transition-old(root),
+  :root:active-view-transition-type(backwards)::view-transition-new(root) {
+    animation: none;
+    clip-path: none;
+    mask: none;
+    transform: none;
+    filter: none;
+    box-shadow: none;
+    background: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:active-view-transition-type(backwards)::view-transition-group(root) {
+    animation: none;
+    background: var(--segue-lead-color);
+  }
+  :root:active-view-transition-type(backwards)::view-transition-image-pair(root) {
+    background: var(--segue-trail-color);
+    animation: segue-lead var(--segue-duration) var(--segue-ease) 0s both,
+      segue-trail var(--segue-duration) var(--segue-ease) var(--segue-gap) both;
+    clip-path: shape(evenodd from -1% -1%, hline to 101%, vline to 101%, hline to -1%, close, move to calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + -0.7071 * ((var(--segue-lead) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + 0.7071 * ((var(--segue-lead) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + -0.7071 * ((var(--segue-lead) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + 0.7071 * ((var(--segue-lead) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)), line to calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)), close, move to calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + -0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + 0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + -0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + 0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)), line to calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)), close);
+  }
+  :root:active-view-transition-type(backwards)::view-transition-old(root) {
+    mix-blend-mode: normal;
+    animation: segue-trail var(--segue-duration) var(--segue-ease) var(--segue-gap) both;
+    clip-path: shape(evenodd from -1% -1%, hline to 101%, vline to 101%, hline to -1%, close, move to calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + -0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + 0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + -0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + 0.7071 * ((var(--segue-trail) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)), line to calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)), close);
+  }
+  :root:active-view-transition-type(backwards)::view-transition-new(root) {
+    mix-blend-mode: normal;
+    animation: segue-page var(--segue-duration) var(--segue-ease) calc(var(--segue-gap) * 2) both;
+    clip-path: shape(evenodd from calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + -0.7071 * ((var(--segue-page) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))) calc(50% + 0.7071 * ((var(--segue-page) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px))), line to calc(50% + -0.7071 * ((var(--segue-page) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + 0.7071 * ((var(--segue-page) * 2 - 1) * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)), line to calc(50% + -0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)) calc(50% + 0.7071 * (-1 * (35.3553vw + 35.3553vh + 1px)) + -0.7071 * (35.3553vw + 35.3553vh + 1px)), close);
+  }
+}

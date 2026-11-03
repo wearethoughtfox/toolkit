@@ -1,0 +1,98 @@
+/* Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue */
+/*
+  Segue: Card Flip (flip: axis: 90, direction: forward, perspective: 120, depth: 60, lift: 1, move: 0.35, turn: 0.8, turnEase: sine.inOut)
+
+  Drop this in and any view transition on the page uses it:
+  - same page:   document.startViewTransition(() => updateTheDOM())
+  - across pages: the @view-transition rule below opts same-origin
+    navigations in; it needs to be on both pages.
+  Reduced motion falls back to the default crossfade.
+*/
+
+@view-transition {
+  navigation: auto;
+}
+
+:root {
+  --segue-lead-color: #8fd3ff;
+  /* out 0.35s, turn 0.8s, back 0.35s */
+  --segue-duration: 1.5s;
+}
+
+@keyframes segue-turn-out {
+  0% {
+    transform: perspective(120vmax) translateZ(calc(0vmax + (50vw + 0vh) * 0)) rotate3d(0, 1, 0, 0deg);
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  23.333% {
+    transform: perspective(120vmax) translateZ(calc(-60vmax + (50vw + 0vh) * 1)) rotate3d(0, 1, 0, 0deg);
+    animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+  }
+  76.667% {
+    transform: perspective(120vmax) translateZ(calc(-60vmax + (50vw + 0vh) * 1)) rotate3d(0, 1, 0, 180deg);
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  100% {
+    transform: perspective(120vmax) translateZ(calc(0vmax + (50vw + 0vh) * 0)) rotate3d(0, 1, 0, 180deg);
+  }
+}
+@keyframes segue-turn-in {
+  0% {
+    transform: perspective(120vmax) translateZ(calc(0vmax + (50vw + 0vh) * 0)) rotate3d(0, 1, 0, -180deg);
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  23.333% {
+    transform: perspective(120vmax) translateZ(calc(-60vmax + (50vw + 0vh) * 1)) rotate3d(0, 1, 0, -180deg);
+    animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+  }
+  76.667% {
+    transform: perspective(120vmax) translateZ(calc(-60vmax + (50vw + 0vh) * 1)) rotate3d(0, 1, 0, 0deg);
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  100% {
+    transform: perspective(120vmax) translateZ(calc(0vmax + (50vw + 0vh) * 0)) rotate3d(0, 1, 0, 0deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(root) {
+    animation: none;
+    background: var(--segue-lead-color);
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    mix-blend-mode: normal;
+    animation-duration: var(--segue-duration);
+    animation-fill-mode: both;
+  }
+  ::view-transition-old(root) {
+    animation-name: segue-turn-out;
+    backface-visibility: hidden;
+  }
+  ::view-transition-new(root) {
+    animation-name: segue-turn-in;
+    backface-visibility: hidden;
+  }
+}
+
+/*
+  Backwards: the same move, the other way, for going back. It runs when the
+  view transition carries the type "backwards":
+  - same page:   document.startViewTransition({ update, types: ['backwards'] })
+  - across pages: in a 'pagereveal' listener, when the navigation went back,
+    event.viewTransition.types.add('backwards')
+*/
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:active-view-transition-type(backwards)::view-transition-old(root) {
+    animation-name: segue-turn-in;
+    animation-direction: reverse;
+    backface-visibility: hidden;
+    z-index: 1;
+  }
+  :root:active-view-transition-type(backwards)::view-transition-new(root) {
+    animation-name: segue-turn-out;
+    animation-direction: reverse;
+    backface-visibility: hidden;
+  }
+}

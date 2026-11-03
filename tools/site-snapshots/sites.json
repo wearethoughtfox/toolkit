@@ -1,0 +1,13 @@
+{
+  "widths": [375, 768, 1280],
+  "maxPages": 80,
+  "sites": [
+    { "name": "ashbright", "dir": "../../../ashbright-site", "port": 5201 },
+    { "name": "brickhouse", "dir": "../../../brickhouse-site", "port": 5202, "paths": ["/thanks"] },
+    { "name": "clubs", "dir": "../../../clubs-site", "port": 5203 },
+    { "name": "watf", "dir": "../../../wearethoughtfox-site", "port": 5204 },
+    { "name": "starter", "dir": "../../playground", "port": 5205, "paths": ["/palette"] },
+    { "name": "root", "dir": "../../../root-pilates-cafe", "port": 5206 },
+    { "name": "robertocarroll", "dir": "../../../robertocarroll", "port": 5207 }
+  ]
+}

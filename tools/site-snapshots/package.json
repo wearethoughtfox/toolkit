@@ -1,0 +1,15 @@
+{
+  "name": "site-snapshots",
+  "private": true,
+  "type": "module",
+  "description": "Screenshot every page of each Thought Fox site and diff against a baseline",
+  "scripts": {
+    "baseline": "node snap.js baseline",
+    "compare": "node snap.js compare"
+  },
+  "dependencies": {
+    "pixelmatch": "^8.0.0",
+    "playwright": "1.58",
+    "pngjs": "^7.0.0"
+  }
+}

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Segue transitions demo</title>
+  <script src="../segue.js"></script>
+  <script src="catalogue.js"></script>
+  <script>
+    // Pick the transition before first render so cross-page navigations use it
+    const params = new URLSearchParams(location.search)
+    let chosen = params.get('t')
+    try { chosen ||= localStorage.getItem('segue:demo') } catch {}
+    window.current = SEGUE_TRANSITIONS.find((t) => t.slug === chosen) || SEGUE_TRANSITIONS[0]
+    document.write(`<link rel="stylesheet" id="segue-css" href="../${current.css}">`)
+  </script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      background: var(--bg);
+      color: var(--fg);
+    }
+    body[data-scene="0"] { --bg: #f4f1ea; --fg: #1d1b18; }
+    body[data-scene="1"] { --bg: #1d1b18; --fg: #f4f1ea; }
+    body[data-scene="2"] { --bg: #ffd8c2; --fg: #3b1608; }
+    body[data-scene="3"] { --bg: #0f2a3d; --fg: #d9f1ff; }
+    .bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: Canvas;
+      color: CanvasText;
+      border-bottom: 1px solid color-mix(in srgb, CanvasText 15%, transparent);
+    }
+    .bar select, .bar button, .bar a {
+      font: inherit;
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.4rem;
+      border: 1px solid color-mix(in srgb, CanvasText 25%, transparent);
+      background: Canvas;
+      color: CanvasText;
+      text-decoration: none;
+    }
+    #segue-markup { display: contents; }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .bar .note { margin-inline-start: auto; font-size: 0.85rem; opacity: 0.7; }
+    .scene {
+      display: grid;
+      place-content: center;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .scene h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 10vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+    }
+    .scene p { margin: 1rem 0 0; font-size: 1.1rem; opacity: 0.75; }
+  </style>
+</head>
+<body data-scene="0">
+  <div id="segue-markup"></div>
+  <script>
+    document.getElementById('segue-markup').innerHTML = current.markupHtml || ''
+  </script>
+
+  <nav class="bar" aria-label="Demo controls">
+    <label for="pick" class="visually-hidden">Transition</label>
+    <select id="pick"></select>
+    <button type="button" data-step="-1">← Back</button>
+    <button type="button" data-step="1">Next →</button>
+    <a id="next-page" href="?p=2">Next page (cross-document) →</a>
+    <span class="note" id="note"></span>
+  </nav>
+
+  <main class="scene">
+    <h1 id="title"></h1>
+    <p id="line"></p>
+  </main>
+
+  <script>
+    const scenes = [
+      ['A change<br>of pace.', 'One page becomes another.'],
+      ['Different<br>perspective.', 'Same content, new view.'],
+      ['Turn<br>the page.', 'Back plays it in reverse.'],
+      ['Quiet,<br>then not.', 'Then round again.'],
+    ]
+    const [title, line, pick, note] = ['title', 'line', 'pick', 'note'].map((id) => document.getElementById(id))
+    const page = Number(params.get('p') || 1)
+    let scene = (page - 1) % scenes.length
+
+    const render = () => {
+      document.body.dataset.scene = scene
+      title.innerHTML = scenes[scene][0]
+      line.textContent = `Page ${page} · ${scenes[scene][1]}`
+    }
+    render()
+
+    // Picker, grouped by family
+    const groups = {}
+    for (const t of SEGUE_TRANSITIONS) (groups[t.family] ||= []).push(t)
+    for (const [family, items] of Object.entries(groups)) {
+      const group = document.createElement('optgroup')
+      group.label = family
+      for (const t of items) group.append(new Option(t.name, t.slug, false, t === current))
+      pick.append(group)
+    }
+
+    const describe = () => {
+      note.textContent = [
+        current.markup && 'needs SVG markup',
+        !current.backwards && 'no reverse for back',
+      ].filter(Boolean).join(' · ')
+      document.getElementById('next-page').href = `?p=${page + 1}`
+    }
+    describe()
+
+    pick.addEventListener('change', () => {
+      current = SEGUE_TRANSITIONS.find((t) => t.slug === pick.value)
+      try { localStorage.setItem('segue:demo', current.slug) } catch {}
+      document.getElementById('segue-css').href = `../${current.css}`
+      document.getElementById('segue-markup').innerHTML = current.markupHtml || ''
+      describe()
+    })
+
+    document.querySelectorAll('[data-step]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const step = Number(button.dataset.step)
+        segue(() => {
+          scene = (scene + step + scenes.length) % scenes.length
+          render()
+        }, { back: step < 0 })
+      })
+    })
+  </script>
+</body>
+</html>

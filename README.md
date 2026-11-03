@@ -16,6 +16,37 @@ npm i -D github:wearethoughtfox/toolkit#v0.1.0
 Pin a tag. Upgrade sites deliberately by bumping the tag, rebuilding, and
 checking the site — never track a branch.
 
+## This repo
+
+Everything shared is worked on here, once. Sites get a change only when
+you tag a release and bump that site's pin.
+
+```
+(top-level folders)   The package, listed below. Only these are installed
+                      (see "files" in package.json)
+playground/           The former sveltekit-cube-starter: demo pages, the
+                      /palette and /type labs (dev only). cd playground &&
+                      npm install && npm run dev
+tools/site-snapshots/ Screenshots every page of each site and diffs them
+                      against a baseline: run before and after a bump
+tools/segue-bank/     The 46 Segue transitions with their demo page
+                      (python3 -m http.server, then open demo/)
+.claude/skills/       thoughtfox-redesign and thoughtfox-type. They load in
+                      any Claude session in this repo, including cloud ones
+ROADMAP.md            The order of work
+```
+
+To use the skills while working in a site's own repo, link them into your
+user skills, from this folder:
+
+```bash
+ln -s "$PWD/.claude/skills/thoughtfox-redesign" ~/.claude/skills/thoughtfox-redesign && ln -s "$PWD/.claude/skills/thoughtfox-type" ~/.claude/skills/thoughtfox-type
+```
+
+The playground still has its own copies of the compositions, utilities and
+token script. Making it use the package, and moving the palette and type
+tools into the package, is roadmap step 5.
+
 ## What's inside
 
 ```

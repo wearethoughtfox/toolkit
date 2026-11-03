@@ -1,0 +1,83 @@
+/* Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue */
+/*
+  Segue: Focus Pull (focus: blur: 16, zoom: 0.08)
+
+  Drop this in and any view transition on the page uses it:
+  - same page:   document.startViewTransition(() => updateTheDOM())
+  - across pages: the @view-transition rule below opts same-origin
+    navigations in; it needs to be on both pages.
+  Reduced motion falls back to the default crossfade.
+*/
+
+@view-transition {
+  navigation: auto;
+}
+
+:root {
+  --segue-duration: 0.8s;
+}
+
+@keyframes segue-focus-out {
+  0% {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  100% {
+    transform: scale(1.128);
+    filter: blur(16px);
+    opacity: 0;
+  }
+}
+@keyframes segue-focus-in {
+  0% {
+    transform: scale(1.088);
+    filter: blur(16px);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(root) {
+    animation: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    mix-blend-mode: plus-lighter;
+    animation-duration: var(--segue-duration);
+    animation-fill-mode: both;
+  }
+  ::view-transition-old(root) {
+    animation-name: segue-focus-out;
+  }
+  ::view-transition-new(root) {
+    animation-name: segue-focus-in;
+  }
+}
+
+/*
+  Backwards: the same move, the other way, for going back. It runs when the
+  view transition carries the type "backwards":
+  - same page:   document.startViewTransition({ update, types: ['backwards'] })
+  - across pages: in a 'pagereveal' listener, when the navigation went back,
+    event.viewTransition.types.add('backwards')
+*/
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:active-view-transition-type(backwards)::view-transition-old(root) {
+    animation-name: segue-focus-in;
+    animation-direction: reverse;
+    z-index: 1;
+  }
+  :root:active-view-transition-type(backwards)::view-transition-new(root) {
+    animation-name: segue-focus-out;
+    animation-direction: reverse;
+  }
+}
