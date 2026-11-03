@@ -11,7 +11,12 @@
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     // Development-only tools
-    ...(dev ? [{ href: '/palette', label: 'Palette' }] : [])
+    ...(dev
+      ? [
+          { href: '/palette', label: 'Palette' },
+          { href: '/type', label: 'Type' }
+        ]
+      : [])
   ];
 
   onMount(() => {

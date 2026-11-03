@@ -1,5 +1,7 @@
 /* Generated tokens — all --color-*, --space-*, --size-step-*, --leading-*, --font-* */
 @import './_tokens.generated.css';
+/* Generated from typography.json — all --type-* */
+@import './_type.generated.css';
 
 /* Manual variables that live alongside tokens */
 :root {

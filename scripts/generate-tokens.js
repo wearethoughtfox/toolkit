@@ -5,16 +5,19 @@
  * Also called automatically by Vite on dev/build start.
  */
 
-import { readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { dirname, join } from 'path';
 import { generateContrast } from './contrast.js';
 import { checkVars } from './check-vars.js';
+import { typographyCss } from '../src/lib/type/css.js';
+import { typographyErrors, typographyWarnings } from '../src/lib/type/checks.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const tokensDir = join(__dirname, '../src/lib/design-tokens');
 const outputPath = join(__dirname, '../src/lib/css/global/_tokens.generated.css');
 const spacingOutputPath = join(__dirname, '../src/lib/css/utilities/_spacing.generated.css');
+const typeOutputPath = join(__dirname, '../src/lib/css/global/_type.generated.css');
 
 // Tachyons spacing prefixes → logical properties
 const spacingProperties = {
@@ -202,6 +205,7 @@ export function generateTokens() {
   console.log('✓ tokens generated →', outputPath);
 
   generateSpacingUtilities(spacing);
+  generateTypography(viewports);
   generateContrast();
   checkVars();
 }
@@ -241,6 +245,31 @@ function generateSpacingUtilities(spacing) {
 
   writeFileSync(spacingOutputPath, lines.join('\n') + '\n');
   console.log('✓ spacing utilities generated →', spacingOutputPath);
+}
+
+/**
+ * typography.json (from the /type lab) → --type-* custom properties.
+ * Bad structure stops the build; departures from the method are warnings.
+ * Without the file, an empty stylesheet keeps the import in variables.css working.
+ */
+function generateTypography(viewports) {
+  if (!existsSync(join(tokensDir, 'typography.json'))) {
+    writeFileSync(typeOutputPath, '/* AUTO-GENERATED — no typography.json yet. Make one in the /type lab. */\n');
+    return;
+  }
+  const typography = readToken('typography.json');
+  const errors = typographyErrors(typography);
+  if (errors.length) {
+    throw new Error(`typography.json has ${errors.length} problem(s):\n  - ${errors.join('\n  - ')}`);
+  }
+  writeFileSync(typeOutputPath, typographyCss(typography, viewports));
+  console.log('✓ typography generated →', typeOutputPath);
+
+  const warnings = typographyWarnings(typography);
+  if (warnings.length) {
+    console.warn(`⚠ typography.json: ${warnings.length} departure(s) from the type method:`);
+    for (const warning of warnings) console.warn(`    ${warning}`);
+  }
 }
 
 // Run directly: node scripts/generate-tokens.js (Vite calls generateTokens itself)

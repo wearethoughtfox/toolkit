@@ -11,6 +11,7 @@ This project uses **CUBE CSS** (Composition Utility Block Exception) with **Ever
 | Normalize | `modern-normalize` (npm), first import in `app.css` | Cross-browser fixes — update with npm |
 | Reset | `src/lib/css/global/reset.css` | Global, never override |
 | Tokens (generated) | `src/lib/css/global/_tokens.generated.css` | Never edit — run `npm run tokens` |
+| Type tokens (generated) | `src/lib/css/global/_type.generated.css` | Never edit — made from `typography.json` |
 | Variables | `src/lib/css/global/variables.css` | Manual additions on top of tokens |
 | Global styles | `src/lib/css/global/global-styles.css` | Low-specificity, element selectors |
 | Compositions | `src/lib/css/compositions/*.css` | Every Layout patterns — plain class names |
@@ -43,6 +44,7 @@ Token files:
 - `text-weights.json` — font-weight values
 - `fonts.json` — font stacks
 - `viewports.json` — min/max viewport for clamp() calculations
+- `typography.json` — the type method's results: candidates and test notes, body size, breakpoint, a scale on a 4px rhythm, hierarchy recipes. Edit it in the `/type` lab (dev only), which saves the file and regenerates. It becomes `--type-<step>-font`, `-weight`, `-size` and `-leading`, plus `--type-max-width`. Nothing uses these yet; a site opts in by using them in its blocks. Bad structure stops the build; departures from the method print as warnings.
 
 ## Utilities (Tachyons names)
 
