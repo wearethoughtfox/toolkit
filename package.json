@@ -1,7 +1,7 @@
 {
 	"name": "@thoughtfox/toolkit",
-	"version": "0.1.0",
-	"description": "Shared CUBE CSS + Every Layout foundations for Thought Fox SvelteKit sites: compositions, utilities, layout components, and the design-token generator.",
+	"version": "0.2.0",
+	"description": "Shared foundations for Thought Fox SvelteKit sites, by area: design tokens, layout (CUBE CSS + Every Layout), motion, and the palette and type tools.",
 	"type": "module",
 	"svelte": "./index.js",
 	"exports": {
