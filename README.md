@@ -198,9 +198,18 @@ file lists what it exposes:
 }
 ```
 
-Reduced-motion users get the default crossfade, and browsers without view
-transitions navigate normally. To try them all, use the demo in
-`CSS-course-picalli/segue-transitions/demo/`.
+Reduced-motion users get a 180ms crossfade with no movement: each file ends
+with its own `prefers-reduced-motion: reduce` block (set
+`--segue-fade-duration` to change it). Browsers without view transitions
+navigate normally.
+
+`transitions.json` has each transition's duration, easing and verdict
+(keep, tone down or drop) with a reason, and the override for each
+tone-down. Nothing is "keep" as shipped: all are 800ms or longer. Start
+from the shortlist (`"shortlist": true`) and put its `override.css` after
+the import. To try them, run the playground and open `/transitions`: it
+previews any one between the playground's pages, with a reduced-motion
+toggle. `tools/segue-bank/demo/` has them all on a plain page.
 
 ### Design tokens
 
@@ -274,6 +283,18 @@ the package installs.
   style it.
 - Blocks (buttons, cards, navs) stay in each site — they carry the brand.
 - Rule of two: nothing enters this package until at least two sites need it.
+
+## Unreleased
+
+**Transitions.** Each of the 46 files in `motion/transitions/` now ends
+with a reduced-motion block: a 180ms crossfade, no movement. With reduced
+motion off, nothing changes. `transitions.json` gains `slug`,
+`durationMs`, `timing`, `easing`, `reducedMotion`, `verdict`, `why`,
+`shortlist` and `override`; the existing fields are unchanged.
+
+**Check after bumping:** with reduced motion on, page changes are a
+180ms crossfade instead of the browser's 250ms. Root (Focus Pull at
+0.35s) looks the same with reduced motion off.
 
 ## v0.2.2 (not tagged yet)
 

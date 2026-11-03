@@ -21,8 +21,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -55,8 +55,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -89,8 +89,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -123,8 +123,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -157,8 +157,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -192,8 +192,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -227,8 +227,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -262,8 +262,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -297,8 +297,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -333,8 +333,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -369,8 +369,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -405,8 +405,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -441,8 +441,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -479,8 +479,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "3D rotateX/rotateY with perspective on the full-page snapshot; heavy on low-end phones.",
@@ -516,8 +516,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "3D rotateX/rotateY with perspective on the full-page snapshot; heavy on low-end phones.",
@@ -551,8 +551,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -586,8 +586,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -621,8 +621,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -655,8 +655,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "filter: blur(16px) on two full-viewport snapshots at once: the most expensive filter in the bank; janky on low-end phones.",
@@ -688,8 +688,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -723,8 +723,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -758,8 +758,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -793,8 +793,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -829,8 +829,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "1.55s: blocks reading for over a second.",
@@ -862,8 +862,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "1.75s, the longest in the bank: blocks reading for well over a second.",
@@ -897,8 +897,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "3D perspective, clip-path inset and brightness() on the old page, plus a large box-shadow on the new page.",
@@ -930,8 +930,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -967,8 +967,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "The whole page, header included, falls off the screen and rotates: high movement.",
@@ -1000,8 +1000,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -1036,8 +1036,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -1072,8 +1072,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -1108,8 +1108,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -1144,8 +1144,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -1181,8 +1181,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "The new page travels about one screen diagonally and rotates: high movement.",
@@ -1215,8 +1215,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
@@ -1253,8 +1253,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's. The SVG mask markup stays in the page but is inert under reduce."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "Needs the SVG mask markup on every page; masks are animated in the page DOM, not on the pseudos, so the two run on separate clocks (the 1.01s hold is the safety margin).",
@@ -1290,8 +1290,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's. The SVG mask markup stays in the page but is inert under reduce."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "768 SVG rects animate inside masks that cover the whole page: the heaviest transition to render.",
@@ -1329,8 +1329,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's. The SVG mask markup stays in the page but is inert under reduce."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "768 SVG rects animate inside masks that cover the whole page: the heaviest transition to render.",
@@ -1367,8 +1367,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's. The SVG mask markup stays in the page but is inert under reduce."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "616 SVG rects animate inside masks that cover the whole page: the heaviest transition to render.",
@@ -1403,8 +1403,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "15KB of CSS on every page (sprite sheets as data URIs).",
@@ -1437,8 +1437,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "20KB of CSS on every page (sprite sheets as data URIs).",
@@ -1471,8 +1471,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "66KB of CSS on every page (sprite sheets as data URIs).",
@@ -1504,8 +1504,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "40KB of CSS on every page (sprite sheets as data URIs).",
@@ -1540,8 +1540,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "50KB of CSS on every page (sprite sheets as data URIs).",
@@ -1576,8 +1576,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "1.5s; the page is edge-on and unreadable around 720-800ms, and the lead colour fills about 93% of the screen at that moment.",
@@ -1610,8 +1610,8 @@
       },
       "reducedMotion": {
         "pass": true,
-        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
-        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference). Since roadmap step 6 the file ends with its own reduce block: a 180ms opacity crossfade (--segue-fade-duration), no movement, forwards and back (checked in Chromium).",
+        "missing": "Nothing."
       },
       "risks": [
         "1.5s with a full 3D turn of both pages.",

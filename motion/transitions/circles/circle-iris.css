@@ -6,7 +6,7 @@
   - same page:   document.startViewTransition(() => updateTheDOM())
   - across pages: the @view-transition rule below opts same-origin
     navigations in; it needs to be on both pages.
-  No extra markup needed. Reduced motion falls back to the default crossfade.
+  No extra markup needed. Reduced motion gets a short crossfade (the last block).
 */
 
 @view-transition {
@@ -116,5 +116,37 @@
     mix-blend-mode: normal;
     animation: segue-page var(--segue-duration) var(--segue-ease) calc(var(--segue-gap) * 2) both;
     clip-path: shape(evenodd from calc(50% - var(--segue-page) * (hypot(50vw, 50vh) + 1px)) 50%, arc by calc(var(--segue-page) * (hypot(50vw, 50vh) + 1px) * 2) 0 of calc(var(--segue-page) * (hypot(50vw, 50vh) + 1px)), arc by calc(var(--segue-page) * (hypot(50vw, 50vh) + 1px) * -2) 0 of calc(var(--segue-page) * (hypot(50vw, 50vh) + 1px)), close);
+  }
+}
+
+/*
+  Reduced motion: a short crossfade and nothing else. Every animated rule
+  above runs only with no-preference, so with reduce this block is the
+  whole transition, forwards and back: no movement, clip-path, scale or blur.
+  Set --segue-fade-duration to change the length (default 180ms).
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes segue-fade-out {
+    to { opacity: 0; }
+  }
+  @keyframes segue-fade-in {
+    from { opacity: 0; }
+  }
+  ::view-transition-group(root) {
+    animation: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    mix-blend-mode: plus-lighter;
+    animation-duration: var(--segue-fade-duration, 180ms);
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+  ::view-transition-old(root) {
+    animation-name: segue-fade-out;
+  }
+  ::view-transition-new(root) {
+    animation-name: segue-fade-in;
   }
 }
