@@ -77,13 +77,20 @@ describe('typographyCss, stepped', () => {
     assert.equal(root['--type-max-width'], '43.75rem');
   });
 
-  test('the small settings are in :root, in rem', () => {
+  test('the small settings are in :root: sizes in rem, line heights as ratios', () => {
     assert.equal(root['--type-label-size'], '0.8125rem');
-    assert.equal(root['--type-label-leading'], '1rem');
+    assert.equal(root['--type-label-leading'], '1.2308');
     assert.equal(root['--type-body-size'], '1.125rem');
-    assert.equal(root['--type-body-leading'], '1.5rem');
+    assert.equal(root['--type-body-leading'], '1.3333');
     assert.equal(root['--type-h1-size'], '2.25rem');
-    assert.equal(root['--type-h1-leading'], '2.5rem');
+    assert.equal(root['--type-h1-leading'], '1.1111');
+  });
+
+  test('each ratio gives back the chosen px at its setting', () => {
+    for (const s of t.scale) {
+      close(Number(root[`--type-${s.name}-leading`]) * s.small.size, s.small.leading, `${s.name} small`);
+      close(Number(media.decls[`--type-${s.name}-leading`]) * s.large.size, s.large.leading, `${s.name} large`);
+    }
   });
 
   test('the large settings are in a min-width media query at the breakpoint, in em', () => {
@@ -91,11 +98,11 @@ describe('typographyCss, stepped', () => {
     assert.equal(media.em, 37.5);
     assert.deepEqual(media.decls, {
       '--type-label-size': '0.8125rem',
-      '--type-label-leading': '1rem',
+      '--type-label-leading': '1.2308',
       '--type-body-size': '1.25rem',
-      '--type-body-leading': '1.75rem',
+      '--type-body-leading': '1.4',
       '--type-h1-size': '3.25rem',
-      '--type-h1-leading': '3.5rem'
+      '--type-h1-leading': '1.0769'
     });
   });
 
@@ -120,7 +127,7 @@ describe('typographyCss, stepped', () => {
     const scale = [step('odd', [17, 23], [17, 23])];
     const out = parse(typographyCss(typography({ scale, breakpoint: 601, maxWidth: 650 }), viewports));
     assert.equal(out.root['--type-odd-size'], '1.0625rem');
-    assert.equal(out.root['--type-odd-leading'], '1.4375rem');
+    assert.equal(out.root['--type-odd-leading'], '1.3529');
     assert.equal(out.root['--type-max-width'], '40.625rem');
     assert.equal(out.media.em, 37.5625);
   });
@@ -147,32 +154,42 @@ describe('typographyCss, fluid', () => {
     assert.ok(!css.includes('@media'));
   });
 
-  test('a step with the same size at both ends is a plain rem value', () => {
+  test('a step with the same size at both ends is a plain rem value, and its ratio is exact', () => {
     assert.equal(root['--type-label-size'], '0.8125rem');
-    assert.equal(root['--type-label-leading'], '1rem');
+    assert.equal(root['--type-label-leading'], '1.2308');
   });
 
   for (const name of ['body', 'h1']) {
-    for (const prop of ['size', 'leading']) {
-      test(`${name} ${prop} is a clamp that equals the small value at viewports.min and the large value at the breakpoint`, () => {
-        const value = root[`--type-${name}-${prop}`];
-        assert.match(value, /^clamp\(/);
-        const s = t.scale.find((x) => x.name === name);
-        close(evaluate(value, viewports.min), s.small[prop], 'at viewports.min');
-        close(evaluate(value, t.breakpoint), s.large[prop], 'at the breakpoint');
-        close(evaluate(value, 200), s.small[prop], 'below viewports.min');
-        close(evaluate(value, 1200), s.large[prop], 'above the breakpoint');
-      });
+    test(`${name} size is a clamp that equals the small value at viewports.min and the large value at the breakpoint`, () => {
+      const value = root[`--type-${name}-size`];
+      assert.match(value, /^clamp\(/);
+      const s = t.scale.find((x) => x.name === name);
+      close(evaluate(value, viewports.min), s.small.size, 'at viewports.min');
+      close(evaluate(value, t.breakpoint), s.large.size, 'at the breakpoint');
+      close(evaluate(value, 200), s.small.size, 'below viewports.min');
+      close(evaluate(value, 1200), s.large.size, 'above the breakpoint');
+    });
 
-      test(`${name} ${prop} matches settingAt in between`, () => {
-        const value = root[`--type-${name}-${prop}`];
-        const s = t.scale.find((x) => x.name === name);
-        for (const w of [400, 465, 550]) {
-          // settingAt rounds to 0.1px
-          assert.ok(Math.abs(evaluate(value, w) - settingAt(s, w, t, viewports)[prop]) <= 0.05, `at ${w}px`);
-        }
-      });
-    }
+    test(`${name} leading is one ratio, the mean of the two ends, within a pixel of each`, () => {
+      const value = Number(root[`--type-${name}-leading`]);
+      const s = t.scale.find((x) => x.name === name);
+      const mean = (s.small.leading / s.small.size + s.large.leading / s.large.size) / 2;
+      assert.ok(Math.abs(value - mean) < 0.0001, `${value} should be ${mean}`);
+      assert.ok(Math.abs(value * s.small.size - s.small.leading) <= 1, 'at viewports.min');
+      assert.ok(Math.abs(value * s.large.size - s.large.leading) <= 1, 'at the breakpoint');
+    });
+
+    test(`${name} matches settingAt in between`, () => {
+      const size = root[`--type-${name}-size`];
+      const leading = Number(root[`--type-${name}-leading`]);
+      const s = t.scale.find((x) => x.name === name);
+      for (const w of [400, 465, 550]) {
+        // settingAt rounds to 0.1px
+        const at = settingAt(s, w, t, viewports);
+        assert.ok(Math.abs(evaluate(size, w) - at.size) <= 0.05, `size at ${w}px`);
+        assert.ok(Math.abs(evaluate(size, w) * leading - at.leading) <= 0.06, `leading at ${w}px`);
+      }
+    });
   }
 
   test('a clamp with a negative intercept still meets both ends', () => {
@@ -184,15 +201,15 @@ describe('typographyCss, fluid', () => {
     close(evaluate(value, tt.breakpoint), 80, 'at the breakpoint');
   });
 
-  test('a value that gets smaller still goes from the small value to the large value', () => {
-    // Shrinking is warned about in checks.js but it isn't an error, and a
-    // line-height can reasonably tighten as the size grows (36/44 → 40/40)
-    const scale = [step('h1', [36, 44], [40, 40])];
+  test('a size that gets smaller still goes from the small value to the large value', () => {
+    // Shrinking is warned about in checks.js but it isn't an error, so
+    // clamp() needs its bounds swapped (40 → 36)
+    const scale = [step('h1', [40, 44], [36, 40])];
     const tt = typography({ mode: 'fluid', scale });
-    const value = parse(typographyCss(tt, viewports)).root['--type-h1-leading'];
-    close(evaluate(value, viewports.min), 44, 'at viewports.min');
-    close(evaluate(value, tt.breakpoint), 40, 'at the breakpoint');
-    close(evaluate(value, 465), settingAt(scale[0], 465, tt, viewports).leading, 'halfway');
+    const value = parse(typographyCss(tt, viewports)).root['--type-h1-size'];
+    close(evaluate(value, viewports.min), 40, 'at viewports.min');
+    close(evaluate(value, tt.breakpoint), 36, 'at the breakpoint');
+    close(evaluate(value, 465), settingAt(scale[0], 465, tt, viewports).size, 'halfway');
   });
 
   for (const breakpoint of [330, 300]) {
@@ -227,22 +244,24 @@ describe('settingAt', () => {
 
   describe('fluid', () => {
     const t = typography({ mode: 'fluid' });
-    test('at and below viewports.min is the small setting', () => {
-      assert.deepEqual(settingAt(body, 330, t, viewports), { size: 18, leading: 24 });
-      assert.deepEqual(settingAt(body, 100, t, viewports), { size: 18, leading: 24 });
+    // The line height is what the CSS gives: the size times the mean
+    // ratio, (24/18 + 28/20) / 2 = 1.3667, so within a pixel of 24 and 28
+    test('at and below viewports.min is the small size', () => {
+      assert.deepEqual(settingAt(body, 330, t, viewports), { size: 18, leading: 24.6 });
+      assert.deepEqual(settingAt(body, 100, t, viewports), { size: 18, leading: 24.6 });
     });
-    test('halfway between viewports.min and the breakpoint is halfway between the settings', () => {
+    test('halfway between viewports.min and the breakpoint is halfway between the sizes', () => {
       assert.deepEqual(settingAt(body, 465, t, viewports), { size: 19, leading: 26 });
     });
     test('below the breakpoint is in between, rounded to 0.1px', () => {
       // p = (500 - 330) / 270 = 0.6296…
-      assert.deepEqual(settingAt(body, 500, t, viewports), { size: 19.3, leading: 26.5 });
+      assert.deepEqual(settingAt(body, 500, t, viewports), { size: 19.3, leading: 26.3 });
     });
-    test('at the breakpoint is the large setting', () => {
-      assert.deepEqual(settingAt(body, 600, t, viewports), { size: 20, leading: 28 });
+    test('at the breakpoint is the large size', () => {
+      assert.deepEqual(settingAt(body, 600, t, viewports), { size: 20, leading: 27.3 });
     });
-    test('above the breakpoint stops at the large setting', () => {
-      assert.deepEqual(settingAt(body, 1400, t, viewports), { size: 20, leading: 28 });
+    test('above the breakpoint stops at the large size', () => {
+      assert.deepEqual(settingAt(body, 1400, t, viewports), { size: 20, leading: 27.3 });
     });
     for (const breakpoint of [330, 300]) {
       test(`falls back to stepped when the breakpoint (${breakpoint}) is at or below viewports.min`, () => {

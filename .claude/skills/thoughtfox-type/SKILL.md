@@ -53,7 +53,8 @@ Chimero's result: 18/24 below 600px, 20/28 above it, max width 700px.
 
 ## Leading
 
-- Line heights land on **multiples of 4px**. Nudge by a pixel to get there. Half pixels don't exist, and 1px visibly changes a block at 16–20px.
+- Choose line heights on **multiples of 4px**. Nudge by a pixel to get there. Half pixels don't exist, and 1px visibly changes a block at 16–20px.
+- **Ship them as unitless ratios** (line height ÷ size, so 28px on 20px is `1.4`), never as px or rem lengths. A length is inherited as it is, so every element that changes its font size would also have to set its line height. Rob's call (2026-11-03): the exact rhythm isn't worth that complexity. With fixed breakpoints a ratio gives exactly the chosen px. With fluid type it's within a pixel or so, which is fine.
 - Pick the text colour on purpose. Digital designers default to light colour at 140–160% line-height; editorial designers prefer darker colour at 120–130%. Chimero thinks most screen text is set too loose, especially on mobile. Say which way you're going and why, against the aims.
 - Headlines never inherit body leading. 150% on a big headline makes the lines drift apart.
 
@@ -87,10 +88,10 @@ For a client site, copy the route, `src/lib/type/` and `src/lib/components/type/
 
 There are two type systems in the playground. `text-sizes.json` is the older fluid Utopia scale (15 steps), stretched from `viewports.min` to `viewports.max` (330→1350px). `typography.json` is this method's scale.
 
-- **Prefer `typography.json`** for anything set with this skill. Its `stepped` mode is Chimero's: the small setting below the breakpoint, the large one above it, every line-height on 4px. Its `fluid` mode grows from `viewports.min` and stops at the breakpoint, and only its two ends are on 4px.
+- **Prefer `typography.json`** for anything set with this skill. Its `stepped` mode is Chimero's: the small setting below the breakpoint, the large one above it, and each line-height ratio gives exactly the chosen px. Its `fluid` mode grows the size from `viewports.min` and stops at the breakpoint, with one line-height ratio (the mean of the two ends), so it lands within a pixel or so of the chosen px.
 - **On a site still using `text-sizes.json`:** the body step's `min` is the small-box size and its `max` the large-box size. Stretching to 1350px means body type keeps growing on wide screens. Flag that in `TYPOGRAPHY.md` and to Rob, with moving to `--type-*` as the fix. Never edit the generator or `viewports.json` silently.
 - **Steps in use:** list the 6–7 steps the site actually uses in `TYPOGRAPHY.md`. Unused steps can stay in the JSON but never appear in markup.
-- **Leading:** `text-leading.json` holds a few global ratios. Check each step's size × leading at both ends against the 4px rule. If they miss, propose a per-role line-height and show the numbers; don't change the global token without Rob's go-ahead.
+- **Leading:** `text-leading.json` holds a few global ratios. Check each step's size × leading at both ends against the 4px rule. If one is more than about a pixel out, propose a different ratio for that role and show the numbers. Don't turn line heights into lengths to hit the rhythm exactly, and don't change the global token without Rob's go-ahead.
 - **Utilities:** use the Tachyons names already in the project (`.lh-copy`, `.lh-title`, `.measure`, `.b`, `.fw5`, `.ttu`, `.tracked`).
 
 ## Output: `TYPOGRAPHY.md` in the site root

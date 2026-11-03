@@ -40,6 +40,8 @@ The order of work across the toolkit and the client sites, agreed on 3 November 
 - [x] a scale editor with the 4px, small-end and "body over 20px" checks, and the px values at 330, 700 and 1350px
 - [x] the hierarchy tools added one at a time to a post header, saved as a recipe
 - [x] saves `typography.json` → `npm run tokens` → `_type.generated.css` (`--type-*`), stepped (Chimero) or fluid stopping at the breakpoint
+- [x] line heights ship as unitless ratios, not rem lengths (Rob, 3 November): the 4px rhythm guides the choice, the ratio is what sites get
+- [x] tests: `cd playground && npm test`
 - [ ] Rob: try it on a real choice (Root, or the Brick House audit)
 - [ ] Adopt `--type-*` in the playground's own `global-styles.css`, which still uses the old `--size-step-*` scale. This changes how the playground looks, so take a snapshot first
 
