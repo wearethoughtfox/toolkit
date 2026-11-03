@@ -5,7 +5,7 @@ Fixed-width sidebar beside flexible main content.
 Stacks when there isn't room for both.
 
 Custom properties:
-  --gutter (var(--space-s-l)): gap between sidebar and content
+  --gutter (var(--space-s-l), else var(--space-m)): gap between sidebar and content
   --sidebar-target-width (20rem): sidebar width
   --sidebar-content-min-width (50%): minimum content area width
 
@@ -17,7 +17,7 @@ Exception:
 .sidebar {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gutter, var(--space-s-l));
+  gap: var(--gutter, var(--space-s-l, var(--space-m)));
 }
 
 .sidebar:not([data-direction]) > :first-child {

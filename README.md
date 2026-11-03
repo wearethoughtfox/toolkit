@@ -268,6 +268,10 @@ the package installs.
 - Compositions are plain classes configured by custom properties; exceptions
   use data attributes (`.grid[data-layout='50-50']`).
 - `--gutter` is the shared spacing hook across cluster/grid/switcher/wrapper.
+- Package files only use variables every site has, or give a fallback:
+  `var(--x, …)`. SkipLink uses the `--primary` / `--on-primary` roles,
+  else the system colours; set `--skip-link-bg` and `--skip-link-text` to
+  style it.
 - Blocks (buttons, cards, navs) stay in each site — they carry the brand.
 - Rule of two: nothing enters this package until at least two sites need it.
 

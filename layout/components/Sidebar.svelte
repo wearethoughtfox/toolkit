@@ -6,7 +6,7 @@
   /** @type {string} Minimum content area width */
   export let contentMin = '50%';
   /** @type {string} Gap between sidebar and content */
-  export let gap = 'var(--space-s-l)';
+  export let gap = 'var(--space-s-l, var(--space-m))';
   /** @type {string} HTML element to render */
   export let as = 'div';
 </script>
