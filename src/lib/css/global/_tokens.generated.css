@@ -17,6 +17,7 @@
   --on-primary: var(--color-ground);
   --accent: var(--color-clay);
   --border: var(--color-olive-oil);
+  --focus-ring: var(--color-olive-oil);
 
   /* Spacing */
   --space-2xs: clamp(0.1875rem, 0.17rem + 0.10vw, 0.25rem);
@@ -86,6 +87,7 @@
   --on-primary: var(--color-ground);
   --accent: var(--color-clay);
   --border: var(--color-olive-oil);
+  --focus-ring: var(--color-olive-oil);
 }
 
 [data-scheme="inverse"] {
@@ -96,6 +98,7 @@
   --on-primary: var(--color-clay);
   --accent: var(--color-ground);
   --border: var(--color-ground);
+  --focus-ring: var(--color-ground);
 }
 
 [data-scheme="highlight"] {
@@ -106,4 +109,5 @@
   --on-primary: var(--color-clay);
   --accent: var(--color-ground);
   --border: var(--color-ground);
+  --focus-ring: var(--color-ground);
 }

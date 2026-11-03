@@ -16,7 +16,8 @@
     "primary": "olive-oil",
     "on-primary": "ground",
     "accent": "clay",
-    "border": "olive-oil"
+    "border": "olive-oil",
+    "focus-ring": "olive-oil"
   },
   "schemes": {
     "inverse": {
@@ -26,7 +27,8 @@
       "primary": "ground",
       "on-primary": "clay",
       "accent": "ground",
-      "border": "ground"
+      "border": "ground",
+      "focus-ring": "ground"
     },
     "highlight": {
       "surface": "olive-oil",
@@ -35,7 +37,8 @@
       "primary": "ground",
       "on-primary": "clay",
       "accent": "ground",
-      "border": "ground"
+      "border": "ground",
+      "focus-ring": "ground"
     }
   }
 }

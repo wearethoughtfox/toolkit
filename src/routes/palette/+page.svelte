@@ -4,6 +4,8 @@
   import Stack from '$lib/components/layout/Stack.svelte';
   import PairExplorer from '$lib/components/palette/PairExplorer.svelte';
   import ContrastMatrix from '$lib/components/palette/ContrastMatrix.svelte';
+  import SchemePreview from '$lib/components/palette/SchemePreview.svelte';
+  import Grid from '$lib/components/layout/Grid.svelte';
   import data from '$lib/palette/contrast.generated.json';
   import { uses } from '$lib/palette/levels.js';
 
@@ -67,6 +69,20 @@
           {use}
           {metric}
         />
+      </section>
+
+      <section class="stack" aria-labelledby="schemes">
+        <h2 id="schemes">Schemes</h2>
+        <p>
+          Each scheme in <code>colors.json</code> on the real components, with every role pair it
+          uses checked. The same checks print as warnings on <code>npm run tokens</code>. Fixes are
+          suggestions only; nothing changes until you edit <code>colors.json</code>.
+        </p>
+        <Grid minItemSize="22rem">
+          {#each Object.entries(data.schemeChecks) as [name, checks]}
+            <SchemePreview {name} {checks} />
+          {/each}
+        </Grid>
       </section>
     </Stack>
   </Wrapper>

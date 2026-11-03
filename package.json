@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "tokens": "node scripts/generate-tokens.js",
-    "contrast": "node scripts/contrast.js"
+    "contrast": "node scripts/contrast.js",
+    "check:vars": "node scripts/check-vars.js"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.0.0",

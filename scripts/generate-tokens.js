@@ -6,9 +6,10 @@
  */
 
 import { readFileSync, writeFileSync } from 'fs';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { dirname, join } from 'path';
 import { generateContrast } from './contrast.js';
+import { checkVars } from './check-vars.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const tokensDir = join(__dirname, '../src/lib/design-tokens');
@@ -202,6 +203,7 @@ export function generateTokens() {
 
   generateSpacingUtilities(spacing);
   generateContrast();
+  checkVars();
 }
 
 /**
@@ -241,5 +243,5 @@ function generateSpacingUtilities(spacing) {
   console.log('✓ spacing utilities generated →', spacingOutputPath);
 }
 
-// Allow running directly: node scripts/generate-tokens.js
-generateTokens();
+// Run directly: node scripts/generate-tokens.js (Vite calls generateTokens itself)
+if (import.meta.url === pathToFileURL(process.argv[1]).href) generateTokens();
