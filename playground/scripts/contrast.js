@@ -3,6 +3,10 @@
  * WCAG 2 ratio decides pass/fail; APCA Lc is shown alongside as a guide
  * (it is polarity-sensitive, so fg/bg order matters).
  *
+ * Also adds each colour's OKLCH (derived from its hex, which stays the source
+ * of truth) and a fixed-hue tonal ramp per colour, checked against every
+ * scheme's surface. Ramps are for exploring only: they are not written to tokens.
+ *
  * Writes src/lib/palette/contrast.generated.json for the /palette page.
  * Run: npm run contrast   (prints a summary; also runs with npm run tokens)
  */
@@ -11,6 +15,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { dirname, join } from 'path';
 import { APCAcontrast, sRGBtoY } from 'apca-w3';
+import { hexToOklch, roundOklch, ramp } from '../src/lib/palette/oklch.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const colorsPath = join(__dirname, '../src/lib/design-tokens/colors.json');
@@ -202,6 +207,7 @@ export function buildContrast({ colors, roles, schemes = {} }) {
       hex: colors[name],
       rgb,
       hsl: rgbToHsl(rgb),
+      oklch: roundOklch(hexToOklch(colors[name])),
       roles: Object.keys(roles).filter((role) => roles[role] === name),
       onBlack: against(colors[name], '#000000'),
       onWhite: against(colors[name], '#FFFFFF')
@@ -225,7 +231,38 @@ export function buildContrast({ colors, roles, schemes = {} }) {
 
   const schemeChecks = checkSchemes({ colors, roles, schemes });
 
-  return { thresholds, colors: colorList, roles, schemes, pairs, schemeChecks };
+  // One surface per scheme, for checking ramp steps against
+  const surfaces = Object.entries({ default: roles, ...schemes })
+    .map(([scheme, map]) => ({ scheme, color: map.surface ?? roles.surface }))
+    .filter((s) => s.color in colors)
+    .map((s) => ({ ...s, hex: colors[s.color] }));
+
+  const ramps = names.map((name) => {
+    const { steps, nearest } = ramp(colors[name]);
+    return {
+      name,
+      hex: colors[name],
+      nearest,
+      steps: steps.map((step) => ({
+        ...step,
+        on: Object.fromEntries(
+          surfaces.map((s) => {
+            const ratio = wcagRatio(step.hex, s.hex);
+            return [
+              s.scheme,
+              {
+                ratio: Math.round(ratio * 100) / 100,
+                apca: Math.round(apcaLc(step.hex, s.hex) * 10) / 10,
+                supports: supports(ratio)
+              }
+            ];
+          })
+        )
+      }))
+    };
+  });
+
+  return { thresholds, colors: colorList, roles, schemes, pairs, schemeChecks, surfaces, ramps };
 }
 
 export function generateContrast() {
@@ -238,7 +275,7 @@ export function generateContrast() {
 }
 
 // Run directly: print every pair, best first
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const { pairs, schemeChecks } = generateContrast();
   const label = ({ supports: s }) =>
     s.aaaBody ? 'AAA' : s.body ? 'AA' : s.largeText ? 'AA large / UI' : 'fail';

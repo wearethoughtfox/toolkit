@@ -5,6 +5,7 @@
   import PairExplorer from '$lib/components/palette/PairExplorer.svelte';
   import ContrastMatrix from '$lib/components/palette/ContrastMatrix.svelte';
   import SchemePreview from '$lib/components/palette/SchemePreview.svelte';
+  import TonalRamps from '$lib/components/palette/TonalRamps.svelte';
   import Grid from '$lib/components/layout/Grid.svelte';
   import data from '$lib/palette/contrast.generated.json';
   import { uses } from '$lib/palette/levels.js';
@@ -13,6 +14,9 @@
   let metric = 'wcag';
 
   $: passing = data.pairs.filter((p) => p.supports[use]).length;
+
+  // Open the ramps on the primary colour: it's the one most often tinted
+  const primary = data.colors.find((c) => c.roles.includes('primary'))?.name;
 </script>
 
 <svelte:head>
@@ -27,6 +31,7 @@
         <p>
           Every colour in <code>colors.json</code> as text on every other. WCAG 2 decides pass or
           fail; the APCA score is shown as a guide, and changes with which colour is the text.
+          OKLCH values are worked out from the hex, which stays the source of truth.
           This page only exists in development. Run <code>npm run contrast</code> for the same data
           in the terminal.
         </p>
@@ -69,6 +74,17 @@
           {use}
           {metric}
         />
+      </section>
+
+      <section class="stack" aria-labelledby="ramps">
+        <h2 id="ramps">Ramps</h2>
+        <p>
+          A tonal ramp for each colour: its OKLCH hue kept, the lightness stepped from 97% to 22%,
+          and the chroma pulled in where it would leave sRGB. Every ramp uses the same lightness
+          steps, so step 500 is equally light in each. Ramps are for exploring only. They aren’t
+          tokens: to use a step, add its hex to <code>colors.json</code>.
+        </p>
+        <TonalRamps ramps={data.ramps} surfaces={data.surfaces} start={primary} {use} {metric} />
       </section>
 
       <section class="stack" aria-labelledby="schemes">

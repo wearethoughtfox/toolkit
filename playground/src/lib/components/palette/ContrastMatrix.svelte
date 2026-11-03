@@ -27,6 +27,7 @@
       <tr>
         <th scope="col">Colour</th>
         <th scope="col">Hex</th>
+        <th scope="col">OKLCH</th>
         <th scope="col">HSL</th>
         <th scope="col">RGB</th>
         <th scope="col">On other palette colours</th>
@@ -45,6 +46,7 @@
             {/if}
           </th>
           <td><code>{c.hex}</code></td>
+          <td><code>{c.oklch.css}</code></td>
           <td><code>hsl({c.hsl[0]} {c.hsl[1]}% {c.hsl[2]}%)</code></td>
           <td><code>rgb({c.rgb.join(' ')})</code></td>
           <td>

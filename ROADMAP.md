@@ -49,6 +49,11 @@ There's no automatic breakpoint estimate. Chimero's targets (5.5 words at 320px,
 
 From `emil-color`: generate OKLCH alongside hex, add APCA scores next to the WCAG ratios, and add fixed-hue tonal ramps. These go in the playground first, then steps T1–T6 in `playground/PALETTE-PLAN.md`.
 
+- [x] OKLCH alongside hex in `contrast.generated.json` and on `/palette` (worked out from the hex, which stays the source of truth)
+- [x] APCA Lc next to the WCAG ratio (was already there; checked against the APCA reference values)
+- [x] Fixed-hue tonal ramps on `/palette`: 11 steps per colour, each checked against every scheme's surface. For exploring only, not written to tokens
+- [ ] The palette skill, once Rob has used the ramps on a real choice
+
 ## 5. Toolkit restructure
 
 The pieces are now in one repo, but the playground still has its own copies of the compositions, utilities and token script. Group the package by area (tokens, layout, motion, palette, type). Make the playground import the package instead of its copies, and move the palette and type tools (`src/lib/palette`, `src/lib/type`, their components and scripts) into the package so sites can use them. Then release v0.2.0, and check it with `tools/site-snapshots` against Root and robertocarroll.com before bumping either.
