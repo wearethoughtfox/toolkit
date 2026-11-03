@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "tokens": "node scripts/generate-tokens.js",
     "contrast": "node scripts/contrast.js",
-    "check:vars": "node scripts/check-vars.js"
+    "check:vars": "node scripts/check-vars.js",
+    "test": "node --test \"src/**/*.test.js\""
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.0.0",

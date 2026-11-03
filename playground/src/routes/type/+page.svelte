@@ -150,7 +150,7 @@
 
         <section class="stack" id="scale" aria-labelledby="scale-h">
           <h2 id="scale-h">Scale</h2>
-          <p>Six or seven sizes, line-heights on 4px, never three consecutive small sizes. The “At” columns show what a reader actually gets at the narrowest, a 700px and the widest viewport. Values off the 4px rhythm are highlighted.</p>
+          <p>Six or seven sizes, line-heights on 4px, never three consecutive small sizes. The “At” columns show what a reader actually gets at the narrowest, a 700px and the widest viewport. Values off the 4px rhythm are highlighted. Line heights are saved as ratios (line height ÷ size), so they follow any element that changes its font size.</p>
           <ScaleEditor bind:typography viewports={data.viewports} />
         </section>
 

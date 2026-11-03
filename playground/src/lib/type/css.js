@@ -3,20 +3,31 @@
  * token script (which writes _type.generated.css) and the /type lab (which
  * previews the same output), so the preview can't drift from the file.
  *
+ * Sizes are written in rem. Line heights are written as unitless ratios
+ * (leading ÷ size), so they follow any element that changes its font size.
+ * The 4px rhythm is how you choose the px values in the lab, not what ships.
+ *
  * Two modes:
  * - stepped (Chimero): the small setting below the breakpoint, the large
- *   one above it. Every line-height stays on the 4px rhythm.
- * - fluid: grows from viewports.min to the breakpoint, then stops. Only the
- *   two ends are on the 4px rhythm; values in between are not.
+ *   one above it. The ratio gives exactly the chosen px at both settings.
+ * - fluid: the size grows from viewports.min to the breakpoint, then stops.
+ *   A ratio can't be fluid, so the line height is the mean of the two
+ *   ends' ratios: within a pixel or so of the chosen px at each end.
  */
 
 const rem = (px) => `${+(px / 16).toFixed(4)}rem`;
+const ratio = ({ size, leading }) => +(leading / size).toFixed(4);
+const meanRatio = (step) => +((ratio(step.small) + ratio(step.large)) / 2).toFixed(4);
 
 function fluid(min, max, from, to) {
   if (min === max) return rem(min);
   const slope = (max - min) / (to - from);
   const intercept = min - slope * from;
-  return `clamp(${rem(min)}, ${rem(intercept)} + ${+(slope * 100).toFixed(4)}vw, ${rem(max)})`;
+  // clamp() takes its bounds in order. A value that gets smaller (a
+  // line-height that tightens as the size grows) has its ends swapped, or
+  // CSS would keep it at the small end's value.
+  const [lower, upper] = min < max ? [min, max] : [max, min];
+  return `clamp(${rem(lower)}, ${rem(intercept)} + ${+(slope * 100).toFixed(4)}vw, ${rem(upper)})`;
 }
 
 /** Size and line-height in px for one step at a viewport width */
@@ -26,8 +37,9 @@ export function settingAt(step, viewport, typography, viewports) {
     return viewport < typography.breakpoint ? small : large;
   }
   const p = Math.min(1, Math.max(0, (viewport - viewports.min) / (typography.breakpoint - viewports.min)));
-  const mix = (a, b) => +(a + (b - a) * p).toFixed(1);
-  return { size: mix(small.size, large.size), leading: mix(small.leading, large.leading) };
+  const size = small.size + (large.size - small.size) * p;
+  // What the generated CSS gives: the fluid size times the one ratio
+  return { size: +size.toFixed(1), leading: +(size * meanRatio(step)).toFixed(1) };
 }
 
 export function typographyCss(typography, viewports) {
@@ -49,10 +61,10 @@ export function typographyCss(typography, viewports) {
     lines.push(`  --type-${step.name}-weight: ${step.weight};`);
     if (isFluid) {
       lines.push(`  --type-${step.name}-size: ${fluid(step.small.size, step.large.size, viewports.min, breakpoint)};`);
-      lines.push(`  --type-${step.name}-leading: ${fluid(step.small.leading, step.large.leading, viewports.min, breakpoint)};`);
+      lines.push(`  --type-${step.name}-leading: ${meanRatio(step)};`);
     } else {
       lines.push(`  --type-${step.name}-size: ${rem(step.small.size)};`);
-      lines.push(`  --type-${step.name}-leading: ${rem(step.small.leading)};`);
+      lines.push(`  --type-${step.name}-leading: ${ratio(step.small)};`);
     }
   }
   lines.push('}');
@@ -61,7 +73,7 @@ export function typographyCss(typography, viewports) {
     lines.push(`\n@media (min-width: ${+(breakpoint / 16).toFixed(4)}em) {`, '  :root {');
     for (const step of scale) {
       lines.push(`    --type-${step.name}-size: ${rem(step.large.size)};`);
-      lines.push(`    --type-${step.name}-leading: ${rem(step.large.leading)};`);
+      lines.push(`    --type-${step.name}-leading: ${ratio(step.large)};`);
     }
     lines.push('  }', '}');
   }
