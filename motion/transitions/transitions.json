@@ -1,282 +1,621 @@
 [
   {
     "name": "Slide Left",
+    "slug": "slide-left",
     "family": "Slides",
     "css": "css/transitions/slides/slide-left.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Slide Right",
+    "slug": "slide-right",
     "family": "Slides",
     "css": "css/transitions/slides/slide-right.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Slide Up",
+    "slug": "slide-up",
     "family": "Slides",
     "css": "css/transitions/slides/slide-up.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Slide Down",
+    "slug": "slide-down",
     "family": "Slides",
     "css": "css/transitions/slides/slide-down.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Diagonal Up",
+    "slug": "diagonal-up",
     "family": "Slides",
     "css": "css/transitions/slides/diagonal-up.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Diagonal Down",
+    "slug": "diagonal-down",
     "family": "Slides",
     "css": "css/transitions/slides/diagonal-down.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Stripes Horizontal",
+    "slug": "stripes-horizontal",
     "family": "Stripes",
     "css": "css/transitions/stripes/stripes-horizontal.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 6 stripes staggered inside that window",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Stripes Vertical",
+    "slug": "stripes-vertical",
     "family": "Stripes",
     "css": "css/transitions/stripes/stripes-vertical.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 9 stripes staggered inside that window",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Stripes Horizontal Alt",
+    "slug": "stripes-horizontal-alt",
     "family": "Stripes",
     "css": "css/transitions/stripes/stripes-horizontal-alt.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 8 stripes staggered inside that window",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Stripes Vertical Alt",
+    "slug": "stripes-vertical-alt",
     "family": "Stripes",
     "css": "css/transitions/stripes/stripes-vertical-alt.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 12 stripes staggered inside that window",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Stripes Diagonal",
+    "slug": "stripes-diagonal",
     "family": "Stripes",
     "css": "css/transitions/stripes/stripes-diagonal.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 7 stripes staggered inside that window",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Blinds Horizontal",
+    "slug": "blinds-horizontal",
     "family": "Blinds",
     "css": "css/transitions/blinds/blinds-horizontal.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 12 blinds grow from their edges",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Blinds Vertical",
+    "slug": "blinds-vertical",
     "family": "Blinds",
     "css": "css/transitions/blinds/blinds-vertical.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 18 blinds grow from their edges",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Hinge Open",
+    "slug": "hinge-open",
     "family": "Hinges",
     "css": "css/transitions/hinges/hinge-open.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 800,
+    "timing": "old page swings open on its left edge to -111 degrees over 0-496ms; new page waits pushed back and dimmed until 464ms, then comes forward 464-800ms",
+    "easing": [
+      "cubic-bezier(0.3, 0, 0.6, 0.75)",
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "linear (hold only)"
+    ],
+    "easingNote": "The swing ends at speed (the curve never settles), which suits a door leaving the screen. Linear is used only for a still hold. No overshoot."
   },
   {
     "name": "Hinge Lift",
+    "slug": "hinge-lift",
     "family": "Hinges",
     "css": "css/transitions/hinges/hinge-lift.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 800,
+    "timing": "old page swings open on its top edge to -111 degrees over 0-496ms; new page waits pushed back and dimmed until 464ms, then comes forward 464-800ms",
+    "easing": [
+      "cubic-bezier(0.3, 0, 0.6, 0.75)",
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "linear (hold only)"
+    ],
+    "easingNote": "The swing ends at speed (the curve never settles), which suits a door leaving the screen. Linear is used only for a still hold. No overshoot."
   },
   {
     "name": "Circle Pop",
+    "slug": "circle-pop",
     "family": "Circles",
     "css": "css/transitions/circles/circle-pop.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); circles grow from the pointer",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Circle Iris",
+    "slug": "circle-iris",
     "family": "Circles",
     "css": "css/transitions/circles/circle-iris.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); rings close on the centre",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Circle Corner",
+    "slug": "circle-corner",
     "family": "Circles",
     "css": "css/transitions/circles/circle-corner.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); circles grow from the bottom-left corner",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Focus Pull",
+    "slug": "focus-pull",
     "family": "Focus",
     "css": "css/transitions/focus/focus-pull.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 800,
+    "timing": "old page fades out, blurs to 16px and scales to 1.128 over 0-800ms; new page fades in from 16px blur and scale 1.088 over the same 0-800ms",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on opacity, blur and scale. No linear, no overshoot."
   },
   {
     "name": "Diamond Iris",
+    "slug": "diamond-iris",
     "family": "Polygons",
     "css": "css/transitions/polygons/diamond-iris.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); diamonds grow from the centre",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Arrow Right",
+    "slug": "arrow-right",
     "family": "Arrows",
     "css": "css/transitions/arrows/arrow-right.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); chevron-shaped edge moving right",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Shutter",
+    "slug": "shutter",
     "family": "Splits",
     "css": "css/transitions/splits/shutter.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); two horizontal shutters close on the middle",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Doors",
+    "slug": "doors",
     "family": "Splits",
     "css": "css/transitions/splits/doors.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); two vertical doors close on the middle",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Framed Slide",
+    "slug": "framed-slide",
     "family": "Framed",
     "css": "css/transitions/framed/framed-slide.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 1550,
+    "timing": "four phases: sink back (0-400ms), reel slides up (400-1150ms), come forward (1150-1550ms)",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "cubic-bezier(0.76, 0, 0.24, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic and quint. No linear, no overshoot."
   },
   {
     "name": "Framed Drift",
+    "slug": "framed-drift",
     "family": "Framed",
     "css": "css/transitions/framed/framed-drift.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 1750,
+    "timing": "four phases: both pages sink back and tilt 12 degrees (0-450ms), slide across as a reel (450-1300ms), come forward (1300-1750ms)",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on every phase. No linear, no overshoot."
   },
   {
     "name": "Framed Cover",
+    "slug": "framed-cover",
     "family": "Framed",
     "css": "css/transitions/framed/framed-cover.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 1100,
+    "timing": "old page sinks back (translateZ -30vmax), rounds to 16px and dims to 0.7 over 0-400ms, then holds; new page waits until 400ms, then slides in from the right 400-1100ms",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "cubic-bezier(0.76, 0, 0.24, 1)",
+      "linear (hold only)"
+    ],
+    "easingNote": "Ease-in-out cubic for the push back, ease-in-out quint for the slide. Linear is used only for a still hold. No overshoot."
   },
   {
     "name": "Quad Pinwheel",
+    "slug": "quad-pinwheel",
     "family": "Pinwheels",
     "css": "css/transitions/pinwheels/quad-pinwheel.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); four quadrants wipe in rotation",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Drop Away",
+    "slug": "drop-away",
     "family": "Drops",
     "css": "css/transitions/drops/drop-away.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 800,
+    "timing": "old page falls off the bottom and turns 8 degrees over 0-624ms; new page holds at scale 0.92 and brightness 0.7 until 144ms, then grows to full 144-800ms",
+    "easing": [
+      "cubic-bezier(0.55, 0, 1, 0.45)",
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "linear (hold only)"
+    ],
+    "easingNote": "Strong ease-in (gravity) on the fall, which accelerates out of view. Linear is used only for a still hold. No overshoot."
   },
   {
     "name": "Clock Wipe",
+    "slug": "clock-wipe",
     "family": "Radial",
     "css": "css/transitions/radial/clock-wipe.css",
-    "backwards": false
+    "backwards": false,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); one blade sweeps 360 degrees round the centre",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Fan Wipe",
+    "slug": "fan-wipe",
     "family": "Radial",
     "css": "css/transitions/radial/fan-wipe.css",
-    "backwards": false
+    "backwards": false,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); a symmetrical fan opens 360 degrees from the centre",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Swing",
+    "slug": "swing",
     "family": "Radial",
     "css": "css/transitions/radial/swing.css",
-    "backwards": false
+    "backwards": false,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); a 90-degree swing from the bottom-left corner",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Zigzag Up",
+    "slug": "zigzag-up",
     "family": "Edges",
     "css": "css/transitions/edges/zigzag-up.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); an 18-tooth zigzag edge rises from the bottom",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Wave Up",
+    "slug": "wave-up",
     "family": "Edges",
     "css": "css/transitions/edges/wave-up.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); a soft wave edge (2.5 waves) rises from the bottom",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Deal In",
+    "slug": "deal-in",
     "family": "Deals",
     "css": "css/transitions/deals/deal-in.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 800,
+    "timing": "old page shrinks to 0.95 and dims to 0.75 over 0-800ms; new page flies in from the top right, turned -10 degrees at scale 1.1, over 0-800ms and fades in over the first 96ms",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "cubic-bezier(0.25, 1, 0.5, 1)",
+      "linear (opacity only)"
+    ],
+    "easingNote": "Ease-out quart on the landing (fast in, long settle); linear only on the short fade. No overshoot."
   },
   {
     "name": "Brush Lines",
+    "slug": "brush-lines",
     "family": "Brush",
     "css": "css/transitions/brush/brush-lines.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); five slanted brush strokes",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic on all three layers. No linear movement, no overshoot."
   },
   {
     "name": "Paint Over",
+    "slug": "paint-over",
     "family": "Paint",
     "css": "css/transitions/paint/paint-over.css",
+    "masks": "components/transitions/PaintOverMasks.svelte",
     "backwards": true,
-    "masks": "components/transitions/PaintOverMasks.svelte"
+    "durationMs": 1010,
+    "timing": "lead strokes 0-800ms, trail strokes 80-880ms, page strokes 160-960ms, page fill snaps in at 896-960ms; the transition is held open to 1010ms",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "linear (hold and fill)"
+    ],
+    "easingNote": "Ease-in-out cubic on the strokes. Linear only on the hold. No overshoot."
   },
   {
     "name": "Dots Radial",
+    "slug": "dots-radial",
     "family": "Cells",
     "css": "css/transitions/cells/dots-radial.css",
+    "masks": "components/transitions/DotsRadialMasks.svelte",
     "backwards": false,
-    "masks": "components/transitions/DotsRadialMasks.svelte"
+    "durationMs": 1010,
+    "timing": "dots grow out from the centre: each cell scales up over 360ms, staggered 0-409ms; lead +0ms, trail +80ms, page +160ms; held open to 1010ms",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "linear (hold only)"
+    ],
+    "easingNote": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot."
   },
   {
     "name": "Dots Sweep",
+    "slug": "dots-sweep",
     "family": "Cells",
     "css": "css/transitions/cells/dots-sweep.css",
+    "masks": "components/transitions/DotsSweepMasks.svelte",
     "backwards": true,
-    "masks": "components/transitions/DotsSweepMasks.svelte"
+    "durationMs": 1010,
+    "timing": "dots grow in a sweep: each cell scales up over 360ms, staggered 0-426ms; lead +0ms, trail +80ms, page +160ms; held open to 1010ms",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "linear (hold only)"
+    ],
+    "easingNote": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot."
   },
   {
     "name": "Grid Squares",
+    "slug": "grid-squares",
     "family": "Cells",
     "css": "css/transitions/cells/grid-squares.css",
+    "masks": "components/transitions/GridSquaresMasks.svelte",
     "backwards": true,
-    "masks": "components/transitions/GridSquaresMasks.svelte"
+    "durationMs": 1010,
+    "timing": "squares grow along the diagonal: each cell scales up over 320ms, staggered 0-480ms; lead +0ms, trail +80ms, page +160ms; held open to 1010ms",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "linear (hold only)"
+    ],
+    "easingNote": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot."
   },
   {
     "name": "Sprite Noise",
+    "slug": "sprite-noise",
     "family": "Sprites",
     "css": "css/transitions/sprites/sprite-noise.css",
-    "backwards": false
+    "backwards": false,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 16 sprite frames per layer",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "The ease drives an integer frame number, so the movement steps through 16 frames (about 20 fps). No overshoot."
   },
   {
     "name": "Dither Dissolve",
+    "slug": "dither-dissolve",
     "family": "Sprites",
     "css": "css/transitions/sprites/dither-dissolve.css",
-    "backwards": false
+    "backwards": false,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 16 sprite frames per layer",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "The ease drives an integer frame number, so the movement steps through 16 frames (about 20 fps). No overshoot."
   },
   {
     "name": "Dither Wipe",
+    "slug": "dither-wipe",
     "family": "Sprites",
     "css": "css/transitions/sprites/dither-wipe.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 24 sprite frames per layer",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "The ease drives an integer frame number, so the movement steps through 24 frames (about 30 fps). No overshoot."
   },
   {
     "name": "Pixel Burn",
+    "slug": "pixel-burn",
     "family": "Sprites",
     "css": "css/transitions/sprites/pixel-burn.css",
-    "backwards": false
+    "backwards": false,
+    "durationMs": 1360,
+    "timing": "lead 0-1200ms, trail 80-1280ms, page 160-1360ms (--segue-duration 1.2s); 24 sprite frames per layer",
+    "easing": [
+      "linear"
+    ],
+    "easingNote": "The ease drives an integer frame number, so the movement steps through 24 frames (about 20 fps). Flagged: linear."
   },
   {
     "name": "Sprite Shuffle",
+    "slug": "sprite-shuffle",
     "family": "Sprites",
     "css": "css/transitions/sprites/sprite-shuffle.css",
-    "backwards": false
+    "backwards": false,
+    "durationMs": 960,
+    "timing": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 12 sprite frames per layer",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)"
+    ],
+    "easingNote": "The ease drives an integer frame number, so the movement steps through 12 frames (about 15 fps). No overshoot."
   },
   {
     "name": "Card Flip",
+    "slug": "card-flip",
     "family": "Turns",
     "css": "css/transitions/turns/card-flip.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 1500,
+    "timing": "page moves back (0-350ms), flips 180 degrees (350-1150ms), comes forward (1150-1500ms)",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "cubic-bezier(0.37, 0, 0.63, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic and sine. No linear, no overshoot."
   },
   {
     "name": "Cube Turn",
+    "slug": "cube-turn",
     "family": "Turns",
     "css": "css/transitions/turns/cube-turn.css",
-    "backwards": true
+    "backwards": true,
+    "durationMs": 1500,
+    "timing": "pages move back (0-350ms), turn 90 degrees as a cube (350-1150ms), come forward (1150-1500ms)",
+    "easing": [
+      "cubic-bezier(0.65, 0, 0.35, 1)",
+      "cubic-bezier(0.37, 0, 0.63, 1)"
+    ],
+    "easingNote": "Ease-in-out cubic and sine. No linear, no overshoot."
   }
 ]
