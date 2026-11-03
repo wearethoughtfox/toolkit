@@ -129,7 +129,7 @@
         current.markup && 'needs SVG markup',
         !current.backwards && 'no reverse for back',
       ].filter(Boolean).join(' · ')
-      document.getElementById('next-page').href = `?p=${page + 1}`
+      document.getElementById('next-page').href = `?p=${page + 1}&t=${current.slug}`
     }
     describe()
 

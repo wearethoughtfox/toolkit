@@ -4,245 +4,1230 @@
     "family": "Slides",
     "slug": "slide-left",
     "css": "transitions/slides/slide-left.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 920ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. A plain straight wipe (left) with a true reverse on back: the calmest of the wipes."
+    }
   },
   {
     "name": "Slide Right",
     "family": "Slides",
     "slug": "slide-right",
     "css": "transitions/slides/slide-right.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 920ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. A plain straight wipe (right) with a true reverse on back: the calmest of the wipes."
+    }
   },
   {
     "name": "Slide Up",
     "family": "Slides",
     "slug": "slide-up",
     "css": "transitions/slides/slide-up.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+        "measured": "Chromium frames: new page half visible at 560ms, fully visible at about 720ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. A plain straight wipe (up) with a true reverse on back: the calmest of the wipes."
+    }
   },
   {
     "name": "Slide Down",
     "family": "Slides",
     "slug": "slide-down",
     "css": "transitions/slides/slide-down.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 920ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. A plain straight wipe (down) with a true reverse on back: the calmest of the wipes."
+    }
   },
   {
     "name": "Diagonal Up",
     "family": "Slides",
     "slug": "diagonal-up",
     "css": "transitions/slides/diagonal-up.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+        "measured": "Chromium frames: new page half visible at 560ms, fully visible at about 760ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "The 45-degree edge crosses the text at an angle, so it reads busier than a straight slide."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. Usable, but a straight slide does the same job more quietly."
+    }
   },
   {
     "name": "Diagonal Down",
     "family": "Slides",
     "slug": "diagonal-down",
     "css": "transitions/slides/diagonal-down.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s)",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 840ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "The 45-degree edge crosses the text at an angle, so it reads busier than a straight slide."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. Usable, but a straight slide does the same job more quietly."
+    }
   },
   {
     "name": "Stripes Horizontal",
     "family": "Stripes",
     "slug": "stripes-horizontal",
     "css": "transitions/stripes/stripes-horizontal.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 6 stripes staggered inside that window",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 920ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "27KB of CSS on every page (generated clip-path geometry)."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. Sequenced stripes are orderly; for a calmer version regenerate with 3-4 stripes in Segue."
+    }
   },
   {
     "name": "Stripes Vertical",
     "family": "Stripes",
     "slug": "stripes-vertical",
     "css": "transitions/stripes/stripes-vertical.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 9 stripes staggered inside that window",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 880ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "39KB of CSS on every page (generated clip-path geometry)."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. Sequenced stripes are orderly; for a calmer version regenerate with 3-4 stripes in Segue."
+    }
   },
   {
     "name": "Stripes Horizontal Alt",
     "family": "Stripes",
     "slug": "stripes-horizontal-alt",
     "css": "transitions/stripes/stripes-horizontal-alt.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 8 stripes staggered inside that window",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 920ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "Random stripe order and alternating directions: reads as flicker.",
+        "35KB of CSS on every page (generated clip-path geometry)."
+      ],
+      "verdict": "drop",
+      "note": "Random order makes it busy; Stripes Horizontal does this more calmly."
+    }
   },
   {
     "name": "Stripes Vertical Alt",
     "family": "Stripes",
     "slug": "stripes-vertical-alt",
     "css": "transitions/stripes/stripes-vertical-alt.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 12 stripes staggered inside that window",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 880ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "Random stripe order and alternating directions across 12 stripes: reads as flicker.",
+        "51KB of CSS on every page (generated clip-path geometry)."
+      ],
+      "verdict": "drop",
+      "note": "Twelve stripes in random order is too busy for a document site."
+    }
   },
   {
     "name": "Stripes Diagonal",
     "family": "Stripes",
     "slug": "stripes-diagonal",
     "css": "transitions/stripes/stripes-diagonal.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 7 stripes staggered inside that window",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 720ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "Seven diagonal stripes cut across the text at 45 degrees.",
+        "66KB of CSS on every page (generated clip-path geometry)."
+      ],
+      "verdict": "drop",
+      "note": "Diagonal stripes are the busiest of the family; no client-site use."
+    }
   },
   {
     "name": "Blinds Horizontal",
     "family": "Blinds",
     "slug": "blinds-horizontal",
     "css": "transitions/blinds/blinds-horizontal.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 12 blinds grow from their edges",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 800ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "12 thin slats over the text at mid-point: a strobe-like pattern.",
+        "51KB of CSS on every page."
+      ],
+      "verdict": "drop",
+      "note": "Venetian-blind effect reads as slideshow software; too busy for a client site."
+    }
   },
   {
     "name": "Blinds Vertical",
     "family": "Blinds",
     "slug": "blinds-vertical",
     "css": "transitions/blinds/blinds-vertical.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 18 blinds grow from their edges",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 800ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "18 thin slats over the text at mid-point: a strobe-like pattern.",
+        "75KB of CSS on every page."
+      ],
+      "verdict": "drop",
+      "note": "Venetian-blind effect reads as slideshow software; too busy for a client site."
+    }
   },
   {
     "name": "Hinge Open",
     "family": "Hinges",
     "slug": "hinge-open",
     "css": "transitions/hinges/hinge-open.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 800,
+        "phases": "old page swings open on its left edge to -111 degrees over 0-496ms; new page waits pushed back and dimmed until 464ms, then comes forward 464-800ms",
+        "measured": "Chromium frames: new page half visible at 320ms, fully visible at about 800ms.",
+        "flag": "Over 600ms for a page change (800ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.3, 0, 0.6, 0.75)",
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "linear (hold only)"
+        ],
+        "notes": "The swing ends at speed (the curve never settles), which suits a door leaving the screen. Linear is used only for a still hold. No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "3D rotateX/rotateY with perspective on the full-page snapshot; heavy on low-end phones.",
+        "brightness() filter on the new page while it waits.",
+        "The lead colour shows round the page while it is pushed back.",
+        "The new page is dimmed and small for about 460ms before it is readable."
+      ],
+      "verdict": "drop",
+      "note": "A 3D door swing is theatrical for a document site, and the new page waits almost half a second."
+    }
   },
   {
     "name": "Hinge Lift",
     "family": "Hinges",
     "slug": "hinge-lift",
     "css": "transitions/hinges/hinge-lift.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 800,
+        "phases": "old page swings open on its top edge to -111 degrees over 0-496ms; new page waits pushed back and dimmed until 464ms, then comes forward 464-800ms",
+        "measured": "Chromium frames: new page half visible at 320ms, fully visible at about 800ms.",
+        "flag": "Over 600ms for a page change (800ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.3, 0, 0.6, 0.75)",
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "linear (hold only)"
+        ],
+        "notes": "The swing ends at speed (the curve never settles), which suits a door leaving the screen. Linear is used only for a still hold. No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "3D rotateX/rotateY with perspective on the full-page snapshot; heavy on low-end phones.",
+        "brightness() filter on the new page while it waits.",
+        "The lead colour shows round the page while it is pushed back.",
+        "The new page is dimmed and small for about 460ms before it is readable."
+      ],
+      "verdict": "drop",
+      "note": "A 3D door swing is theatrical for a document site, and the new page waits almost half a second."
+    }
   },
   {
     "name": "Circle Pop",
     "family": "Circles",
     "slug": "circle-pop",
     "css": "transitions/circles/circle-pop.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); circles grow from the pointer",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 800ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "Needs segue.js to grow from the click; without it the circle grows from the centre."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. Growing from the click ties the change to the user's action, which feels purposeful, not decorative."
+    }
   },
   {
     "name": "Circle Iris",
     "family": "Circles",
     "slug": "circle-iris",
     "css": "transitions/circles/circle-iris.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); rings close on the centre",
+        "measured": "Chromium frames: new page half visible at 560ms, fully visible at about 800ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "Concentric rings closing on the page centre: a cartoon iris-out."
+      ],
+      "verdict": "drop",
+      "note": "The closing iris is a film-ending gag; it calls attention to itself."
+    }
   },
   {
     "name": "Circle Corner",
     "family": "Circles",
     "slug": "circle-corner",
     "css": "transitions/circles/circle-corner.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); circles grow from the bottom-left corner",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 760ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. Fine, but Circle Pop does the same with a reason for its origin."
+    }
   },
   {
     "name": "Focus Pull",
     "family": "Focus",
     "slug": "focus-pull",
     "css": "transitions/focus/focus-pull.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 800,
+        "phases": "old page fades out, blurs to 16px and scales to 1.128 over 0-800ms; new page fades in from 16px blur and scale 1.088 over the same 0-800ms",
+        "measured": "Chromium frames: new page half visible at 560ms, fully visible at about 680ms.",
+        "flag": "Over 600ms for a page change (800ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on opacity, blur and scale. No linear, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "filter: blur(16px) on two full-viewport snapshots at once: the most expensive filter in the bank; janky on low-end phones.",
+        "Text is unreadable for about 280ms in the middle (both pages blurred)."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.35s and regenerate in Segue with blur 4 and zoom 0.02 (blur and scale are baked into the keyframes). It is the nearest thing to a plain crossfade in the bank."
+    }
   },
   {
     "name": "Diamond Iris",
     "family": "Polygons",
     "slug": "diamond-iris",
     "css": "transitions/polygons/diamond-iris.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); diamonds grow from the centre",
+        "measured": "Chromium frames: new page half visible at 560ms, fully visible at about 800ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "Rotated square growing from the centre: a strong graphic shape."
+      ],
+      "verdict": "drop",
+      "note": "A diamond reveal is decorative and does not fit a calm document site."
+    }
   },
   {
     "name": "Arrow Right",
     "family": "Arrows",
     "slug": "arrow-right",
     "css": "transitions/arrows/arrow-right.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); chevron-shaped edge moving right",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 840ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "The chevron edge is a strong graphic; it points right even on back unless segue.js adds the backwards type."
+      ],
+      "verdict": "drop",
+      "note": "The chevron is a branded, sporty look; Slide Left/Right gives direction without the graphic."
+    }
   },
   {
     "name": "Shutter",
     "family": "Splits",
     "slug": "shutter",
     "css": "transitions/splits/shutter.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); two horizontal shutters close on the middle",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 920ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "The old page stays in a shrinking strip in the middle until about 680ms, so it is the last thing the eye sees."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. A symmetrical wipe; acceptable, but not on the shortlist because the closing middle strip draws the eye."
+    }
   },
   {
     "name": "Doors",
     "family": "Splits",
     "slug": "doors",
     "css": "transitions/splits/doors.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); two vertical doors close on the middle",
+        "measured": "Chromium frames: new page half visible at 560ms, fully visible at about 920ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "The old page stays in a shrinking strip in the middle until about 680ms, so it is the last thing the eye sees."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. A symmetrical wipe; acceptable, but not on the shortlist because the closing middle strip draws the eye."
+    }
   },
   {
     "name": "Framed Slide",
     "family": "Framed",
     "slug": "framed-slide",
     "css": "transitions/framed/framed-slide.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 1550,
+        "phases": "four phases: sink back (0-400ms), reel slides up (400-1150ms), come forward (1150-1550ms)",
+        "measured": "Chromium frames: new page half visible at 800ms, fully visible at about 1520ms.",
+        "flag": "Over 600ms for a page change (1550ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "cubic-bezier(0.76, 0, 0.24, 1)"
+        ],
+        "notes": "Ease-in-out cubic and quint. No linear, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "1.55s: blocks reading for over a second.",
+        "3D perspective on full-page snapshots."
+      ],
+      "verdict": "drop",
+      "note": "Too long; cutting it to 600ms would rush its three phases. Framed Cover is the usable member of the family."
+    }
   },
   {
     "name": "Framed Drift",
     "family": "Framed",
     "slug": "framed-drift",
     "css": "transitions/framed/framed-drift.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 1750,
+        "phases": "four phases: both pages sink back and tilt 12 degrees (0-450ms), slide across as a reel (450-1300ms), come forward (1300-1750ms)",
+        "measured": "Chromium frames: new page half visible at 960ms, fully visible at about 1720ms.",
+        "flag": "Over 600ms for a page change (1750ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on every phase. No linear, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "1.75s, the longest in the bank: blocks reading for well over a second.",
+        "3D perspective and a tilt on full-page snapshots."
+      ],
+      "verdict": "drop",
+      "note": "Nearly three times the 600ms limit; the reel is a showpiece, not a page change."
+    }
   },
   {
     "name": "Framed Cover",
     "family": "Framed",
     "slug": "framed-cover",
     "css": "transitions/framed/framed-cover.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 1100,
+        "phases": "old page sinks back (translateZ -30vmax), rounds to 16px and dims to 0.7 over 0-400ms, then holds; new page waits until 400ms, then slides in from the right 400-1100ms",
+        "measured": "Chromium frames: new page half visible at 760ms, fully visible at about 1080ms.",
+        "flag": "Over 600ms for a page change (1100ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "cubic-bezier(0.76, 0, 0.24, 1)",
+          "linear (hold only)"
+        ],
+        "notes": "Ease-in-out cubic for the push back, ease-in-out quint for the slide. Linear is used only for a still hold. No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "3D perspective, clip-path inset and brightness() on the old page, plus a large box-shadow on the new page.",
+        "Nothing new is shown for the first 400ms."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.5s (180ms push, 320ms slide). Reads like a native 'push' screen change: one clear move, a real reverse on back."
+    }
   },
   {
     "name": "Quad Pinwheel",
     "family": "Pinwheels",
     "slug": "quad-pinwheel",
     "css": "transitions/pinwheels/quad-pinwheel.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); four quadrants wipe in rotation",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 920ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "Four wipes in four directions at once: the eye has nowhere to rest."
+      ],
+      "verdict": "drop",
+      "note": "Busy and decorative."
+    }
   },
   {
     "name": "Drop Away",
     "family": "Drops",
     "slug": "drop-away",
     "css": "transitions/drops/drop-away.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 800,
+        "phases": "old page falls off the bottom and turns 8 degrees over 0-624ms; new page holds at scale 0.92 and brightness 0.7 until 144ms, then grows to full 144-800ms",
+        "measured": "Chromium frames: new page half visible at 520ms, fully visible at about 760ms.",
+        "flag": "Over 600ms for a page change (800ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.55, 0, 1, 0.45)",
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "linear (hold only)"
+        ],
+        "notes": "Strong ease-in (gravity) on the fall, which accelerates out of view. Linear is used only for a still hold. No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "The whole page, header included, falls off the screen and rotates: high movement.",
+        "brightness() filter and a large box-shadow on full-page snapshots."
+      ],
+      "verdict": "drop",
+      "note": "A falling, rotating page is playful slapstick, not calm."
+    }
   },
   {
     "name": "Clock Wipe",
     "family": "Radial",
     "slug": "clock-wipe",
     "css": "transitions/radial/clock-wipe.css",
-    "backwards": false
+    "backwards": false,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); one blade sweeps 360 degrees round the centre",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 920ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "No reverse: going back replays the forward move.",
+        "41KB of CSS on every page."
+      ],
+      "verdict": "drop",
+      "note": "A clock wipe is a film gag, and it has no reverse for back."
+    }
   },
   {
     "name": "Fan Wipe",
     "family": "Radial",
     "slug": "fan-wipe",
     "css": "transitions/radial/fan-wipe.css",
-    "backwards": false
+    "backwards": false,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); a symmetrical fan opens 360 degrees from the centre",
+        "measured": "Chromium frames: new page half visible at 560ms, fully visible at about 920ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "No reverse: going back replays the forward move.",
+        "40KB of CSS on every page."
+      ],
+      "verdict": "drop",
+      "note": "Decorative, and it has no reverse for back."
+    }
   },
   {
     "name": "Swing",
     "family": "Radial",
     "slug": "swing",
     "css": "transitions/radial/swing.css",
-    "backwards": false
+    "backwards": false,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); a 90-degree swing from the bottom-left corner",
+        "measured": "Chromium frames: new page half visible at 640ms, fully visible at about 960ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "No reverse: going back replays the forward move.",
+        "12KB of CSS on every page."
+      ],
+      "verdict": "drop",
+      "note": "The calmest radial, but it has no reverse for back and a straight slide does the job better."
+    }
   },
   {
     "name": "Zigzag Up",
     "family": "Edges",
     "slug": "zigzag-up",
     "css": "transitions/edges/zigzag-up.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); an 18-tooth zigzag edge rises from the bottom",
+        "measured": "Chromium frames: new page half visible at 560ms, fully visible at about 720ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "57KB of CSS on every page.",
+        "A jagged edge reads as aggressive."
+      ],
+      "verdict": "drop",
+      "note": "The zigzag is loud; Wave Up or Slide Up covers this direction."
+    }
   },
   {
     "name": "Wave Up",
     "family": "Edges",
     "slug": "wave-up",
     "css": "transitions/edges/wave-up.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); a soft wave edge (2.5 waves) rises from the bottom",
+        "measured": "Chromium frames: new page half visible at 560ms, fully visible at about 720ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "51KB of CSS on every page."
+      ],
+      "verdict": "tone down",
+      "note": "Set --segue-duration: 0.4s and --segue-gap: 0.03s (460ms total), --segue-ease: cubic-bezier(0.22, 1, 0.36, 1), and the site's colours for --segue-lead-color and --segue-trail-color. Slide Up with a soft edge; only for a client whose identity is already playful or watery."
+    }
   },
   {
     "name": "Deal In",
     "family": "Deals",
     "slug": "deal-in",
     "css": "transitions/deals/deal-in.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 800,
+        "phases": "old page shrinks to 0.95 and dims to 0.75 over 0-800ms; new page flies in from the top right, turned -10 degrees at scale 1.1, over 0-800ms and fades in over the first 96ms",
+        "measured": "Chromium frames: new page half visible at 200ms, fully visible at about 680ms.",
+        "flag": "Over 600ms for a page change (800ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "cubic-bezier(0.25, 1, 0.5, 1)",
+          "linear (opacity only)"
+        ],
+        "notes": "Ease-out quart on the landing (fast in, long settle); linear only on the short fade. No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "The new page travels about one screen diagonally and rotates: high movement.",
+        "brightness() filter on the old page and a large box-shadow on the new one.",
+        "Most of the motion is over by 400ms, but the long settle keeps the page moving until 800ms."
+      ],
+      "verdict": "drop",
+      "note": "A card dealt onto the table is a gimmick for a document site."
+    }
   },
   {
     "name": "Brush Lines",
     "family": "Brush",
     "slug": "brush-lines",
     "css": "transitions/brush/brush-lines.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); five slanted brush strokes",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 720ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "Ease-in-out cubic on all three layers. No linear movement, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "Two full-height bands of bright demo colour cross the screen; set both colours to the site palette.",
+        "Movement comes from @property numbers that drive a clip-path shape(), which runs on the main thread: it can stutter while the new page loads or hydrates.",
+        "Needs clip-path shape() (Chrome/Edge 135+, Safari 18.4+). Without it the change is an instant cut.",
+        "105KB of CSS on every page, the largest file in the bank.",
+        "Covers up to 85% of the screen with the two band colours at its peak."
+      ],
+      "verdict": "drop",
+      "note": "Expressive and heavy; it would suit an art client's showpiece, not page-to-page reading."
+    }
   },
   {
     "name": "Paint Over",
@@ -250,7 +1235,36 @@
     "slug": "paint-over",
     "css": "transitions/paint/paint-over.css",
     "backwards": true,
-    "markup": "transitions/paint/paint-over.html"
+    "markup": "transitions/paint/paint-over.html",
+    "audit": {
+      "duration": {
+        "totalMs": 1010,
+        "phases": "lead strokes 0-800ms, trail strokes 80-880ms, page strokes 160-960ms, page fill snaps in at 896-960ms; the transition is held open to 1010ms",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 880ms.",
+        "flag": "Over 600ms for a page change (1010ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "linear (hold and fill)"
+        ],
+        "notes": "Ease-in-out cubic on the strokes. Linear only on the hold. No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's. The SVG mask markup stays in the page but is inert under reduce."
+      },
+      "risks": [
+        "Needs the SVG mask markup on every page; masks are animated in the page DOM, not on the pseudos, so the two run on separate clocks (the 1.01s hold is the safety margin).",
+        "Timing is hard-coded (0.8s strokes, 1.01s hold): no --segue-duration, so a shorter version means regenerating.",
+        "mask: url(#id) on view-transition pseudos worked cross-page in Chromium; not checked in Safari.",
+        "Covers up to 69% of the screen with the band colours."
+      ],
+      "verdict": "drop",
+      "note": "Over a second, fiddly markup, and the painted look is decorative."
+    }
   },
   {
     "name": "Dots Radial",
@@ -258,7 +1272,38 @@
     "slug": "dots-radial",
     "css": "transitions/cells/dots-radial.css",
     "backwards": false,
-    "markup": "transitions/cells/dots-radial.html"
+    "markup": "transitions/cells/dots-radial.html",
+    "audit": {
+      "duration": {
+        "totalMs": 1010,
+        "phases": "dots grow out from the centre: each cell scales up over 360ms, staggered 0-409ms; lead +0ms, trail +80ms, page +160ms; held open to 1010ms",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 800ms.",
+        "flag": "Over 600ms for a page change (1010ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "linear (hold only)"
+        ],
+        "notes": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's. The SVG mask markup stays in the page but is inert under reduce."
+      },
+      "risks": [
+        "768 SVG rects animate inside masks that cover the whole page: the heaviest transition to render.",
+        "Needs about 100KB of SVG markup on every page.",
+        "Timing is hard-coded in the CSS and in each rect's --d: no --segue-duration to shorten it.",
+        "Masks run on the page's clock, not the transition's (the 1.01s hold is the safety margin).",
+        "mask: url(#id) on view-transition pseudos worked cross-page in Chromium; not checked in Safari.",
+        "No reverse: going back replays the forward move."
+      ],
+      "verdict": "drop",
+      "note": "Over a second, heavy to render, and a lot of markup for a decorative effect."
+    }
   },
   {
     "name": "Dots Sweep",
@@ -266,7 +1311,37 @@
     "slug": "dots-sweep",
     "css": "transitions/cells/dots-sweep.css",
     "backwards": true,
-    "markup": "transitions/cells/dots-sweep.html"
+    "markup": "transitions/cells/dots-sweep.html",
+    "audit": {
+      "duration": {
+        "totalMs": 1010,
+        "phases": "dots grow in a sweep: each cell scales up over 360ms, staggered 0-426ms; lead +0ms, trail +80ms, page +160ms; held open to 1010ms",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 840ms.",
+        "flag": "Over 600ms for a page change (1010ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "linear (hold only)"
+        ],
+        "notes": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's. The SVG mask markup stays in the page but is inert under reduce."
+      },
+      "risks": [
+        "768 SVG rects animate inside masks that cover the whole page: the heaviest transition to render.",
+        "Needs about 100KB of SVG markup on every page.",
+        "Timing is hard-coded in the CSS and in each rect's --d: no --segue-duration to shorten it.",
+        "Masks run on the page's clock, not the transition's (the 1.01s hold is the safety margin).",
+        "mask: url(#id) on view-transition pseudos worked cross-page in Chromium; not checked in Safari."
+      ],
+      "verdict": "drop",
+      "note": "Over a second, heavy to render, and a lot of markup for a decorative effect."
+    }
   },
   {
     "name": "Grid Squares",
@@ -274,55 +1349,276 @@
     "slug": "grid-squares",
     "css": "transitions/cells/grid-squares.css",
     "backwards": true,
-    "markup": "transitions/cells/grid-squares.html"
+    "markup": "transitions/cells/grid-squares.html",
+    "audit": {
+      "duration": {
+        "totalMs": 1010,
+        "phases": "squares grow along the diagonal: each cell scales up over 320ms, staggered 0-480ms; lead +0ms, trail +80ms, page +160ms; held open to 1010ms",
+        "measured": "Chromium frames: new page half visible at 640ms, fully visible at about 880ms.",
+        "flag": "Over 600ms for a page change (1010ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "linear (hold only)"
+        ],
+        "notes": "Ease-in-out cubic on each cell. Linear only on the hold. No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's. The SVG mask markup stays in the page but is inert under reduce."
+      },
+      "risks": [
+        "616 SVG rects animate inside masks that cover the whole page: the heaviest transition to render.",
+        "Needs about 100KB of SVG markup on every page.",
+        "Timing is hard-coded in the CSS and in each rect's --d: no --segue-duration to shorten it.",
+        "Masks run on the page's clock, not the transition's (the 1.01s hold is the safety margin).",
+        "mask: url(#id) on view-transition pseudos worked cross-page in Chromium; not checked in Safari."
+      ],
+      "verdict": "drop",
+      "note": "Over a second, heavy to render, and a lot of markup for a decorative effect."
+    }
   },
   {
     "name": "Sprite Noise",
     "family": "Sprites",
     "slug": "sprite-noise",
     "css": "transitions/sprites/sprite-noise.css",
-    "backwards": false
+    "backwards": false,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 16 sprite frames per layer",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 840ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "The ease drives an integer frame number, so the movement steps through 16 frames (about 20 fps). No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "15KB of CSS on every page (sprite sheets as data URIs).",
+        "Movement is stepped by design, so it looks choppy next to the smooth transitions.",
+        "No reverse: going back replays the forward move."
+      ],
+      "verdict": "drop",
+      "note": "Stepped noise reads as a glitch effect; no reverse for back."
+    }
   },
   {
     "name": "Dither Dissolve",
     "family": "Sprites",
     "slug": "dither-dissolve",
     "css": "transitions/sprites/dither-dissolve.css",
-    "backwards": false
+    "backwards": false,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 16 sprite frames per layer",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 840ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "The ease drives an integer frame number, so the movement steps through 16 frames (about 20 fps). No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "20KB of CSS on every page (sprite sheets as data URIs).",
+        "Movement is stepped by design, so it looks choppy next to the smooth transitions.",
+        "No reverse: going back replays the forward move."
+      ],
+      "verdict": "drop",
+      "note": "A retro dither is a strong style choice; no reverse for back."
+    }
   },
   {
     "name": "Dither Wipe",
     "family": "Sprites",
     "slug": "dither-wipe",
     "css": "transitions/sprites/dither-wipe.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 24 sprite frames per layer",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 880ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "The ease drives an integer frame number, so the movement steps through 24 frames (about 30 fps). No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "66KB of CSS on every page (sprite sheets as data URIs).",
+        "Movement is stepped by design, so it looks choppy next to the smooth transitions."
+      ],
+      "verdict": "drop",
+      "note": "The best of the sprites (it has a reverse), but the stepped dither is still a retro style, not a calm one."
+    }
   },
   {
     "name": "Pixel Burn",
     "family": "Sprites",
     "slug": "pixel-burn",
     "css": "transitions/sprites/pixel-burn.css",
-    "backwards": false
+    "backwards": false,
+    "audit": {
+      "duration": {
+        "totalMs": 1360,
+        "phases": "lead 0-1200ms, trail 80-1280ms, page 160-1360ms (--segue-duration 1.2s); 24 sprite frames per layer",
+        "measured": "Chromium frames: new page half visible at 840ms, fully visible at about 1360ms.",
+        "flag": "Over 600ms for a page change (1360ms)."
+      },
+      "easing": {
+        "values": [
+          "linear"
+        ],
+        "notes": "The ease drives an integer frame number, so the movement steps through 24 frames (about 20 fps). Linear ease: flagged.",
+        "flag": "Linear movement."
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "40KB of CSS on every page (sprite sheets as data URIs).",
+        "Movement is stepped by design, so it looks choppy next to the smooth transitions.",
+        "1.2s at linear ease, 1.36s in all.",
+        "Linear motion on the burn.",
+        "No reverse: going back replays the forward move."
+      ],
+      "verdict": "drop",
+      "note": "Long, linear, and a burning-film effect."
+    }
   },
   {
     "name": "Sprite Shuffle",
     "family": "Sprites",
     "slug": "sprite-shuffle",
     "css": "transitions/sprites/sprite-shuffle.css",
-    "backwards": false
+    "backwards": false,
+    "audit": {
+      "duration": {
+        "totalMs": 960,
+        "phases": "lead band 0-800ms, trail band 80-880ms, new page 160-960ms (--segue-duration 0.8s, --segue-gap 0.08s); 12 sprite frames per layer",
+        "measured": "Chromium frames: new page half visible at 600ms, fully visible at about 800ms.",
+        "flag": "Over 600ms for a page change (960ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)"
+        ],
+        "notes": "The ease drives an integer frame number, so the movement steps through 12 frames (about 15 fps). No overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "50KB of CSS on every page (sprite sheets as data URIs).",
+        "Movement is stepped by design, so it looks choppy next to the smooth transitions.",
+        "Its colours are baked into sprite images (--segue-lead-color is a url()), so the site palette cannot replace them; five-plus colours of confetti.",
+        "No reverse: going back replays the forward move."
+      ],
+      "verdict": "drop",
+      "note": "Multicolour confetti that cannot take the site's colours."
+    }
   },
   {
     "name": "Card Flip",
     "family": "Turns",
     "slug": "card-flip",
     "css": "transitions/turns/card-flip.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 1500,
+        "phases": "page moves back (0-350ms), flips 180 degrees (350-1150ms), comes forward (1150-1500ms)",
+        "measured": "Chromium frames: new page half visible at 880ms, fully visible at about 1480ms.",
+        "flag": "Over 600ms for a page change (1500ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "cubic-bezier(0.37, 0, 0.63, 1)"
+        ],
+        "notes": "Ease-in-out cubic and sine. No linear, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "1.5s; the page is edge-on and unreadable around 720-800ms, and the lead colour fills about 93% of the screen at that moment.",
+        "Full 3D rotation of the page snapshot."
+      ],
+      "verdict": "drop",
+      "note": "Two and a half times the limit, and a flipping page is a showpiece."
+    }
   },
   {
     "name": "Cube Turn",
     "family": "Turns",
     "slug": "cube-turn",
     "css": "transitions/turns/cube-turn.css",
-    "backwards": true
+    "backwards": true,
+    "audit": {
+      "duration": {
+        "totalMs": 1500,
+        "phases": "pages move back (0-350ms), turn 90 degrees as a cube (350-1150ms), come forward (1150-1500ms)",
+        "measured": "Chromium frames: new page half visible at 800ms, fully visible at about 1480ms.",
+        "flag": "Over 600ms for a page change (1500ms)."
+      },
+      "easing": {
+        "values": [
+          "cubic-bezier(0.65, 0, 0.35, 1)",
+          "cubic-bezier(0.37, 0, 0.63, 1)"
+        ],
+        "notes": "Ease-in-out cubic and sine. No linear, no overshoot.",
+        "flag": null
+      },
+      "reducedMotion": {
+        "pass": true,
+        "fallback": "Passes. Every animated rule sits inside @media (prefers-reduced-motion: no-preference), so reduced-motion users get the browser's default crossfade: 250ms, no movement (checked in Chromium).",
+        "missing": "Nothing for the house rule. Optional: an explicit reduce block, so the fade length is ours and not the browser's."
+      },
+      "risks": [
+        "1.5s with a full 3D turn of both pages.",
+        "Large perspective transforms on full-page snapshots."
+      ],
+      "verdict": "drop",
+      "note": "Too long and too much movement; a 2010-era presentation effect."
+    }
   }
 ]
