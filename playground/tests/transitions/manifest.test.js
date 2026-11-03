@@ -88,3 +88,40 @@ describe('transitions: reduced motion', () => {
     });
   }
 });
+
+describe('transitions: verdicts', () => {
+  const verdicts = ['keep', 'tone down', 'drop'];
+
+  for (const entry of manifest) {
+    test(`${entry.name}: a verdict, a one-line why, and an override to tone down`, () => {
+      assert.ok(verdicts.includes(entry.verdict), entry.verdict);
+      assert.ok(entry.why.length > 20 && !entry.why.includes('\n'));
+      assert.equal(typeof entry.shortlist, 'boolean');
+      if (entry.shortlist) assert.notEqual(entry.verdict, 'drop');
+      if (entry.verdict !== 'tone down') {
+        assert.equal(entry.override, undefined);
+        return;
+      }
+      const { css, durationMs } = entry.override;
+      assert.ok(durationMs < entry.durationMs && durationMs <= 600);
+      // An override only sets custom properties the file exposes on :root
+      const exposed = cssOf(entry).match(/^:root \{[\s\S]*?^\}/m)[0];
+      for (const [, name] of css.matchAll(/(--segue-[a-z-]+):/g)) {
+        assert.ok(exposed.includes(`${name}:`), `${name} is not in ${entry.css}'s :root`);
+      }
+    });
+  }
+
+  test('the shortlist is the five in AUDIT.md', () => {
+    const shortlist = manifest.filter((t) => t.shortlist).map((t) => t.slug).sort();
+    assert.deepEqual(shortlist, ['circle-pop', 'focus-pull', 'framed-cover', 'slide-left', 'slide-up']);
+  });
+
+  test("Focus Pull keeps its default look; Root's 0.35s is the override", () => {
+    const focus = manifest.find((t) => t.slug === 'focus-pull');
+    const css = cssOf(focus);
+    assert.match(css, /--segue-duration: 0\.8s;/);
+    assert.match(css, /filter: blur\(16px\);/);
+    assert.match(focus.override.css, /--segue-duration: 0\.35s;/);
+  });
+});

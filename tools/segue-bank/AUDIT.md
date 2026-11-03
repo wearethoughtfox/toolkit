@@ -1,6 +1,6 @@
 # Segue bank audit
 
-Roadmap step 6. This audit covers all 46 transitions in this folder. The verdicts are drafts for Rob to decide. The full record for each transition is the `audit` object in `transitions.json`: `duration`, `easing`, `reducedMotion`, `risks`, `verdict` and `note`.
+Roadmap step 6. This audit covers all 46 transitions in this folder. The verdicts were drafts for Rob to decide. The verdicts the package ships, with a one-line reason and the override for each tone-down, are in `motion/transitions/transitions.json`, and the playground's `/transitions` page shows them. The full audit record for each transition is the `audit` object in this folder's `transitions.json`: `duration`, `easing`, `reducedMotion`, `risks`, `verdict` and `note`.
 
 **Result:** 0 keep, 15 tone down, 31 drop.
 
@@ -106,10 +106,12 @@ To get a plain wipe with no visible bands, set `--segue-gap: 0s`.
 
 ```css
 :root {
-  --segue-lead-color: var(--color-surface);
-  --segue-trail-color: var(--color-primary);
+  --segue-lead-color: var(--surface);
+  --segue-trail-color: var(--primary);
 }
 ```
+
+`--surface` and `--primary` are the role names the token generator writes. The overrides in `motion/transitions/transitions.json` use them.
 
 Sprite Shuffle can't take this fix, because its colours are baked into the sprite images.
 

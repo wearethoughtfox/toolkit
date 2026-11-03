@@ -40,7 +40,7 @@ Which properties exist varies by family (look at the `:root` block at the top of
 
 - `transitions/<family>/<name>.css`: one self-contained transition per file, the same as the package's `motion/transitions/`. Change both copies together
 - `transitions/<family>/<name>.html`: SVG mask markup (only the four above)
-- `transitions.json`: manifest of name, family, file paths, `markup` and `backwards` (38 of 46 have a reverse for going back; the rest replay forwards), plus an `audit` object on each entry (draft verdicts)
+- `transitions.json`: manifest of name, family, file paths, `markup` and `backwards` (38 of 46 have a reverse for going back; the rest replay forwards), plus an `audit` object on each entry (the draft verdicts; the final ones, with a reason and an override, are in the package's `motion/transitions/transitions.json`)
 - `AUDIT.md`: the audit summary, the shortlist for document-style sites and the common fixes
 - `segue.js`: optional helper
 - `demo/`: picker for trying every transition, same-page and cross-page
