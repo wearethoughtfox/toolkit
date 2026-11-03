@@ -2,7 +2,7 @@
  * Svelte action: scroll-scrubbed sticky scene.
  *
  * Attach to a tall "runway" section that contains a sticky frame (see
- * css/compositions/scene.css). As the user scrolls through the runway the
+ * motion/compositions/scene.css). As the user scrolls through the runway the
  * action computes progress 0→1 and:
  *   - sets the `--scene-progress` custom property on the node (pure-CSS use)
  *   - calls `onProgress(progress, node)` (JS-driven recipes: lerp, phases…)

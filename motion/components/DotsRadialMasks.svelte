@@ -1,5 +1,5 @@
 <!--
-  Masks for the Segue Dots Radial transition (css/transitions/cells/dots-radial.css).
+  Masks for the Segue Dots Radial transition (motion/transitions/cells/dots-radial.css).
   Render once in the root +layout.svelte; it takes no space.
   Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue
 -->

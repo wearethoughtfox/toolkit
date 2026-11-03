@@ -1,5 +1,5 @@
 /**
- * Page transitions for the Segue CSS in css/transitions/.
+ * Page transitions for the Segue CSS in motion/transitions/.
  *
  * SvelteKit navigates client-side, so the CSS's @view-transition rule never
  * fires; this wraps each navigation in a view transition instead. The CSS

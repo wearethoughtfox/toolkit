@@ -2,7 +2,7 @@
 	/**
 	 * Scroll-scrubbed sticky scene (Svelte 5).
 	 *
-	 * Renders the runway + sticky frame from css/compositions/scene.css and
+	 * Renders the runway + sticky frame from motion/compositions/scene.css and
 	 * wires up the scrollScene action. Two ways to consume progress:
 	 *
 	 *   1. CSS only (cheapest — no re-renders):
@@ -20,7 +20,7 @@
 	 * argument re-renders on every frame, which is fine for text (progress
 	 * counters, state labels) but wasteful for transforms.
 	 */
-	import { scrollScene } from '../actions/scroll-scene.js';
+	import { scrollScene } from '../scroll-scene.js';
 
 	let {
 		/** Runway height — how much scroll the scene costs (default 300vh). */

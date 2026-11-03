@@ -1,5 +1,5 @@
 <!--
-  Masks for the Segue Grid Squares transition (css/transitions/cells/grid-squares.css).
+  Masks for the Segue Grid Squares transition (motion/transitions/cells/grid-squares.css).
   Render once in the root +layout.svelte; it takes no space.
   Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue
 -->

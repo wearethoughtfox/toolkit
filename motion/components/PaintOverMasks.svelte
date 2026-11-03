@@ -1,5 +1,5 @@
 <!--
-  Masks for the Segue Paint Over transition (css/transitions/paint/paint-over.css).
+  Masks for the Segue Paint Over transition (motion/transitions/paint/paint-over.css).
   Render once in the root +layout.svelte; it takes no space.
   Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue
 -->

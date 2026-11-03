@@ -1,5 +1,5 @@
 <!--
-  Masks for the Segue Dots Sweep transition (css/transitions/cells/dots-sweep.css).
+  Masks for the Segue Dots Sweep transition (motion/transitions/cells/dots-sweep.css).
   Render once in the root +layout.svelte; it takes no space.
   Generated with Segue by Jhey Tompkins: https://jhey.dev/prototypes/2026/segue
 -->
