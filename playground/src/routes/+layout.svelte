@@ -6,6 +6,7 @@
   import SkipLink from '@thoughtfox/toolkit/layout/components/SkipLink.svelte';
   import SiteHead from '$lib/components/blocks/SiteHead.svelte';
   import SiteFoot from '$lib/components/blocks/SiteFoot.svelte';
+  import TransitionPreview from '$lib/transitions/TransitionPreview.svelte';
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -14,7 +15,8 @@
     ...(dev
       ? [
           { href: '/palette', label: 'Palette' },
-          { href: '/type', label: 'Type' }
+          { href: '/type', label: 'Type' },
+          { href: '/transitions', label: 'Transitions' }
         ]
       : [])
   ];
@@ -38,6 +40,11 @@
 </main>
 
 <SiteFoot siteName="My Site" />
+
+<!-- Dev only: runs the transition picked on /transitions -->
+{#if dev}
+  <TransitionPreview />
+{/if}
 
 <style>
   :global(body) {
