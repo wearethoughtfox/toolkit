@@ -81,3 +81,4 @@ Then record a verdict for each in `transitions.json` (keep, tone down or drop), 
 
 - Move a copied site (Brick House, WATF, Ashbright, Clubs) onto the toolkit only when it's next being worked on, with a snapshot baseline first
 - Run `emil-prep-for-prod` before each launch
+- Forms off Netlify: `tools/forms/` (PocketBase hooks on Coolify, Maillayer for newsletters). Brick House's contact form first, when its DNS moves; then robertocarroll.com's signup

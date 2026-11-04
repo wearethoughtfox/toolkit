@@ -1,0 +1,13 @@
+{
+	"name": "thoughtfox-forms",
+	"private": true,
+	"description": "Shared forms back end (PocketBase hooks) for Thought Fox's static sites. Not part of the published package.",
+	"type": "commonjs",
+	"scripts": {
+		"test": "node --test test/*.test.js",
+		"test:pocketbase": "node --test test/integration.test.js"
+	},
+	"engines": {
+		"node": ">=20"
+	}
+}

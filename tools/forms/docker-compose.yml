@@ -1,0 +1,59 @@
+# Try the forms back end on your own machine.
+#
+#   cd tools/forms
+#   docker compose up --build
+#
+# Then open:
+#   http://localhost:8090/          a demo contact form (example/index.html)
+#   http://localhost:8025/          Mailpit: the notification emails land here
+#   http://localhost:8090/_/        PocketBase admin (create a superuser from
+#                                   the link in the PocketBase log)
+#
+# The hooks and migrations are mounted, not copied, so edits to pb_hooks
+# restart PocketBase straight away. Nothing here is for production.
+
+services:
+  pocketbase:
+    build: .
+    ports:
+      - "8090:8080"
+    # Same command as the image, but watching the mounted hooks and
+    # serving the demo page from example/.
+    command:
+      - /pb/pocketbase
+      - serve
+      - --http=0.0.0.0:8080
+      - --dir=/pb/pb_data
+      - --hooksDir=/pb/pb_hooks
+      - --migrationsDir=/pb/pb_migrations
+      - --publicDir=/pb/pb_public
+      - --automigrate=false
+      - --hooksWatch=true
+    volumes:
+      - ./pb_hooks:/pb/pb_hooks
+      - ./pb_migrations:/pb/pb_migrations
+      - ./example:/pb/pb_public:ro
+      - pb-data:/pb/pb_data
+    environment:
+      FORMS_DEMO: "1" # adds the "demo" site from pb_hooks/forms/config.js
+      FORMS_NOTIFY_DEMO: you@example.com
+      MAIL_SENDER_ADDRESS: forms@example.com
+      MAIL_SENDER_NAME: Thought Fox forms (local)
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      # Uncomment to try Turnstile with Cloudflare's always-pass test keys
+      # (also uncomment the widget in example/index.html):
+      # FORMS_DEMO_TURNSTILE: "1"
+      # TURNSTILE_SECRET_KEY: 1x0000000000000000000000000000000AA
+      # Point at a Maillayer to try the newsletter route:
+      # MAILLAYER_URL: http://host.docker.internal:8024
+    depends_on:
+      - mailpit
+
+  mailpit:
+    image: axllent/mailpit:v1.33
+    ports:
+      - "8025:8025"
+
+volumes:
+  pb-data:
