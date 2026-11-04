@@ -1,0 +1,8 @@
+pb_data
+test
+example
+node_modules
+*.md
+.env
+.env.*
+docker-compose.yml
