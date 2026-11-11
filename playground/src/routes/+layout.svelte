@@ -2,8 +2,7 @@
   import '../app.css';
   import { afterNavigate } from '$app/navigation';
   import { dev } from '$app/environment';
-  import { onMount } from 'svelte';
-  import SkipLink from '@thoughtfox/toolkit/layout/components/SkipLink.svelte';
+  import { SkipLink, focusHeading } from '@thoughtfox/toolkit/layout';
   import SiteHead from '$lib/components/blocks/SiteHead.svelte';
   import SiteFoot from '$lib/components/blocks/SiteFoot.svelte';
 
@@ -26,15 +25,7 @@
       : [])
   ];
 
-  onMount(() => {
-    afterNavigate(() => {
-      const heading = document.querySelector('main h1');
-      if (heading) {
-        heading.setAttribute('tabindex', '-1');
-        heading.focus({ preventScroll: false });
-      }
-    });
-  });
+  afterNavigate(focusHeading());
 </script>
 
 <SkipLink />
