@@ -20,8 +20,8 @@
   }
 
   .site-foot__credit {
-    font-size: var(--size-step-00);
-    color: var(--color-mid);
+    font-size: var(--type-small-size);
+    color: var(--text);
     max-width: unset;
   }
 </style>

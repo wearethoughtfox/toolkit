@@ -58,8 +58,10 @@
   }
 
   .feature-block__label {
-    font-size: var(--size-step-00);
-    font-weight: var(--font-weight-medium);
+    font-family: var(--type-label-font);
+    font-size: var(--type-label-size);
+    font-weight: var(--type-label-weight);
+    line-height: var(--type-label-leading);
     max-width: unset;
   }
 
@@ -92,7 +94,7 @@
     padding: var(--space-xs) var(--space-m);
     border-radius: var(--radius-l);
     font-weight: var(--font-weight-bold);
-    font-size: var(--size-step-1);
+    font-size: var(--type-body-size);
     text-decoration: none;
     transition: background var(--transition-base), color var(--transition-base);
   }

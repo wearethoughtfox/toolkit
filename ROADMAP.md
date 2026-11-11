@@ -45,7 +45,7 @@ The order of work across the toolkit and the client sites, agreed on 3 November 
 - [x] line heights ship as unitless ratios, not rem lengths (Rob, 3 November): the 4px rhythm guides the choice, the ratio is what sites get
 - [x] tests: `cd playground && npm test`
 - [ ] Rob: try it on a real choice (Root, or the Brick House audit)
-- [ ] Adopt `--type-*` in the playground's own `global-styles.css`, which still uses the old `--size-step-*` scale. This changes how the playground looks, so take a snapshot first
+- [x] Adopt `--type-*` in the playground's own `global-styles.css` and blocks, instead of the old `--size-step-*` scale (3 November). The `/palette` and `/type` tools still use `--size-step-*`
 
 There's no automatic breakpoint estimate. Chimero's targets (5.5 words at 320px, 12 at 700px) scale in proportion with the width, so word counts can't find his breakpoint. It's a judgement by eye, and the lab gives the counts to judge against.
 
