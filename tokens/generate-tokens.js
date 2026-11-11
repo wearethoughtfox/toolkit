@@ -65,14 +65,20 @@ export function toKebab(name) {
     .replace(/-+/g, '-');        // collapse any double dashes
 }
 
-export function clampGenerator(tokens, viewports) {
+export function clampGenerator(tokens, viewports, { precision = 2 } = {}) {
+  if (!Number.isInteger(precision) || precision < 0 || precision > 10) {
+    throw new Error('clamp precision must be an integer between 0 and 10');
+  }
   const rootSize = 16;
   const minViewport = viewports.min / rootSize;
-  const maxViewport = viewports.max / rootSize;
 
-  return tokens.map(({ name, min, max }) => {
+  return tokens.map(({ name, min, max, maxViewport: until = 'max' }) => {
     if (min === max) {
       return { name, value: `${min / rootSize}rem` };
+    }
+    const maxViewport = viewports[until] / rootSize;
+    if (!Number.isFinite(minViewport) || !Number.isFinite(maxViewport) || maxViewport <= minViewport) {
+      throw new Error(`Token "${name}": viewport "${until}" must be a finite number greater than viewports.min`);
     }
     const minRem = min / rootSize;
     const maxRem = max / rootSize;
@@ -80,7 +86,7 @@ export function clampGenerator(tokens, viewports) {
     const intersection = -1 * minViewport * slope + minRem;
     return {
       name,
-      value: `clamp(${minRem}rem, ${intersection.toFixed(2)}rem + ${(slope * 100).toFixed(2)}vw, ${maxRem}rem)`
+      value: `clamp(${minRem}rem, ${intersection.toFixed(precision)}rem + ${(slope * 100).toFixed(precision)}vw, ${maxRem}rem)`
     };
   });
 }
@@ -215,7 +221,8 @@ export function generateTokens({
   spacingOutput,
   typographyOutput,
   contrastOutput,
-  checkVars
+  checkVars,
+  clampPrecision = 2
 } = {}) {
   const readToken = (filename) => JSON.parse(readFileSync(join(tokensDir, filename), 'utf-8'));
 
@@ -248,13 +255,13 @@ export function generateTokens({
 
   // Spacing (fluid clamp values)
   lines.push('\n  /* Spacing */');
-  for (const { name, value } of clampGenerator(spacing.items, viewports)) {
+  for (const { name, value } of clampGenerator(spacing.items, viewports, { precision: clampPrecision })) {
     lines.push(`  --space-${toKebab(name)}: ${value};`);
   }
 
   // Type sizes (fluid clamp values)
   lines.push('\n  /* Type sizes */');
-  for (const { name, value } of clampGenerator(textSizes.items, viewports)) {
+  for (const { name, value } of clampGenerator(textSizes.items, viewports, { precision: clampPrecision })) {
     // "Step 000" → "step-000", "Step 0" → "step-0"
     lines.push(`  --size-${toKebab(name)}: ${value};`);
   }

@@ -1,6 +1,6 @@
 {
 	"name": "@thoughtfox/toolkit",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"description": "Shared foundations for Thought Fox SvelteKit sites, by area: design tokens, layout (CUBE CSS + Every Layout), motion, and the palette and type tools.",
 	"type": "module",
 	"svelte": "./index.js",

@@ -28,7 +28,7 @@
 
 <style>
   .card {
-    background: var(--color-dark-glare);
+    background: var(--surface-raised);
     border-radius: var(--radius-m);
     overflow: hidden;
     display: flex;
@@ -48,8 +48,8 @@
     color: inherit;
     text-decoration: none;
     font-weight: var(--font-bold);
-    font-size: var(--size-step-2);
-    line-height: var(--leading-fine);
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-leading);
   }
 
   .card__link::after {
@@ -63,7 +63,7 @@
   }
 
   .card__link:hover {
-    color: var(--color-primary);
+    color: var(--primary);
   }
 
   @media (prefers-reduced-motion: no-preference) {

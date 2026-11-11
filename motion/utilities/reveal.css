@@ -1,4 +1,4 @@
-/* Scroll reveal — paired with @thoughtfox/toolkit/actions/reveal.js */
+/* Scroll reveal — paired with @thoughtfox/toolkit/motion/reveal.js */
 
 [data-revealed='false'] {
   opacity: 0;

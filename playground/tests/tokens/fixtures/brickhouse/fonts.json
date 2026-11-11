@@ -1,0 +1,18 @@
+{
+  "title": "Fonts",
+  "description": "As on the Jekyll site: Georgia for headings, the system sans stack for everything else. No web fonts to load.",
+  "items": [
+    {
+      "name": "Base",
+      "value": "-apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif"
+    },
+    {
+      "name": "Display",
+      "value": "georgia, 'times new roman', serif"
+    },
+    {
+      "name": "Mono",
+      "value": "ui-monospace, 'Cascadia Code', consolas, monaco, monospace"
+    }
+  ]
+}

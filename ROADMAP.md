@@ -1,5 +1,7 @@
 # Roadmap
 
+See the [11 November review response and implementation plan](IMPLEMENTATION-2026-11-11.md) for the proposed order, qualifications and completed generator prerequisite. The historical checklist below remains intact.
+
 The order of work across the toolkit and the client sites, agreed on 3 November 2026. Each step makes the next one safer or easier.
 
 **How it fits together:** everything shared lives in this one repo. That's the package (the top-level folders), the playground (`playground/`, which was the starter), the tools (`tools/`), the Thought Fox skills (`.claude/skills/`) and this roadmap. Work happens here once. Each site gets it only when you tag a release and bump that site's pin (`github:wearethoughtfox/toolkit#vX.Y.Z`), then check it with the snapshots. Nothing updates a site on its own.
@@ -43,7 +45,7 @@ The order of work across the toolkit and the client sites, agreed on 3 November 
 - [x] line heights ship as unitless ratios, not rem lengths (Rob, 3 November): the 4px rhythm guides the choice, the ratio is what sites get
 - [x] tests: `cd playground && npm test`
 - [ ] Rob: try it on a real choice (Root, or the Brick House audit)
-- [ ] Adopt `--type-*` in the playground's own `global-styles.css`, which still uses the old `--size-step-*` scale. This changes how the playground looks, so take a snapshot first
+- [x] Adopt `--type-*` in the playground's own `global-styles.css` and blocks, instead of the old `--size-step-*` scale (3 November). The `/palette` and `/type` tools still use `--size-step-*`
 
 There's no automatic breakpoint estimate. Chimero's targets (5.5 words at 320px, 12 at 700px) scale in proportion with the width, so word counts can't find his breakpoint. It's a judgement by eye, and the lab gives the counts to judge against.
 
@@ -65,7 +67,8 @@ The pieces are now in one repo, but the playground still has its own copies of t
 - [x] The palette and type tools in the package (`@thoughtfox/toolkit/palette`, `/type`); the `/palette` and `/type` routes stay in the playground and pass its Button as `button={Button}`
 - [x] v0.2.0 release notes and upgrade notes in the README
 - [x] Rob: tag v0.2.0 after merging (`git tag v0.2.0 && git push --tags`)
-- [ ] Rob: bump Root and robertocarroll.com to `#v0.2.0` and check each with `cd tools/site-snapshots && npm run compare -- root robertocarroll`. No code changes needed
+- [x] Root is on `#v0.2.2`
+- [ ] robertocarroll.com is on `#v0.2.0` in a local commit that isn't pushed (checked 11 November). Push it, or bump straight to the next tag
 
 ## 6. Transitions bank (done 3 November, except the Lapse pass)
 

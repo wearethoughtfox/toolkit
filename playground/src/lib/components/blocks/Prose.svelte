@@ -9,22 +9,20 @@
 
 <style>
   .prose {
-    --measure: 66ch;
+    --measure: var(--type-max-width);
     --flow-space: var(--space-m);
   }
 
   .prose :global(h2) {
     --flow-space: var(--space-l);
-    font-size: var(--size-step-4);
   }
 
   .prose :global(h3) {
     --flow-space: var(--space-m);
-    font-size: var(--size-step-3);
   }
 
   .prose :global(a) {
-    color: var(--color-primary);
+    color: var(--primary);
     text-underline-offset: 0.2em;
   }
 
@@ -33,9 +31,10 @@
   }
 
   .prose :global(blockquote) {
-    border-inline-start: 4px solid var(--color-primary);
+    border-inline-start: 4px solid var(--border);
     padding-inline-start: var(--space-m);
-    font-size: var(--size-step-2);
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-leading);
     font-style: italic;
   }
 

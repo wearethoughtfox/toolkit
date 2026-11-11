@@ -11,11 +11,14 @@ Used by [robertocarroll.com](https://robertocarroll.com) and Root Pilates & Cafe
 ## Install
 
 ```sh
-npm i -D github:wearethoughtfox/toolkit#v0.2.0
+npm i -D github:wearethoughtfox/toolkit#v0.2.2
 ```
 
 Pin a tag. Upgrade sites deliberately by bumping the tag, rebuilding, and
 checking the site — never track a branch.
+
+For the 11 November audit assessment and implementation status, see
+[the review response](IMPLEMENTATION-2026-11-11.md).
 
 ## This repo
 
@@ -66,6 +69,8 @@ layout/compositions/*.css     stack, cluster, sidebar, grid, switcher, cover,
 layout/utilities/*.css        region, visually-hidden
 layout/components/*.svelte    Prop-based wrappers for each composition, and
                               SkipLink (pair with #main-content)
+layout/focus-heading.js       focusHeading() for afterNavigate: focus the new
+                              page's h1 after a client-side navigation
 
 motion/compositions/scene.css Scroll-scene runway
 motion/utilities/reveal.css   Scroll reveal (pair with reveal.js)
@@ -246,6 +251,16 @@ Each output takes a path to move it, or `false` to turn it off:
 `generateTokens({ spacingOutput, typographyOutput, contrastOutput, checkVars })`.
 `checkVars` takes the folders to scan (default `'src'`). Run the check alone
 with `node node_modules/@thoughtfox/toolkit/tokens/check-vars.js [folder …]`.
+
+#### Named viewport limits
+
+A fluid spacing or text-size token can set `"maxViewport": "mid"` to stop growing
+at `viewports.mid` instead of `viewports.max`. The named viewport must exceed
+`viewports.min`. Constant-size tokens do not need a viewport range.
+
+`generateTokens({ clampPrecision: 4 })` uses four decimal places for fluid
+coefficients, matching Brick House's generator. The default remains two to
+preserve existing output. Compare screenshots when changing precision.
 
 ### Palette and type tools
 
