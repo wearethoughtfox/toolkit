@@ -1,0 +1,49 @@
+<!doctype html>
+<!--
+  Demo for `docker compose up`: PocketBase serves this page at
+  http://localhost:8090/ and the form posts to the "demo" site in
+  pb_hooks/forms/config.js. It is the same markup a static site uses,
+  apart from the action URL.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forms demo</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 36rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; }
+      label { display: block; margin-top: 1rem; }
+      input, textarea { display: block; width: 100%; font: inherit; padding: 0.4rem; box-sizing: border-box; }
+      button { margin-top: 1rem; font: inherit; padding: 0.5rem 1rem; }
+      .visually-hidden { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+    </style>
+    <!-- Uncomment with FORMS_DEMO_TURNSTILE=1 in docker-compose.yml:
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    -->
+  </head>
+  <body>
+    <h1>Contact (demo)</h1>
+    <p>Works with JavaScript turned off. The email appears in <a href="http://localhost:8025/">Mailpit</a>.</p>
+
+    <form method="POST" action="/api/forms/demo/contact">
+      <p class="visually-hidden" aria-hidden="true">
+        <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+      </p>
+      <label>Name <input name="name" autocomplete="name" /></label>
+      <label>Email <input name="email" type="email" autocomplete="email" required /></label>
+      <label>Message <textarea name="message" rows="6" required></textarea></label>
+      <!-- <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div> -->
+      <button type="submit">Send</button>
+    </form>
+
+    <h2>Newsletter (demo)</h2>
+    <p>Needs MAILLAYER_URL in docker-compose.yml. Without it, the address is kept in PocketBase instead.</p>
+    <form method="POST" action="/api/forms/demo/subscribe">
+      <p class="visually-hidden" aria-hidden="true">
+        <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+      </p>
+      <label>Email <input name="email" type="email" autocomplete="email" required /></label>
+      <button type="submit">Subscribe</button>
+    </form>
+  </body>
+</html>
