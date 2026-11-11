@@ -1,0 +1,62 @@
+/* AUTO-GENERATED — do not edit. Run `npm run tokens` to regenerate. */
+:root {
+
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-gold: #FFC843;
+  --color-gold-deep: #7D5F17;
+  --color-grey: #565656;
+  --color-logo-grey: #6C6C6C;
+  --color-text: #3A3A3A;
+  --color-ink: #1A1A1A;
+  --color-rule: #E4E4E4;
+  --color-wash: #F5F5F3;
+
+  /* Spacing */
+  --space-2xs: clamp(0.1875rem, 0.1673rem + 0.0980vw, 0.25rem);
+  --space-xs: clamp(0.4375rem, 0.4173rem + 0.0980vw, 0.5rem);
+  --space-s: clamp(0.875rem, 0.8346rem + 0.1961vw, 1rem);
+  --space-m: clamp(1.3125rem, 1.2518rem + 0.2941vw, 1.5rem);
+  --space-l: clamp(2.1875rem, 2.0864rem + 0.4902vw, 2.5rem);
+  --space-xl: clamp(3.0625rem, 2.9210rem + 0.6863vw, 3.5rem);
+  --space-2xl: clamp(3.5rem, 3.3382rem + 0.7843vw, 4rem);
+  --space-3xl: clamp(4.375rem, 4.1728rem + 0.9804vw, 5rem);
+  --space-4xl: clamp(6.5625rem, 6.2592rem + 1.4706vw, 7.5rem);
+  --space-xs-l: clamp(0.4375rem, -0.2298rem + 3.2353vw, 2.5rem);
+  --space-m-l: clamp(1.3125rem, 0.9283rem + 1.8627vw, 2.5rem);
+  --space-2xl-4xl: clamp(3.5rem, 2.2059rem + 6.2745vw, 7.5rem);
+
+  /* Type sizes */
+  --size-step-000: clamp(0.75rem, 0.7399rem + 0.0490vw, 0.78125rem);
+  --size-step-00: clamp(0.875rem, 0.8548rem + 0.0980vw, 0.9375rem);
+  --size-step-0: clamp(1rem, 0.9041rem + 0.4651vw, 1.125rem);
+  --size-step-1: clamp(1.09375rem, 0.9499rem + 0.6977vw, 1.28125rem);
+  --size-step-2: clamp(1.21875rem, 1.1278rem + 0.4412vw, 1.5rem);
+  --size-step-3: clamp(1.375rem, 1.2335rem + 0.6863vw, 1.8125rem);
+  --size-step-4: clamp(1.625rem, 1.3824rem + 1.1765vw, 2.375rem);
+  --size-step-5: clamp(1.875rem, 1.4706rem + 1.9608vw, 3.125rem);
+  --size-step-6: clamp(2.25rem, 1.6029rem + 3.1373vw, 4.25rem);
+  --size-step-7: clamp(2.625rem, 1.6140rem + 4.9020vw, 5.75rem);
+
+  /* Leading */
+  --leading-micro: 0.85;
+  --leading-flat: 1;
+  --leading-fine: 1.2;
+  --leading-standard: 1.55;
+  --leading-loose: 1.7;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-regular: 400;
+  --font-weight-medium: 500;
+  --font-medium: 500;
+  --font-weight-bold: 700;
+  --font-bold: 700;
+  --font-weight-black: 900;
+  --font-black: 900;
+
+  /* Font stacks */
+  --font-base: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+  --font-display: georgia, 'times new roman', serif;
+  --font-mono: ui-monospace, 'Cascadia Code', consolas, monaco, monospace;
+}

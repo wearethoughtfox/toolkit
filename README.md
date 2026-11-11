@@ -17,6 +17,9 @@ npm i -D github:wearethoughtfox/toolkit#v0.2.2
 Pin a tag. Upgrade sites deliberately by bumping the tag, rebuilding, and
 checking the site — never track a branch.
 
+For the 11 November audit assessment and implementation status, see
+[the review response](IMPLEMENTATION-2026-11-11.md).
+
 ## This repo
 
 Everything shared is worked on here, once. Sites get a change only when
@@ -240,6 +243,16 @@ Each output takes a path to move it, or `false` to turn it off:
 `checkVars` takes the folders to scan (default `'src'`). Run the check alone
 with `node node_modules/@thoughtfox/toolkit/tokens/check-vars.js [folder …]`.
 
+#### Named viewport limits
+
+A fluid spacing or text-size token can set `"maxViewport": "mid"` to stop growing
+at `viewports.mid` instead of `viewports.max`. The named viewport must exceed
+`viewports.min`. Constant-size tokens do not need a viewport range.
+
+`generateTokens({ clampPrecision: 4 })` uses four decimal places for fluid
+coefficients, matching Brick House's generator. The default remains two to
+preserve existing output. Compare screenshots when changing precision.
+
 ### Palette and type tools
 
 The `/palette` and `/type` labs are routes in the playground, built from the
@@ -290,6 +303,8 @@ was never affected.
 and which uses the `<Wrapper>` component gets narrower (or wider) pages:
 they finally follow the variable. Root sets 1360px, so nothing moves there.
 robertocarroll.com uses the class, not the component.
+
+**New: named viewport limits.** A fluid token can set `"maxViewport": "mid"` to stop growing at a named viewport, and `generateTokens({ clampPrecision: 4 })` sets the decimals in `clamp()`. The default stays at two, so existing output doesn't change (see "Design tokens").
 
 **New: `focusHeading()`.** After a client-side navigation it moves focus to
 the new page's `h1`. Every site's layout had this as a copied snippet that

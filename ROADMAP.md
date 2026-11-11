@@ -1,5 +1,7 @@
 # Roadmap
 
+See the [11 November review response and implementation plan](IMPLEMENTATION-2026-11-11.md) for the proposed order, qualifications and completed generator prerequisite. The historical checklist below remains intact.
+
 The order of work across the toolkit and the client sites, agreed on 3 November 2026. Each step makes the next one safer or easier.
 
 **How it fits together:** everything shared lives in this one repo. That's the package (the top-level folders), the playground (`playground/`, which was the starter), the tools (`tools/`), the Thought Fox skills (`.claude/skills/`) and this roadmap. Work happens here once. Each site gets it only when you tag a release and bump that site's pin (`github:wearethoughtfox/toolkit#vX.Y.Z`), then check it with the snapshots. Nothing updates a site on its own.
