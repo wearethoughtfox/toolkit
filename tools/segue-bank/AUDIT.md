@@ -1,6 +1,6 @@
 # Segue bank audit
 
-Roadmap step 6. This audit covers all 46 transitions in this folder. The verdicts are drafts for Rob to decide. The full record for each transition is the `audit` object in `transitions.json`: `duration`, `easing`, `reducedMotion`, `risks`, `verdict` and `note`.
+Roadmap step 6. This audit covers all 46 transitions in this folder. The verdicts were drafts for Rob to decide. The verdicts the package ships, with a one-line reason and the override for each tone-down, are in `motion/transitions/transitions.json`, and the playground's `/transitions` page shows them. The full audit record for each transition is the `audit` object in this folder's `transitions.json`: `duration`, `easing`, `reducedMotion`, `risks`, `verdict` and `note`.
 
 **Result:** 0 keep, 15 tone down, 31 drop.
 
@@ -15,7 +15,7 @@ Roadmap step 6. This audit covers all 46 transitions in this folder. The verdict
 
 - **Every transition is too long.** None is under 600ms as captured. The shortest take 800ms. 31 use the same 3-layer timing: an 800ms move with an 80ms gap between the lead band, the trail band and the new page, so 960ms in all. The longest are Framed Drift (1.75s), Framed Slide (1.55s), Card Flip and Cube Turn (1.5s each) and Pixel Burn (1.36s). This is why there are no plain "keep" verdicts: every possible keep needs a change to its timing.
 - **The easing is good.** Most moves use ease-in-out cubic `cubic-bezier(0.65, 0, 0.35, 1)`. No transition overshoots or bounces. Pixel Burn is the only one that moves at a linear rate. Other transitions use `linear` only for a still hold or a short opacity fade.
-- **Reduced motion passes in all 46.** Every animated rule is inside `@media (prefers-reduced-motion: no-preference)`. `@view-transition` is outside it, so reduced-motion users still get the browser's default crossfade: 250ms, no movement. I checked this for all 46 in Chromium. Nothing is missing for the house rule. The only gap is that the fade length belongs to the browser, not to us (see fix 3).
+- **Reduced motion passes in all 46.** Every animated rule is inside `@media (prefers-reduced-motion: no-preference)`. `@view-transition` is outside it, so reduced-motion users still get a crossfade. Since roadmap step 6, each file also ends with its own `prefers-reduced-motion: reduce` block: a 180ms opacity crossfade with no movement, forwards and back. Before, the fade was the browser's default (250ms). I checked all 46 in Chromium: with reduce, the only animations are the two fades; with no-preference, the animations are the same as before the block was added.
 - **Going back.** 38 have a true reverse. The 8 without one replay the forward move: Clock Wipe, Fan Wipe, Swing, Dots Radial, Sprite Noise, Dither Dissolve, Pixel Burn and Sprite Shuffle. The reverse plays across pages only if segue.js is loaded, or if the SvelteKit `onNavigate` snippet sets the `backwards` type.
 - **Demo colours.** The lead and trail colours are bright demo colours, such as neon cyan and magenta. On a client site, always set them to the site's palette.
 
@@ -106,29 +106,24 @@ To get a plain wipe with no visible bands, set `--segue-gap: 0s`.
 
 ```css
 :root {
-  --segue-lead-color: var(--color-surface);
-  --segue-trail-color: var(--color-primary);
+  --segue-lead-color: var(--surface);
+  --segue-trail-color: var(--primary);
 }
 ```
+
+`--surface` and `--primary` are the role names the token generator writes. The overrides in `motion/transitions/transitions.json` use them.
 
 Sprite Shuffle can't take this fix, because its colours are baked into the sprite images.
 
-### 3. Optional: set our own reduced-motion fade
+### 3. Reduced-motion fade (done in every file)
 
-Every file already passes the house rule through the browser's 250ms crossfade. To make the fade length ours, and the same on every site, add this:
+Each file now ends with a `prefers-reduced-motion: reduce` block that gives a 180ms opacity crossfade and nothing else. A site doesn't need to add anything. To change the length:
 
 ```css
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(root),
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 200ms;
-    animation-timing-function: ease-out;
-  }
+:root {
+  --segue-fade-duration: 200ms;
 }
 ```
-
-I checked this in Chromium: the fade runs for 200ms, and nothing moves.
 
 ### 4. Regenerate when the timing or shape is baked in
 

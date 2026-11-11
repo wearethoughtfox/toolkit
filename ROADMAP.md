@@ -70,15 +70,15 @@ The pieces are now in one repo, but the playground still has its own copies of t
 - [x] Root is on `#v0.2.2`
 - [ ] robertocarroll.com is on `#v0.2.0` in a local commit that isn't pushed (checked 11 November). Push it, or bump straight to the next tag
 
-## 6. Transitions bank
+## 6. Transitions bank (done 3 November, except the Lapse pass)
 
-Audit all 46 Segue transitions in `tools/segue-bank/` (the CSS is the same as the package's `motion/transitions/`). The audit is written up with draft verdicts in `tools/segue-bank/AUDIT.md` (0 keep, 15 tone down, 31 drop); the Lapse pass on the shortlist, Rob's verdicts and the picker are still to do:
+Audit all 46 Segue transitions in `tools/segue-bank/` (the CSS is the same as the package's `motion/transitions/`; change both copies together):
 
-- duration and easing
-- a reduced-motion version that keeps a fade and drops the movement
-- a frame-by-frame look in Lapse
-
-Then record a verdict for each in `transitions.json` (keep, tone down or drop), and make a picker that previews them on a client's own pages.
+- [x] Duration and easing: `durationMs`, `timing`, `easing` and `easingNote` for each in `motion/transitions/transitions.json`, from the audit (`tools/segue-bank/AUDIT.md`). A test checks them against the CSS
+- [x] A reduced-motion version in each file: a 180ms opacity crossfade (`--segue-fade-duration`), with no movement, clip-path, scale or blur, forwards and back. Nothing changes with reduced motion off (checked in Chromium for all 46)
+- [x] A verdict for each in `transitions.json` (`verdict`, `why`, `shortlist`, and an `override` for each tone-down): 0 keep, 15 tone down, 31 drop. The shortlist is Slide Left, Slide Up, Focus Pull, Framed Cover and Circle Pop. Focus Pull's file is unchanged; Root's `--segue-duration: 0.35s` is its override
+- [x] A picker: `/transitions` in `playground/` (dev only) lists them by verdict and previews any one as a real page-to-page transition between the playground's pages, with a reduced-motion toggle and the steps for a site
+- [ ] Rob: the frame-by-frame look in Lapse, on the shortlist only, on a real phone as well as the Mac. Change a verdict in `transitions.json` if it doesn't hold up
 
 ## Ongoing
 

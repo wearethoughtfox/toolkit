@@ -6,6 +6,12 @@
   import SiteHead from '$lib/components/blocks/SiteHead.svelte';
   import SiteFoot from '$lib/components/blocks/SiteFoot.svelte';
 
+  // Dev only: import.meta.env.DEV is replaced at build time, so a production
+  // build drops the preview and its masks completely
+  const transitionPreview = import.meta.env.DEV
+    ? import('$lib/transitions/TransitionPreview.svelte')
+    : null;
+
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
@@ -13,7 +19,8 @@
     ...(dev
       ? [
           { href: '/palette', label: 'Palette' },
-          { href: '/type', label: 'Type' }
+          { href: '/type', label: 'Type' },
+          { href: '/transitions', label: 'Transitions' }
         ]
       : [])
   ];
@@ -29,6 +36,13 @@
 </main>
 
 <SiteFoot siteName="My Site" />
+
+<!-- Dev only: runs the transition picked on /transitions -->
+{#if transitionPreview}
+  {#await transitionPreview then { default: TransitionPreview }}
+    <TransitionPreview />
+  {/await}
+{/if}
 
 <style>
   :global(body) {

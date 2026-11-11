@@ -6,7 +6,7 @@
   - same page:   document.startViewTransition(() => updateTheDOM())
   - across pages: the @view-transition rule below opts same-origin
     navigations in; it needs to be on both pages.
-  Reduced motion falls back to the default crossfade.
+  Reduced motion gets a short crossfade (the last block).
 */
 
 @view-transition {
@@ -93,5 +93,37 @@
     animation-direction: reverse;
     transform-origin: 0% 50%;
     backface-visibility: hidden;
+  }
+}
+
+/*
+  Reduced motion: a short crossfade and nothing else. Every animated rule
+  above runs only with no-preference, so with reduce this block is the
+  whole transition, forwards and back: no movement, clip-path, scale or blur.
+  Set --segue-fade-duration to change the length (default 180ms).
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes segue-fade-out {
+    to { opacity: 0; }
+  }
+  @keyframes segue-fade-in {
+    from { opacity: 0; }
+  }
+  ::view-transition-group(root) {
+    animation: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    mix-blend-mode: plus-lighter;
+    animation-duration: var(--segue-fade-duration, 180ms);
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+  ::view-transition-old(root) {
+    animation-name: segue-fade-out;
+  }
+  ::view-transition-new(root) {
+    animation-name: segue-fade-in;
   }
 }

@@ -6,7 +6,7 @@
   - same page:   document.startViewTransition(() => updateTheDOM())
   - across pages: the @view-transition rule below opts same-origin
     navigations in; it needs to be on both pages.
-  No extra markup needed. Reduced motion falls back to the default crossfade.
+  No extra markup needed. Reduced motion gets a short crossfade (the last block).
 */
 
 @view-transition {
@@ -116,5 +116,37 @@
     mix-blend-mode: normal;
     animation: segue-page var(--segue-duration) var(--segue-ease) calc(var(--segue-gap) * 2) both;
     clip-path: shape(evenodd from calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (-1 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (-1 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((-1 + 0.1667 * clamp(0, (var(--segue-page) - 0) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((-1 + 0.1667 * clamp(0, (var(--segue-page) - 0) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (-0.8333 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (-0.8333 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((-0.8333 + 0.1667 * clamp(0, (var(--segue-page) - 0.0318) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((-0.8333 + 0.1667 * clamp(0, (var(--segue-page) - 0.0318) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (-0.6667 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (-0.6667 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((-0.6667 + 0.1667 * clamp(0, (var(--segue-page) - 0.0636) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((-0.6667 + 0.1667 * clamp(0, (var(--segue-page) - 0.0636) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (-0.5 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (-0.5 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((-0.5 + 0.1667 * clamp(0, (var(--segue-page) - 0.0955) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((-0.5 + 0.1667 * clamp(0, (var(--segue-page) - 0.0955) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (-0.3333 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (-0.3333 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((-0.3333 + 0.1667 * clamp(0, (var(--segue-page) - 0.1273) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((-0.3333 + 0.1667 * clamp(0, (var(--segue-page) - 0.1273) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (-0.1667 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (-0.1667 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((-0.1667 + 0.1667 * clamp(0, (var(--segue-page) - 0.1591) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((-0.1667 + 0.1667 * clamp(0, (var(--segue-page) - 0.1591) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (0 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (0 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((0 + 0.1667 * clamp(0, (var(--segue-page) - 0.1909) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((0 + 0.1667 * clamp(0, (var(--segue-page) - 0.1909) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (0.1667 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (0.1667 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((0.1667 + 0.1667 * clamp(0, (var(--segue-page) - 0.2227) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((0.1667 + 0.1667 * clamp(0, (var(--segue-page) - 0.2227) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (0.3333 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (0.3333 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((0.3333 + 0.1667 * clamp(0, (var(--segue-page) - 0.2545) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((0.3333 + 0.1667 * clamp(0, (var(--segue-page) - 0.2545) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (0.5 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (0.5 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((0.5 + 0.1667 * clamp(0, (var(--segue-page) - 0.2864) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((0.5 + 0.1667 * clamp(0, (var(--segue-page) - 0.2864) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (0.6667 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (0.6667 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((0.6667 + 0.1667 * clamp(0, (var(--segue-page) - 0.3182) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((0.6667 + 0.1667 * clamp(0, (var(--segue-page) - 0.3182) / 0.65, 1)) * (0vw + 50vh + 1px))), close, move to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * (0.8333 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * (0.8333 * (0vw + 50vh + 1px))), line to calc(50% + -1 * (50vw + 0vh + 1px)) calc(50% + -1 * ((0.8333 + 0.1667 * clamp(0, (var(--segue-page) - 0.35) / 0.65, 1)) * (0vw + 50vh + 1px))), line to calc(50% + -1 * (-1 * (50vw + 0vh + 1px))) calc(50% + -1 * ((0.8333 + 0.1667 * clamp(0, (var(--segue-page) - 0.35) / 0.65, 1)) * (0vw + 50vh + 1px))), close);
+  }
+}
+
+/*
+  Reduced motion: a short crossfade and nothing else. Every animated rule
+  above runs only with no-preference, so with reduce this block is the
+  whole transition, forwards and back: no movement, clip-path, scale or blur.
+  Set --segue-fade-duration to change the length (default 180ms).
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes segue-fade-out {
+    to { opacity: 0; }
+  }
+  @keyframes segue-fade-in {
+    from { opacity: 0; }
+  }
+  ::view-transition-group(root) {
+    animation: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    mix-blend-mode: plus-lighter;
+    animation-duration: var(--segue-fade-duration, 180ms);
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+  ::view-transition-old(root) {
+    animation-name: segue-fade-out;
+  }
+  ::view-transition-new(root) {
+    animation-name: segue-fade-in;
   }
 }
