@@ -290,7 +290,7 @@ the package installs.
 - Blocks (buttons, cards, navs) stay in each site — they carry the brand.
 - Rule of two: nothing enters this package until at least two sites need it.
 
-## Unreleased (v0.2.3)
+## v0.2.3
 
 **Fix: Wrapper ignored the site's width.** `<Wrapper>` wrote
 `--wrapper-max-width: var(--wrapper-max-width, 1360px)` inline. A custom
