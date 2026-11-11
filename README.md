@@ -11,7 +11,7 @@ Used by [robertocarroll.com](https://robertocarroll.com) and Root Pilates & Cafe
 ## Install
 
 ```sh
-npm i -D github:wearethoughtfox/toolkit#v0.2.0
+npm i -D github:wearethoughtfox/toolkit#v0.2.2
 ```
 
 Pin a tag. Upgrade sites deliberately by bumping the tag, rebuilding, and
@@ -66,6 +66,8 @@ layout/compositions/*.css     stack, cluster, sidebar, grid, switcher, cover,
 layout/utilities/*.css        region, visually-hidden
 layout/components/*.svelte    Prop-based wrappers for each composition, and
                               SkipLink (pair with #main-content)
+layout/focus-heading.js       focusHeading() for afterNavigate: focus the new
+                              page's h1 after a client-side navigation
 
 motion/compositions/scene.css Scroll-scene runway
 motion/utilities/reveal.css   Scroll reveal (pair with reveal.js)
@@ -200,7 +202,7 @@ file lists what it exposes:
 
 Reduced-motion users get the default crossfade, and browsers without view
 transitions navigate normally. To try them all, use the demo in
-`CSS-course-picalli/segue-transitions/demo/`.
+`tools/segue-bank/demo/` (see its README).
 
 ### Design tokens
 
@@ -275,7 +277,36 @@ the package installs.
 - Blocks (buttons, cards, navs) stay in each site — they carry the brand.
 - Rule of two: nothing enters this package until at least two sites need it.
 
-## v0.2.2 (not tagged yet)
+## Unreleased (v0.2.3)
+
+**Fix: Wrapper ignored the site's width.** `<Wrapper>` wrote
+`--wrapper-max-width: var(--wrapper-max-width, 1360px)` inline. A custom
+property that refers to itself is invalid, so the site's
+`--wrapper-max-width` was dropped and every `<Wrapper>` was 1360px wide. It
+now writes nothing inline unless you pass `maxWidth`. The `.wrapper` class
+was never affected.
+
+**Check after bumping:** a site whose `--wrapper-max-width` isn't 1360px
+and which uses the `<Wrapper>` component gets narrower (or wider) pages:
+they finally follow the variable. Root sets 1360px, so nothing moves there.
+robertocarroll.com uses the class, not the component.
+
+**New: `focusHeading()`.** After a client-side navigation it moves focus to
+the new page's `h1`. Every site's layout had this as a copied snippet that
+called `afterNavigate` inside `onMount`, where it never registers, so it has
+not been running anywhere. In the root `+layout.svelte`, at the top level:
+
+```svelte
+<script>
+  import { afterNavigate } from '$app/navigation';
+  import { focusHeading } from '@thoughtfox/toolkit/layout';
+  afterNavigate(focusHeading());
+</script>
+```
+
+Delete the old `onMount(() => { afterNavigate(...) })` block when you add it.
+
+## v0.2.2
 
 **Fix: Grid presets.** `<Grid layout="thirds">` and `layout="50-50"` never
 applied, because the component wrote its default `minItemSize` and

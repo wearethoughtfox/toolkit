@@ -65,11 +65,12 @@ The pieces are now in one repo, but the playground still has its own copies of t
 - [x] The palette and type tools in the package (`@thoughtfox/toolkit/palette`, `/type`); the `/palette` and `/type` routes stay in the playground and pass its Button as `button={Button}`
 - [x] v0.2.0 release notes and upgrade notes in the README
 - [x] Rob: tag v0.2.0 after merging (`git tag v0.2.0 && git push --tags`)
-- [ ] Rob: bump Root and robertocarroll.com to `#v0.2.0` and check each with `cd tools/site-snapshots && npm run compare -- root robertocarroll`. No code changes needed
+- [x] Root is on `#v0.2.2`
+- [ ] robertocarroll.com is on `#v0.2.0` in a local commit that isn't pushed (checked 11 November). Push it, or bump straight to the next tag
 
 ## 6. Transitions bank
 
-Audit all 46 Segue transitions in `tools/segue-bank/` (the CSS is the same as the package's `css/transitions/`):
+Audit all 46 Segue transitions in `tools/segue-bank/` (the CSS is the same as the package's `motion/transitions/`). The audit is written up with draft verdicts in `tools/segue-bank/AUDIT.md` (0 keep, 15 tone down, 31 drop); the Lapse pass on the shortlist, Rob's verdicts and the picker are still to do:
 
 - duration and easing
 - a reduced-motion version that keeps a fade and drops the movement
