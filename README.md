@@ -299,7 +299,7 @@ the package installs.
 - Blocks (buttons, cards, navs) stay in each site — they carry the brand.
 - Rule of two: nothing enters this package until at least two sites need it.
 
-## Unreleased
+## v0.3.0
 
 **Transitions.** Each of the 46 files in `motion/transitions/` now ends
 with a reduced-motion block: a 180ms crossfade, no movement. With reduced
@@ -310,6 +310,81 @@ motion off, nothing changes. `transitions.json` gains `slug`,
 **Check after bumping:** with reduced motion on, page changes are a
 180ms crossfade instead of the browser's 250ms. Root (Focus Pull at
 0.35s) looks the same with reduced motion off.
+
+**New: shared SEO helpers (`@thoughtfox/toolkit/seo`).** The head tags, the
+sitemap, robots.txt and llms.txt, which every site had grown its own
+near-copy of. The decisions are plain tested functions; `Head.svelte` only
+prints what `buildHead()` returns.
+
+```svelte
+<script>
+  import Head from '@thoughtfox/toolkit/seo/Head.svelte';
+  import { site } from '$lib/content/site.js';
+  let props = $props();
+</script>
+
+<Head {site} trailingSlash="always" twitterCard="summary" {...props} />
+```
+
+`site` is `{ url, name, description, ogImage, homeTitle?, locale? }`. Each
+site states its own policy as props rather than inheriting one by accident:
+title wording (`titles`), slash policy (`trailingSlash`, SvelteKit's own
+values), share card size (`twitterCard`) and whether the build may be indexed
+at all (`indexable`, for previews and branch deploys).
+
+`site.url` must be an http(s) origin and says so when it isn't.
+`absoluteUrl()` refuses other schemes, and `escapeXml()` and `jsonLdScript()`
+escape so no title or description can break out of the XML or end the script
+element. `sitemapXml()` takes a `lastmod` only where a page has a real date,
+so index pages no longer claim to have changed on every build.
+
+**Check after bumping:** compare the head tags, robots.txt and the sitemap
+before and after. A site that was stamping today's date on its index pages
+will lose those `lastmod` lines, which is the point. Confirm the slash policy
+you pass matches the site's `trailingSlash` page option, or its canonicals
+will move.
+
+**New: `tokensPlugin()`.** Replaces each site's hand-rolled `buildStart`
+hook, and regenerates in dev when a token file changes, appears or
+disappears:
+
+```js
+import { tokensPlugin } from '@thoughtfox/toolkit/tokens/vite-plugin.js';
+export default defineConfig({ plugins: [tokensPlugin(), sveltekit()] });
+```
+
+It watches the `.json` files in the token folder and nothing else. Outputs are
+excluded explicitly and `writeIfChanged()` leaves a file alone when its
+content would not change, so a regeneration cannot trigger itself and the
+browser never sees an empty HMR update. A failure in dev prints to the
+terminal and the browser overlay and the server keeps running; a failure at
+build start still stops the build.
+
+`generateTokens()` now takes a `root`, so the plugin can give it Vite's root
+instead of relying on the working directory. Every default path and the
+undefined-variable check resolve against it. Token output is unchanged.
+
+**New: `tools/forms/`.** PocketBase hooks to replace Netlify Forms, with the
+reasons and the setup in that folder's own README. A repo tool, not part of
+the package, so bumping the tag doesn't bring it into a site. Brick House's
+contact form is the first one lined up for it, when its DNS moves.
+
+**Playground: on `--type-*` and the colour roles.** Its `global-styles.css`
+and blocks now use the type lab's tokens instead of the old `--size-step-*`
+scale, and the roles (`--surface`, `--text`, `--primary` and the rest) instead
+of leftover `--color-*` references, so `data-scheme` switches everything.
+Playground-only: no site is affected. `--size-step-*` stays for the
+`/palette` and `/type` tools.
+
+**Correction to the v0.2.3 note on `focusHeading()`.** That note said the
+copied `onMount(() => afterNavigate(...))` snippet "never registers", and the
+11 November review concluded the opposite. The installed SvelteKit source
+settles it: `afterNavigate` itself calls `onMount` internally, so the copied
+snippet calls `onMount` from inside a mount callback, after the mount phase
+has run. The v0.2.3 note was right and the review was wrong. This is read from
+the source, not yet confirmed in a browser, and the first site to swap in
+`focusHeading()` should test navigation to be sure.
+
 
 ## v0.2.3
 
