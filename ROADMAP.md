@@ -80,6 +80,17 @@ Audit all 46 Segue transitions in `tools/segue-bank/` (the CSS is the same as th
 - [x] A picker: `/transitions` in `playground/` (dev only) lists them by verdict and previews any one as a real page-to-page transition between the playground's pages, with a reduced-motion toggle and the steps for a site
 - [ ] Rob: the frame-by-frame look in Lapse, on the shortlist only, on a real phone as well as the Mac. Change a verdict in `transitions.json` if it doesn't hold up
 
+## 7. Shared foundations and the adoptions
+
+Execution step 2 of [the 11 November plan](IMPLEMENTATION-2026-11-11.md): give the copied sites something to share, then move them over one at a time, proving the API on the first before the rest follow.
+
+- [x] `tokens/vite-plugin.js`: generates at build start and regenerates in dev when a token file changes, appears or disappears. Watches the token `.json` files only, and `writeIfChanged()` stops a regeneration triggering itself
+- [x] `seo/`: the head tags, sitemap, robots.txt and llms.txt as tested functions, with URL handling and XML and JSON-LD escaping in one place. Each site states its own title wording, slash policy, share card and indexability as props
+- [x] WATF adopted, on its `adopt-the-toolkit` branch. Checked by building the commit before and after: the search and sharing tags are identical on all 59 pages, robots.txt is identical, `_tokens.generated.css` is unchanged, and the only CSS difference is 40 unused composition rules removed
+- [ ] Release the two above and change WATF's pin from `file:../toolkit` to that tag. It will not deploy until then
+- [ ] Then Clubs, Ashbright and Brick House, each with a baseline first. Ashbright and Brick House have uncommitted adoptions already started; they use the compositions, which WATF did not, so the CSS comparison matters more there
+- [ ] Add the repeatable checks as each one goes: canonicals, indexability, sitemap entries, keyboard navigation and browser history alongside the screenshots
+
 ## Ongoing
 
 - Move a copied site (Brick House, WATF, Ashbright, Clubs) onto the toolkit only when it's next being worked on, with a snapshot baseline first
