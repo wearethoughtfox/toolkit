@@ -25,10 +25,15 @@
 			"svelte": "./type/index.js",
 			"default": "./type/index.js"
 		},
+		"./seo": {
+			"svelte": "./seo/index.js",
+			"default": "./seo/index.js"
+		},
 		"./tokens": "./tokens/index.js",
 		"./layout/*": "./layout/*",
 		"./motion/*": "./motion/*",
 		"./tokens/*": "./tokens/*",
+		"./seo/*": "./seo/*",
 		"./palette/*": "./palette/*",
 		"./type/*": "./type/*",
 		"./css/reset.css": "./layout/reset.css",
@@ -54,6 +59,7 @@
 		"layout",
 		"motion",
 		"palette",
+		"seo",
 		"tokens",
 		"type",
 		"shared",
