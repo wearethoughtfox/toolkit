@@ -16,7 +16,8 @@
  *   "contrast": "node node_modules/@thoughtfox/toolkit/palette/contrast.js"
  */
 
-import { readFileSync, writeFileSync, mkdirSync, realpathSync } from 'fs';
+import { readFileSync, mkdirSync, realpathSync } from 'fs';
+import { writeIfChanged } from '../tokens/write-if-changed.js';
 import { pathToFileURL } from 'url';
 import { createRequire } from 'module';
 import { dirname, join } from 'path';
@@ -292,8 +293,9 @@ export function generateContrast({
 } = {}) {
   const data = buildContrast(JSON.parse(readFileSync(colorsPath, 'utf-8')));
   mkdirSync(dirname(output), { recursive: true });
-  writeFileSync(output, JSON.stringify(data, null, 2) + '\n');
-  console.log('✓ contrast generated →', output);
+  if (writeIfChanged(output, JSON.stringify(data, null, 2) + '\n')) {
+    console.log('✓ contrast generated →', output);
+  }
   for (const line of schemeWarnings(data.schemeChecks)) console.warn(`⚠ ${line}`);
   return data;
 }

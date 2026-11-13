@@ -30,10 +30,11 @@
  *   plugins: [{ name: 'tokens', buildStart: () => generateTokens() }]
  */
 
-import { existsSync, readFileSync, writeFileSync, realpathSync } from 'fs';
+import { existsSync, readFileSync, realpathSync } from 'fs';
 import { join } from 'path';
 import { pathToFileURL } from 'url';
 import { checkVars as runCheckVars } from './check-vars.js';
+import { writeIfChanged } from './write-if-changed.js';
 import { typographyCss } from '../type/css.js';
 import { typographyErrors, typographyWarnings } from '../type/checks.js';
 import { generateContrast } from '../palette/contrast.js';
@@ -55,6 +56,8 @@ const spacingProperties = {
   ml: 'margin-inline-start',
   mr: 'margin-inline-end'
 };
+
+export { writeIfChanged };
 
 export function toKebab(name) {
   return name
@@ -216,8 +219,9 @@ function pick(option, auto, fallback) {
 }
 
 export function generateTokens({
-  tokensDir = join(process.cwd(), 'src/lib/design-tokens'),
-  output = join(process.cwd(), 'src/lib/css/global/_tokens.generated.css'),
+  root = process.cwd(),
+  tokensDir = join(root, 'src/lib/design-tokens'),
+  output = join(root, 'src/lib/css/global/_tokens.generated.css'),
   spacingOutput,
   typographyOutput,
   contrastOutput,
@@ -291,36 +295,37 @@ export function generateTokens({
   // Schemes (outside :root)
   lines.push(...colorCss.after);
 
-  writeFileSync(output, lines.join('\n') + '\n');
-  console.log('✓ tokens generated →', output);
+  const written = writeIfChanged(output, lines.join('\n') + '\n');
+  if (written) console.log('✓ tokens generated →', output);
 
   const spacingPath = pick(
     spacingOutput,
     spacing.items.some((item) => item.step !== undefined),
-    join(process.cwd(), 'src/lib/css/utilities/_spacing.generated.css')
+    join(root, 'src/lib/css/utilities/_spacing.generated.css')
   );
   if (spacingPath) {
-    writeFileSync(spacingPath, spacingUtilitiesCss(spacing));
-    console.log('✓ spacing utilities generated →', spacingPath);
+    if (writeIfChanged(spacingPath, spacingUtilitiesCss(spacing))) {
+      console.log('✓ spacing utilities generated →', spacingPath);
+    }
   }
 
   const hasTypography = existsSync(join(tokensDir, 'typography.json'));
   const typographyPath = pick(
     typographyOutput,
     hasTypography,
-    join(process.cwd(), 'src/lib/css/global/_type.generated.css')
+    join(root, 'src/lib/css/global/_type.generated.css')
   );
   if (typographyPath) generateTypography({ tokensDir, viewports, output: typographyPath });
 
   const contrastPath = pick(
     contrastOutput,
     roles,
-    join(process.cwd(), 'src/lib/palette/contrast.generated.json')
+    join(root, 'src/lib/palette/contrast.generated.json')
   );
   if (contrastPath) generateContrast({ colorsPath: join(tokensDir, 'colors.json'), output: contrastPath });
 
   const checkDirs = pick(checkVars, roles, 'src');
-  if (checkDirs) runCheckVars({ srcDir: checkDirs });
+  if (checkDirs) runCheckVars({ srcDir: checkDirs, root });
 }
 
 /**
@@ -331,7 +336,7 @@ export function generateTokens({
 function generateTypography({ tokensDir, viewports, output }) {
   const path = join(tokensDir, 'typography.json');
   if (!existsSync(path)) {
-    writeFileSync(output, '/* AUTO-GENERATED — no typography.json yet. Make one in the /type lab. */\n');
+    writeIfChanged(output, '/* AUTO-GENERATED — no typography.json yet. Make one in the /type lab. */\n');
     return;
   }
   const typography = JSON.parse(readFileSync(path, 'utf-8'));
@@ -339,8 +344,9 @@ function generateTypography({ tokensDir, viewports, output }) {
   if (errors.length) {
     throw new Error(`typography.json has ${errors.length} problem(s):\n  - ${errors.join('\n  - ')}`);
   }
-  writeFileSync(output, typographyCss(typography, viewports));
-  console.log('✓ typography generated →', output);
+  if (writeIfChanged(output, typographyCss(typography, viewports))) {
+    console.log('✓ typography generated →', output);
+  }
 
   const warnings = typographyWarnings(typography);
   if (warnings.length) {
