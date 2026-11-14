@@ -87,12 +87,37 @@ Execution step 2 of [the 11 November plan](IMPLEMENTATION-2026-11-11.md): give t
 - [x] `tokens/vite-plugin.js`: generates at build start and regenerates in dev when a token file changes, appears or disappears. Watches the token `.json` files only, and `writeIfChanged()` stops a regeneration triggering itself
 - [x] `seo/`: the head tags, sitemap, robots.txt and llms.txt as tested functions, with URL handling and XML and JSON-LD escaping in one place. Each site states its own title wording, slash policy, share card and indexability as props
 - [x] WATF adopted, on its `adopt-the-toolkit` branch. Checked by building the commit before and after: the search and sharing tags are identical on all 59 pages, robots.txt is identical, `_tokens.generated.css` is unchanged, and the only CSS difference is 40 unused composition rules removed
-- [ ] Release the two above and change WATF's pin from `file:../toolkit` to that tag. It will not deploy until then
-- [ ] Then Clubs, Ashbright and Brick House, each with a baseline first. Ashbright and Brick House have uncommitted adoptions already started; they use the compositions, which WATF did not, so the CSS comparison matters more there
+- [x] Released as v0.3.0 (13 November) and WATF's pin changed from `file:../toolkit` to that tag. Snapshots agree: a fresh baseline from the pre-adoption commit against the adopted build, 57 pages at three widths, no visual changes
+- [x] Ashbright adopted — twice over, as it turned out. A cloud session had already merged PR #30 into its `main` at v0.2.2 (reset, compositions, utilities, `text-legacy.css`, `SkipLink`, `generateTokens`), with `grid.css` kept local because the toolkit's thirds preset stacks below 52rem and would collapse the two-column situations cards on tablets. Branch `adopt-the-toolkit` now sits one commit on top of that and adds only what v0.3.0 brought: the SEO helpers and `tokensPlugin()`. Built v0.2.2 against v0.3.0 from the same tree: 31 page bodies identical, 180 CSS rules each side with nothing added or removed, `robots.txt` and `llms.txt` identical, every sitemap URL, priority and changefreq identical, tokens unchanged, head tags identical bar `&` now escaped `\u0026` in two JSON-LD blocks
+- [ ] **Check the remote before starting an adoption.** The uncommitted adoption sitting in Ashbright's working tree was a stale parallel attempt, and the first commit built on it took the pre-adoption commit as its base — it would have reverted PR #30. The sandbox cannot fetch, so `origin/*` is stale there; fetch in a real terminal first. Brick House's uncommitted adoption deserves the same suspicion
+- [x] `focusHeading()` adopted on Ashbright and checked in a browser, not just read: after a client-side navigation the next Tab lands on the first link inside `<main>` instead of restarting at the header nav; a hash link keeps its anchor jump and does not take focus; Back restores without a scroll fight. Watch for `scroll-behavior: smooth`, which makes an early `scrollY` reading look like a bug
+- [ ] **Every copied site has the same dead snippet.** `onMount(() => afterNavigate(...))` never registers, so focus-on-route-change has silently done nothing wherever it was copied, while the notes claimed it worked. Check WATF, Brick House and Clubs and fix each the same way
+- [ ] One Ashbright decision still open: its `sitemap.xml` no longer stamps the build date on every page as `lastmod` (only insights carry a real date, and there are none yet)
+- [ ] Then Clubs and Brick House, each with a baseline first. Brick House has an uncommitted adoption already started
 - [ ] Add the repeatable checks as each one goes: canonicals, indexability, sitemap entries, keyboard navigation and browser history alongside the screenshots
+
+## 8. A catalog agents can read
+
+Added 13 November, after looking at Vercel's [json-render](https://json-render.dev). We won't use the library: it builds UI at runtime for each visitor, and our sites are static pages whose look stays in each site. We're taking its catalog idea. Every component has its props and a line saying when to use it, and the agent instructions are generated from that list. Hand-written instructions drift. The "Where CSS lives" table sent agents to folders that don't exist, so they recreated the copies, and the playground's `CLAUDE.md` and `AGENTS.md` no longer match.
+
+Do this after the adoptions in step 7, so the catalog describes the API the sites actually use.
+
+- [ ] `catalog.json` at the top of the package lists the layout primitives, compositions, utilities, motion, the token files and the `seo/` helpers. Each entry has its import path, its props or custom properties with defaults, a "use when" line and a "not for" line
+- [ ] A test checks the catalog against `exports` in `package.json` and against the components' real props, so a new or renamed part fails until it's described
+- [ ] A script generates the agent section of `CLAUDE.md` from the catalog. `AGENTS.md` becomes a one-line pointer to it (review D7)
+- [ ] Sites get it on their next bump: the site's `CLAUDE.md` points at `node_modules/@thoughtfox/toolkit/catalog.json` rather than copying it
+- [ ] The `thoughtfox-directions` skill (review §3) uses the catalog as its vocabulary, so directions are made from the parts that exist
+- [ ] Optional, playground only: an afternoon trying `@json-render/svelte` with the Every Layout primitives as its catalog. Nothing goes in the package or a site from this
 
 ## Ongoing
 
 - Move a copied site (Brick House, WATF, Ashbright, Clubs) onto the toolkit only when it's next being worked on, with a snapshot baseline first
 - Run `emil-prep-for-prod` before each launch
 - Forms off Netlify: `tools/forms/` (PocketBase hooks on Coolify, Maillayer for newsletters). Brick House's contact form first, when its DNS moves; then robertocarroll.com's signup
+
+## Watching
+
+Libraries looked at but not adopted, and what would change that.
+
+- **[UI SDK](https://ui-sdk.dev)** (Vercel Labs, beta, looked at 13 November). Unstyled, accessible interaction behaviours (focus, keyboard, popups, listboxes, typeahead, drag and drop) that state shows through `data-*` attributes. It's the same split as review §2: behaviour in the package, look in the site. Not adopted because it's in beta with APIs still changing, only React has guides (Svelte support is claimed but undocumented), and our sites' interactions are covered by `<details>`, `<dialog>` and `popover`. Revisit when a site first needs a widget HTML can't do (combobox, tabs, date picker, reorder) **and** its Svelte adapter is documented. Two ideas already taken: docs for the installed version shipped in `node_modules` (step 8), and a keyboard, focus and ARIA test kit as a model for the `site-check` gate
+- **[json-render](https://json-render.dev)** (Vercel Labs, looked at 13 November). It renders UI at runtime from JSON that an AI streams back, so it doesn't fit static sites. Its catalog idea is step 8
