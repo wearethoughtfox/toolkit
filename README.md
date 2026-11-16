@@ -262,6 +262,24 @@ at `viewports.mid` instead of `viewports.max`. The named viewport must exceed
 coefficients, matching Brick House's generator. The default remains two to
 preserve existing output. Compare screenshots when changing precision.
 
+#### Options for `npm run tokens`
+
+Keep a site's options in `tokens.config.js` at its root, so the command line
+and the Vite build can't generate different CSS:
+
+```js
+// tokens.config.js
+export default { clampPrecision: 4 };
+
+// vite.config.js
+import tokenOptions from './tokens.config.js';
+plugins: [tokensPlugin(tokenOptions), sveltekit()]
+```
+
+`npm run tokens` reads that file by itself (a named `tokenOptions` export
+works too). `npm run tokens -- --clamp-precision=4` overrides it for one run.
+A mistyped flag stops the run. A site with no config file gets the defaults.
+
 ### Palette and type tools
 
 The `/palette` and `/type` labs are routes in the playground, built from the
