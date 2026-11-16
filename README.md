@@ -504,6 +504,55 @@ resolves `@thoughtfox/toolkit/…` through `exports`, so imports in CSS,
 Svelte and JS are not affected. Neither Root nor robertocarroll.com reads
 files this way.
 
+## Deploying a site
+
+Every site deploys the same way: a push to `main` asks Coolify to build, over
+Tailscale, then waits for the build and for the site to answer. That lives
+here once, in `.github/workflows/coolify-deploy.yml`, and each site calls it:
+
+```yaml
+# .github/workflows/deploy.yml in the site
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+# One deploy at a time: two builds at once have run the server out of memory.
+concurrency:
+  group: deploy-main
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    uses: wearethoughtfox/toolkit/.github/workflows/coolify-deploy.yml@v0.3.1
+    with:
+      app_uuid: '' # from the application's URL in Coolify
+      site_url: '' # the address it serves
+    secrets:
+      TS_OAUTH_CLIENT_ID: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+      TS_OAUTH_SECRET: ${{ secrets.TS_OAUTH_SECRET }}
+      COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+```
+
+- **The tag after `@`** is the toolkit version the site deploys with, pinned
+  like the package in `package.json`. v0.3.1 is the first that has the
+  workflow. Bump the two together.
+- **Left empty,** `app_uuid` and `site_url` stop the run at its first step
+  with a message saying so. A new site's first pushes are meant to go red.
+- **The three secrets** are repository secrets on the site's repo.
+  `COOLIFY_TOKEN` needs read as well as deploy.
+- **A slow build** can set `build_timeout_minutes` (default 15; Root uses 25).
+- **A private site repo can call this** because the toolkit repo is public.
+  The site repo's Actions settings must allow reusable workflows from other
+  repositories, which is GitHub's default.
+
+Root keeps its own `preview.yml` and `pr.yml`; only the production deploy is
+shared.
+
 ## Releasing a change
 
 1. Make the change here.
