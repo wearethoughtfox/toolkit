@@ -24,6 +24,8 @@
  *
  * Run from a site root:  npm run tokens
  *   ("tokens": "node node_modules/@thoughtfox/toolkit/tokens/generate-tokens.js")
+ *   It reads options from tokens.config.js at the site root, if there is
+ *   one, and takes --clamp-precision=<n>. See cli-options.js.
  *
  * Or call from vite.config.js so tokens regenerate on dev/build start:
  *   import { generateTokens } from '@thoughtfox/toolkit/tokens/generate-tokens.js';
@@ -358,5 +360,8 @@ function generateTypography({ tokensDir, viewports, output }) {
 // Run when executed directly (node .../generate-tokens.js), but not when
 // imported from vite.config.js.
 if (process.argv[1] && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href) {
-  generateTokens();
+  // Options come from the site's tokens.config.js and the command line, so
+  // this can't quietly run at defaults the site's Vite build doesn't use.
+  const { loadTokenOptions } = await import('./cli-options.js');
+  generateTokens(await loadTokenOptions({ argv: process.argv.slice(2) }));
 }
