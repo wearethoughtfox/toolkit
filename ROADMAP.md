@@ -98,6 +98,9 @@ Execution step 2 of [the 11 November plan](IMPLEMENTATION-2026-11-11.md): give t
 - [ ] Then Clubs, the last one, with a baseline first
 - [ ] Add the repeatable checks as each one goes: canonicals, indexability, sitemap entries, keyboard navigation and browser history alongside the screenshots
 
+- [x] **One deploy workflow for every site** (16 November, branch `reusable-deploy-workflow`, unreleased). `.github/workflows/coolify-deploy.yml` is Root's deploy as a reusable workflow, taking the application ID, address and build timeout. Written once WATF had proven the copied version end to end. Sites switch their `deploy.yml` to the short caller in the README when they bump to the tag that carries it
+- [ ] Switch the sites' `deploy.yml` to the caller, one at a time, after the tag: robertocarroll.com first (not live yet), then WATF, then Root with `build_timeout_minutes: 25`
+
 ## 8. A catalog agents can read
 
 Added 13 November, after looking at Vercel's [json-render](https://json-render.dev). We won't use the library: it builds UI at runtime for each visitor, and our sites are static pages whose look stays in each site. We're taking its catalog idea. Every component has its props and a line saying when to use it, and the agent instructions are generated from that list. Hand-written instructions drift. The "Where CSS lives" table sent agents to folders that don't exist, so they recreated the copies, and the playground's `CLAUDE.md` and `AGENTS.md` no longer match.
