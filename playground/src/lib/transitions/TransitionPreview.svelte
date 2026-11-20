@@ -90,8 +90,8 @@
     inset-block-end: 0;
     z-index: 2;
     padding-block: var(--space-xs);
-    background: var(--color-clay);
-    color: var(--color-ground);
+    background: var(--color-paper);
+    color: var(--text);
     font-size: var(--size-step-00);
   }
 

@@ -233,8 +233,8 @@
   .type-lab :global(:where(input:not([type='checkbox'], [type='radio'], [type='range']), select, textarea)) {
     padding: var(--space-2xs) var(--space-xs);
     font: inherit;
-    color: var(--color-ground);
-    background: var(--color-clay);
+    color: var(--text);
+    background: var(--color-paper);
     border: 1px solid var(--border);
     border-radius: var(--radius-s);
   }

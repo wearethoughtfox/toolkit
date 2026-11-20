@@ -1,39 +1,8 @@
 /*
-  Root brand fonts.
+  No @font-face rules on purpose.
 
-  Inter: variable font — covers all weights 100–900 in a single file.
-  Rockhill Sans Rough: display only, use at Step 5+ (≥24px).
-  Rockhill Sans: cleaner variant for slightly smaller display sizes.
+  The playground is the parent demo and has no brand of its own, so it uses
+  the faces already on the machine — see fonts.json. A site that adopts the
+  toolkit adds its own @font-face blocks here, puts the files in static/fonts/
+  and preloads the display face in app.html.
 */
-
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/InterVariable.woff2') format('woff2-variations');
-  font-weight: 100 900;
-  font-display: optional;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/InterVariable-Italic.woff2') format('woff2-variations');
-  font-weight: 100 900;
-  font-display: optional;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Rockhill Sans Rough';
-  src: url('/fonts/rockhill-sans-rough.woff2') format('woff2');
-  font-weight: 400;
-  font-display: optional;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rockhill Sans';
-  src: url('/fonts/rockhill-sans-regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: optional;
-  font-style: normal;
-}

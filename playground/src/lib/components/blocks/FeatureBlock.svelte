@@ -9,11 +9,11 @@
   export let label = undefined;
   export let ctaText = 'Learn more';
   export let ctaHref = '/';
-  export let bg = 'var(--color-olive-oil)';
-  export let color = 'var(--color-ground)';
+  export let bg = 'var(--primary)';
+  export let color = 'var(--on-primary)';
   /** Should match the PAGE background so the CTA button camouflages when hovered */
-  export let ctaBg = 'var(--color-ground)';
-  export let ctaColor = 'var(--color-clay)';
+  export let ctaBg = 'var(--text)';
+  export let ctaColor = 'var(--surface)';
 </script>
 
 <div
@@ -47,12 +47,12 @@
 
 <style>
   .feature-block {
-    color: var(--feature-color, var(--color-ground));
+    color: var(--feature-color, var(--on-primary));
   }
 
   /* ---- Main block ---- */
   .feature-block__main {
-    background: var(--feature-bg, var(--color-olive-oil));
+    background: var(--feature-bg, var(--primary));
     border-radius: var(--radius-l);
     padding: var(--space-l);
   }
@@ -68,7 +68,7 @@
   /* ---- Bubble block ---- */
   .feature-block__bubble {
     /* Same colour as main — reads as one organic shape */
-    background: var(--feature-bg, var(--color-olive-oil));
+    background: var(--feature-bg, var(--primary));
     border-radius: 0 0 var(--radius-l) var(--radius-l);
     width: fit-content;
     /* Centered on mobile — sits within the main block's content area */
@@ -89,8 +89,8 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-xs);
-    background: var(--cta-bg, var(--color-ground));
-    color: var(--cta-color, var(--color-clay));
+    background: var(--cta-bg, var(--text));
+    color: var(--cta-color, var(--surface));
     padding: var(--space-xs) var(--space-m);
     border-radius: var(--radius-l);
     font-weight: var(--font-weight-bold);
@@ -100,8 +100,8 @@
   }
 
   .feature-block__cta:hover {
-    background: var(--color-clay);
-    color: var(--color-ground);
+    background: var(--surface);
+    color: var(--text);
   }
 
   .feature-block__arrow {
@@ -111,7 +111,7 @@
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
-    background: color-mix(in srgb, var(--cta-color, var(--color-clay)) 15%, transparent);
+    background: color-mix(in srgb, var(--cta-color, var(--surface)) 15%, transparent);
     flex-shrink: 0;
   }
 
