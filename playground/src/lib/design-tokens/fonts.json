@@ -1,18 +1,18 @@
 {
   "title": "Fonts",
-  "description": "Root brand fonts. Rockhill Sans Rough for display headlines only. Inter variable for all body, UI, and labels.",
+  "description": "The browser's own faces. The playground ships no brand fonts: a site sets its own here and adds the @font-face rules in fonts.css.",
   "items": [
     {
       "name": "Base",
-      "value": "'Inter', 'Helvetica Neue', Arial, sans-serif"
+      "value": "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
     },
     {
       "name": "Display",
-      "value": "'Rockhill Sans Rough', 'Inter', sans-serif"
+      "value": "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
     },
     {
       "name": "Mono",
-      "value": "'ui-monospace', 'Cascadia Code', monospace"
+      "value": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
     }
   ]
 }

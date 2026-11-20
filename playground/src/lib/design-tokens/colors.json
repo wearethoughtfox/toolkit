@@ -1,44 +1,44 @@
 {
   "title": "Colors",
-  "description": "colors: the palette (name → hex). roles: what each colour does (role → colour name). schemes: role overrides for a context, used with data-scheme=\"name\". Any role a scheme leaves out keeps its value from roles.",
+  "description": "colors: the palette (name → hex). roles: what each colour does (role → colour name). schemes: role overrides for a context, used with data-scheme=\"name\". Any role a scheme leaves out keeps its value from roles. The playground is the parent demo and deliberately has no brand of its own: this is a neutral greyscale close to the browser's own defaults. A site replaces these values; the role names stay.",
   "colors": {
-    "ground": "#332822",
-    "olive-oil": "#B6893B",
-    "olive-oil-dark": "#a37a34",
-    "clay": "#F7E8D6",
-    "air": "#FFFFFF",
-    "teal": "#346278"
+    "white": "#FFFFFF",
+    "paper": "#F2F2F2",
+    "line": "#8C8C8C",
+    "muted": "#666666",
+    "black": "#000000",
+    "link": "#0645AD"
   },
   "roles": {
-    "surface": "ground",
-    "text": "clay",
-    "heading": "olive-oil",
-    "primary": "olive-oil",
-    "on-primary": "ground",
-    "accent": "clay",
-    "border": "olive-oil",
-    "focus-ring": "olive-oil"
+    "surface": "white",
+    "text": "black",
+    "heading": "black",
+    "primary": "link",
+    "on-primary": "white",
+    "accent": "muted",
+    "border": "line",
+    "focus-ring": "link"
   },
   "schemes": {
     "inverse": {
-      "surface": "clay",
-      "text": "ground",
-      "heading": "olive-oil-dark",
-      "primary": "ground",
-      "on-primary": "clay",
-      "accent": "ground",
-      "border": "ground",
-      "focus-ring": "ground"
+      "surface": "black",
+      "text": "white",
+      "heading": "white",
+      "primary": "white",
+      "on-primary": "black",
+      "accent": "line",
+      "border": "muted",
+      "focus-ring": "white"
     },
     "highlight": {
-      "surface": "olive-oil",
-      "text": "clay",
-      "heading": "clay",
-      "primary": "ground",
-      "on-primary": "clay",
-      "accent": "ground",
-      "border": "ground",
-      "focus-ring": "ground"
+      "surface": "paper",
+      "text": "black",
+      "heading": "black",
+      "primary": "link",
+      "on-primary": "white",
+      "accent": "muted",
+      "border": "line",
+      "focus-ring": "link"
     }
   }
 }

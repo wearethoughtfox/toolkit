@@ -2,22 +2,22 @@
 :root {
 
   /* Colors — the palette. Only roles and schemes should use these */
-  --color-ground: #332822;
-  --color-olive-oil: #B6893B;
-  --color-olive-oil-dark: #a37a34;
-  --color-clay: #F7E8D6;
-  --color-air: #FFFFFF;
-  --color-teal: #346278;
+  --color-white: #FFFFFF;
+  --color-paper: #F2F2F2;
+  --color-line: #8C8C8C;
+  --color-muted: #666666;
+  --color-black: #000000;
+  --color-link: #0645AD;
 
   /* Roles — what each colour does. Components use these */
-  --surface: var(--color-ground);
-  --text: var(--color-clay);
-  --heading: var(--color-olive-oil);
-  --primary: var(--color-olive-oil);
-  --on-primary: var(--color-ground);
-  --accent: var(--color-clay);
-  --border: var(--color-olive-oil);
-  --focus-ring: var(--color-olive-oil);
+  --surface: var(--color-white);
+  --text: var(--color-black);
+  --heading: var(--color-black);
+  --primary: var(--color-link);
+  --on-primary: var(--color-white);
+  --accent: var(--color-muted);
+  --border: var(--color-line);
+  --focus-ring: var(--color-link);
 
   /* Spacing */
   --space-2xs: clamp(0.1875rem, 0.17rem + 0.10vw, 0.25rem);
@@ -68,9 +68,9 @@
   --font-black: 900;
 
   /* Font stacks */
-  --font-base: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-display: 'Rockhill Sans Rough', 'Inter', sans-serif;
-  --font-mono: 'ui-monospace', 'Cascadia Code', monospace;
+  --font-base: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 /* Schemes — put data-scheme="name" on a section to switch its colours */
@@ -80,34 +80,34 @@
 }
 
 [data-scheme="default"] {
-  --surface: var(--color-ground);
-  --text: var(--color-clay);
-  --heading: var(--color-olive-oil);
-  --primary: var(--color-olive-oil);
-  --on-primary: var(--color-ground);
-  --accent: var(--color-clay);
-  --border: var(--color-olive-oil);
-  --focus-ring: var(--color-olive-oil);
+  --surface: var(--color-white);
+  --text: var(--color-black);
+  --heading: var(--color-black);
+  --primary: var(--color-link);
+  --on-primary: var(--color-white);
+  --accent: var(--color-muted);
+  --border: var(--color-line);
+  --focus-ring: var(--color-link);
 }
 
 [data-scheme="inverse"] {
-  --surface: var(--color-clay);
-  --text: var(--color-ground);
-  --heading: var(--color-olive-oil-dark);
-  --primary: var(--color-ground);
-  --on-primary: var(--color-clay);
-  --accent: var(--color-ground);
-  --border: var(--color-ground);
-  --focus-ring: var(--color-ground);
+  --surface: var(--color-black);
+  --text: var(--color-white);
+  --heading: var(--color-white);
+  --primary: var(--color-white);
+  --on-primary: var(--color-black);
+  --accent: var(--color-line);
+  --border: var(--color-muted);
+  --focus-ring: var(--color-white);
 }
 
 [data-scheme="highlight"] {
-  --surface: var(--color-olive-oil);
-  --text: var(--color-clay);
-  --heading: var(--color-clay);
-  --primary: var(--color-ground);
-  --on-primary: var(--color-clay);
-  --accent: var(--color-ground);
-  --border: var(--color-ground);
-  --focus-ring: var(--color-ground);
+  --surface: var(--color-paper);
+  --text: var(--color-black);
+  --heading: var(--color-black);
+  --primary: var(--color-link);
+  --on-primary: var(--color-white);
+  --accent: var(--color-muted);
+  --border: var(--color-line);
+  --focus-ring: var(--color-link);
 }

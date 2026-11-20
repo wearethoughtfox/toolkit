@@ -54,7 +54,7 @@
 </Region>
 
 <!-- CLAY SECTION TEST -->
-<div class="clay-section">
+<div class="tinted-section">
   <Region>
     <Wrapper>
       <Stack space="var(--space-l)">
@@ -107,7 +107,7 @@
         </p>
       </svelte:fragment>
       <svelte:fragment slot="media">
-        <div class="frame" data-ratio="1/1" style="border-radius: var(--radius-m); overflow: hidden; background: var(--color-ground); min-width: 12rem;">
+        <div class="frame" data-ratio="1/1" style="border-radius: var(--radius-m); overflow: hidden; background: var(--color-paper); min-width: 12rem;">
         </div>
       </svelte:fragment>
     </FeatureBlock>
@@ -324,19 +324,19 @@
 </Region>
 
 <style>
-  .clay-section {
-    background: var(--color-clay);
-    color: var(--color-ground);
+  .tinted-section {
+    background: var(--color-paper);
+    color: var(--text);
   }
 
-  /* Override heading colours inside clay section */
-  .clay-section :global(h1),
-  .clay-section :global(h2) {
-    color: var(--color-teal);
+  /* Override heading colours inside the tinted section */
+  .tinted-section :global(h1),
+  .tinted-section :global(h2) {
+    color: var(--accent);
   }
 
-  .clay-section :global(h3) {
-    color: var(--color-ground);
+  .tinted-section :global(h3) {
+    color: var(--text);
   }
 
   .panel {
@@ -377,7 +377,7 @@
   }
 
   .type-specimen-row {
-    border-top: 1px solid var(--color-clay);
+    border-top: 1px solid var(--border);
     padding-top: var(--space-xs);
   }
 
@@ -453,9 +453,9 @@
     opacity: 0.5;
   }
 
-  /* Treatment B: mid-size Rockhill, open tracking — matches brand manifesto style */
+  /* Treatment B: mid-size display face, open tracking */
   .manifesto-block {
-    background: var(--color-olive-oil);
+    background: var(--primary);
     padding: var(--space-xl);
     text-align: center;
   }
@@ -467,7 +467,7 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
     line-height: var(--type-h2-leading);
-    color: var(--color-clay);
+    color: var(--on-primary);
     max-width: unset;
   }
 </style>

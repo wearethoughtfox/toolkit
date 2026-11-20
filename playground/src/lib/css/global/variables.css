@@ -16,8 +16,8 @@
   --transition-fade: 300ms ease;
   --transition-bounce: 500ms cubic-bezier(0.5, 0.05, 0.2, 1.5);
 
-  --stroke: 1px dashed var(--color-olive-oil);
-  --stroke-solid: 1px solid var(--color-olive-oil);
+  --stroke: 1px dashed var(--border);
+  --stroke-solid: 1px solid var(--border);
 
   --radius-s: 0.2rem;
   --radius-m: 0.75rem;

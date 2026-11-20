@@ -7,134 +7,7 @@
   },
   "colors": [
     {
-      "name": "ground",
-      "hex": "#332822",
-      "rgb": [
-        51,
-        40,
-        34
-      ],
-      "hsl": [
-        21,
-        20,
-        17
-      ],
-      "oklch": {
-        "l": 28.7,
-        "c": 0.02,
-        "h": 50.2,
-        "css": "oklch(28.7% 0.020 50.2)"
-      },
-      "roles": [
-        "surface",
-        "on-primary"
-      ],
-      "onBlack": {
-        "ratio": 1.47,
-        "apca": 0
-      },
-      "onWhite": {
-        "ratio": 14.31,
-        "apca": 101
-      }
-    },
-    {
-      "name": "olive-oil",
-      "hex": "#B6893B",
-      "rgb": [
-        182,
-        137,
-        59
-      ],
-      "hsl": [
-        38,
-        51,
-        47
-      ],
-      "oklch": {
-        "l": 65.9,
-        "c": 0.109,
-        "h": 78.5,
-        "css": "oklch(65.9% 0.109 78.5)"
-      },
-      "roles": [
-        "heading",
-        "primary",
-        "border",
-        "focus-ring"
-      ],
-      "onBlack": {
-        "ratio": 6.63,
-        "apca": -43.1
-      },
-      "onWhite": {
-        "ratio": 3.17,
-        "apca": 58.7
-      }
-    },
-    {
-      "name": "olive-oil-dark",
-      "hex": "#a37a34",
-      "rgb": [
-        163,
-        122,
-        52
-      ],
-      "hsl": [
-        38,
-        52,
-        42
-      ],
-      "oklch": {
-        "l": 60.6,
-        "c": 0.101,
-        "h": 78.1,
-        "css": "oklch(60.6% 0.101 78.1)"
-      },
-      "roles": [],
-      "onBlack": {
-        "ratio": 5.39,
-        "apca": -35.4
-      },
-      "onWhite": {
-        "ratio": 3.9,
-        "apca": 66.3
-      }
-    },
-    {
-      "name": "clay",
-      "hex": "#F7E8D6",
-      "rgb": [
-        247,
-        232,
-        214
-      ],
-      "hsl": [
-        33,
-        67,
-        90
-      ],
-      "oklch": {
-        "l": 93.8,
-        "c": 0.029,
-        "h": 72.5,
-        "css": "oklch(93.8% 0.029 72.5)"
-      },
-      "roles": [
-        "text",
-        "accent"
-      ],
-      "onBlack": {
-        "ratio": 17.47,
-        "apca": -94.3
-      },
-      "onWhite": {
-        "ratio": 1.2,
-        "apca": 9.9
-      }
-    },
-    {
-      "name": "air",
+      "name": "white",
       "hex": "#FFFFFF",
       "rgb": [
         255,
@@ -152,7 +25,10 @@
         "h": null,
         "css": "oklch(100.0% 0 none)"
       },
-      "roles": [],
+      "roles": [
+        "surface",
+        "on-primary"
+      ],
       "onBlack": {
         "ratio": 21,
         "apca": -107.9
@@ -163,144 +39,198 @@
       }
     },
     {
-      "name": "teal",
-      "hex": "#346278",
+      "name": "paper",
+      "hex": "#F2F2F2",
       "rgb": [
-        52,
-        98,
-        120
+        242,
+        242,
+        242
       ],
       "hsl": [
-        199,
-        40,
-        34
+        0,
+        0,
+        95
       ],
       "oklch": {
-        "l": 47.3,
-        "c": 0.062,
-        "h": 230.7,
-        "css": "oklch(47.3% 0.062 230.7)"
+        "l": 96.1,
+        "c": 0,
+        "h": null,
+        "css": "oklch(96.1% 0 none)"
       },
       "roles": [],
       "onBlack": {
-        "ratio": 3.16,
-        "apca": -19.2
+        "ratio": 18.76,
+        "apca": -99.3
       },
       "onWhite": {
-        "ratio": 6.64,
-        "apca": 82.7
+        "ratio": 1.12,
+        "apca": 0
+      }
+    },
+    {
+      "name": "line",
+      "hex": "#8C8C8C",
+      "rgb": [
+        140,
+        140,
+        140
+      ],
+      "hsl": [
+        0,
+        0,
+        55
+      ],
+      "oklch": {
+        "l": 64,
+        "c": 0,
+        "h": null,
+        "css": "oklch(64.0% 0 none)"
+      },
+      "roles": [
+        "border"
+      ],
+      "onBlack": {
+        "ratio": 6.25,
+        "apca": -40.6
+      },
+      "onWhite": {
+        "ratio": 3.36,
+        "apca": 61.1
+      }
+    },
+    {
+      "name": "muted",
+      "hex": "#666666",
+      "rgb": [
+        102,
+        102,
+        102
+      ],
+      "hsl": [
+        0,
+        0,
+        40
+      ],
+      "oklch": {
+        "l": 51,
+        "c": 0,
+        "h": null,
+        "css": "oklch(51.0% 0 none)"
+      },
+      "roles": [
+        "accent"
+      ],
+      "onBlack": {
+        "ratio": 3.66,
+        "apca": -23
+      },
+      "onWhite": {
+        "ratio": 5.74,
+        "apca": 78.8
+      }
+    },
+    {
+      "name": "black",
+      "hex": "#000000",
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hsl": [
+        0,
+        0,
+        0
+      ],
+      "oklch": {
+        "l": 0,
+        "c": 0,
+        "h": null,
+        "css": "oklch(0.0% 0 none)"
+      },
+      "roles": [
+        "text",
+        "heading"
+      ],
+      "onBlack": {
+        "ratio": 1,
+        "apca": 0
+      },
+      "onWhite": {
+        "ratio": 21,
+        "apca": 106
+      }
+    },
+    {
+      "name": "link",
+      "hex": "#0645AD",
+      "rgb": [
+        6,
+        69,
+        173
+      ],
+      "hsl": [
+        217,
+        93,
+        35
+      ],
+      "oklch": {
+        "l": 42.7,
+        "c": 0.176,
+        "h": 260.9,
+        "css": "oklch(42.7% 0.176 260.9)"
+      },
+      "roles": [
+        "primary",
+        "focus-ring"
+      ],
+      "onBlack": {
+        "ratio": 2.46,
+        "apca": -13.7
+      },
+      "onWhite": {
+        "ratio": 8.53,
+        "apca": 88.5
       }
     }
   ],
   "roles": {
-    "surface": "ground",
-    "text": "clay",
-    "heading": "olive-oil",
-    "primary": "olive-oil",
-    "on-primary": "ground",
-    "accent": "clay",
-    "border": "olive-oil",
-    "focus-ring": "olive-oil"
+    "surface": "white",
+    "text": "black",
+    "heading": "black",
+    "primary": "link",
+    "on-primary": "white",
+    "accent": "muted",
+    "border": "line",
+    "focus-ring": "link"
   },
   "schemes": {
     "inverse": {
-      "surface": "clay",
-      "text": "ground",
-      "heading": "olive-oil-dark",
-      "primary": "ground",
-      "on-primary": "clay",
-      "accent": "ground",
-      "border": "ground",
-      "focus-ring": "ground"
+      "surface": "black",
+      "text": "white",
+      "heading": "white",
+      "primary": "white",
+      "on-primary": "black",
+      "accent": "line",
+      "border": "muted",
+      "focus-ring": "white"
     },
     "highlight": {
-      "surface": "olive-oil",
-      "text": "clay",
-      "heading": "clay",
-      "primary": "ground",
-      "on-primary": "clay",
-      "accent": "ground",
-      "border": "ground",
-      "focus-ring": "ground"
+      "surface": "paper",
+      "text": "black",
+      "heading": "black",
+      "primary": "link",
+      "on-primary": "white",
+      "accent": "muted",
+      "border": "line",
+      "focus-ring": "link"
     }
   },
   "pairs": [
     {
-      "fg": "ground",
-      "bg": "olive-oil",
-      "ratio": 4.52,
-      "apca": 40.4,
-      "supports": {
-        "body": true,
-        "largeText": true,
-        "nonText": true,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "ground",
-      "bg": "olive-oil-dark",
-      "ratio": 3.67,
-      "apca": 32.8,
-      "supports": {
-        "body": false,
-        "largeText": true,
-        "nonText": true,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "ground",
-      "bg": "clay",
-      "ratio": 11.9,
-      "apca": 88.7,
-      "supports": {
-        "body": true,
-        "largeText": true,
-        "nonText": true,
-        "aaaBody": true
-      }
-    },
-    {
-      "fg": "ground",
-      "bg": "air",
-      "ratio": 14.31,
-      "apca": 101,
-      "supports": {
-        "body": true,
-        "largeText": true,
-        "nonText": true,
-        "aaaBody": true
-      }
-    },
-    {
-      "fg": "ground",
-      "bg": "teal",
-      "ratio": 2.16,
-      "apca": 16.4,
-      "supports": {
-        "body": false,
-        "largeText": false,
-        "nonText": false,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "olive-oil",
-      "bg": "ground",
-      "ratio": 4.52,
-      "apca": -39.2,
-      "supports": {
-        "body": true,
-        "largeText": true,
-        "nonText": true,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "olive-oil",
-      "bg": "olive-oil-dark",
-      "ratio": 1.23,
+      "fg": "white",
+      "bg": "paper",
+      "ratio": 1.12,
       "apca": 0,
       "supports": {
         "body": false,
@@ -310,22 +240,10 @@
       }
     },
     {
-      "fg": "olive-oil",
-      "bg": "clay",
-      "ratio": 2.63,
-      "apca": 46.3,
-      "supports": {
-        "body": false,
-        "largeText": false,
-        "nonText": false,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "olive-oil",
-      "bg": "air",
-      "ratio": 3.17,
-      "apca": 58.7,
+      "fg": "white",
+      "bg": "line",
+      "ratio": 3.36,
+      "apca": -66.6,
       "supports": {
         "body": false,
         "largeText": true,
@@ -334,33 +252,45 @@
       }
     },
     {
-      "fg": "olive-oil",
-      "bg": "teal",
-      "ratio": 2.1,
-      "apca": -22.9,
+      "fg": "white",
+      "bg": "muted",
+      "ratio": 5.74,
+      "apca": -84,
       "supports": {
-        "body": false,
-        "largeText": false,
-        "nonText": false,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "olive-oil-dark",
-      "bg": "ground",
-      "ratio": 3.67,
-      "apca": -31.5,
-      "supports": {
-        "body": false,
+        "body": true,
         "largeText": true,
         "nonText": true,
         "aaaBody": false
       }
     },
     {
-      "fg": "olive-oil-dark",
-      "bg": "olive-oil",
-      "ratio": 1.23,
+      "fg": "white",
+      "bg": "black",
+      "ratio": 21,
+      "apca": -107.9,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": true
+      }
+    },
+    {
+      "fg": "white",
+      "bg": "link",
+      "ratio": 8.53,
+      "apca": -93.1,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": true
+      }
+    },
+    {
+      "fg": "paper",
+      "bg": "white",
+      "ratio": 1.12,
       "apca": 0,
       "supports": {
         "body": false,
@@ -370,10 +300,10 @@
       }
     },
     {
-      "fg": "olive-oil-dark",
-      "bg": "clay",
-      "ratio": 3.24,
-      "apca": 53.9,
+      "fg": "paper",
+      "bg": "line",
+      "ratio": 3,
+      "apca": -58,
       "supports": {
         "body": false,
         "largeText": true,
@@ -382,34 +312,22 @@
       }
     },
     {
-      "fg": "olive-oil-dark",
-      "bg": "air",
-      "ratio": 3.9,
-      "apca": 66.3,
+      "fg": "paper",
+      "bg": "muted",
+      "ratio": 5.13,
+      "apca": -75.5,
       "supports": {
-        "body": false,
+        "body": true,
         "largeText": true,
         "nonText": true,
         "aaaBody": false
       }
     },
     {
-      "fg": "olive-oil-dark",
-      "bg": "teal",
-      "ratio": 1.7,
-      "apca": -15.2,
-      "supports": {
-        "body": false,
-        "largeText": false,
-        "nonText": false,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "clay",
-      "bg": "ground",
-      "ratio": 11.9,
-      "apca": -90.4,
+      "fg": "paper",
+      "bg": "black",
+      "ratio": 18.76,
+      "apca": -99.3,
       "supports": {
         "body": true,
         "largeText": true,
@@ -418,58 +336,10 @@
       }
     },
     {
-      "fg": "clay",
-      "bg": "olive-oil",
-      "ratio": 2.63,
-      "apca": -50.4,
-      "supports": {
-        "body": false,
-        "largeText": false,
-        "nonText": false,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "clay",
-      "bg": "olive-oil-dark",
-      "ratio": 3.24,
-      "apca": -58.1,
-      "supports": {
-        "body": false,
-        "largeText": true,
-        "nonText": true,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "clay",
-      "bg": "air",
-      "ratio": 1.2,
-      "apca": 9.9,
-      "supports": {
-        "body": false,
-        "largeText": false,
-        "nonText": false,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "clay",
-      "bg": "teal",
-      "ratio": 5.52,
-      "apca": -74.1,
-      "supports": {
-        "body": true,
-        "largeText": true,
-        "nonText": true,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "air",
-      "bg": "ground",
-      "ratio": 14.31,
-      "apca": -104,
+      "fg": "paper",
+      "bg": "link",
+      "ratio": 7.62,
+      "apca": -84.5,
       "supports": {
         "body": true,
         "largeText": true,
@@ -478,10 +348,10 @@
       }
     },
     {
-      "fg": "air",
-      "bg": "olive-oil",
-      "ratio": 3.17,
-      "apca": -64.1,
+      "fg": "line",
+      "bg": "white",
+      "ratio": 3.36,
+      "apca": 61.1,
       "supports": {
         "body": false,
         "largeText": true,
@@ -490,10 +360,10 @@
       }
     },
     {
-      "fg": "air",
-      "bg": "olive-oil-dark",
-      "ratio": 3.9,
-      "apca": -71.8,
+      "fg": "line",
+      "bg": "paper",
+      "ratio": 3,
+      "apca": 53.4,
       "supports": {
         "body": false,
         "largeText": true,
@@ -502,10 +372,10 @@
       }
     },
     {
-      "fg": "air",
-      "bg": "clay",
-      "ratio": 1.2,
-      "apca": -11.5,
+      "fg": "line",
+      "bg": "muted",
+      "ratio": 1.71,
+      "apca": -16.7,
       "supports": {
         "body": false,
         "largeText": false,
@@ -514,10 +384,10 @@
       }
     },
     {
-      "fg": "air",
-      "bg": "teal",
-      "ratio": 6.64,
-      "apca": -87.7,
+      "fg": "line",
+      "bg": "black",
+      "ratio": 6.25,
+      "apca": -40.6,
       "supports": {
         "body": true,
         "largeText": true,
@@ -526,10 +396,10 @@
       }
     },
     {
-      "fg": "teal",
-      "bg": "ground",
-      "ratio": 2.16,
-      "apca": -15.3,
+      "fg": "line",
+      "bg": "link",
+      "ratio": 2.54,
+      "apca": -25.8,
       "supports": {
         "body": false,
         "largeText": false,
@@ -538,34 +408,10 @@
       }
     },
     {
-      "fg": "teal",
-      "bg": "olive-oil",
-      "ratio": 2.1,
-      "apca": 22,
-      "supports": {
-        "body": false,
-        "largeText": false,
-        "nonText": false,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "teal",
-      "bg": "olive-oil-dark",
-      "ratio": 1.7,
-      "apca": 14.5,
-      "supports": {
-        "body": false,
-        "largeText": false,
-        "nonText": false,
-        "aaaBody": false
-      }
-    },
-    {
-      "fg": "teal",
-      "bg": "clay",
-      "ratio": 5.52,
-      "apca": 70.3,
+      "fg": "muted",
+      "bg": "white",
+      "ratio": 5.74,
+      "apca": 78.8,
       "supports": {
         "body": true,
         "largeText": true,
@@ -574,14 +420,170 @@
       }
     },
     {
-      "fg": "teal",
-      "bg": "air",
-      "ratio": 6.64,
-      "apca": 82.7,
+      "fg": "muted",
+      "bg": "paper",
+      "ratio": 5.13,
+      "apca": 71,
       "supports": {
         "body": true,
         "largeText": true,
         "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "muted",
+      "bg": "line",
+      "ratio": 1.71,
+      "apca": 15.7,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "muted",
+      "bg": "black",
+      "ratio": 3.66,
+      "apca": -23,
+      "supports": {
+        "body": false,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "muted",
+      "bg": "link",
+      "ratio": 1.49,
+      "apca": -8.2,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "black",
+      "bg": "white",
+      "ratio": 21,
+      "apca": 106,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": true
+      }
+    },
+    {
+      "fg": "black",
+      "bg": "paper",
+      "ratio": 18.76,
+      "apca": 98.3,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": true
+      }
+    },
+    {
+      "fg": "black",
+      "bg": "line",
+      "ratio": 6.25,
+      "apca": 43,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "black",
+      "bg": "muted",
+      "ratio": 3.66,
+      "apca": 25.3,
+      "supports": {
+        "body": false,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "black",
+      "bg": "link",
+      "ratio": 2.46,
+      "apca": 15.5,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "link",
+      "bg": "white",
+      "ratio": 8.53,
+      "apca": 88.5,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": true
+      }
+    },
+    {
+      "fg": "link",
+      "bg": "paper",
+      "ratio": 7.62,
+      "apca": 80.7,
+      "supports": {
+        "body": true,
+        "largeText": true,
+        "nonText": true,
+        "aaaBody": true
+      }
+    },
+    {
+      "fg": "link",
+      "bg": "line",
+      "ratio": 2.54,
+      "apca": 25.4,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "link",
+      "bg": "muted",
+      "ratio": 1.49,
+      "apca": 7.7,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
+        "aaaBody": false
+      }
+    },
+    {
+      "fg": "link",
+      "bg": "black",
+      "ratio": 2.46,
+      "apca": -13.7,
+      "supports": {
+        "body": false,
+        "largeText": false,
+        "nonText": false,
         "aaaBody": false
       }
     }
@@ -593,10 +595,10 @@
         "bg": "surface",
         "use": "body",
         "why": "body text",
-        "fgColor": "clay",
-        "bgColor": "ground",
-        "ratio": 11.9,
-        "apca": -90.4,
+        "fgColor": "black",
+        "bgColor": "white",
+        "ratio": 21,
+        "apca": 106,
         "min": 4.5,
         "pass": true,
         "fixes": []
@@ -606,10 +608,10 @@
         "bg": "surface",
         "use": "largeText",
         "why": "headings (large text only)",
-        "fgColor": "olive-oil",
-        "bgColor": "ground",
-        "ratio": 4.52,
-        "apca": -39.2,
+        "fgColor": "black",
+        "bgColor": "white",
+        "ratio": 21,
+        "apca": 106,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -619,10 +621,10 @@
         "bg": "surface",
         "use": "body",
         "why": "links in running text",
-        "fgColor": "olive-oil",
-        "bgColor": "ground",
-        "ratio": 4.52,
-        "apca": -39.2,
+        "fgColor": "link",
+        "bgColor": "white",
+        "ratio": 8.53,
+        "apca": 88.5,
         "min": 4.5,
         "pass": true,
         "fixes": []
@@ -632,10 +634,10 @@
         "bg": "primary",
         "use": "body",
         "why": "button labels",
-        "fgColor": "ground",
-        "bgColor": "olive-oil",
-        "ratio": 4.52,
-        "apca": 40.4,
+        "fgColor": "white",
+        "bgColor": "link",
+        "ratio": 8.53,
+        "apca": -93.1,
         "min": 4.5,
         "pass": true,
         "fixes": []
@@ -645,10 +647,10 @@
         "bg": "surface",
         "use": "nonText",
         "why": "borders that mark out controls",
-        "fgColor": "olive-oil",
-        "bgColor": "ground",
-        "ratio": 4.52,
-        "apca": -39.2,
+        "fgColor": "line",
+        "bgColor": "white",
+        "ratio": 3.36,
+        "apca": 61.1,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -658,10 +660,10 @@
         "bg": "surface",
         "use": "nonText",
         "why": "accents",
-        "fgColor": "clay",
-        "bgColor": "ground",
-        "ratio": 11.9,
-        "apca": -90.4,
+        "fgColor": "muted",
+        "bgColor": "white",
+        "ratio": 5.74,
+        "apca": 78.8,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -671,10 +673,10 @@
         "bg": "surface",
         "use": "nonText",
         "why": "keyboard focus ring",
-        "fgColor": "olive-oil",
-        "bgColor": "ground",
-        "ratio": 4.52,
-        "apca": -39.2,
+        "fgColor": "link",
+        "bgColor": "white",
+        "ratio": 8.53,
+        "apca": 88.5,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -686,10 +688,10 @@
         "bg": "surface",
         "use": "body",
         "why": "body text",
-        "fgColor": "ground",
-        "bgColor": "clay",
-        "ratio": 11.9,
-        "apca": 88.7,
+        "fgColor": "white",
+        "bgColor": "black",
+        "ratio": 21,
+        "apca": -107.9,
         "min": 4.5,
         "pass": true,
         "fixes": []
@@ -699,10 +701,10 @@
         "bg": "surface",
         "use": "largeText",
         "why": "headings (large text only)",
-        "fgColor": "olive-oil-dark",
-        "bgColor": "clay",
-        "ratio": 3.24,
-        "apca": 53.9,
+        "fgColor": "white",
+        "bgColor": "black",
+        "ratio": 21,
+        "apca": -107.9,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -712,10 +714,10 @@
         "bg": "surface",
         "use": "body",
         "why": "links in running text",
-        "fgColor": "ground",
-        "bgColor": "clay",
-        "ratio": 11.9,
-        "apca": 88.7,
+        "fgColor": "white",
+        "bgColor": "black",
+        "ratio": 21,
+        "apca": -107.9,
         "min": 4.5,
         "pass": true,
         "fixes": []
@@ -725,10 +727,10 @@
         "bg": "primary",
         "use": "body",
         "why": "button labels",
-        "fgColor": "clay",
-        "bgColor": "ground",
-        "ratio": 11.9,
-        "apca": -90.4,
+        "fgColor": "black",
+        "bgColor": "white",
+        "ratio": 21,
+        "apca": 106,
         "min": 4.5,
         "pass": true,
         "fixes": []
@@ -738,10 +740,10 @@
         "bg": "surface",
         "use": "nonText",
         "why": "borders that mark out controls",
-        "fgColor": "ground",
-        "bgColor": "clay",
-        "ratio": 11.9,
-        "apca": 88.7,
+        "fgColor": "muted",
+        "bgColor": "black",
+        "ratio": 3.66,
+        "apca": -23,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -751,10 +753,10 @@
         "bg": "surface",
         "use": "nonText",
         "why": "accents",
-        "fgColor": "ground",
-        "bgColor": "clay",
-        "ratio": 11.9,
-        "apca": 88.7,
+        "fgColor": "line",
+        "bgColor": "black",
+        "ratio": 6.25,
+        "apca": -40.6,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -764,10 +766,10 @@
         "bg": "surface",
         "use": "nonText",
         "why": "keyboard focus ring",
-        "fgColor": "ground",
-        "bgColor": "clay",
-        "ratio": 11.9,
-        "apca": 88.7,
+        "fgColor": "white",
+        "bgColor": "black",
+        "ratio": 21,
+        "apca": -107.9,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -779,87 +781,36 @@
         "bg": "surface",
         "use": "body",
         "why": "body text",
-        "fgColor": "clay",
-        "bgColor": "olive-oil",
-        "ratio": 2.63,
-        "apca": -50.4,
+        "fgColor": "black",
+        "bgColor": "paper",
+        "ratio": 18.76,
+        "apca": 98.3,
         "min": 4.5,
-        "pass": false,
-        "fixes": [
-          {
-            "kind": "palette",
-            "role": "text",
-            "from": "clay",
-            "to": "ground",
-            "ratio": 4.52
-          },
-          {
-            "kind": "palette",
-            "role": "surface",
-            "from": "olive-oil",
-            "to": "teal",
-            "ratio": 5.52
-          },
-          {
-            "kind": "tint",
-            "role": "surface",
-            "from": "olive-oil",
-            "to": "#85642b",
-            "ratio": 4.53
-          }
-        ]
+        "pass": true,
+        "fixes": []
       },
       {
         "fg": "heading",
         "bg": "surface",
         "use": "largeText",
         "why": "headings (large text only)",
-        "fgColor": "clay",
-        "bgColor": "olive-oil",
-        "ratio": 2.63,
-        "apca": -50.4,
+        "fgColor": "black",
+        "bgColor": "paper",
+        "ratio": 18.76,
+        "apca": 98.3,
         "min": 3,
-        "pass": false,
-        "fixes": [
-          {
-            "kind": "palette",
-            "role": "heading",
-            "from": "clay",
-            "to": "air",
-            "ratio": 3.17
-          },
-          {
-            "kind": "tint",
-            "role": "heading",
-            "from": "clay",
-            "to": "#fdf8f3",
-            "ratio": 3
-          },
-          {
-            "kind": "palette",
-            "role": "surface",
-            "from": "olive-oil",
-            "to": "olive-oil-dark",
-            "ratio": 3.24
-          },
-          {
-            "kind": "tint",
-            "role": "surface",
-            "from": "olive-oil",
-            "to": "#a97f37",
-            "ratio": 3.02
-          }
-        ]
+        "pass": true,
+        "fixes": []
       },
       {
         "fg": "primary",
         "bg": "surface",
         "use": "body",
         "why": "links in running text",
-        "fgColor": "ground",
-        "bgColor": "olive-oil",
-        "ratio": 4.52,
-        "apca": 40.4,
+        "fgColor": "link",
+        "bgColor": "paper",
+        "ratio": 7.62,
+        "apca": 80.7,
         "min": 4.5,
         "pass": true,
         "fixes": []
@@ -869,10 +820,10 @@
         "bg": "primary",
         "use": "body",
         "why": "button labels",
-        "fgColor": "clay",
-        "bgColor": "ground",
-        "ratio": 11.9,
-        "apca": -90.4,
+        "fgColor": "white",
+        "bgColor": "link",
+        "ratio": 8.53,
+        "apca": -93.1,
         "min": 4.5,
         "pass": true,
         "fixes": []
@@ -882,10 +833,10 @@
         "bg": "surface",
         "use": "nonText",
         "why": "borders that mark out controls",
-        "fgColor": "ground",
-        "bgColor": "olive-oil",
-        "ratio": 4.52,
-        "apca": 40.4,
+        "fgColor": "line",
+        "bgColor": "paper",
+        "ratio": 3,
+        "apca": 53.4,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -895,10 +846,10 @@
         "bg": "surface",
         "use": "nonText",
         "why": "accents",
-        "fgColor": "ground",
-        "bgColor": "olive-oil",
-        "ratio": 4.52,
-        "apca": 40.4,
+        "fgColor": "muted",
+        "bgColor": "paper",
+        "ratio": 5.13,
+        "apca": 71,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -908,10 +859,10 @@
         "bg": "surface",
         "use": "nonText",
         "why": "keyboard focus ring",
-        "fgColor": "ground",
-        "bgColor": "olive-oil",
-        "ratio": 4.52,
-        "apca": 40.4,
+        "fgColor": "link",
+        "bgColor": "paper",
+        "ratio": 7.62,
+        "apca": 80.7,
         "min": 3,
         "pass": true,
         "fixes": []
@@ -921,1943 +872,23 @@
   "surfaces": [
     {
       "scheme": "default",
-      "color": "ground",
-      "hex": "#332822"
+      "color": "white",
+      "hex": "#FFFFFF"
     },
     {
       "scheme": "inverse",
-      "color": "clay",
-      "hex": "#F7E8D6"
+      "color": "black",
+      "hex": "#000000"
     },
     {
       "scheme": "highlight",
-      "color": "olive-oil",
-      "hex": "#B6893B"
+      "color": "paper",
+      "hex": "#F2F2F2"
     }
   ],
   "ramps": [
     {
-      "name": "ground",
-      "hex": "#332822",
-      "nearest": 900,
-      "steps": [
-        {
-          "step": 50,
-          "hex": "#fff2eb",
-          "oklch": {
-            "l": 96.9,
-            "c": 0.017,
-            "h": 50.4,
-            "css": "oklch(96.9% 0.017 50.4)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 13.05,
-              "apca": -97,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.1,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.89,
-              "apca": -57.1,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 100,
-          "hex": "#f3e4dc",
-          "oklch": {
-            "l": 92.9,
-            "c": 0.02,
-            "h": 50.1,
-            "css": "oklch(92.9% 0.020 50.1)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 11.55,
-              "apca": -88.2,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.03,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.56,
-              "apca": -48.3,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 200,
-          "hex": "#dccec6",
-          "oklch": {
-            "l": 86.1,
-            "c": 0.019,
-            "h": 51.9,
-            "css": "oklch(86.1% 0.019 51.9)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 9.33,
-              "apca": -74.5,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.28,
-              "apca": 12.3,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.06,
-              "apca": -34.6,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 300,
-          "hex": "#c2b4ac",
-          "oklch": {
-            "l": 77.9,
-            "c": 0.02,
-            "h": 51.9,
-            "css": "oklch(77.9% 0.020 51.9)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 7.1,
-              "apca": -59.3,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.68,
-              "apca": 26.7,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.57,
-              "apca": -19.4,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 400,
-          "hex": "#a99b94",
-          "oklch": {
-            "l": 70,
-            "c": 0.019,
-            "h": 48.4,
-            "css": "oklch(70.0% 0.019 48.4)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 5.32,
-              "apca": -45.7,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 2.24,
-              "apca": 39.9,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.18,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 500,
-          "hex": "#91837c",
-          "oklch": {
-            "l": 62,
-            "c": 0.02,
-            "h": 48.4,
-            "css": "oklch(62.0% 0.020 48.4)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 3.91,
-              "apca": -33.6,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 3.04,
-              "apca": 51.8,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.15,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 600,
-          "hex": "#796c65",
-          "oklch": {
-            "l": 54.1,
-            "c": 0.02,
-            "h": 50.2,
-            "css": "oklch(54.1% 0.020 50.2)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 2.83,
-              "apca": -22.8,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 4.21,
-              "apca": 62.6,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.6,
-              "apca": 14.4,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 700,
-          "hex": "#62554e",
-          "oklch": {
-            "l": 46,
-            "c": 0.021,
-            "h": 50.1,
-            "css": "oklch(46.0% 0.021 50.1)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 2,
-              "apca": -13.2,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 5.96,
-              "apca": 72.5,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.26,
-              "apca": 24.3,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 800,
-          "hex": "#4b4039",
-          "oklch": {
-            "l": 38.1,
-            "c": 0.019,
-            "h": 54.5,
-            "css": "oklch(38.1% 0.019 54.5)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 1.43,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 8.35,
-              "apca": 80.9,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 3.17,
-              "apca": 32.7,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 900,
-          "hex": "#362b25",
-          "oklch": {
-            "l": 29.9,
-            "c": 0.019,
-            "h": 50.2,
-            "css": "oklch(29.9% 0.019 50.2)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 1.04,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 11.42,
-              "apca": 87.9,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 4.34,
-              "apca": 39.7,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 950,
-          "hex": "#221812",
-          "oklch": {
-            "l": 22,
-            "c": 0.02,
-            "h": 52.3,
-            "css": "oklch(22.0% 0.020 52.3)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 1.22,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 14.47,
-              "apca": 91.8,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 5.49,
-              "apca": 43.6,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "olive-oil",
-      "hex": "#B6893B",
-      "nearest": 500,
-      "steps": [
-        {
-          "step": 50,
-          "hex": "#fff3e2",
-          "oklch": {
-            "l": 96.9,
-            "c": 0.026,
-            "h": 76.8,
-            "css": "oklch(96.9% 0.026 76.8)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 13.06,
-              "apca": -97,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.1,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.89,
-              "apca": -57.1,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 100,
-          "hex": "#ffe4ba",
-          "oklch": {
-            "l": 93.1,
-            "c": 0.062,
-            "h": 78.8,
-            "css": "oklch(93.1% 0.062 78.8)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 11.63,
-              "apca": -88.7,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.02,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.57,
-              "apca": -48.8,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 200,
-          "hex": "#f8c87c",
-          "oklch": {
-            "l": 85.9,
-            "c": 0.109,
-            "h": 78,
-            "css": "oklch(85.9% 0.109 78.0)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 9.23,
-              "apca": -74,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.29,
-              "apca": 12.8,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.04,
-              "apca": -34.1,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 300,
-          "hex": "#ddaf62",
-          "oklch": {
-            "l": 78,
-            "c": 0.109,
-            "h": 78.9,
-            "css": "oklch(78.0% 0.109 78.9)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 7.08,
-              "apca": -59.3,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.68,
-              "apca": 26.8,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.57,
-              "apca": -19.3,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 400,
-          "hex": "#c39649",
-          "oklch": {
-            "l": 70,
-            "c": 0.109,
-            "h": 78.8,
-            "css": "oklch(70.0% 0.109 78.8)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 5.3,
-              "apca": -45.7,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 2.25,
-              "apca": 39.9,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.17,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 500,
-          "hex": "#aa7d2e",
-          "oklch": {
-            "l": 62,
-            "c": 0.109,
-            "h": 78,
-            "css": "oklch(62.0% 0.109 78.0)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 3.87,
-              "apca": -33.4,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 3.07,
-              "apca": 52,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.17,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 600,
-          "hex": "#91660a",
-          "oklch": {
-            "l": 54.1,
-            "c": 0.11,
-            "h": 78.7,
-            "css": "oklch(54.1% 0.110 78.7)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 2.8,
-              "apca": -22.8,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 4.25,
-              "apca": 62.6,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.61,
-              "apca": 14.4,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 700,
-          "hex": "#755000",
-          "oklch": {
-            "l": 46,
-            "c": 0.096,
-            "h": 78,
-            "css": "oklch(46.0% 0.096 78.0)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 1.98,
-              "apca": -13.3,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 6.02,
-              "apca": 72.5,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.28,
-              "apca": 24.2,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 800,
-          "hex": "#593c00",
-          "oklch": {
-            "l": 38,
-            "c": 0.079,
-            "h": 78.1,
-            "css": "oklch(38.0% 0.079 78.1)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 1.41,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 8.43,
-              "apca": 80.9,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 3.2,
-              "apca": 32.7,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 900,
-          "hex": "#3f2900",
-          "oklch": {
-            "l": 30,
-            "c": 0.063,
-            "h": 77.5,
-            "css": "oklch(30.0% 0.063 77.5)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 1.04,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 11.43,
-              "apca": 87.7,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 4.34,
-              "apca": 39.5,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 950,
-          "hex": "#261700",
-          "oklch": {
-            "l": 21.9,
-            "c": 0.046,
-            "h": 77.1,
-            "css": "oklch(21.9% 0.046 77.1)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 1.22,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 14.5,
-              "apca": 91.8,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 5.5,
-              "apca": 43.5,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "olive-oil-dark",
-      "hex": "#a37a34",
-      "nearest": 500,
-      "steps": [
-        {
-          "step": 50,
-          "hex": "#fff3e2",
-          "oklch": {
-            "l": 96.9,
-            "c": 0.026,
-            "h": 76.8,
-            "css": "oklch(96.9% 0.026 76.8)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 13.06,
-              "apca": -97,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.1,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.89,
-              "apca": -57.1,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 100,
-          "hex": "#ffe4ba",
-          "oklch": {
-            "l": 93.1,
-            "c": 0.062,
-            "h": 78.8,
-            "css": "oklch(93.1% 0.062 78.8)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 11.63,
-              "apca": -88.7,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.02,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.57,
-              "apca": -48.8,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 200,
-          "hex": "#f5c984",
-          "oklch": {
-            "l": 85.9,
-            "c": 0.1,
-            "h": 78.1,
-            "css": "oklch(85.9% 0.100 78.1)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 9.25,
-              "apca": -74.1,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.29,
-              "apca": 12.7,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.05,
-              "apca": -34.2,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 300,
-          "hex": "#dbb06b",
-          "oklch": {
-            "l": 78.1,
-            "c": 0.101,
-            "h": 78.3,
-            "css": "oklch(78.1% 0.101 78.3)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 7.11,
-              "apca": -59.5,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.67,
-              "apca": 26.6,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.57,
-              "apca": -19.6,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 400,
-          "hex": "#c19652",
-          "oklch": {
-            "l": 69.9,
-            "c": 0.1,
-            "h": 77.4,
-            "css": "oklch(69.9% 0.100 77.4)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 5.28,
-              "apca": -45.6,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 2.25,
-              "apca": 40,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.17,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 500,
-          "hex": "#a77e38",
-          "oklch": {
-            "l": 62,
-            "c": 0.101,
-            "h": 78.3,
-            "css": "oklch(62.0% 0.101 78.3)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 3.87,
-              "apca": -33.4,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 3.07,
-              "apca": 52,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.17,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 600,
-          "hex": "#8e661d",
-          "oklch": {
-            "l": 53.9,
-            "c": 0.1,
-            "h": 77.9,
-            "css": "oklch(53.9% 0.100 77.9)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 2.77,
-              "apca": -22.5,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 4.29,
-              "apca": 63,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.63,
-              "apca": 14.7,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 700,
-          "hex": "#755000",
-          "oklch": {
-            "l": 46,
-            "c": 0.096,
-            "h": 78,
-            "css": "oklch(46.0% 0.096 78.0)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 1.98,
-              "apca": -13.3,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 6.02,
-              "apca": 72.5,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.28,
-              "apca": 24.2,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 800,
-          "hex": "#593c00",
-          "oklch": {
-            "l": 38,
-            "c": 0.079,
-            "h": 78.1,
-            "css": "oklch(38.0% 0.079 78.1)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 1.41,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 8.43,
-              "apca": 80.9,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 3.2,
-              "apca": 32.7,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 900,
-          "hex": "#3f2900",
-          "oklch": {
-            "l": 30,
-            "c": 0.063,
-            "h": 77.5,
-            "css": "oklch(30.0% 0.063 77.5)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 1.04,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 11.43,
-              "apca": 87.7,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 4.34,
-              "apca": 39.5,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 950,
-          "hex": "#261700",
-          "oklch": {
-            "l": 21.9,
-            "c": 0.046,
-            "h": 77.1,
-            "css": "oklch(21.9% 0.046 77.1)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 1.22,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 14.5,
-              "apca": 91.8,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 5.5,
-              "apca": 43.5,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "clay",
-      "hex": "#F7E8D6",
-      "nearest": 100,
-      "steps": [
-        {
-          "step": 50,
-          "hex": "#fff3e5",
-          "oklch": {
-            "l": 97,
-            "c": 0.023,
-            "h": 71.8,
-            "css": "oklch(97.0% 0.023 71.8)"
-          },
-          "clipped": true,
-          "on": {
-            "default": {
-              "ratio": 13.09,
-              "apca": -97.2,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.1,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.9,
-              "apca": -57.3,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 100,
-          "hex": "#f4e5d3",
-          "oklch": {
-            "l": 92.9,
-            "c": 0.029,
-            "h": 72.5,
-            "css": "oklch(92.9% 0.029 72.5)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 11.58,
-              "apca": -88.5,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.03,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.56,
-              "apca": -48.5,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 200,
-          "hex": "#ddcebd",
-          "oklch": {
-            "l": 85.9,
-            "c": 0.029,
-            "h": 70.9,
-            "css": "oklch(85.9% 0.029 70.9)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 9.29,
-              "apca": -74.3,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.28,
-              "apca": 12.5,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.06,
-              "apca": -34.4,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 300,
-          "hex": "#c3b5a4",
-          "oklch": {
-            "l": 78,
-            "c": 0.029,
-            "h": 72.7,
-            "css": "oklch(78.0% 0.029 72.7)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 7.13,
-              "apca": -59.6,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.67,
-              "apca": 26.5,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.58,
-              "apca": -19.6,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 400,
-          "hex": "#aa9c8b",
-          "oklch": {
-            "l": 70,
-            "c": 0.029,
-            "h": 72.7,
-            "css": "oklch(70.0% 0.029 72.7)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 5.34,
-              "apca": -45.9,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 2.23,
-              "apca": 39.7,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.18,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 500,
-          "hex": "#918473",
-          "oklch": {
-            "l": 62,
-            "c": 0.029,
-            "h": 74.6,
-            "css": "oklch(62.0% 0.029 74.6)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 3.92,
-              "apca": -33.7,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 3.04,
-              "apca": 51.7,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.15,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 600,
-          "hex": "#796c5c",
-          "oklch": {
-            "l": 53.9,
-            "c": 0.029,
-            "h": 72.9,
-            "css": "oklch(53.9% 0.029 72.9)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 2.8,
-              "apca": -22.6,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 4.25,
-              "apca": 62.9,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 1.61,
-              "apca": 14.6,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 700,
-          "hex": "#625646",
-          "oklch": {
-            "l": 46,
-            "c": 0.029,
-            "h": 74.9,
-            "css": "oklch(46.0% 0.029 74.9)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 2,
-              "apca": -13.3,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 5.94,
-              "apca": 72.4,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "highlight": {
-              "ratio": 2.26,
-              "apca": 24.2,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 800,
-          "hex": "#4c4031",
-          "oklch": {
-            "l": 38,
-            "c": 0.029,
-            "h": 73,
-            "css": "oklch(38.0% 0.029 73.0)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 1.42,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 8.38,
-              "apca": 81,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 3.18,
-              "apca": 32.7,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 900,
-          "hex": "#372c1e",
-          "oklch": {
-            "l": 30.1,
-            "c": 0.029,
-            "h": 73.1,
-            "css": "oklch(30.1% 0.029 73.1)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 1.05,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 11.33,
-              "apca": 87.7,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 4.3,
-              "apca": 39.5,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        },
-        {
-          "step": 950,
-          "hex": "#23180b",
-          "oklch": {
-            "l": 21.9,
-            "c": 0.029,
-            "h": 70,
-            "css": "oklch(21.9% 0.029 70.0)"
-          },
-          "clipped": false,
-          "on": {
-            "default": {
-              "ratio": 1.22,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 14.47,
-              "apca": 91.8,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 5.49,
-              "apca": 43.6,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "air",
+      "name": "white",
       "hex": "#FFFFFF",
       "nearest": 50,
       "steps": [
@@ -2873,17 +904,7 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 13.13,
-              "apca": -97.4,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.1,
+              "ratio": 1.09,
               "apca": 0,
               "supports": {
                 "body": false,
@@ -2892,9 +913,19 @@
                 "aaaBody": false
               }
             },
+            "inverse": {
+              "ratio": 19.26,
+              "apca": -101.3,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
             "highlight": {
-              "ratio": 2.91,
-              "apca": -57.5,
+              "ratio": 1.03,
+              "apca": 0,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -2916,18 +947,8 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 11.68,
-              "apca": -89,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.02,
-              "apca": 0,
+              "ratio": 1.23,
+              "apca": 11.1,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -2935,9 +956,19 @@
                 "aaaBody": false
               }
             },
+            "inverse": {
+              "ratio": 17.14,
+              "apca": -92.9,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
             "highlight": {
-              "ratio": 2.58,
-              "apca": -49.1,
+              "ratio": 1.09,
+              "apca": 0,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -2959,18 +990,8 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 9.37,
-              "apca": -74.8,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.27,
-              "apca": 12.1,
+              "ratio": 1.53,
+              "apca": 24.5,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -2978,9 +999,19 @@
                 "aaaBody": false
               }
             },
+            "inverse": {
+              "ratio": 13.75,
+              "apca": -78.7,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
             "highlight": {
-              "ratio": 2.07,
-              "apca": -34.9,
+              "ratio": 1.36,
+              "apca": 16.7,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3002,18 +1033,8 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 7.14,
-              "apca": -59.6,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.67,
-              "apca": 26.5,
+              "ratio": 2.01,
+              "apca": 38.9,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3021,9 +1042,19 @@
                 "aaaBody": false
               }
             },
+            "inverse": {
+              "ratio": 10.47,
+              "apca": -63.5,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
             "highlight": {
-              "ratio": 1.58,
-              "apca": -19.6,
+              "ratio": 1.79,
+              "apca": 31.1,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3045,18 +1076,8 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 5.34,
-              "apca": -45.9,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 2.23,
-              "apca": 39.7,
+              "ratio": 2.68,
+              "apca": 52.1,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3064,9 +1085,19 @@
                 "aaaBody": false
               }
             },
+            "inverse": {
+              "ratio": 7.84,
+              "apca": -49.8,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
             "highlight": {
-              "ratio": 1.18,
-              "apca": 0,
+              "ratio": 2.39,
+              "apca": 44.3,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3088,8 +1119,8 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 3.93,
-              "apca": -33.7,
+              "ratio": 3.64,
+              "apca": 64,
               "supports": {
                 "body": false,
                 "largeText": true,
@@ -3098,22 +1129,22 @@
               }
             },
             "inverse": {
-              "ratio": 3.03,
-              "apca": 51.6,
+              "ratio": 5.77,
+              "apca": -37.6,
               "supports": {
-                "body": false,
+                "body": true,
                 "largeText": true,
                 "nonText": true,
                 "aaaBody": false
               }
             },
             "highlight": {
-              "ratio": 1.15,
-              "apca": 0,
+              "ratio": 3.25,
+              "apca": 56.3,
               "supports": {
                 "body": false,
-                "largeText": false,
-                "nonText": false,
+                "largeText": true,
+                "nonText": true,
                 "aaaBody": false
               }
             }
@@ -3131,18 +1162,18 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 2.85,
-              "apca": -23.1,
+              "ratio": 5.02,
+              "apca": 74.8,
               "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
+                "body": true,
+                "largeText": true,
+                "nonText": true,
                 "aaaBody": false
               }
             },
             "inverse": {
               "ratio": 4.18,
-              "apca": 62.4,
+              "apca": -27,
               "supports": {
                 "body": false,
                 "largeText": true,
@@ -3151,12 +1182,12 @@
               }
             },
             "highlight": {
-              "ratio": 1.59,
-              "apca": 14.1,
+              "ratio": 4.49,
+              "apca": 67,
               "supports": {
                 "body": false,
-                "largeText": false,
-                "nonText": false,
+                "largeText": true,
+                "nonText": true,
                 "aaaBody": false
               }
             }
@@ -3174,32 +1205,32 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 2.01,
-              "apca": -13.4,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 5.92,
-              "apca": 72.3,
+              "ratio": 7.11,
+              "apca": 84.7,
               "supports": {
                 "body": true,
                 "largeText": true,
                 "nonText": true,
-                "aaaBody": false
+                "aaaBody": true
               }
             },
-            "highlight": {
-              "ratio": 2.25,
-              "apca": 24.1,
+            "inverse": {
+              "ratio": 2.95,
+              "apca": -17.3,
               "supports": {
                 "body": false,
                 "largeText": false,
                 "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 6.36,
+              "apca": 77,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
                 "aaaBody": false
               }
             }
@@ -3217,18 +1248,8 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 1.42,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 8.36,
-              "apca": 81,
+              "ratio": 10.05,
+              "apca": 93.4,
               "supports": {
                 "body": true,
                 "largeText": true,
@@ -3236,14 +1257,24 @@
                 "aaaBody": true
               }
             },
-            "highlight": {
-              "ratio": 3.17,
-              "apca": 32.7,
+            "inverse": {
+              "ratio": 2.09,
+              "apca": -9.1,
               "supports": {
                 "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 8.98,
+              "apca": 85.6,
+              "supports": {
+                "body": true,
                 "largeText": true,
                 "nonText": true,
-                "aaaBody": false
+                "aaaBody": true
               }
             }
           }
@@ -3260,7 +1291,17 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 1.05,
+              "ratio": 13.58,
+              "apca": 100.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.55,
               "apca": 0,
               "supports": {
                 "body": false,
@@ -3269,24 +1310,14 @@
                 "aaaBody": false
               }
             },
-            "inverse": {
-              "ratio": 11.3,
-              "apca": 87.7,
+            "highlight": {
+              "ratio": 12.13,
+              "apca": 92.4,
               "supports": {
                 "body": true,
                 "largeText": true,
                 "nonText": true,
                 "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 4.29,
-              "apca": 39.5,
-              "supports": {
-                "body": false,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
               }
             }
           }
@@ -3303,7 +1334,17 @@
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 1.2,
+              "ratio": 17.22,
+              "apca": 104.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.22,
               "apca": 0,
               "supports": {
                 "body": false,
@@ -3312,24 +1353,14 @@
                 "aaaBody": false
               }
             },
-            "inverse": {
-              "ratio": 14.33,
-              "apca": 91.7,
+            "highlight": {
+              "ratio": 15.39,
+              "apca": 96.4,
               "supports": {
                 "body": true,
                 "largeText": true,
                 "nonText": true,
                 "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 5.44,
-              "apca": 43.5,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
               }
             }
           }
@@ -3337,33 +1368,23 @@
       ]
     },
     {
-      "name": "teal",
-      "hex": "#346278",
-      "nearest": 700,
+      "name": "paper",
+      "hex": "#F2F2F2",
+      "nearest": 50,
       "steps": [
         {
           "step": 50,
-          "hex": "#eaf8ff",
+          "hex": "#f5f5f5",
           "oklch": {
-            "l": 97.1,
-            "c": 0.018,
-            "h": 229,
-            "css": "oklch(97.1% 0.018 229.0)"
+            "l": 97,
+            "c": 0,
+            "h": null,
+            "css": "oklch(97.0% 0 none)"
           },
-          "clipped": true,
+          "clipped": false,
           "on": {
             "default": {
-              "ratio": 13.2,
-              "apca": -97.8,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.11,
+              "ratio": 1.09,
               "apca": 0,
               "supports": {
                 "body": false,
@@ -3372,9 +1393,19 @@
                 "aaaBody": false
               }
             },
+            "inverse": {
+              "ratio": 19.26,
+              "apca": -101.3,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
             "highlight": {
-              "ratio": 2.92,
-              "apca": -57.9,
+              "ratio": 1.03,
+              "apca": 0,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3386,28 +1417,18 @@
         },
         {
           "step": 100,
-          "hex": "#cdeeff",
+          "hex": "#e8e8e8",
           "oklch": {
             "l": 93.1,
-            "c": 0.042,
-            "h": 230.2,
-            "css": "oklch(93.1% 0.042 230.2)"
+            "c": 0,
+            "h": null,
+            "css": "oklch(93.1% 0 none)"
           },
-          "clipped": true,
+          "clipped": false,
           "on": {
             "default": {
-              "ratio": 11.77,
-              "apca": -89.6,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.01,
-              "apca": 0,
+              "ratio": 1.23,
+              "apca": 11.1,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3415,9 +1436,19 @@
                 "aaaBody": false
               }
             },
+            "inverse": {
+              "ratio": 17.14,
+              "apca": -92.9,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
             "highlight": {
-              "ratio": 2.6,
-              "apca": -49.7,
+              "ratio": 1.09,
+              "apca": 0,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3429,28 +1460,18 @@
         },
         {
           "step": 200,
-          "hex": "#a8d9f2",
+          "hex": "#d1d1d1",
           "oklch": {
-            "l": 85.9,
-            "c": 0.062,
-            "h": 230.5,
-            "css": "oklch(85.9% 0.062 230.5)"
+            "l": 86.1,
+            "c": 0,
+            "h": null,
+            "css": "oklch(86.1% 0 none)"
           },
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 9.45,
-              "apca": -75.4,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.26,
-              "apca": 11.5,
+              "ratio": 1.53,
+              "apca": 24.5,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3458,9 +1479,19 @@
                 "aaaBody": false
               }
             },
+            "inverse": {
+              "ratio": 13.75,
+              "apca": -78.7,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
             "highlight": {
-              "ratio": 2.09,
-              "apca": -35.4,
+              "ratio": 1.36,
+              "apca": 16.7,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3472,28 +1503,18 @@
         },
         {
           "step": 300,
-          "hex": "#8fbfd8",
+          "hex": "#b7b7b7",
           "oklch": {
             "l": 77.9,
-            "c": 0.062,
-            "h": 231.2,
-            "css": "oklch(77.9% 0.062 231.2)"
+            "c": 0,
+            "h": null,
+            "css": "oklch(77.9% 0 none)"
           },
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 7.23,
-              "apca": -60.3,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": true
-              }
-            },
-            "inverse": {
-              "ratio": 1.65,
-              "apca": 25.8,
+              "ratio": 2.01,
+              "apca": 38.9,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3501,9 +1522,19 @@
                 "aaaBody": false
               }
             },
+            "inverse": {
+              "ratio": 10.47,
+              "apca": -63.5,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
             "highlight": {
-              "ratio": 1.6,
-              "apca": -20.4,
+              "ratio": 1.79,
+              "apca": 31.1,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3515,28 +1546,18 @@
         },
         {
           "step": 400,
-          "hex": "#77a6be",
+          "hex": "#9e9e9e",
           "oklch": {
-            "l": 70,
-            "c": 0.061,
-            "h": 230.9,
-            "css": "oklch(70.0% 0.061 230.9)"
+            "l": 69.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(69.9% 0 none)"
           },
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 5.44,
-              "apca": -46.8,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 2.19,
-              "apca": 38.8,
+              "ratio": 2.68,
+              "apca": 52.1,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3544,9 +1565,19 @@
                 "aaaBody": false
               }
             },
+            "inverse": {
+              "ratio": 7.84,
+              "apca": -49.8,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
             "highlight": {
-              "ratio": 1.2,
-              "apca": 0,
+              "ratio": 2.39,
+              "apca": 44.3,
               "supports": {
                 "body": false,
                 "largeText": false,
@@ -3558,18 +1589,18 @@
         },
         {
           "step": 500,
-          "hex": "#5f8da5",
+          "hex": "#868686",
           "oklch": {
-            "l": 61.9,
-            "c": 0.062,
-            "h": 231.8,
-            "css": "oklch(61.9% 0.062 231.8)"
+            "l": 62,
+            "c": 0,
+            "h": null,
+            "css": "oklch(62.0% 0 none)"
           },
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 3.98,
-              "apca": -34.3,
+              "ratio": 3.64,
+              "apca": 64,
               "supports": {
                 "body": false,
                 "largeText": true,
@@ -3578,22 +1609,22 @@
               }
             },
             "inverse": {
-              "ratio": 2.99,
-              "apca": 51.1,
+              "ratio": 5.77,
+              "apca": -37.6,
               "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
+                "body": true,
+                "largeText": true,
+                "nonText": true,
                 "aaaBody": false
               }
             },
             "highlight": {
-              "ratio": 1.14,
-              "apca": 0,
+              "ratio": 3.25,
+              "apca": 56.3,
               "supports": {
                 "body": false,
-                "largeText": false,
-                "nonText": false,
+                "largeText": true,
+                "nonText": true,
                 "aaaBody": false
               }
             }
@@ -3601,28 +1632,28 @@
         },
         {
           "step": 600,
-          "hex": "#47758c",
+          "hex": "#6f6f6f",
           "oklch": {
-            "l": 53.9,
-            "c": 0.062,
-            "h": 231.2,
-            "css": "oklch(53.9% 0.062 231.2)"
+            "l": 54.2,
+            "c": 0,
+            "h": null,
+            "css": "oklch(54.2% 0 none)"
           },
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 2.86,
-              "apca": -23.3,
+              "ratio": 5.02,
+              "apca": 74.8,
               "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
+                "body": true,
+                "largeText": true,
+                "nonText": true,
                 "aaaBody": false
               }
             },
             "inverse": {
-              "ratio": 4.17,
-              "apca": 62.2,
+              "ratio": 4.18,
+              "apca": -27,
               "supports": {
                 "body": false,
                 "largeText": true,
@@ -3631,12 +1662,12 @@
               }
             },
             "highlight": {
-              "ratio": 1.58,
-              "apca": 13.9,
+              "ratio": 4.49,
+              "apca": 67,
               "supports": {
                 "body": false,
-                "largeText": false,
-                "nonText": false,
+                "largeText": true,
+                "nonText": true,
                 "aaaBody": false
               }
             }
@@ -3644,42 +1675,42 @@
         },
         {
           "step": 700,
-          "hex": "#305e74",
+          "hex": "#585858",
           "oklch": {
-            "l": 45.9,
-            "c": 0.062,
-            "h": 230.9,
-            "css": "oklch(45.9% 0.062 230.9)"
+            "l": 46,
+            "c": 0,
+            "h": null,
+            "css": "oklch(46.0% 0 none)"
           },
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 2.03,
-              "apca": -13.8,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 5.86,
-              "apca": 71.9,
+              "ratio": 7.11,
+              "apca": 84.7,
               "supports": {
                 "body": true,
                 "largeText": true,
                 "nonText": true,
-                "aaaBody": false
+                "aaaBody": true
               }
             },
-            "highlight": {
-              "ratio": 2.23,
-              "apca": 23.7,
+            "inverse": {
+              "ratio": 2.95,
+              "apca": -17.3,
               "supports": {
                 "body": false,
                 "largeText": false,
                 "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 6.36,
+              "apca": 77,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
                 "aaaBody": false
               }
             }
@@ -3687,28 +1718,18 @@
         },
         {
           "step": 800,
-          "hex": "#19485d",
+          "hex": "#424242",
           "oklch": {
-            "l": 38,
-            "c": 0.062,
-            "h": 230.9,
-            "css": "oklch(38.0% 0.062 230.9)"
+            "l": 37.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(37.9% 0 none)"
           },
           "clipped": false,
           "on": {
             "default": {
-              "ratio": 1.45,
-              "apca": 0,
-              "supports": {
-                "body": false,
-                "largeText": false,
-                "nonText": false,
-                "aaaBody": false
-              }
-            },
-            "inverse": {
-              "ratio": 8.22,
-              "apca": 80.3,
+              "ratio": 10.05,
+              "apca": 93.4,
               "supports": {
                 "body": true,
                 "largeText": true,
@@ -3716,31 +1737,134 @@
                 "aaaBody": true
               }
             },
-            "highlight": {
-              "ratio": 3.12,
-              "apca": 32.1,
+            "inverse": {
+              "ratio": 2.09,
+              "apca": -9.1,
               "supports": {
                 "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 8.98,
+              "apca": 85.6,
+              "supports": {
+                "body": true,
                 "largeText": true,
                 "nonText": true,
-                "aaaBody": false
+                "aaaBody": true
               }
             }
           }
         },
         {
           "step": 900,
-          "hex": "#003346",
+          "hex": "#2e2e2e",
           "oklch": {
             "l": 30.1,
-            "c": 0.06,
-            "h": 229.9,
-            "css": "oklch(30.1% 0.060 229.9)"
+            "c": 0,
+            "h": null,
+            "css": "oklch(30.1% 0 none)"
           },
-          "clipped": true,
+          "clipped": false,
           "on": {
             "default": {
-              "ratio": 1.06,
+              "ratio": 13.58,
+              "apca": 100.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.55,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 12.13,
+              "apca": 92.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        },
+        {
+          "step": 950,
+          "hex": "#1b1b1b",
+          "oklch": {
+            "l": 22.2,
+            "c": 0,
+            "h": null,
+            "css": "oklch(22.2% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 17.22,
+              "apca": 104.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.22,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 15.39,
+              "apca": 96.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "line",
+      "hex": "#8C8C8C",
+      "nearest": 500,
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#f5f5f5",
+          "oklch": {
+            "l": 97,
+            "c": 0,
+            "h": null,
+            "css": "oklch(97.0% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 1.09,
               "apca": 0,
               "supports": {
                 "body": false,
@@ -3750,8 +1874,8 @@
               }
             },
             "inverse": {
-              "ratio": 11.18,
-              "apca": 87.1,
+              "ratio": 19.26,
+              "apca": -101.3,
               "supports": {
                 "body": true,
                 "largeText": true,
@@ -3760,8 +1884,223 @@
               }
             },
             "highlight": {
-              "ratio": 4.24,
+              "ratio": 1.03,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 100,
+          "hex": "#e8e8e8",
+          "oklch": {
+            "l": 93.1,
+            "c": 0,
+            "h": null,
+            "css": "oklch(93.1% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 1.23,
+              "apca": 11.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 17.14,
+              "apca": -92.9,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.09,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 200,
+          "hex": "#d1d1d1",
+          "oklch": {
+            "l": 86.1,
+            "c": 0,
+            "h": null,
+            "css": "oklch(86.1% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 1.53,
+              "apca": 24.5,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 13.75,
+              "apca": -78.7,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.36,
+              "apca": 16.7,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 300,
+          "hex": "#b7b7b7",
+          "oklch": {
+            "l": 77.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(77.9% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 2.01,
               "apca": 38.9,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 10.47,
+              "apca": -63.5,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.79,
+              "apca": 31.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 400,
+          "hex": "#9e9e9e",
+          "oklch": {
+            "l": 69.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(69.9% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 2.68,
+              "apca": 52.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 7.84,
+              "apca": -49.8,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 2.39,
+              "apca": 44.3,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 500,
+          "hex": "#868686",
+          "oklch": {
+            "l": 62,
+            "c": 0,
+            "h": null,
+            "css": "oklch(62.0% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 3.64,
+              "apca": 64,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 5.77,
+              "apca": -37.6,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 3.25,
+              "apca": 56.3,
               "supports": {
                 "body": false,
                 "largeText": true,
@@ -3772,17 +2111,1639 @@
           }
         },
         {
-          "step": 950,
-          "hex": "#001e2b",
+          "step": 600,
+          "hex": "#6f6f6f",
           "oklch": {
-            "l": 22,
-            "c": 0.044,
-            "h": 230.2,
-            "css": "oklch(22.0% 0.044 230.2)"
+            "l": 54.2,
+            "c": 0,
+            "h": null,
+            "css": "oklch(54.2% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 5.02,
+              "apca": 74.8,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 4.18,
+              "apca": -27,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 4.49,
+              "apca": 67,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 700,
+          "hex": "#585858",
+          "oklch": {
+            "l": 46,
+            "c": 0,
+            "h": null,
+            "css": "oklch(46.0% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 7.11,
+              "apca": 84.7,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 2.95,
+              "apca": -17.3,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 6.36,
+              "apca": 77,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 800,
+          "hex": "#424242",
+          "oklch": {
+            "l": 37.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(37.9% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 10.05,
+              "apca": 93.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 2.09,
+              "apca": -9.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 8.98,
+              "apca": 85.6,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        },
+        {
+          "step": 900,
+          "hex": "#2e2e2e",
+          "oklch": {
+            "l": 30.1,
+            "c": 0,
+            "h": null,
+            "css": "oklch(30.1% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 13.58,
+              "apca": 100.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.55,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 12.13,
+              "apca": 92.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        },
+        {
+          "step": 950,
+          "hex": "#1b1b1b",
+          "oklch": {
+            "l": 22.2,
+            "c": 0,
+            "h": null,
+            "css": "oklch(22.2% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 17.22,
+              "apca": 104.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.22,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 15.39,
+              "apca": 96.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "muted",
+      "hex": "#666666",
+      "nearest": 600,
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#f5f5f5",
+          "oklch": {
+            "l": 97,
+            "c": 0,
+            "h": null,
+            "css": "oklch(97.0% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 1.09,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 19.26,
+              "apca": -101.3,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.03,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 100,
+          "hex": "#e8e8e8",
+          "oklch": {
+            "l": 93.1,
+            "c": 0,
+            "h": null,
+            "css": "oklch(93.1% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 1.23,
+              "apca": 11.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 17.14,
+              "apca": -92.9,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.09,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 200,
+          "hex": "#d1d1d1",
+          "oklch": {
+            "l": 86.1,
+            "c": 0,
+            "h": null,
+            "css": "oklch(86.1% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 1.53,
+              "apca": 24.5,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 13.75,
+              "apca": -78.7,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.36,
+              "apca": 16.7,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 300,
+          "hex": "#b7b7b7",
+          "oklch": {
+            "l": 77.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(77.9% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 2.01,
+              "apca": 38.9,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 10.47,
+              "apca": -63.5,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.79,
+              "apca": 31.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 400,
+          "hex": "#9e9e9e",
+          "oklch": {
+            "l": 69.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(69.9% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 2.68,
+              "apca": 52.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 7.84,
+              "apca": -49.8,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 2.39,
+              "apca": 44.3,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 500,
+          "hex": "#868686",
+          "oklch": {
+            "l": 62,
+            "c": 0,
+            "h": null,
+            "css": "oklch(62.0% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 3.64,
+              "apca": 64,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 5.77,
+              "apca": -37.6,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 3.25,
+              "apca": 56.3,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 600,
+          "hex": "#6f6f6f",
+          "oklch": {
+            "l": 54.2,
+            "c": 0,
+            "h": null,
+            "css": "oklch(54.2% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 5.02,
+              "apca": 74.8,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 4.18,
+              "apca": -27,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 4.49,
+              "apca": 67,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 700,
+          "hex": "#585858",
+          "oklch": {
+            "l": 46,
+            "c": 0,
+            "h": null,
+            "css": "oklch(46.0% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 7.11,
+              "apca": 84.7,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 2.95,
+              "apca": -17.3,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 6.36,
+              "apca": 77,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 800,
+          "hex": "#424242",
+          "oklch": {
+            "l": 37.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(37.9% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 10.05,
+              "apca": 93.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 2.09,
+              "apca": -9.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 8.98,
+              "apca": 85.6,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        },
+        {
+          "step": 900,
+          "hex": "#2e2e2e",
+          "oklch": {
+            "l": 30.1,
+            "c": 0,
+            "h": null,
+            "css": "oklch(30.1% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 13.58,
+              "apca": 100.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.55,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 12.13,
+              "apca": 92.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        },
+        {
+          "step": 950,
+          "hex": "#1b1b1b",
+          "oklch": {
+            "l": 22.2,
+            "c": 0,
+            "h": null,
+            "css": "oklch(22.2% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 17.22,
+              "apca": 104.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.22,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 15.39,
+              "apca": 96.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "black",
+      "hex": "#000000",
+      "nearest": 950,
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#f5f5f5",
+          "oklch": {
+            "l": 97,
+            "c": 0,
+            "h": null,
+            "css": "oklch(97.0% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 1.09,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 19.26,
+              "apca": -101.3,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.03,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 100,
+          "hex": "#e8e8e8",
+          "oklch": {
+            "l": 93.1,
+            "c": 0,
+            "h": null,
+            "css": "oklch(93.1% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 1.23,
+              "apca": 11.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 17.14,
+              "apca": -92.9,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.09,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 200,
+          "hex": "#d1d1d1",
+          "oklch": {
+            "l": 86.1,
+            "c": 0,
+            "h": null,
+            "css": "oklch(86.1% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 1.53,
+              "apca": 24.5,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 13.75,
+              "apca": -78.7,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.36,
+              "apca": 16.7,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 300,
+          "hex": "#b7b7b7",
+          "oklch": {
+            "l": 77.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(77.9% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 2.01,
+              "apca": 38.9,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 10.47,
+              "apca": -63.5,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.79,
+              "apca": 31.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 400,
+          "hex": "#9e9e9e",
+          "oklch": {
+            "l": 69.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(69.9% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 2.68,
+              "apca": 52.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 7.84,
+              "apca": -49.8,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 2.39,
+              "apca": 44.3,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 500,
+          "hex": "#868686",
+          "oklch": {
+            "l": 62,
+            "c": 0,
+            "h": null,
+            "css": "oklch(62.0% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 3.64,
+              "apca": 64,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 5.77,
+              "apca": -37.6,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 3.25,
+              "apca": 56.3,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 600,
+          "hex": "#6f6f6f",
+          "oklch": {
+            "l": 54.2,
+            "c": 0,
+            "h": null,
+            "css": "oklch(54.2% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 5.02,
+              "apca": 74.8,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 4.18,
+              "apca": -27,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 4.49,
+              "apca": 67,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 700,
+          "hex": "#585858",
+          "oklch": {
+            "l": 46,
+            "c": 0,
+            "h": null,
+            "css": "oklch(46.0% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 7.11,
+              "apca": 84.7,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 2.95,
+              "apca": -17.3,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 6.36,
+              "apca": 77,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 800,
+          "hex": "#424242",
+          "oklch": {
+            "l": 37.9,
+            "c": 0,
+            "h": null,
+            "css": "oklch(37.9% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 10.05,
+              "apca": 93.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 2.09,
+              "apca": -9.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 8.98,
+              "apca": 85.6,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        },
+        {
+          "step": 900,
+          "hex": "#2e2e2e",
+          "oklch": {
+            "l": 30.1,
+            "c": 0,
+            "h": null,
+            "css": "oklch(30.1% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 13.58,
+              "apca": 100.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.55,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 12.13,
+              "apca": 92.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        },
+        {
+          "step": 950,
+          "hex": "#1b1b1b",
+          "oklch": {
+            "l": 22.2,
+            "c": 0,
+            "h": null,
+            "css": "oklch(22.2% 0 none)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 17.22,
+              "apca": 104.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.22,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 15.39,
+              "apca": 96.4,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "hex": "#0645AD",
+      "nearest": 700,
+      "steps": [
+        {
+          "step": 50,
+          "hex": "#f0f5ff",
+          "oklch": {
+            "l": 96.9,
+            "c": 0.014,
+            "h": 264.5,
+            "css": "oklch(96.9% 0.014 264.5)"
           },
           "clipped": true,
           "on": {
             "default": {
+              "ratio": 1.09,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 19.21,
+              "apca": -101.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.02,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 100,
+          "hex": "#dbe9ff",
+          "oklch": {
+            "l": 93,
+            "c": 0.033,
+            "h": 259.4,
+            "css": "oklch(93.0% 0.033 259.4)"
+          },
+          "clipped": true,
+          "on": {
+            "default": {
+              "ratio": 1.23,
+              "apca": 11.2,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 17.11,
+              "apca": -92.8,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.1,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 200,
+          "hex": "#b8d2ff",
+          "oklch": {
+            "l": 86,
+            "c": 0.069,
+            "h": 261.3,
+            "css": "oklch(86.0% 0.069 261.3)"
+          },
+          "clipped": true,
+          "on": {
+            "default": {
+              "ratio": 1.53,
+              "apca": 24.6,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 13.7,
+              "apca": -78.5,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.37,
+              "apca": 16.9,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 300,
+          "hex": "#8fb8ff",
+          "oklch": {
+            "l": 78.1,
+            "c": 0.111,
+            "h": 261.1,
+            "css": "oklch(78.1% 0.111 261.1)"
+          },
+          "clipped": true,
+          "on": {
+            "default": {
+              "ratio": 2.01,
+              "apca": 38.8,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 10.47,
+              "apca": -63.6,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 1.79,
+              "apca": 31.1,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 400,
+          "hex": "#649cff",
+          "oklch": {
+            "l": 69.9,
+            "c": 0.157,
+            "h": 261,
+            "css": "oklch(69.9% 0.157 261.0)"
+          },
+          "clipped": true,
+          "on": {
+            "default": {
+              "ratio": 2.71,
+              "apca": 52.3,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 7.74,
+              "apca": -49.5,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "highlight": {
+              "ratio": 2.42,
+              "apca": 44.6,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 500,
+          "hex": "#4481ee",
+          "oklch": {
+            "l": 61.9,
+            "c": 0.176,
+            "h": 261,
+            "css": "oklch(61.9% 0.176 261.0)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 3.74,
+              "apca": 64.5,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 5.62,
+              "apca": -37.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 3.34,
+              "apca": 56.8,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 600,
+          "hex": "#2c68d3",
+          "oklch": {
+            "l": 53.9,
+            "c": 0.177,
+            "h": 260.9,
+            "css": "oklch(53.9% 0.177 260.9)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 5.21,
+              "apca": 75.3,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "inverse": {
+              "ratio": 4.03,
+              "apca": -26.4,
+              "supports": {
+                "body": false,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 4.66,
+              "apca": 67.6,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 700,
+          "hex": "#134fb8",
+          "oklch": {
+            "l": 45.9,
+            "c": 0.177,
+            "h": 261,
+            "css": "oklch(45.9% 0.177 261.0)"
+          },
+          "clipped": false,
+          "on": {
+            "default": {
+              "ratio": 7.4,
+              "apca": 85,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 2.84,
+              "apca": -17,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 6.61,
+              "apca": 77.2,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": false
+              }
+            }
+          }
+        },
+        {
+          "step": 800,
+          "hex": "#003997",
+          "oklch": {
+            "l": 38.1,
+            "c": 0.163,
+            "h": 260.8,
+            "css": "oklch(38.1% 0.163 260.8)"
+          },
+          "clipped": true,
+          "on": {
+            "default": {
+              "ratio": 10.33,
+              "apca": 93.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 2.03,
+              "apca": -9.4,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 9.23,
+              "apca": 85.3,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        },
+        {
+          "step": 900,
+          "hex": "#00276d",
+          "oklch": {
+            "l": 30.1,
+            "c": 0.129,
+            "h": 260.8,
+            "css": "oklch(30.1% 0.129 260.8)"
+          },
+          "clipped": true,
+          "on": {
+            "default": {
+              "ratio": 13.9,
+              "apca": 99.8,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
+              "ratio": 1.51,
+              "apca": 0,
+              "supports": {
+                "body": false,
+                "largeText": false,
+                "nonText": false,
+                "aaaBody": false
+              }
+            },
+            "highlight": {
+              "ratio": 12.41,
+              "apca": 92.1,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            }
+          }
+        },
+        {
+          "step": 950,
+          "hex": "#001645",
+          "oklch": {
+            "l": 22.1,
+            "c": 0.094,
+            "h": 260.7,
+            "css": "oklch(22.1% 0.094 260.7)"
+          },
+          "clipped": true,
+          "on": {
+            "default": {
+              "ratio": 17.49,
+              "apca": 103.9,
+              "supports": {
+                "body": true,
+                "largeText": true,
+                "nonText": true,
+                "aaaBody": true
+              }
+            },
+            "inverse": {
               "ratio": 1.2,
               "apca": 0,
               "supports": {
@@ -3792,24 +3753,14 @@
                 "aaaBody": false
               }
             },
-            "inverse": {
-              "ratio": 14.31,
-              "apca": 91.5,
+            "highlight": {
+              "ratio": 15.62,
+              "apca": 96.2,
               "supports": {
                 "body": true,
                 "largeText": true,
                 "nonText": true,
                 "aaaBody": true
-              }
-            },
-            "highlight": {
-              "ratio": 5.43,
-              "apca": 43.2,
-              "supports": {
-                "body": true,
-                "largeText": true,
-                "nonText": true,
-                "aaaBody": false
               }
             }
           }
