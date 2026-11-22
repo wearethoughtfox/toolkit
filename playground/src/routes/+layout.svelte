@@ -20,7 +20,8 @@
       ? [
           { href: '/palette', label: 'Palette' },
           { href: '/type', label: 'Type' },
-          { href: '/transitions', label: 'Transitions' }
+          { href: '/transitions', label: 'Transitions' },
+          { href: '/patterns', label: 'Patterns' }
         ]
       : [])
   ];
